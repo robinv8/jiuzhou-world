@@ -6,8 +6,9 @@ export type Lang = (typeof LOCALES)[number]
 export const DEFAULT_LANG: Lang = 'zh'
 
 /**
- * Locales with full hand-written copy today.
- * Others still get routes + UI, but strings fall back (en → zh).
+ * Locales with a full body of copy.
+ * ja / ko keep routes and a few UI strings; the rest is intentionally
+ * not translated and falls back (en → zh).
  */
 export const TRANSLATED_LOCALES: readonly Lang[] = ['zh', 'en']
 

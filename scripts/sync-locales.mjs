@@ -1,6 +1,6 @@
 /**
- * Rebuild ja.json / ko.json so they share zh.json's key tree.
- * Existing ja/ko strings are kept; missing keys are copied from en.
+ * Prune ja.json / ko.json: drop any string that is identical to English.
+ * Those keys should fall back (en → zh), not pretend to be Japanese/Korean.
  */
 import { readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
@@ -12,36 +12,26 @@ function load(code) {
     return JSON.parse(readFileSync(join(root, `${code}.json`), 'utf8'))
 }
 
-function lookup(node, path) {
-    let cur = node
-    for (const key of path) {
-        if (cur == null || typeof cur !== 'object' || Array.isArray(cur)) return undefined
-        cur = cur[key]
+function prune(node, en) {
+    if (typeof node === 'string') {
+        if (typeof en === 'string' && node === en) return undefined
+        return node
     }
-    return cur
-}
-
-function align(canon, en, existing, path = []) {
-    if (typeof canon === 'string' || Array.isArray(canon)) {
-        const own = lookup(existing, path)
-        if (typeof canon === 'string') {
-            return typeof own === 'string' && own ? own : lookup(en, path)
-        }
-        if (Array.isArray(own) && own.length === canon.length) return own
-        return lookup(en, path)
+    if (Array.isArray(node)) {
+        if (Array.isArray(en) && JSON.stringify(node) === JSON.stringify(en)) return undefined
+        return node
     }
     const out = {}
-    for (const key of Object.keys(canon)) {
-        out[key] = align(canon[key], en, existing, [...path, key])
+    for (const [key, value] of Object.entries(node)) {
+        const next = prune(value, en && typeof en === 'object' && !Array.isArray(en) ? en[key] : undefined)
+        if (next !== undefined) out[key] = next
     }
-    return out
+    return Object.keys(out).length ? out : undefined
 }
 
-const zh = load('zh')
 const en = load('en')
-
 for (const code of ['ja', 'ko']) {
-    const next = align(zh, en, load(code))
+    const next = prune(load(code), en) ?? {}
     writeFileSync(join(root, `${code}.json`), JSON.stringify(next, null, 2) + '\n')
-    console.log('aligned', code)
+    console.log('pruned', code)
 }

@@ -4,11 +4,11 @@ title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
 created: "2026-08-15T07:32:31"
-updated: "2026-08-15T07:50:38"
+updated: "2026-08-15T07:57:40"
 ---
 
 <!-- compiled_truth -->
-文案在 src/i18n/locales/{zh,en,ja,ko}.json，四份文件同一套 key 树（168 keys）。npm run i18n:check 校验对齐。ja/ko 未完稿的条目先与英文对齐，已有日韩短句（开卷、临安卷等）保留。组件用 t(key) 显示当前语言，双语微标用 counterpartLang（zh↔en）。结构数据仍在 catalogs.ts。新增语言：复制 en.json → locales/<code>.json，挂上 catalogs，再跑 i18n:check。
+zh / en 是全文。ja / ko 有路由，但只翻译少量界面短句（开卷、临安卷、口号等）；正文、SEO、各卷小传故意不译，回退 en → zh。这不是漏译。ja.json / ko.json 保持稀疏，不要为了对齐 key 而填入英文副本。印章字与卷次编号也不进语言文件。en.json 仍须与 zh.json 全 key 对齐。npm run i18n:check：en 必须完整，ja/ko 允许缺 key。
 
 
 ## Timeline
@@ -35,4 +35,10 @@ updated: "2026-08-15T07:50:38"
   kind: decision
   summary: "四份 locale JSON 共用同一套 key；导航随当前语言显示"
   source: code
+  affects: [i18n-locale-routing]
+
+- time: 2026-08-15T07:57:40
+  kind: decision
+  summary: "ja/ko 只译少量界面短句，正文故意不译"
+  source: product
   affects: [i18n-locale-routing]

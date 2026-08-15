@@ -37,28 +37,24 @@ npm run preview
 
 | 代码 | URL | 文案 |
 |------|-----|------|
-| `zh` | `/…`（默认无前缀） | 完整 |
-| `en` | `/en/…` | 完整 |
-| `ja` | `/ja/…` | 结构已就绪，回退 en → zh |
-| `ko` | `/ko/…` | 结构已就绪，回退 en → zh |
+| `zh` | `/…`（默认无前缀） | 全文 |
+| `en` | `/en/…` | 全文 |
+| `ja` | `/ja/…` | 只译少量界面短句；正文故意不译，回退 en → zh |
+| `ko` | `/ko/…` | 同上 |
 
-文案按语言分文件，四份 JSON **同一套 key 树**：
+文案按语言分文件：
 
 ```
-src/i18n/locales/zh.json
-src/i18n/locales/en.json
-src/i18n/locales/ja.json
-src/i18n/locales/ko.json
+src/i18n/locales/zh.json   # 全文
+src/i18n/locales/en.json   # 全文，key 与 zh 对齐
+src/i18n/locales/ja.json   # 稀疏：只放要译成日文的 key
+src/i18n/locales/ko.json   # 稀疏：只放要译成韩文的 key
 ```
 
-路由与语言列表在 `src/i18n/config.ts`。组件用 `t('nav.home')` / `tList(...)`。`ja` / `ko` 未完稿处先与英文对齐，之后按同一 key 补译。校验：`npm run i18n:check`。
+`en` 必须覆盖 `zh` 的全部 key。`ja` / `ko` 不必齐：没写的 key 走回退，这是有意的，不是漏译。印章字、卷次编号等也不进语言文件。校验：`npm run i18n:check`。
 
-新增语言：
-
-1. 在 `LOCALES` 增加代码
-2. 复制 `en.json` 为 `locales/<code>.json`，按 key 翻译
-3. 在 `t.ts` 的 `catalogs` 挂上该文件
-4. 跑 `npm run i18n:check`，确认 key 与 `zh.json` 对齐
+新增完整语言：复制 `en.json`，译完全部 key，并加入 `TRANSLATED_LOCALES`。  
+只加界面短句：在对应 JSON 里写那几个 key 即可。
 
 ## SEO
 
