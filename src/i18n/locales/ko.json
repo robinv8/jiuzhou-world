@@ -1,0 +1,16 @@
+{
+  "ui": {
+    "openVolume": "개권",
+    "linanVolume": "임안 권",
+    "oneCityOneVolume": "구주지 · 일권일성",
+    "onlineGazetteer": "온라인 방지지",
+    "nineLands": "구주, 한 권의 지",
+    "volumeTwoDash": "제2권 —",
+    "nextVolumeOnTheRoad": "다음 권은 길 위에 있습니다."
+  },
+  "seo": {
+    "place": {
+      "linan": "임안"
+    }
+  }
+}

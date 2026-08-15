@@ -42,7 +42,13 @@ npm run preview
 | `ja` | `/ja/…` | 结构已就绪，回退 en → zh |
 | `ko` | `/ko/…` | 结构已就绪，回退 en → zh |
 
-新增语言：在 `src/i18n/config.ts` 的 `LOCALES` 增加代码，并逐步补 `LocalizedString` 字段。
+文案按语言分文件，放在 `src/i18n/locales/`（`zh.json` / `en.json` / `ja.json` / `ko.json`）。路由与语言列表仍在 `src/i18n/config.ts`。组件通过 `t('nav.home')` 取值，缺译时回退 **当前语言 → en → zh**。
+
+新增语言：
+
+1. 在 `src/i18n/config.ts` 的 `LOCALES` 增加代码
+2. 新增 `src/i18n/locales/<code>.json`（可先只译部分 key，其余回退）
+3. 在 `src/i18n/t.ts` 的 `catalogs` 里挂上该文件
 
 ## SEO
 
