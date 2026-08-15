@@ -1,3 +1,4 @@
+import { counterpartLang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import Reveal from './Reveal'
 
@@ -23,7 +24,7 @@ export default function PageHero({ kicker, title, sub, image, imageAlt }: PageHe
             <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-16 md:pb-24">
                 <Reveal>
                     <p className="micro-label text-[#b0c6b3]">
-                        {lang === 'zh' ? t(kicker, 'en') : t(kicker, 'zh')} · {t(kicker)}
+                        {t(kicker, counterpartLang(lang))} · {t(kicker)}
                     </p>
                 </Reveal>
                 <Reveal delay={120}>
