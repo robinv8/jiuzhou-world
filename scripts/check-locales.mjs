@@ -1,7 +1,6 @@
 /**
  * zh.json is the canonical key tree.
- * en.json must have the same keys (full translation).
- * ja.json / ko.json are allowed to be sparse: only keys we chose to translate.
+ * en / ja / ko must have the same keys (full translation).
  * Extra keys (not in zh) are always an error.
  */
 import { readFileSync } from 'node:fs'
@@ -9,8 +8,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'i18n', 'locales')
-const FULL = ['en']
-const PARTIAL = ['ja', 'ko']
+const FULL = ['en', 'ja', 'ko']
 
 function paths(node, prefix = '') {
     if (typeof node === 'string' || Array.isArray(node)) return [prefix]
@@ -36,17 +34,6 @@ for (const code of FULL) {
         if (extra.length) console.error('  extra:', extra.join(', '))
     } else {
         console.log(`[i18n] ${code}.json complete (${have.size} keys)`)
-    }
-}
-
-for (const code of PARTIAL) {
-    const have = new Set(paths(load(code)))
-    const extra = [...have].filter((p) => !canon.has(p))
-    if (extra.length) {
-        failed = true
-        console.error(`[i18n] ${code}.json has keys not in zh.json:`, extra.join(', '))
-    } else {
-        console.log(`[i18n] ${code}.json partial by design (${have.size} keys, ${canon.size - have.size} fall back)`)
     }
 }
 

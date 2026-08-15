@@ -2,7 +2,7 @@
 slug: architecture
 title: System architecture
 role: system architecture
-updated: "2026-08-15T07:32:28"
+updated: "2026-08-15T08:05:01"
 ---
 
 # System architecture
@@ -16,14 +16,14 @@ graph TD
   Views --> Components["src/components/*"]
   Views --> I18n["src/i18n/*"]
   Layout --> SEO["src/lib/seo.ts"]
-  I18n --> Config["LOCALES / pick()"]
+  I18n --> Config["LOCALES / t()"]
   Build["astro build → dist/"] --> CF["Cloudflare Pages"]
 ```
 
 ## 模块边界
 - **pages**：路由入口；默认中文无前缀，其他语言走 `/[locale]/…`
 - **views**：页面级 React 组合（Home、About、临安各章）
-- **i18n**：文案与语言配置；`TRANSLATED_LOCALES` 控制完整翻译，其余回退 en → zh
+- **i18n**：文案按语言分 JSON（`src/i18n/locales/{zh,en,ja,ko}.json`）；`t(key, lang)` 读取，回退 lang → en → zh。四语正文齐全。印章、卷次、拉丁名留在 catalogs / 组件里，不进 locale 文件
 - **lib**：路径与 SEO 工具
 - **components**：站点壳与 UI 原语（含 shadcn 风格 ui/）
 

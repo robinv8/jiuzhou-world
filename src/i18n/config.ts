@@ -6,11 +6,10 @@ export type Lang = (typeof LOCALES)[number]
 export const DEFAULT_LANG: Lang = 'zh'
 
 /**
- * Locales with a full body of copy.
- * ja / ko keep routes and a few UI strings; the rest is intentionally
- * not translated and falls back (en → zh).
+ * Locales with a full body of copy (nav, essays, SEO, about).
+ * Seals, catalog numbers, and Latin names stay out of locale files.
  */
-export const TRANSLATED_LOCALES: readonly Lang[] = ['zh', 'en']
+export const TRANSLATED_LOCALES: readonly Lang[] = ['zh', 'en', 'ja', 'ko']
 
 export const LANG_META: Record<
     Lang,

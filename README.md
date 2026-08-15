@@ -39,22 +39,21 @@ npm run preview
 |------|-----|------|
 | `zh` | `/…`（默认无前缀） | 全文 |
 | `en` | `/en/…` | 全文 |
-| `ja` | `/ja/…` | 只译少量界面短句；正文故意不译，回退 en → zh |
-| `ko` | `/ko/…` | 同上 |
+| `ja` | `/ja/…` | 全文 |
+| `ko` | `/ko/…` | 全文 |
 
 文案按语言分文件：
 
 ```
-src/i18n/locales/zh.json   # 全文
+src/i18n/locales/zh.json   # 全文（中文底本）
 src/i18n/locales/en.json   # 全文，key 与 zh 对齐
-src/i18n/locales/ja.json   # 稀疏：只放要译成日文的 key
-src/i18n/locales/ko.json   # 稀疏：只放要译成韩文的 key
+src/i18n/locales/ja.json   # 全文
+src/i18n/locales/ko.json   # 全文
 ```
 
-`en` 必须覆盖 `zh` 的全部 key。`ja` / `ko` 不必齐：没写的 key 走回退，这是有意的，不是漏译。印章字、卷次编号等也不进语言文件。校验：`npm run i18n:check`。
+四份 locale 必须覆盖同一套 key，但文案是改写，不是逐句对译：同一事实与语气，各自语言里能独立成篇。印章字、卷次编号、拉丁学名不进语言文件。校验：`npm run i18n:check`。
 
-新增完整语言：复制 `en.json`，译完全部 key，并加入 `TRANSLATED_LOCALES`。  
-只加界面短句：在对应 JSON 里写那几个 key 即可。
+新增完整语言：复制 `en.json`，译完全部 key，并加入 `LOCALES` 与 `TRANSLATED_LOCALES`。
 
 ## SEO
 
