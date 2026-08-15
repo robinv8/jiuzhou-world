@@ -1,4 +1,5 @@
 import { ANTHOLOGY_DOMAIN, linanNav } from '@/i18n/catalogs'
+import { counterpartLang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { withLocale } from '@/lib/i18n-path'
 import Seal from './Seal'
@@ -30,16 +31,20 @@ export default function SiteFooter() {
                         </a>
                         {linanNav.map((l) => (
                             <a key={l.base} href={href(l.base)} className="group pl-0">
-                                <span className="micro-label text-[#b0c6b3]/50 block">{t(l.key, 'en')}</span>
+                                <span className="micro-label text-[#b0c6b3]/50 block">
+                                    {t(l.key, counterpartLang(lang))}
+                                </span>
                                 <span className="font-display text-base tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
-                                    {t(l.key, 'zh')}
+                                    {t(l.key)}
                                 </span>
                             </a>
                         ))}
                         <a href={href('/about')} className="group col-span-2 mt-2">
-                            <span className="micro-label text-[#b0c6b3]/70 block">{t('anthology.about', 'en')}</span>
+                            <span className="micro-label text-[#b0c6b3]/70 block">
+                                {t('anthology.about', counterpartLang(lang))}
+                            </span>
                             <span className="font-display text-base tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
-                                {t('anthology.about', 'zh')}
+                                {t('anthology.about')}
                             </span>
                         </a>
                     </nav>

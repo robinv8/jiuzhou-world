@@ -10,7 +10,8 @@
     "astro": "astro",
     "brain": "brain",
     "brain:reindex": "brain reindex",
-    "brain:lint": "brain lint-links"
+    "brain:lint": "brain lint-links",
+    "i18n:check": "node scripts/check-locales.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

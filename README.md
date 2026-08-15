@@ -42,13 +42,23 @@ npm run preview
 | `ja` | `/ja/…` | 结构已就绪，回退 en → zh |
 | `ko` | `/ko/…` | 结构已就绪，回退 en → zh |
 
-文案按语言分文件，放在 `src/i18n/locales/`（`zh.json` / `en.json` / `ja.json` / `ko.json`）。路由与语言列表仍在 `src/i18n/config.ts`。组件通过 `t('nav.home')` 取值，缺译时回退 **当前语言 → en → zh**。
+文案按语言分文件，四份 JSON **同一套 key 树**：
+
+```
+src/i18n/locales/zh.json
+src/i18n/locales/en.json
+src/i18n/locales/ja.json
+src/i18n/locales/ko.json
+```
+
+路由与语言列表在 `src/i18n/config.ts`。组件用 `t('nav.home')` / `tList(...)`。`ja` / `ko` 未完稿处先与英文对齐，之后按同一 key 补译。校验：`npm run i18n:check`。
 
 新增语言：
 
-1. 在 `src/i18n/config.ts` 的 `LOCALES` 增加代码
-2. 新增 `src/i18n/locales/<code>.json`（可先只译部分 key，其余回退）
-3. 在 `src/i18n/t.ts` 的 `catalogs` 里挂上该文件
+1. 在 `LOCALES` 增加代码
+2. 复制 `en.json` 为 `locales/<code>.json`，按 key 翻译
+3. 在 `t.ts` 的 `catalogs` 挂上该文件
+4. 跑 `npm run i18n:check`，确认 key 与 `zh.json` 对齐
 
 ## SEO
 

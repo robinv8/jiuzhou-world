@@ -61,3 +61,8 @@ export function isLang(value: string): value is Lang {
 export function isTranslated(lang: Lang): boolean {
     return TRANSLATED_LOCALES.includes(lang)
 }
+
+/** Bilingual pair used in micro-labels: zh ↔ en. */
+export function counterpartLang(lang: Lang): Lang {
+    return lang === 'zh' ? 'en' : 'zh'
+}
