@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { MountainsEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import Mountains from '@/views/linan/Mountains'
 import { getPageSeo } from '@/lib/seo'
 import { localeStaticPaths } from '@/lib/i18n-path'
 import { type Lang } from '@/i18n/config'
@@ -13,6 +13,6 @@ const lang = Astro.params.locale as Lang
 const seo = getPageSeo('/linan/mountains')
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <MountainsEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <Mountains lang={lang} />
+</PageShell>

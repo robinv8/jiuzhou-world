@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { AboutEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import About from '@/views/About'
 import { getPageSeo } from '@/lib/seo'
 import { localeStaticPaths } from '@/lib/i18n-path'
 import { type Lang } from '@/i18n/config'
@@ -13,6 +13,6 @@ const lang = Astro.params.locale as Lang
 const seo = getPageSeo('/about')
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <AboutEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <About lang={lang} />
+</PageShell>

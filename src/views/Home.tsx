@@ -1,14 +1,15 @@
 import { ArrowRight } from 'lucide-react'
 import { anthologyVolumes, ANTHOLOGY_DOMAIN } from '@/i18n/catalogs'
-import { useLanguage } from '@/i18n/LanguageContext'
+import type { Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
 import MiniTitle from '@/components/MiniTitle'
 import ParallaxImage from '@/components/ParallaxImage'
 import Seal from '@/components/Seal'
 import { withLocale } from '@/lib/i18n-path'
 
-export default function Home() {
-    const { lang, t, tList } = useLanguage()
+export default function Home({ lang }: { lang: Lang }) {
+    const { t, tList } = messages(lang)
     const href = (p: string) => withLocale(p, lang)
 
     return (
@@ -47,7 +48,7 @@ export default function Home() {
 
             <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
                 <Reveal>
-                    <MiniTitle i18nKey="anthology.about" />
+                    <MiniTitle i18nKey="anthology.about" lang={lang} />
                 </Reveal>
                 <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-10">
                     <Reveal className="md:col-span-5" delay={100}>
@@ -76,7 +77,7 @@ export default function Home() {
 
             <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
                 <Reveal>
-                    <MiniTitle i18nKey="anthology.volumesLabel" />
+                    <MiniTitle i18nKey="anthology.volumesLabel" lang={lang} />
                 </Reveal>
                 <Reveal delay={100}>
                     <h2 className="mt-10 font-display text-4xl md:text-5xl font-semibold">

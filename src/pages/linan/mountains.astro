@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { MountainsEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import Mountains from '@/views/linan/Mountains'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan/mountains')
 const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <MountainsEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <Mountains lang={lang} />
+</PageShell>

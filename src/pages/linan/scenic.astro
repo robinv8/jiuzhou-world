@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { ScenicEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import Scenic from '@/views/linan/Scenic'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan/scenic')
 const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <ScenicEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <Scenic lang={lang} />
+</PageShell>

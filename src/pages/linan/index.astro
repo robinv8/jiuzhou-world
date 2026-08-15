@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { LinanHomeEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import LinanHome from '@/views/linan/LinanHome'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan')
 const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <LinanHomeEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <LinanHome lang={lang} />
+</PageShell>

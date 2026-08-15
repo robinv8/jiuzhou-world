@@ -56,3 +56,11 @@ export function tList(key: string, lang: Lang): string[] {
     }
     return []
 }
+
+/** Bind t / tList to a locale so views do not need React context. */
+export function messages(lang: Lang) {
+    return {
+        t: (key: string, locale: Lang = lang) => t(key, locale),
+        tList: (key: string, locale: Lang = lang) => tList(key, locale),
+    }
+}

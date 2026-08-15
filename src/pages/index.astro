@@ -1,12 +1,12 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { HomeEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import Home from '@/views/Home'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/')
 const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <HomeEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <Home lang={lang} />
+</PageShell>

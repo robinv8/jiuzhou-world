@@ -1,15 +1,17 @@
 import { scenicSpots } from '@/i18n/catalogs'
-import { useLanguage } from '@/i18n/LanguageContext'
+import type { Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import Seal from '@/components/Seal'
 
-export default function Scenic() {
-    const { t } = useLanguage()
+export default function Scenic({ lang }: { lang: Lang }) {
+    const { t } = messages(lang)
 
     return (
         <main>
             <PageHero
+                lang={lang}
                 kicker="scenic.heroKicker"
                 title="scenic.heroTitle"
                 sub="scenic.heroSub"

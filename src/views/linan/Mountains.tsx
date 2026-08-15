@@ -1,16 +1,18 @@
 import { mountainEssays } from '@/i18n/catalogs'
-import { useLanguage } from '@/i18n/LanguageContext'
+import type { Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import ParallaxImage from '@/components/ParallaxImage'
 import Seal from '@/components/Seal'
 
-export default function Mountains() {
-    const { t, tList } = useLanguage()
+export default function Mountains({ lang }: { lang: Lang }) {
+    const { t, tList } = messages(lang)
 
     return (
         <main>
             <PageHero
+                lang={lang}
                 kicker="mountains.heroKicker"
                 title="mountains.heroTitle"
                 sub="mountains.heroSub"
