@@ -77,8 +77,8 @@ export const pages: PageSeo[] = [
             en: "Places · Lin'an · Jiuzhou",
         },
         description: {
-            zh: '临安八处去处小传：天目山、大明山、青山湖、浙西大峡谷、太湖源、指南村、河桥古镇、清凉峰。',
-            en: "Eight places in Lin'an: Tianmu, Daming, Qingshan Lake, Zhexi Canyon, Source of Taihu, Zhinan, Heqiao, Qingliang.",
+            zh: '临安八处去处小传：天目山、大明山、青山湖、浙西大峡谷、太湖源、指南村、河桥古镇、清凉峰。每处一篇，先写它是什么，再写走进去会遇见什么。',
+            en: "Eight place biographies in Lin'an: Tianmu, Daming, Qingshan Lake, Zhexi Canyon, Source of Taihu, Zhinan, Heqiao, Qingliang — what each place is, and what you meet when you walk in.",
         },
         image: `${SITE_URL}/images/cover-scenic.webp`,
     },
