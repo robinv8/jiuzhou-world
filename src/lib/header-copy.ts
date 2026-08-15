@@ -19,6 +19,8 @@ export function headerCopy(lang: Lang, path: string) {
         linanVolume: t('ui.linanVolume'),
         about: t('anthology.about'),
         aboutGloss: t('anthology.about', gloss),
+        contribute: t('anthology.contribute'),
+        contributeGloss: t('anthology.contribute', gloss),
         homeGloss: t('nav.home', gloss),
         language: t('ui.language'),
         menu: t('ui.menu'),
@@ -26,6 +28,7 @@ export function headerCopy(lang: Lang, path: string) {
             home: withLocale('/', lang),
             linan: withLocale('/linan', lang),
             about: withLocale('/about', lang),
+            contribute: withLocale('/contribute', lang),
         },
         nav: linanNav.map((l) => ({
             base: l.base,

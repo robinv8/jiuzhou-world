@@ -103,18 +103,32 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                             )
                         })}
                     {!inLinan && (
-                        <a href={hrefs.about}>
-                            <span
-                                className={`flex flex-col items-start transition-colors opacity-70 hover:opacity-100 ${
-                                    onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
-                                }`}
-                            >
-                                <span className="micro-label" lang={glossLang}>
-                                    {copy.aboutGloss}
+                        <>
+                            <a href={hrefs.about}>
+                                <span
+                                    className={`flex flex-col items-start transition-colors opacity-70 hover:opacity-100 ${
+                                        onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
+                                    }`}
+                                >
+                                    <span className="micro-label" lang={glossLang}>
+                                        {copy.aboutGloss}
+                                    </span>
+                                    <span className="font-display text-base tracking-[0.2em]">{copy.about}</span>
                                 </span>
-                                <span className="font-display text-base tracking-[0.2em]">{copy.about}</span>
-                            </span>
-                        </a>
+                            </a>
+                            <a href={hrefs.contribute}>
+                                <span
+                                    className={`flex flex-col items-start transition-colors opacity-70 hover:opacity-100 ${
+                                        onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
+                                    }`}
+                                >
+                                    <span className="micro-label" lang={glossLang}>
+                                        {copy.contributeGloss}
+                                    </span>
+                                    <span className="font-display text-base tracking-[0.2em]">{copy.contribute}</span>
+                                </span>
+                            </a>
+                        </>
                     )}
 
                     <div className="relative ml-4">
@@ -182,6 +196,18 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                                 </span>
                             </a>
                         ))}
+                    <a href={hrefs.about} className="flex items-baseline gap-3 text-[#1f2a26]">
+                        <span className="font-display text-lg">{copy.about}</span>
+                        <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                            {copy.aboutGloss}
+                        </span>
+                    </a>
+                    <a href={hrefs.contribute} className="flex items-baseline gap-3 text-[#1f2a26]">
+                        <span className="font-display text-lg">{copy.contribute}</span>
+                        <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                            {copy.contributeGloss}
+                        </span>
+                    </a>
                     <div className="flex flex-wrap gap-2 pt-2">
                         {locales.map((item) => (
                             <a

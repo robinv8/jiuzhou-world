@@ -2,6 +2,9 @@
 
 export const ANTHOLOGY_DOMAIN = 'jiuzhou.world'
 
+/** Inbox for reader-submitted photographs. */
+export const CONTRIBUTE_EMAIL = 'hello@jiuzhou.world'
+
 /** Latin volume mark — not translated. */
 export const VOLUME_I_LATIN = 'Vol. I'
 
@@ -78,6 +81,8 @@ export const cultureItems = [
 
 export const aboutSections = [{ id: 'gazetteer' }, { id: 'notPromotion' }] as const
 
+export const contributeSections = [{ id: 'why' }, { id: 'what' }, { id: 'how' }, { id: 'license' }] as const
+
 export const linanNav = [
     { base: '/linan/mountains', key: 'nav.mountains' },
     { base: '/linan/scenic', key: 'nav.scenic' },
@@ -90,6 +95,7 @@ export type SeoPageType = 'website' | 'article' | 'collection'
 export const seoPages = [
     { path: '/', key: 'home', type: 'website' as SeoPageType, image: '/images/hero-lake.webp' },
     { path: '/about', key: 'about', type: 'article' as SeoPageType, image: '/images/hero-village.webp' },
+    { path: '/contribute', key: 'contribute', type: 'article' as SeoPageType, image: '/images/hero-village.webp' },
     { path: '/linan', key: 'linan', type: 'collection' as SeoPageType, image: '/images/hero-tianmu.webp' },
     {
         path: '/linan/mountains',

@@ -1,0 +1,12 @@
+---
+import PageShell from '@/layouts/PageShell.astro'
+import Contribute from '@/views/Contribute'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/contribute')
+const lang = 'zh' as const
+---
+
+<PageShell seo={seo} lang={lang}>
+    <Contribute lang={lang} />
+</PageShell>

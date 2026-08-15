@@ -79,7 +79,13 @@ export function buildJsonLd(seo: PageSeo, lang: Lang): Record<string, unknown>[]
     }
 
     const pageType =
-        seo.type === 'article' ? 'AboutPage' : seo.type === 'collection' ? 'CollectionPage' : 'WebPage'
+        seo.path === '/contribute'
+            ? 'ContactPage'
+            : seo.type === 'article'
+              ? 'AboutPage'
+              : seo.type === 'collection'
+                ? 'CollectionPage'
+                : 'WebPage'
 
     const webPage: Record<string, unknown> = {
         '@context': 'https://schema.org',

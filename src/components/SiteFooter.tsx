@@ -49,6 +49,14 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
                                 {t('anthology.about')}
                             </span>
                         </a>
+                        <a href={href('/contribute')} className="group col-span-2">
+                            <span className="micro-label text-[#b0c6b3]/70 block" lang={glossLang}>
+                                {t('anthology.contribute', gloss)}
+                            </span>
+                            <span className="font-display text-base tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
+                                {t('anthology.contribute')}
+                            </span>
+                        </a>
                     </nav>
                 </div>
                 <div className="mt-16 pt-8 border-t border-[#f7f5ee]/15 flex flex-col md:flex-row justify-between gap-4 text-xs tracking-widest text-[#f7f5ee]/50">

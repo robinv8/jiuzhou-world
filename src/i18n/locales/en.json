@@ -15,6 +15,7 @@
     "volumesLabel": "The volumes",
     "volumesTitle": "Open a volume",
     "about": "About",
+    "contribute": "Photographs",
     "heroKicker": "One city, one volume",
     "intro": [
       "Ancient China was divided into Nine Lands — Jiuzhou. Each land was its mountains and rivers, its customs, the way its people lived. Jiuzhou is an online gazetteer of these lands: one city, one volume, written slowly.",
@@ -42,7 +43,38 @@
         "title": "Not promotion",
         "paragraphs": [
           "These pages sell no tickets and push no routes. If a mountain takes root in your mind, or you find yourself wanting to see a place, they have done their work.",
-          "All images are AI-generated impressions, not photographs of the actual places; where details differ, official publications prevail."
+          "Most images here are AI impressions, not photographs. If you have walked these places and pressed the shutter yourself, you may offer a picture. Where details differ, official publications prevail."
+        ]
+      }
+    }
+  },
+  "contribute": {
+    "heroTitle": "Photographs",
+    "heroSub": "A mountain you photographed can be kept here.",
+    "write": "Write to offer a picture",
+    "sections": {
+      "why": {
+        "title": "Why we take them",
+        "paragraphs": [
+          "The pictures on these pages are mostly atmosphere, not a shutter-click. If you have been to these places, taken the photograph yourself, and would let a gazetteer use one frame, we will look. This is not a contest. We only ask whether the picture belongs to this soil."
+        ]
+      },
+      "what": {
+        "title": "What to send",
+        "paragraphs": [
+          "Lin’an’s mountains, water, villages, and things. Your own photographs. No watermarks, no tour-company marks. Faces that can be recognised should stay out of frame unless you have their consent."
+        ]
+      },
+      "how": {
+        "title": "How to send",
+        "paragraphs": [
+          "Write a letter. In it: your name (or how you wish to be credited), where it was taken, roughly when. Attach the original file. We will reply. Whether we use it or not, we will say so."
+        ]
+      },
+      "license": {
+        "title": "The grant",
+        "paragraphs": [
+          "By sending, you say the photograph is yours to give; you allow Jiuzhou to show it on this site without commerce — including cropping, covers, and share-cards — and to credit you, unless you ask not to be named. The copyright stays yours. You may write later and withdraw it. Pictures taken from the web, or from someone else, please do not send."
         ]
       }
     }
@@ -273,7 +305,7 @@
   },
   "footer": {
     "colophonLabel": "Colophon",
-    "colophon": "A non-profit cultural project with no commercial function. Where details differ, official publications prevail. All images on this site are AI-generated impressions, not photographs of the actual places.",
+    "colophon": "A non-profit cultural project with no commercial function. Where details differ, official publications prevail. Most pictures are AI impressions; we also take photographs readers made themselves — see Photographs.",
     "credit": "Lin'an Anthology · an online gazetteer"
   },
   "seo": {
@@ -284,6 +316,10 @@
     "about": {
       "title": "About · Jiuzhou",
       "description": "Why Jiuzhou exists: bringing the gazetteer tradition online, one city at a time."
+    },
+    "contribute": {
+      "title": "Photographs · Jiuzhou",
+      "description": "Offer a photograph you took in Lin’an. Write to us; the copyright stays yours."
     },
     "linan": {
       "title": "Lin'an · Jiuzhou",
