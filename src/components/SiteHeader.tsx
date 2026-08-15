@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { linanNav } from '@/i18n/catalogs'
-import { LANG_META, LOCALES, counterpartLang, isTranslated, type Lang } from '@/i18n/config'
+import { linanNav, VOLUME_I_LATIN } from '@/i18n/catalogs'
+import { LANG_META, LOCALES, counterpartLang, type Lang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { stripLocale, withLocale } from '@/lib/i18n-path'
 
@@ -16,6 +16,8 @@ export default function SiteHeader({ path }: { path: string }) {
     const inLinan = basePath === '/linan' || basePath.startsWith('/linan/')
     const href = (p: string) => withLocale(p, lang)
     const active = (p: string) => basePath === p
+    const gloss = counterpartLang(lang)
+    const glossLang = LANG_META[gloss].htmlLang
 
     useEffect(() => {
         let lastY = window.scrollY
@@ -64,8 +66,9 @@ export default function SiteHeader({ path }: { path: string }) {
                             className={`micro-label hidden sm:inline transition-colors ${
                                 onDark ? 'text-[#f7f5ee]/70' : 'text-[#5a665e]'
                             }`}
+                            lang={glossLang}
                         >
-                            Jiuzhou
+                            {t('anthology.name', gloss)}
                         </span>
                     </a>
                     {inLinan && (
@@ -96,7 +99,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                             onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                         } ${isActive ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
                                     >
-                                        <span className="micro-label">{t(l.key, counterpartLang(lang))}</span>
+                                        <span className="micro-label" lang={glossLang}>
+                                            {t(l.key, gloss)}
+                                        </span>
                                         <span className="font-display text-base tracking-[0.2em]">
                                             {t(l.key)}
                                         </span>
@@ -114,7 +119,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                     onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                 }`}
                             >
-                                <span className="micro-label">{t('anthology.about', counterpartLang(lang))}</span>
+                                <span className="micro-label" lang={glossLang}>
+                                    {t('anthology.about', gloss)}
+                                </span>
                                 <span className="font-display text-base tracking-[0.2em]">
                                     {t('anthology.about')}
                                 </span>
@@ -127,7 +134,7 @@ export default function SiteHeader({ path }: { path: string }) {
                             type="button"
                             onClick={() => setLangOpen((v) => !v)}
                             className={`border px-3 py-1.5 text-xs tracking-[0.2em] transition-colors font-display ${langButtonClass}`}
-                            aria-label="Language"
+                            aria-label={t('ui.language')}
                             aria-expanded={langOpen}
                         >
                             {LANG_META[lang].short}
@@ -151,11 +158,6 @@ export default function SiteHeader({ path }: { path: string }) {
                                             <span className="font-display tracking-wide">
                                                 {LANG_META[code].label}
                                             </span>
-                                            {!isTranslated(code) && (
-                                                <span className="text-[10px] tracking-wider text-[#8b958d]">
-                                                    β
-                                                </span>
-                                            )}
                                         </button>
                                     </li>
                                 ))}
@@ -167,7 +169,8 @@ export default function SiteHeader({ path }: { path: string }) {
                 <button
                     className={`md:hidden ${onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'}`}
                     onClick={() => setOpen(!open)}
-                    aria-label="Menu"
+                    aria-label={t('ui.menu')}
+                    aria-expanded={open}
                 >
                     {open ? <X size={22} /> : <Menu size={22} />}
                 </button>
@@ -177,13 +180,15 @@ export default function SiteHeader({ path }: { path: string }) {
                 <nav className="md:hidden bg-[#f7f5ee] border-t hairline px-6 py-6 flex flex-col gap-5">
                     <a href={href('/')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">{t('anthology.name')}</span>
-                        <span className="micro-label text-[#5a665e]">{t('nav.home', counterpartLang(lang))}</span>
+                        <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                            {t('nav.home', gloss)}
+                        </span>
                     </a>
                     <a href={href('/linan')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">
                             {t('ui.linanVolume')}
                         </span>
-                        <span className="micro-label text-[#5a665e]">Vol. I</span>
+                        <span className="micro-label text-[#5a665e]">{VOLUME_I_LATIN}</span>
                     </a>
                     {inLinan &&
                         linanNav.map((l) => (
@@ -193,7 +198,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                 className="flex items-baseline gap-3 pl-4 text-[#1f2a26]"
                             >
                                 <span className="font-display text-base">{t(l.key)}</span>
-                                <span className="micro-label text-[#5a665e]">{t(l.key, counterpartLang(lang))}</span>
+                                <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                                    {t(l.key, gloss)}
+                                </span>
                             </a>
                         ))}
                     <div className="flex flex-wrap gap-2 pt-2">
@@ -209,7 +216,6 @@ export default function SiteHeader({ path }: { path: string }) {
                                 }`}
                             >
                                 {LANG_META[code].short}
-                                {!isTranslated(code) ? ' · β' : ''}
                             </button>
                         ))}
                     </div>

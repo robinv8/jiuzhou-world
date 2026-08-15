@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useCallback, type ReactNode } from 'react'
+import { createContext, useContext, useCallback, type ReactNode } from 'react'
 import { DEFAULT_LANG, type Lang } from '@/i18n/config'
 import { t as translate, tList as translateList } from '@/i18n/t'
 import { switchLocalePath } from '@/lib/i18n-path'
@@ -28,10 +28,6 @@ export function LanguageProvider({
         },
         [lang],
     )
-
-    useEffect(() => {
-        document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang
-    }, [lang])
 
     const t = useCallback((key: string, locale?: Lang) => translate(key, locale ?? lang), [lang])
     const tList = useCallback((key: string, locale?: Lang) => translateList(key, locale ?? lang), [lang])

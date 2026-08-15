@@ -2,6 +2,9 @@
 
 export const ANTHOLOGY_DOMAIN = 'jiuzhou.world'
 
+/** Latin volume mark — not translated. */
+export const VOLUME_I_LATIN = 'Vol. I'
+
 export const anthologyVolumes = [
     {
         key: 'linan',

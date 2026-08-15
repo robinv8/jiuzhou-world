@@ -1,5 +1,5 @@
-import { ANTHOLOGY_DOMAIN, linanNav } from '@/i18n/catalogs'
-import { counterpartLang } from '@/i18n/config'
+import { ANTHOLOGY_DOMAIN, VOLUME_I_LATIN, linanNav } from '@/i18n/catalogs'
+import { LANG_META, counterpartLang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { withLocale } from '@/lib/i18n-path'
 import Seal from './Seal'
@@ -7,6 +7,8 @@ import Seal from './Seal'
 export default function SiteFooter() {
     const { lang, t } = useLanguage()
     const href = (p: string) => withLocale(p, lang)
+    const gloss = counterpartLang(lang)
+    const glossLang = LANG_META[gloss].htmlLang
 
     return (
         <footer className="bg-[#1f2a26] text-[#f7f5ee]">
@@ -24,15 +26,15 @@ export default function SiteFooter() {
                     </div>
                     <nav className="grid grid-cols-2 gap-x-16 gap-y-4">
                         <a href={href('/linan')} className="group col-span-2">
-                            <span className="micro-label text-[#b0c6b3]/70 block">Vol. I</span>
+                            <span className="micro-label text-[#b0c6b3]/70 block">{VOLUME_I_LATIN}</span>
                             <span className="font-display text-lg tracking-[0.2em] text-[#f7f5ee]/90 group-hover:text-[#b0c6b3] transition-colors">
                                 {t('ui.linanVolume')}
                             </span>
                         </a>
                         {linanNav.map((l) => (
                             <a key={l.base} href={href(l.base)} className="group pl-0">
-                                <span className="micro-label text-[#b0c6b3]/50 block">
-                                    {t(l.key, counterpartLang(lang))}
+                                <span className="micro-label text-[#b0c6b3]/50 block" lang={glossLang}>
+                                    {t(l.key, gloss)}
                                 </span>
                                 <span className="font-display text-base tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
                                     {t(l.key)}
@@ -40,8 +42,8 @@ export default function SiteFooter() {
                             </a>
                         ))}
                         <a href={href('/about')} className="group col-span-2 mt-2">
-                            <span className="micro-label text-[#b0c6b3]/70 block">
-                                {t('anthology.about', counterpartLang(lang))}
+                            <span className="micro-label text-[#b0c6b3]/70 block" lang={glossLang}>
+                                {t('anthology.about', gloss)}
                             </span>
                             <span className="font-display text-base tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
                                 {t('anthology.about')}

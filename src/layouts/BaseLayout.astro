@@ -2,13 +2,12 @@
 import '@/index.css'
 import {
     DEFAULT_OG_IMAGE,
-    SITE_NAME,
     buildJsonLd,
     hreflangLinks,
     pageUrl,
     type PageSeo,
 } from '@/lib/seo'
-import { LANG_META, LOCALES, isTranslated, type Lang } from '@/i18n/config'
+import { LANG_META, LOCALES, type Lang } from '@/i18n/config'
 import { t } from '@/i18n/t'
 
 interface Props {
@@ -19,12 +18,12 @@ interface Props {
 const { seo, lang = 'zh' } = Astro.props
 const title = t(`seo.${seo.key}.title`, lang)
 const description = t(`seo.${seo.key}.description`, lang)
+const siteName = t('anthology.name', lang)
 const canonical = pageUrl(seo.path, lang)
 const ogImage = seo.image ?? DEFAULT_OG_IMAGE
 const meta = LANG_META[lang]
 const alternates = hreflangLinks(seo.path)
 const jsonLd = buildJsonLd(seo, lang)
-const partialTranslation = !isTranslated(lang)
 ---
 
 <!doctype html>
@@ -41,7 +40,7 @@ const partialTranslation = !isTranslated(lang)
         ))}
 
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content={meta.ogLocale} />
         {LOCALES.filter((l) => l !== lang).map((l) => (
             <meta property="og:locale:alternate" content={LANG_META[l].ogLocale} />
@@ -56,12 +55,12 @@ const partialTranslation = !isTranslated(lang)
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={ogImage} />
 
-        {partialTranslation && (
-            <meta name="robots" content="index,follow" />
-        )}
-
         <meta name="theme-color" content="#1f2a26" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href={meta.fontHref} />
 
         {jsonLd.map((block) => (
             <script type="application/ld+json" set:html={JSON.stringify(block)} />
