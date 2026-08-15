@@ -314,6 +314,8 @@
     }
   },
   "ui": {
+    "language": "言語",
+    "menu": "目次",
     "openVolume": "開巻",
     "season": "時令",
     "note": "附注",

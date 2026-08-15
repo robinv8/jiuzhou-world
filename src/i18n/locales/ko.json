@@ -314,6 +314,8 @@
     }
   },
   "ui": {
+    "language": "언어",
+    "menu": "차례",
     "openVolume": "개권",
     "season": "시령",
     "note": "부주",

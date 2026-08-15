@@ -5,12 +5,6 @@ export type Lang = (typeof LOCALES)[number]
 /** Default site language (no URL prefix). */
 export const DEFAULT_LANG: Lang = 'zh'
 
-/**
- * Locales with a full body of copy (nav, essays, SEO, about).
- * Seals, catalog numbers, and Latin names stay out of locale files.
- */
-export const TRANSLATED_LOCALES: readonly Lang[] = ['zh', 'en', 'ja', 'ko']
-
 export const LANG_META: Record<
     Lang,
     {
@@ -19,6 +13,8 @@ export const LANG_META: Record<
         hreflang: string
         htmlLang: string
         ogLocale: string
+        /** Display + body CJK serif for this locale (Google Fonts CSS2). */
+        fontHref: string
     }
 > = {
     zh: {
@@ -27,6 +23,8 @@ export const LANG_META: Record<
         hreflang: 'zh-CN',
         htmlLang: 'zh-CN',
         ogLocale: 'zh_CN',
+        fontHref:
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap',
     },
     en: {
         label: 'English',
@@ -34,6 +32,9 @@ export const LANG_META: Record<
         hreflang: 'en',
         htmlLang: 'en',
         ogLocale: 'en_US',
+        // Counterpart labels are Chinese; seals are CJK.
+        fontHref:
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap',
     },
     ja: {
         label: '日本語',
@@ -41,6 +42,8 @@ export const LANG_META: Record<
         hreflang: 'ja',
         htmlLang: 'ja',
         ogLocale: 'ja_JP',
+        fontHref:
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600;700&display=swap',
     },
     ko: {
         label: '한국어',
@@ -48,6 +51,8 @@ export const LANG_META: Record<
         hreflang: 'ko',
         htmlLang: 'ko',
         ogLocale: 'ko_KR',
+        fontHref:
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;600;700&display=swap',
     },
 }
 
@@ -58,11 +63,10 @@ export function isLang(value: string): value is Lang {
     return (LOCALES as readonly string[]).includes(value)
 }
 
-export function isTranslated(lang: Lang): boolean {
-    return TRANSLATED_LOCALES.includes(lang)
-}
-
-/** Bilingual pair used in micro-labels: zh ↔ en. */
+/**
+ * Bilingual micro-label pair.
+ * English pages gloss in Chinese; every other locale glosses in English.
+ */
 export function counterpartLang(lang: Lang): Lang {
-    return lang === 'zh' ? 'en' : 'zh'
+    return lang === 'en' ? 'zh' : 'en'
 }

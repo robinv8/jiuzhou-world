@@ -1,4 +1,4 @@
-import { counterpartLang } from '@/i18n/config'
+import { LANG_META, counterpartLang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import Reveal from './Reveal'
 
@@ -13,6 +13,7 @@ interface PageHeroProps {
 /** Interior page hero: tall image band with ink-gradient and serif title. */
 export default function PageHero({ kicker, title, sub, image, imageAlt }: PageHeroProps) {
     const { lang, t } = useLanguage()
+    const gloss = counterpartLang(lang)
     const alt = imageAlt ?? t(title)
     return (
         <header className="relative h-[78vh] min-h-[520px] overflow-hidden">
@@ -24,7 +25,9 @@ export default function PageHero({ kicker, title, sub, image, imageAlt }: PageHe
             <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-16 md:pb-24">
                 <Reveal>
                     <p className="micro-label text-[#b0c6b3]">
-                        {t(kicker, counterpartLang(lang))} · {t(kicker)}
+                        <span lang={LANG_META[gloss].htmlLang}>{t(kicker, gloss)}</span>
+                        {' · '}
+                        {t(kicker)}
                     </p>
                 </Reveal>
                 <Reveal delay={120}>

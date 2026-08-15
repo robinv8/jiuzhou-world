@@ -17,6 +17,15 @@ export default defineConfig({
         }),
         sitemap({
             filter: (page) => !page.includes('/404'),
+            i18n: {
+                defaultLocale: 'zh',
+                locales: {
+                    zh: 'zh-CN',
+                    en: 'en',
+                    ja: 'ja',
+                    ko: 'ko',
+                },
+            },
         }),
     ],
     vite: {

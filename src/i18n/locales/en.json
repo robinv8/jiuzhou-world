@@ -314,6 +314,8 @@
     }
   },
   "ui": {
+    "language": "Language",
+    "menu": "Menu",
     "openVolume": "OPEN",
     "season": "Season",
     "note": "Note",
