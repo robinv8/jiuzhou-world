@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Paper & ink system */
+    --paper: #f7f5ee;
+    --paper-deep: #edeae0;
+    --paper-warm: #f2efe5;
+    --ink: #1f2a26;
+    --ink-soft: #5a665e;
+    --ink-faint: #8b958d;
+    --sage: #b0c6b3;
+    --celadon: #8ca693;
+    --seal: #b03a2e;
+    --line: rgba(31, 42, 38, 0.14);
+
+    /* shadcn tokens mapped to the palette */
+    --background: 60 17% 95%;
+    --foreground: 160 15% 14%;
+    --card: 60 17% 95%;
+    --card-foreground: 160 15% 14%;
+    --popover: 60 17% 95%;
+    --popover-foreground: 160 15% 14%;
+    --primary: 160 15% 14%;
+    --primary-foreground: 60 17% 95%;
+    --secondary: 52 22% 91%;
+    --secondary-foreground: 160 15% 14%;
+    --muted: 52 22% 91%;
+    --muted-foreground: 140 6% 42%;
+    --accent: 52 22% 91%;
+    --accent-foreground: 160 15% 14%;
+    --destructive: 6 50% 43%;
+    --destructive-foreground: 60 17% 95%;
+    --border: 150 10% 84%;
+    --input: 150 10% 84%;
+    --ring: 160 15% 14%;
+    --radius: 0.25rem;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--paper);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+      'Microsoft YaHei', 'Source Han Sans SC', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--sage);
+    color: var(--ink);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(31, 42, 38, 0.25);
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(31, 42, 38, 0.4);
+  }
+}
+
+@layer utilities {
+  /* Serif display stack: Latin first, Chinese falls to Song-style serif */
+  .font-display {
+    font-family: 'EB Garamond', 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+  }
+  .font-body-sans {
+    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+      'Microsoft YaHei', sans-serif;
+  }
+
+  /* Uppercase Latin micro-label with letterspacing */
+  .micro-label {
+    font-family: 'EB Garamond', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 0.72rem;
+  }
+
+  .vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+
+  /* Editorial link underline: 25% opacity -> full on hover */
+  .link-underline {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-decoration-color: currentColor;
+    text-underline-offset: 4px;
+    text-decoration-skip-ink: none;
+    transition: text-decoration-color 0.25s ease-out;
+  }
+  .link-underline-faint {
+    text-decoration-color: rgba(31, 42, 38, 0.25);
+  }
+  .link-underline-faint:hover {
+    text-decoration-color: rgba(31, 42, 38, 1);
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    .ken-burns-slide {
+      animation: none !important;
+      opacity: 1;
+    }
+  }
+
+  /* Ken Burns hero slideshow — 24s cycle, 3 slides */
+  .ken-burns-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    animation: kenBurnsCycle 24s infinite;
+    will-change: transform, opacity;
+  }
+  .ken-burns-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .ken-burns-slide:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .ken-burns-slide:nth-child(2) {
+    animation-delay: 8s;
+  }
+  .ken-burns-slide:nth-child(3) {
+    animation-delay: 16s;
+  }
+
+  @keyframes kenBurnsCycle {
+    0% {
+      opacity: 0;
+      transform: scale(1.08);
+    }
+    4% {
+      opacity: 1;
+    }
+    29% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    34% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scale(1.08);
+    }
+  }
+
+  /* Sticky-steps (history timeline) visual crossfade */
+  .sticky-visual {
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sticky-visual.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Thin rule */
+  .hairline {
+    border-color: var(--line);
+  }
+
+  /* Seal stamp */
+  .seal-stamp {
+    background: var(--seal);
+    color: #f7f5ee;
+    box-shadow: inset 0 0 0 2px rgba(247, 245, 238, 0.5);
+  }
+}
