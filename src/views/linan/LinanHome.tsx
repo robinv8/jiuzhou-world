@@ -1,4 +1,3 @@
-import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { home, volumes } from '@/i18n/content'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -101,8 +100,8 @@ export default function Home() {
         <div className="mt-16 flex flex-col">
           {volumes.map((v, i) => (
             <Reveal key={v.key} delay={i * 80}>
-              <Link
-                to={v.route}
+              <a
+                href={v.route}
                 className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t hairline ${
                   i === volumes.length - 1 ? 'border-b' : ''
                 }`}
@@ -136,7 +135,7 @@ export default function Home() {
                     />
                   </span>
                 </div>
-              </Link>
+              </a>
             </Reveal>
           ))}
         </div>

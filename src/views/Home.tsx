@@ -1,4 +1,3 @@
-import { Link } from 'react-router'
 import { ArrowRight } from 'lucide-react'
 import { anthology, anthologyVolumes } from '@/i18n/content'
 import { useLanguage } from '@/i18n/LanguageContext'
@@ -89,8 +88,8 @@ export default function Home() {
         <div className="mt-16 flex flex-col">
           {anthologyVolumes.map((v) => (
             <Reveal key={v.key}>
-              <Link
-                to={v.route}
+              <a
+                href={v.route}
                 className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t border-b hairline"
               >
                 <div className="md:col-span-5 overflow-hidden">
@@ -117,7 +116,7 @@ export default function Home() {
                     />
                   </span>
                 </div>
-              </Link>
+              </a>
             </Reveal>
           ))}
 

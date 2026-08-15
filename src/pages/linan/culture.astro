@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { CultureEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/linan/culture')
+---
+
+<BaseLayout seo={seo}>
+    <CultureEntry client:load />
+</BaseLayout>

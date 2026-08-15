@@ -1,0 +1,55 @@
+---
+import '@/index.css'
+import { absoluteUrl, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL, type PageSeo } from '@/lib/seo'
+
+interface Props {
+    seo: PageSeo
+    lang?: 'zh' | 'en'
+}
+
+const { seo, lang = 'zh' } = Astro.props
+const title = seo.title[lang]
+const description = seo.description[lang]
+const canonical = absoluteUrl(seo.path)
+const ogImage = seo.image ?? DEFAULT_OG_IMAGE
+const htmlLang = lang === 'zh' ? 'zh-CN' : 'en'
+---
+
+<!doctype html>
+<html lang={htmlLang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="canonical" href={canonical} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content={SITE_NAME} />
+        <meta property="og:locale" content={lang === 'zh' ? 'zh_CN' : 'en_US'} />
+        <meta property="og:url" content={canonical} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={ogImage} />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:image" content={ogImage} />
+
+        <meta name="theme-color" content="#1f2a26" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-J12WBYEXR2"></script>
+        <script is:inline>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-J12WBYEXR2');
+        </script>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>

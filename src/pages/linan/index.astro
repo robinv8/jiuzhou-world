@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { LinanHomeEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/linan')
+---
+
+<BaseLayout seo={seo}>
+    <LinanHomeEntry client:load />
+</BaseLayout>

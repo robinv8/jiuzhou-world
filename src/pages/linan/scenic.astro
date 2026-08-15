@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { ScenicEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/linan/scenic')
+---
+
+<BaseLayout seo={seo}>
+    <ScenicEntry client:load />
+</BaseLayout>

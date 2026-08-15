@@ -14,10 +14,12 @@ const LanguageContext = createContext<LanguageContextValue | null>(null)
 const STORAGE_KEY = 'linan-lang'
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(() => {
-    const saved = typeof window !== 'undefined' ? window.localStorage.getItem(STORAGE_KEY) : null
-    return saved === 'en' || saved === 'zh' ? saved : 'zh'
-  })
+  const [lang, setLangState] = useState<Lang>('zh')
+
+  useEffect(() => {
+    const saved = window.localStorage.getItem(STORAGE_KEY)
+    if (saved === 'en' || saved === 'zh') setLangState(saved)
+  }, [])
 
   const setLang = (next: Lang) => {
     setLangState(next)
@@ -27,7 +29,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en'
   }, [lang])
-
   const pick = (pair: { zh: string; en: string }) => (lang === 'zh' ? pair.zh : pair.en)
 
   return (

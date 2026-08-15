@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { AboutEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/about')
+---
+
+<BaseLayout seo={seo}>
+    <AboutEntry client:load />
+</BaseLayout>

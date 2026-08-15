@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { MountainsEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/linan/mountains')
+---
+
+<BaseLayout seo={seo}>
+    <MountainsEntry client:load />
+</BaseLayout>

@@ -1,0 +1,11 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { HistoryEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/linan/history')
+---
+
+<BaseLayout seo={seo}>
+    <HistoryEntry client:load />
+</BaseLayout>
