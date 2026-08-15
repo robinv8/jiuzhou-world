@@ -49,7 +49,7 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
                                 {t('anthology.about')}
                             </span>
                         </a>
-                        <a href={href('/linan/contribute')} className="group col-span-2">
+                        <a href={href('/contribute')} className="group col-span-2">
                             <span className="micro-label text-[#b0c6b3]/70 block" lang={glossLang}>
                                 {t('anthology.contribute', gloss)}
                             </span>

@@ -1,12 +1,12 @@
 ---
 import PageShell from '@/layouts/PageShell.astro'
-import ContributePlace from '@/views/ContributePlace'
+import ContributeHub from '@/views/ContributeHub'
 import { getPageSeo } from '@/lib/seo'
 
-const seo = getPageSeo('/linan/contribute')
+const seo = getPageSeo('/contribute')
 const lang = 'zh' as const
 ---
 
 <PageShell seo={seo} lang={lang}>
-    <ContributePlace lang={lang} place="linan" />
+    <ContributeHub lang={lang} />
 </PageShell>

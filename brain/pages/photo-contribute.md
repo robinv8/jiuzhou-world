@@ -4,19 +4,18 @@ title: "供图入口：邮件投稿，不是相册社区"
 category: decision
 status: active
 created: "2026-08-15T12:41:49"
-updated: "2026-08-15T21:22:12"
+updated: "2026-08-15T21:27:06"
 ---
 
 <!-- compiled_truth -->
-供图入口按「一卷一城」拆分：每个地方/卷有自己的供图页，不是全站共用一个 /contribute。
+供图是「一卷一城」：不同地域收的图不一样，不是全站同一套标准，也不是只服务临安。
 
-当前：
-- 路径：/linan/contribute（及 /en|ja|ko/linan/contribute）
-- 文案：locales 中 contribute.linan.*
-- 邮件 subject 带「临安卷」
-- 旧 /contribute 与各语言 /{locale}/contribute 经 _redirects 301 到临安卷
+结构：
+- /contribute 总入口：说明各地标准不同，列出开放中的卷（卡片上是该卷收什么的摘要 blurb）
+- /{city}/contribute 地方页：该卷完整规则（why / what / how / license）；「收什么」按地域写死
+- 邮件 subject 带卷名，便于分拣
 
-下一卷开城时：在 contributePlaces 增加条目、写 contribute.{city} 文案、加 /{city}/contribute 路由即可。仍用邮件收稿，不是上传社区。
+扩展下一城：catalogs.contributePlaces 加条目 + locales contribute.{city} + 路由 /{city}/contribute。总入口会自动多一张卡。
 
 
 ## Timeline
@@ -44,3 +43,9 @@ updated: "2026-08-15T21:22:12"
   summary: "供图改为按地方/卷独立页（/linan/contribute），旧全局路径 301"
   source: product
   affects: [photo-contribute, i18n-locale-routing]
+
+- time: 2026-08-15T21:27:06
+  kind: decision
+  summary: "供图：总入口 + 各地不同收稿标准"
+  source: product
+  affects: [photo-contribute]

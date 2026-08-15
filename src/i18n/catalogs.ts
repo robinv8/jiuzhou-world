@@ -81,16 +81,28 @@ export const cultureItems = [
 
 export const aboutSections = [{ id: 'gazetteer' }, { id: 'notPromotion' }] as const
 
-export const contributeSections = [{ id: 'why' }, { id: 'what' }, { id: 'how' }, { id: 'license' }] as const
+/** Sections on each place page — “what” is the regional difference. */
+export const contributePlaceSections = [
+    { id: 'why' },
+    { id: 'what' },
+    { id: 'how' },
+    { id: 'license' },
+] as const
 
-/** Open city volumes that accept photographs (one contribute page each). */
+/**
+ * City volumes that may accept photographs.
+ * Each place has its own 收什么; hub at /contribute lists open ones.
+ */
 export const contributePlaces = [
     {
         key: 'linan',
         route: '/linan/contribute',
         volumeRoute: '/linan',
+        latin: 'Vol. I — Lin’an',
         image: '/images/hero-village.webp',
+        status: 'open' as const,
     },
+    // Next city: add key + locales contribute.{key} + /{key}/contribute route
 ] as const
 
 export type ContributePlaceKey = (typeof contributePlaces)[number]['key']
@@ -111,6 +123,12 @@ export type SeoPageType = 'website' | 'article' | 'collection'
 export const seoPages = [
     { path: '/', key: 'home', type: 'website' as SeoPageType, image: '/images/hero-lake.webp' },
     { path: '/about', key: 'about', type: 'article' as SeoPageType, image: '/images/hero-village.webp' },
+    {
+        path: '/contribute',
+        key: 'contribute',
+        type: 'article' as SeoPageType,
+        image: '/images/hero-village.webp',
+    },
     { path: '/linan', key: 'linan', type: 'collection' as SeoPageType, image: '/images/hero-tianmu.webp' },
     {
         path: '/linan/contribute',

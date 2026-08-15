@@ -1,6 +1,6 @@
 import {
     CONTRIBUTE_EMAIL,
-    contributeSections,
+    contributePlaceSections,
     getContributePlace,
     type ContributePlaceKey,
 } from '@/i18n/catalogs'
@@ -10,7 +10,11 @@ import Reveal from '@/components/Reveal'
 import Seal from '@/components/Seal'
 import { withLocale } from '@/lib/i18n-path'
 
-export default function Contribute({
+/**
+ * Per-place contribute page: 收什么 differs by region.
+ * Shared hub is /contribute; this page is the volume's own rules + mail.
+ */
+export default function ContributePlace({
     lang,
     place,
 }: {
@@ -31,6 +35,13 @@ export default function Contribute({
                 <Reveal>
                     <p className="micro-label text-[#8ca693]">
                         <a
+                            href={withLocale('/contribute', lang)}
+                            className="transition-opacity hover:opacity-70"
+                        >
+                            {t('contribute.hub.heroTitle')}
+                        </a>
+                        <span className="mx-2 opacity-40">/</span>
+                        <a
                             href={withLocale(meta.volumeRoute, lang)}
                             className="transition-opacity hover:opacity-70"
                         >
@@ -47,7 +58,7 @@ export default function Contribute({
             </header>
 
             <section className="mx-auto max-w-3xl px-6 pb-24 md:pb-36 flex flex-col gap-16 md:gap-20">
-                {contributeSections.map((s) => (
+                {contributePlaceSections.map((s) => (
                     <Reveal key={s.id}>
                         <h2 className="font-display text-2xl md:text-3xl font-semibold">
                             {t(`${root}.sections.${s.id}.title`)}
@@ -69,6 +80,17 @@ export default function Contribute({
                         <span className="font-display text-lg tracking-[0.2em]">{t(`${root}.write`)}</span>
                         <span className="micro-label text-[#8ca693]">{CONTRIBUTE_EMAIL}</span>
                     </a>
+                </Reveal>
+
+                <Reveal>
+                    <p className="text-sm leading-7 text-[#8b958d]">
+                        <a
+                            href={withLocale('/contribute', lang)}
+                            className="link-underline link-underline-faint"
+                        >
+                            {t('contribute.hub.openLabel')}
+                        </a>
+                    </p>
                 </Reveal>
 
                 <Reveal>

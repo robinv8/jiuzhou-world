@@ -28,8 +28,8 @@ export function headerCopy(lang: Lang, path: string) {
             home: withLocale('/', lang),
             linan: withLocale('/linan', lang),
             about: withLocale('/about', lang),
-            // Per-volume for now (only Lin’an is open). Later: resolve by current city.
-            contribute: withLocale('/linan/contribute', lang),
+            // Hub lists every open volume; each volume has its own 收什么.
+            contribute: withLocale('/contribute', lang),
         },
         nav: linanNav.map((l) => ({
             base: l.base,

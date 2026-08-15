@@ -49,6 +49,17 @@
     }
   },
   "contribute": {
+    "hub": {
+      "heroTitle": "Photographs",
+      "heroSub": "One city, one volume. Each place asks for different pictures.",
+      "intro": [
+        "Jiuzhou takes photographs by volume: Lin’an is mountain and water; the next volume will be another ground. Choose the volume you walked, read what it takes, then send.",
+        "Not a contest, not a prize. Your own shutter only. Copyright stays yours."
+      ],
+      "openLabel": "Volumes open now",
+      "openCta": "What this volume takes",
+      "plannedNote": "When the next city opens, another line will appear here."
+    },
     "linan": {
       "heroTitle": "Lin’an · Photographs",
       "heroSub": "A place you photographed in Lin’an can be kept in this volume.",
@@ -63,7 +74,8 @@
         "what": {
           "title": "What to send",
           "paragraphs": [
-            "Lin’an’s mountains, water, villages, and things. Your own photographs. No watermarks, no tour-company marks. Faces that can be recognised should stay out of frame unless you have their consent."
+            "Lin’an’s mountains, water, villages, and things. Your own photographs. No watermarks, no tour-company marks. Faces that can be recognised should stay out of frame unless you have their consent.",
+            "The Lin’an volume only takes what belongs to Lin’an: Tianmu and Qingliang, canyon and lake, village and produce. Scenes of another city wait for that volume."
           ]
         },
         "how": {
@@ -79,7 +91,8 @@
           ]
         }
       },
-      "mailSubject": "Photographs · Lin’an volume"
+      "mailSubject": "Photographs · Lin’an volume",
+      "blurb": "Beneath Tianmu: mountains, water, villages, craft."
     }
   },
   "home": {
@@ -350,6 +363,10 @@
     "linan_contribute": {
       "title": "Photographs · Lin’an · Jiuzhou",
       "description": "Contribute photographs for the Lin’an volume: mountains, water, villages, craft — by letter. Copyright stays yours."
+    },
+    "contribute": {
+      "title": "Photographs · Jiuzhou",
+      "description": "One city, one volume — each place takes different photographs. Choose a volume, then write."
     }
   },
   "ui": {
