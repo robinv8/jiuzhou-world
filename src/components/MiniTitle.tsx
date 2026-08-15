@@ -1,9 +1,17 @@
-import { LANG_META, counterpartLang } from '@/i18n/config'
-import { useLanguage } from '@/i18n/LanguageContext'
+import { LANG_META, counterpartLang, type Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 
 /** Gold-line-prefix editorial micro label (counterpart lang + current). */
-export default function MiniTitle({ i18nKey, light = false }: { i18nKey: string; light?: boolean }) {
-    const { lang, t } = useLanguage()
+export default function MiniTitle({
+    i18nKey,
+    lang,
+    light = false,
+}: {
+    i18nKey: string
+    lang: Lang
+    light?: boolean
+}) {
+    const { t } = messages(lang)
     const gloss = counterpartLang(lang)
     return (
         <div className={`flex items-center gap-4 ${light ? 'text-[#f7f5ee]' : 'text-[#5a665e]'}`}>

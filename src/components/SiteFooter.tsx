@@ -1,11 +1,11 @@
 import { ANTHOLOGY_DOMAIN, VOLUME_I_LATIN, linanNav } from '@/i18n/catalogs'
-import { LANG_META, counterpartLang } from '@/i18n/config'
-import { useLanguage } from '@/i18n/LanguageContext'
+import { LANG_META, counterpartLang, type Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 import { withLocale } from '@/lib/i18n-path'
 import Seal from './Seal'
 
-export default function SiteFooter() {
-    const { lang, t } = useLanguage()
+export default function SiteFooter({ lang }: { lang: Lang }) {
+    const { t } = messages(lang)
     const href = (p: string) => withLocale(p, lang)
     const gloss = counterpartLang(lang)
     const glossLang = LANG_META[gloss].htmlLang

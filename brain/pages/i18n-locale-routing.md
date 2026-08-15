@@ -4,11 +4,11 @@ title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
 created: "2026-08-15T07:32:31"
-updated: "2026-08-15T08:16:19"
+updated: "2026-08-15T08:25:28"
 ---
 
 <!-- compiled_truth -->
-zh / en / ja / ko 四份 locale JSON 共用同一套 key。正文四种语言都写，但是改写，不是逐句对译。印章字、卷次编号、拉丁学名不进语言文件。刊头双语小字：英文页配中文，其余语言配英文（ja/ko 不再配中文）。字体按 html[lang] 分别加载 Noto Serif SC / JP / KR，不再用 CSS @import 一次拉全站中文宋。html lang 只由 BaseLayout 写入，不再被客户端改掉。回退链仍是 lang → en → zh。npm run i18n:check：en/ja/ko 必须与 zh 全 key 对齐；CI 构建前会跑。
+站点默认语言是中文：无 URL 前缀，x-default 指向中文。zh / en / ja / ko 四份 locale JSON 共用同一套 key，正文是改写不是对译。刊头双语小字以中文为默认对：中文页配英文，英/日/韩页配中文。缺 key 回退当前语言 → 中文（不再先走英文）。印章字、卷次编号、拉丁学名不进语言文件。字体按 html[lang] 加载 Noto Serif SC / JP / KR；日韩页额外加载 SC，供中文小字。npm run i18n:check：en/ja/ko 必须与 zh 全 key 对齐；CI 构建前会跑。
 
 
 ## Timeline
@@ -58,5 +58,11 @@ zh / en / ja / ko 四份 locale JSON 共用同一套 key。正文四种语言都
 - time: 2026-08-15T08:16:19
   kind: decision
   summary: "刊头小字 en↔zh / 其他配英；按语言加载字体；CI 跑 i18n:check"
+  source: product
+  affects: [i18n-locale-routing]
+
+- time: 2026-08-15T08:25:28
+  kind: decision
+  summary: "默认中文：刊头对译与缺 key 都回中文"
   source: product
   affects: [i18n-locale-routing]

@@ -1,10 +1,11 @@
 import { aboutSections } from '@/i18n/catalogs'
-import { useLanguage } from '@/i18n/LanguageContext'
+import type { Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
 import Seal from '@/components/Seal'
 
-export default function About() {
-    const { t, tList } = useLanguage()
+export default function About({ lang }: { lang: Lang }) {
+    const { t, tList } = messages(lang)
 
     return (
         <main>

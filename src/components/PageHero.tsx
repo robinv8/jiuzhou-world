@@ -1,8 +1,9 @@
-import { LANG_META, counterpartLang } from '@/i18n/config'
-import { useLanguage } from '@/i18n/LanguageContext'
+import { LANG_META, counterpartLang, type Lang } from '@/i18n/config'
+import { messages } from '@/i18n/t'
 import Reveal from './Reveal'
 
 interface PageHeroProps {
+    lang: Lang
     kicker: string
     title: string
     sub: string
@@ -11,8 +12,8 @@ interface PageHeroProps {
 }
 
 /** Interior page hero: tall image band with ink-gradient and serif title. */
-export default function PageHero({ kicker, title, sub, image, imageAlt }: PageHeroProps) {
-    const { lang, t } = useLanguage()
+export default function PageHero({ lang, kicker, title, sub, image, imageAlt }: PageHeroProps) {
+    const { t } = messages(lang)
     const gloss = counterpartLang(lang)
     const alt = imageAlt ?? t(title)
     return (

@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro'
-import { HistoryEntry } from '@/views/entries'
+import PageShell from '@/layouts/PageShell.astro'
+import History from '@/views/linan/History'
 import { getPageSeo } from '@/lib/seo'
 import { localeStaticPaths } from '@/lib/i18n-path'
 import { type Lang } from '@/i18n/config'
@@ -13,6 +13,6 @@ const lang = Astro.params.locale as Lang
 const seo = getPageSeo('/linan/history')
 ---
 
-<BaseLayout seo={seo} lang={lang}>
-    <HistoryEntry client:load lang={lang} />
-</BaseLayout>
+<PageShell seo={seo} lang={lang}>
+    <History lang={lang} />
+</PageShell>
