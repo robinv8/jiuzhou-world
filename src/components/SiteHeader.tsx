@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { linanNav } from '@/i18n/catalogs'
-import { LANG_META, LOCALES, isTranslated, type Lang } from '@/i18n/config'
+import { LANG_META, LOCALES, counterpartLang, isTranslated, type Lang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { stripLocale, withLocale } from '@/lib/i18n-path'
 
@@ -96,9 +96,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                             onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                         } ${isActive ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
                                     >
-                                        <span className="micro-label">{t(l.key, 'en')}</span>
+                                        <span className="micro-label">{t(l.key, counterpartLang(lang))}</span>
                                         <span className="font-display text-base tracking-[0.2em]">
-                                            {t(l.key, 'zh')}
+                                            {t(l.key)}
                                         </span>
                                         {isActive && (
                                             <span className="mt-1 h-px w-full bg-[#b03a2e]" aria-hidden />
@@ -114,9 +114,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                     onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                 }`}
                             >
-                                <span className="micro-label">{t('anthology.about', 'en')}</span>
+                                <span className="micro-label">{t('anthology.about', counterpartLang(lang))}</span>
                                 <span className="font-display text-base tracking-[0.2em]">
-                                    {t('anthology.about', 'zh')}
+                                    {t('anthology.about')}
                                 </span>
                             </span>
                         </a>
@@ -177,7 +177,7 @@ export default function SiteHeader({ path }: { path: string }) {
                 <nav className="md:hidden bg-[#f7f5ee] border-t hairline px-6 py-6 flex flex-col gap-5">
                     <a href={href('/')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">{t('anthology.name')}</span>
-                        <span className="micro-label text-[#5a665e]">Home</span>
+                        <span className="micro-label text-[#5a665e]">{t('nav.home', counterpartLang(lang))}</span>
                     </a>
                     <a href={href('/linan')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">
@@ -192,8 +192,8 @@ export default function SiteHeader({ path }: { path: string }) {
                                 href={href(l.base)}
                                 className="flex items-baseline gap-3 pl-4 text-[#1f2a26]"
                             >
-                                <span className="font-display text-base">{t(l.key, 'zh')}</span>
-                                <span className="micro-label text-[#5a665e]">{t(l.key, 'en')}</span>
+                                <span className="font-display text-base">{t(l.key)}</span>
+                                <span className="micro-label text-[#5a665e]">{t(l.key, counterpartLang(lang))}</span>
                             </a>
                         ))}
                     <div className="flex flex-wrap gap-2 pt-2">

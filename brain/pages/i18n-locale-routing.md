@@ -4,11 +4,11 @@ title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
 created: "2026-08-15T07:32:31"
-updated: "2026-08-15T07:47:01"
+updated: "2026-08-15T07:50:38"
 ---
 
 <!-- compiled_truth -->
-文案按语言分文件：src/i18n/locales/{zh,en,ja,ko}.json。路由与语言列表仍在 config.ts（zh 无前缀，en/ja/ko 走 /[locale]）。组件用 t('nav.home') / tList(...) 取值，缺译回退 当前语言 → en → zh。结构数据（id、图片、路由、拉丁名）留在 catalogs.ts，不进语言文件。新增语言：LOCALES 加代码 + 新增 locales/<code>.json + 在 t.ts catalogs 挂上。不再在 TypeScript 里写 { zh, en } LocalizedString。关联：[[astro-static-ssg]]。
+文案在 src/i18n/locales/{zh,en,ja,ko}.json，四份文件同一套 key 树（168 keys）。npm run i18n:check 校验对齐。ja/ko 未完稿的条目先与英文对齐，已有日韩短句（开卷、临安卷等）保留。组件用 t(key) 显示当前语言，双语微标用 counterpartLang（zh↔en）。结构数据仍在 catalogs.ts。新增语言：复制 en.json → locales/<code>.json，挂上 catalogs，再跑 i18n:check。
 
 
 ## Timeline
@@ -28,5 +28,11 @@ updated: "2026-08-15T07:47:01"
 - time: 2026-08-15T07:47:01
   kind: decision
   summary: "文案改为按语言分 JSON 文件，不再在 TS 里写 { zh, en }"
+  source: code
+  affects: [i18n-locale-routing]
+
+- time: 2026-08-15T07:50:38
+  kind: decision
+  summary: "四份 locale JSON 共用同一套 key；导航随当前语言显示"
   source: code
   affects: [i18n-locale-routing]
