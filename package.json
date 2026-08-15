@@ -7,7 +7,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "brain": "brain",
+    "brain:reindex": "brain reindex",
+    "brain:lint": "brain lint-links"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
@@ -22,6 +25,7 @@
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {
+    "@mindmux/brain-md": "^0.2.0",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
     "autoprefixer": "^10.4.23",

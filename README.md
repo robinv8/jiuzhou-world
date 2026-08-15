@@ -7,6 +7,17 @@
 - [Astro](https://astro.build) 静态站点 + React islands
 - Tailwind CSS
 - 部署：Cloudflare Pages（GitHub Actions CI）
+- 项目记忆：[BRAIN.md](./BRAIN.md)（[`@mindmux/brain-md`](https://projectbrain.md)）— 决策与约束写在 `brain/`，经 `npx brain` / `npm run brain` 读写
+
+## 项目脑（BRAIN.md）
+
+```bash
+npm install
+npx brain list-pages    # 或 npm run brain -- list-pages
+npx brain read-root stack
+```
+
+协议见根目录 `BRAIN.md`；不要手改 `brain/` 下文件。
 
 ## 开发
 
