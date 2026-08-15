@@ -4,7 +4,7 @@
 
 ## 技术栈
 
-- [Astro](https://astro.build) 静态站点 + React islands
+- [Astro](https://astro.build) 静态站点：正文构建期出 HTML，只有顶栏是 React island
 - Tailwind CSS
 - 部署：Cloudflare Pages（GitHub Actions CI）
 - 项目记忆：[BRAIN.md](./BRAIN.md)（[`@mindmux/brain-md`](https://projectbrain.md)）— 决策与约束写在 `brain/`，经 `npx brain` / `npm run brain` 读写
