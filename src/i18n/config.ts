@@ -43,7 +43,7 @@ export const LANG_META: Record<
         htmlLang: 'ja',
         ogLocale: 'ja_JP',
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap',
     },
     ko: {
         label: '한국어',
@@ -52,7 +52,7 @@ export const LANG_META: Record<
         htmlLang: 'ko',
         ogLocale: 'ko_KR',
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap',
     },
 }
 
@@ -65,8 +65,8 @@ export function isLang(value: string): value is Lang {
 
 /**
  * Bilingual micro-label pair.
- * English pages gloss in Chinese; every other locale glosses in English.
+ * Chinese is the default gloss; Chinese pages gloss in English.
  */
 export function counterpartLang(lang: Lang): Lang {
-    return lang === 'en' ? 'zh' : 'en'
+    return lang === 'zh' ? 'en' : 'zh'
 }

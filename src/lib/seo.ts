@@ -1,4 +1,4 @@
-import { DEFAULT_LANG, LANG_META, LOCALES, type Lang } from '@/i18n/config'
+import { DEFAULT_LANG, LANG_META, LOCALES, counterpartLang, type Lang } from '@/i18n/config'
 import { seoPages, type SeoPageType } from '@/i18n/catalogs'
 import { t } from '@/i18n/t'
 import { withLocale } from '@/lib/i18n-path'
@@ -51,7 +51,7 @@ export function buildJsonLd(seo: PageSeo, lang: Lang): Record<string, unknown>[]
     const inLanguage = LANG_META[lang].htmlLang
 
     const siteName = t('anthology.name', lang)
-    const alternateName = t('anthology.name', lang === 'en' ? 'zh' : 'en')
+    const alternateName = t('anthology.name', counterpartLang(lang))
 
     const publisher = {
         '@type': 'Organization',

@@ -2,7 +2,7 @@
 slug: architecture
 title: System architecture
 role: system architecture
-updated: "2026-08-15T08:23:39"
+updated: "2026-08-15T08:25:28"
 ---
 
 # System architecture
@@ -25,7 +25,7 @@ graph TD
 - **pages**：路由入口；默认中文无前缀，其他语言走 `/[locale]/…`
 - **PageShell**：顶栏小岛 + 静态页脚 + 正文 slot
 - **views**：页面级 React，构建期出 HTML，运行时不水合
-- **i18n**：文案按语言分 JSON；`t(key, lang)` / `messages(lang)`，回退 lang → en → zh
+- **i18n**：文案按语言分 JSON；`t(key, lang)` / `messages(lang)`，回退当前语言 → 中文。刊头小字中文页配英文，其余配中文
 - **lib**：路径与 SEO 工具
 - **components**：顶栏可交互；其余组件静态输出
 

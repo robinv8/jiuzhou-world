@@ -2,7 +2,7 @@
 slug: flow
 title: Key flows
 role: key flows
-updated: "2026-08-15T08:23:39"
+updated: "2026-08-15T08:25:28"
 ---
 
 # Key flows
@@ -21,7 +21,7 @@ sequenceDiagram
   H-->>U: 换语言 / 菜单
 ```
 
-正文不经过客户端 React。缺文案在构建期按 lang → en → zh 回退写进 HTML。
+正文不经过客户端 React。缺文案在构建期按当前语言 → 中文回退写进 HTML。
 
 ## 构建与发布
 1. push `main` → GitHub Actions

@@ -13,7 +13,7 @@ const catalogs: Record<Lang, MessageNode> = {
     ko: ko as MessageNode,
 }
 
-const FALLBACK: Lang[] = ['en', DEFAULT_LANG]
+const FALLBACK: Lang[] = [DEFAULT_LANG]
 
 function lookup(tree: MessageNode | undefined, path: string[]): MessageNode | undefined {
     let node: MessageNode | undefined = tree
@@ -36,7 +36,7 @@ function resolve(key: string, lang: Lang): MessageNode | undefined {
     return undefined
 }
 
-/** Look up a string. Fallback: current lang → en → zh. */
+/** Look up a string. Fallback: current lang → zh. */
 export function t(key: string, lang: Lang): string {
     const value = resolve(key, lang)
     if (typeof value === 'string') return value

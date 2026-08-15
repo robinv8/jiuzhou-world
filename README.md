@@ -53,7 +53,7 @@ src/i18n/locales/ko.json   # 全文
 
 四份 locale 必须覆盖同一套 key，但文案是改写，不是逐句对译：同一事实与语气，各自语言里能独立成篇。印章字、卷次编号、拉丁学名不进语言文件。校验：`npm run i18n:check`（CI 构建前也会跑）。
 
-刊头双语小字：英文页配中文，其余语言配英文。字体按 `html[lang]` 加载 Noto Serif SC / JP / KR。
+默认语言是中文（无 URL 前缀）。刊头双语小字：中文页配英文，其余语言配中文。缺 key 回退到中文。字体按 `html[lang]` 加载 Noto Serif SC / JP / KR。
 
 新增完整语言：复制 `en.json`，改写成该语言的全文，并加入 `LOCALES`。
 

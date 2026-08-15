@@ -93,11 +93,12 @@
   }
 
   html[lang='ja'] .font-display {
-    font-family: 'EB Garamond', 'Noto Serif JP', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+    font-family: 'EB Garamond', 'Noto Serif JP', 'Noto Serif SC', 'Hiragino Mincho ProN', 'Yu Mincho',
+      serif;
   }
 
   html[lang='ko'] .font-display {
-    font-family: 'EB Garamond', 'Noto Serif KR', 'Apple Myungjo', 'Batang', serif;
+    font-family: 'EB Garamond', 'Noto Serif KR', 'Noto Serif SC', 'Apple Myungjo', 'Batang', serif;
   }
 
   html[lang='en'] .font-display {
