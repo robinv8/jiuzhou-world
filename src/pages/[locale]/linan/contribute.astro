@@ -10,9 +10,9 @@ export function getStaticPaths() {
 }
 
 const lang = Astro.params.locale as Lang
-const seo = getPageSeo('/contribute')
+const seo = getPageSeo('/linan/contribute')
 ---
 
 <PageShell seo={seo} lang={lang}>
-    <Contribute lang={lang} />
+    <Contribute lang={lang} place="linan" />
 </PageShell>

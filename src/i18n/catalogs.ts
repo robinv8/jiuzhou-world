@@ -83,6 +83,22 @@ export const aboutSections = [{ id: 'gazetteer' }, { id: 'notPromotion' }] as co
 
 export const contributeSections = [{ id: 'why' }, { id: 'what' }, { id: 'how' }, { id: 'license' }] as const
 
+/** Open city volumes that accept photographs (one contribute page each). */
+export const contributePlaces = [
+    {
+        key: 'linan',
+        route: '/linan/contribute',
+        volumeRoute: '/linan',
+        image: '/images/hero-village.webp',
+    },
+] as const
+
+export type ContributePlaceKey = (typeof contributePlaces)[number]['key']
+
+export function getContributePlace(key: string) {
+    return contributePlaces.find((p) => p.key === key)
+}
+
 export const linanNav = [
     { base: '/linan/mountains', key: 'nav.mountains' },
     { base: '/linan/scenic', key: 'nav.scenic' },
@@ -95,8 +111,13 @@ export type SeoPageType = 'website' | 'article' | 'collection'
 export const seoPages = [
     { path: '/', key: 'home', type: 'website' as SeoPageType, image: '/images/hero-lake.webp' },
     { path: '/about', key: 'about', type: 'article' as SeoPageType, image: '/images/hero-village.webp' },
-    { path: '/contribute', key: 'contribute', type: 'article' as SeoPageType, image: '/images/hero-village.webp' },
     { path: '/linan', key: 'linan', type: 'collection' as SeoPageType, image: '/images/hero-tianmu.webp' },
+    {
+        path: '/linan/contribute',
+        key: 'linan_contribute',
+        type: 'article' as SeoPageType,
+        image: '/images/hero-village.webp',
+    },
     {
         path: '/linan/mountains',
         key: 'linan_mountains',

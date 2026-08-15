@@ -79,7 +79,7 @@ export function buildJsonLd(seo: PageSeo, lang: Lang): Record<string, unknown>[]
     }
 
     const pageType =
-        seo.path === '/contribute'
+        seo.path.endsWith('/contribute')
             ? 'ContactPage'
             : seo.type === 'article'
               ? 'AboutPage'

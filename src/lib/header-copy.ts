@@ -28,7 +28,8 @@ export function headerCopy(lang: Lang, path: string) {
             home: withLocale('/', lang),
             linan: withLocale('/linan', lang),
             about: withLocale('/about', lang),
-            contribute: withLocale('/contribute', lang),
+            // Per-volume for now (only Lin’an is open). Later: resolve by current city.
+            contribute: withLocale('/linan/contribute', lang),
         },
         nav: linanNav.map((l) => ({
             base: l.base,

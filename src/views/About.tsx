@@ -35,7 +35,7 @@ export default function About({ lang }: { lang: Lang }) {
                 ))}
                 <Reveal>
                     <a
-                        href={withLocale('/contribute', lang)}
+                        href={withLocale('/linan/contribute', lang)}
                         className="font-display text-lg tracking-[0.2em] text-[#b03a2e] transition-opacity hover:opacity-70"
                     >
                         {t('anthology.contribute')}
