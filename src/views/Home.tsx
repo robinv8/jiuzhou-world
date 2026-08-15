@@ -5,17 +5,19 @@ import Reveal from '@/components/Reveal'
 import MiniTitle from '@/components/MiniTitle'
 import ParallaxImage from '@/components/ParallaxImage'
 import Seal from '@/components/Seal'
+import { withLocale } from '@/lib/i18n-path'
 
 export default function Home() {
   const { lang, pick } = useLanguage()
+  const href = (p: string) => withLocale(p, lang)
 
   return (
     <main>
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#1f2a26]">
         <img
-          src="/images/hero-lake.png"
-          alt=""
+          src="/images/hero-lake.webp"
+          alt={pick({ zh: '湖上远山', en: 'Lake and distant hills' })}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div
@@ -24,7 +26,12 @@ export default function Home() {
         />
         <div className="absolute right-6 md:right-14 top-1/2 -translate-y-1/2 hidden md:block">
           <p className="vertical-rl font-display text-[#f7f5ee]/60 tracking-[0.5em] text-sm">
-            {lang === 'zh' ? '冀兖青徐扬荆豫梁雍' : 'NINE LANDS, ONE ANTHOLOGY'}
+            {pick({
+              zh: '冀兖青徐扬荆豫梁雍',
+              en: 'NINE LANDS, ONE ANTHOLOGY',
+              ja: '九州、一志',
+              ko: '구주, 한 권의 지',
+            })}
           </p>
         </div>
         <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-24 md:pb-28">
@@ -52,7 +59,12 @@ export default function Home() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-10">
           <Reveal className="md:col-span-5" delay={100}>
             <h2 className="font-display text-4xl md:text-5xl font-semibold leading-snug">
-              {lang === 'zh' ? '一部线上的方志' : 'An online gazetteer'}
+              {pick({
+                zh: '一部线上的方志',
+                en: 'An online gazetteer',
+                ja: 'オンラインの方志',
+                ko: '온라인 방지지',
+              })}
             </h2>
             <div className="mt-8">
               <Seal char="九" />
@@ -69,9 +81,9 @@ export default function Home() {
       </section>
 
       <ParallaxImage
-        src="/images/hero-village.png"
-        alt=""
-        caption={lang === 'zh' ? '指南村 · 秋' : 'Zhinan Village, autumn'}
+        src="/images/hero-village.webp"
+        alt={pick({ zh: '指南村秋色', en: 'Zhinan Village in autumn' })}
+        caption={pick({ zh: '指南村 · 秋', en: 'Zhinan Village, autumn' })}
       />
 
       {/* ── Volumes ──────────────────────────────────────────── */}
@@ -89,7 +101,7 @@ export default function Home() {
           {anthologyVolumes.map((v) => (
             <Reveal key={v.key}>
               <a
-                href={v.route}
+                href={href(v.route)}
                 className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t border-b hairline"
               >
                 <div className="md:col-span-5 overflow-hidden">
@@ -109,7 +121,7 @@ export default function Home() {
                   <p className="mt-2 text-xs tracking-[0.2em] text-[#8b958d]">{pick(v.place)}</p>
                   <p className="mt-4 max-w-md text-[#5a665e] leading-7">{pick(v.desc)}</p>
                   <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
-                    {lang === 'zh' ? '开卷' : 'OPEN'}
+                    {pick({ zh: '开卷', en: 'OPEN', ja: '開巻', ko: '개권' })}
                     <ArrowRight
                       size={16}
                       className="transition-transform duration-500 group-hover:translate-x-1.5"
@@ -123,9 +135,16 @@ export default function Home() {
           {/* planned volumes placeholder */}
           <Reveal delay={100}>
             <div className="py-10 md:py-14 border-b hairline opacity-60">
-              <p className="micro-label text-[#8ca693]">{lang === 'zh' ? 'Vol. II —' : '卷二 —'}</p>
+              <p className="micro-label text-[#8ca693]">
+                {pick({ zh: '卷二 —', en: 'Vol. II —', ja: '巻二 —', ko: '제2권 —' })}
+              </p>
               <p className="mt-3 font-display text-2xl md:text-3xl text-[#5a665e]">
-                {lang === 'zh' ? '下一卷，在路上。' : 'The next volume is on the road.'}
+                {pick({
+                  zh: '下一卷，在路上。',
+                  en: 'The next volume is on the road.',
+                  ja: '次の巻は、道の上に。',
+                  ko: '다음 권은 길 위에 있습니다.',
+                })}
               </p>
             </div>
           </Reveal>

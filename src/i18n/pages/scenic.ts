@@ -30,7 +30,7 @@ export const scenicPage = {
       name: { zh: '天目山', en: 'Mount Tianmu' },
       latin: 'Mount Tianmu',
       region: { zh: '临安西北 · 天目山镇', en: 'Northwest Lin’an' },
-      image: '/images/hero-tianmu.png',
+      image: '/images/hero-tianmu.webp',
       essence: {
         zh: '世界生物圈保护区，以千年柳杉古树林与禅源寺闻名。"大树华盖闻九州"，说的就是这里。',
         en: 'A UNESCO Biosphere Reserve known for thousand-year-old cedar groves and Chanyuan Temple — the place behind the verse “a canopy of great trees, famed across the land.”',
@@ -44,7 +44,7 @@ export const scenicPage = {
       name: { zh: '大明山', en: 'Mount Daming' },
       latin: 'Mount Daming',
       region: { zh: '临安西部 · 清凉峰镇', en: 'Western Lin’an' },
-      image: '/images/cover-mountains.png',
+      image: '/images/cover-mountains.webp',
       essence: {
         zh: '千米之上的高山台地，悬空栈道贴着花岗岩崖壁而行，春天杜鹃漫山，冬天是滑雪场。',
         en: 'A high plateau a thousand metres up, a plank walkway bolted to granite cliffs, azaleas in spring, a ski field in winter.',
@@ -58,7 +58,7 @@ export const scenicPage = {
       name: { zh: '青山湖', en: 'Qingshan Lake' },
       latin: 'Qingshan Lake',
       region: { zh: '临安城东', en: 'East of Lin’an town' },
-      image: '/images/hero-lake.png',
+      image: '/images/hero-lake.webp',
       essence: {
         zh: '水库成湖，水杉成林。水上森林是江南少见的景致：树从水里长出来，倒影比树更安静。环湖绿道适合骑行。',
         en: 'A reservoir turned lake, metasequoia turned forest — trees rising straight from the water, reflections calmer than the trees. A greenway circles the shore for cycling.',
@@ -72,7 +72,7 @@ export const scenicPage = {
       name: { zh: '浙西大峡谷', en: 'Zhexi Grand Canyon' },
       latin: 'Zhexi Grand Canyon',
       region: { zh: '临安西部 · 龙岗镇', en: 'Western Lin’an' },
-      image: '/images/cover-scenic.png',
+      image: '/images/cover-scenic.webp',
       essence: {
         zh: '峡谷沿溪而建，柘林瀑、剑门关一线串起深潭与绝壁。这里的绿是水的颜色，不是树的颜色。',
         en: 'A canyon built along a stream — Zhelin Falls and Jiange Pass stringing together deep pools and sheer walls. The green here belongs to the water, not the trees.',
@@ -86,7 +86,7 @@ export const scenicPage = {
       name: { zh: '太湖源', en: 'Source of Taihu' },
       latin: 'Source of Taihu',
       region: { zh: '临安北部 · 白沙村', en: 'Northern Lin’an' },
-      image: '/images/spot-taihuyuan.png',
+      image: '/images/spot-taihuyuan.webp',
       essence: {
         zh: '太湖水最初的来处之一。山坞狭长，一路都是清潭与小瀑，走到尽头才意识到：浩渺太湖，始于这样一线细流。',
         en: 'One of Lake Tai’s first sources. The ravine is narrow, strung with clear pools and small falls — only at its end do you grasp that the vast lake begins as a thread of water like this.',
@@ -100,7 +100,7 @@ export const scenicPage = {
       name: { zh: '指南村', en: 'Zhinan Village' },
       latin: 'Zhinan Village',
       region: { zh: '临安东部 · 太湖源镇', en: 'Eastern Lin’an' },
-      image: '/images/hero-village.png',
+      image: '/images/hero-village.webp',
       essence: {
         zh: '海拔近六百米的古村落，三百余株古树环村而立。深秋时节，银杏黄、枫叶红、梯田金，被摄影爱好者称为华东最美的秋色村落之一。',
         en: 'An ancient village at nearly six hundred metres, ringed by more than three hundred old trees. In late autumn — ginkgo gold, maple red, terraces amber — photographers call it one of East China’s most beautiful autumn villages.',
@@ -114,7 +114,7 @@ export const scenicPage = {
       name: { zh: '河桥古镇', en: 'Heqiao Old Town' },
       latin: 'Heqiao Old Town',
       region: { zh: '临安西南 · 昌南溪畔', en: 'Southwest Lin’an' },
-      image: '/images/spot-heqiao.png',
+      image: '/images/spot-heqiao.webp',
       essence: {
         zh: '因水而兴的浙西古镇。昌南溪在此拐了一个弯，老街上还留着从前水运码头的格局——前店后河，下楼即是船埠。',
         en: 'A river-born old town of western Zhejiang. The Changnan stream bends here, and the old street still keeps its wharf-town layout — shops in front, river behind, steps down to the boats.',
@@ -128,7 +128,7 @@ export const scenicPage = {
       name: { zh: '清凉峰', en: 'Qingliang Peak' },
       latin: 'Qingliang Peak',
       region: { zh: '临安西部 · 浙皖交界', en: 'Zhejiang–Anhui border' },
-      image: '/images/spot-qingliang.png',
+      image: '/images/spot-qingliang.webp',
       essence: {
         zh: '浙西第一高峰，国家级自然保护区。没有索道，只有土路与云海。这里是野生梅花鹿在中国东南最后的大片家园。',
         en: 'The highest peak in western Zhejiang, a national nature reserve. No cable cars — dirt paths and seas of cloud. One of the last large homes of wild sika deer in southeast China.',

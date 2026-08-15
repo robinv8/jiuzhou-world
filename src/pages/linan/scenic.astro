@@ -4,8 +4,9 @@ import { ScenicEntry } from '@/views/entries'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan/scenic')
+const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo}>
-    <ScenicEntry client:load />
+<BaseLayout seo={seo} lang={lang}>
+    <ScenicEntry client:load lang={lang} />
 </BaseLayout>

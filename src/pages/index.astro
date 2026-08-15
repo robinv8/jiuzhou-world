@@ -4,8 +4,9 @@ import { HomeEntry } from '@/views/entries'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/')
+const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo}>
-    <HomeEntry client:load />
+<BaseLayout seo={seo} lang={lang}>
+    <HomeEntry client:load lang={lang} />
 </BaseLayout>

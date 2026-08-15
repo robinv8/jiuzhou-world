@@ -5,11 +5,13 @@ import Reveal from '@/components/Reveal'
 import MiniTitle from '@/components/MiniTitle'
 import ParallaxImage from '@/components/ParallaxImage'
 import Seal from '@/components/Seal'
+import { withLocale } from '@/lib/i18n-path'
 
-const heroImages = ['/images/hero-tianmu.png', '/images/hero-lake.png', '/images/hero-village.png']
+const heroImages = ['/images/hero-tianmu.webp', '/images/hero-lake.webp', '/images/hero-village.webp']
 
-export default function Home() {
+export default function LinanHome() {
   const { lang, pick } = useLanguage()
+  const href = (p: string) => withLocale(p, lang)
 
   return (
     <main>
@@ -17,7 +19,7 @@ export default function Home() {
       <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#1f2a26]">
         {heroImages.map((src, i) => (
           <div className="ken-burns-slide" key={i}>
-            <img src={src} alt="" />
+            <img src={src} alt={pick(home.heroTitle)} />
           </div>
         ))}
         <div
@@ -81,8 +83,8 @@ export default function Home() {
 
       {/* ── Parallax band ─────────────────────────────────────── */}
       <ParallaxImage
-        src="/images/spot-qingliang.png"
-        alt=""
+        src="/images/spot-qingliang.webp"
+        alt={pick({ zh: '清凉峰云海', en: 'Qingliang Peak, sea of clouds' })}
         caption={lang === 'zh' ? '清凉峰 · 云海' : 'Qingliang Peak · sea of clouds'}
       />
 
@@ -101,7 +103,7 @@ export default function Home() {
           {volumes.map((v, i) => (
             <Reveal key={v.key} delay={i * 80}>
               <a
-                href={v.route}
+                href={href(v.route)}
                 className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t hairline ${
                   i === volumes.length - 1 ? 'border-b' : ''
                 }`}

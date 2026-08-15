@@ -4,8 +4,9 @@ import { MountainsEntry } from '@/views/entries'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan/mountains')
+const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo}>
-    <MountainsEntry client:load />
+<BaseLayout seo={seo} lang={lang}>
+    <MountainsEntry client:load lang={lang} />
 </BaseLayout>

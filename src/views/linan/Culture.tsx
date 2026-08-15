@@ -14,7 +14,7 @@ export default function Culture() {
         kicker={culturePage.heroKicker}
         title={culturePage.heroTitle}
         sub={culturePage.heroSub}
-        image="/images/cover-culture.png"
+        image="/images/cover-culture.webp"
       />
 
       <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
@@ -63,7 +63,7 @@ export default function Culture() {
           </section>
           {i === 1 && (
             <ParallaxImage
-              src="/images/spot-heqiao.png"
+              src="/images/spot-heqiao.webp"
               alt=""
               caption={pick({ zh: '河桥古镇 · 昌南溪', en: 'Heqiao Old Town · the Changnan stream' })}
             />

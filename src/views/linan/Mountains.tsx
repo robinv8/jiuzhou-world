@@ -14,7 +14,7 @@ export default function Mountains() {
         kicker={mountainsPage.heroKicker}
         title={mountainsPage.heroTitle}
         sub={mountainsPage.heroSub}
-        image="/images/cover-mountains.png"
+        image="/images/cover-mountains.webp"
       />
 
       <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
@@ -61,7 +61,7 @@ export default function Mountains() {
           </section>
           {i === 1 && (
             <ParallaxImage
-              src="/images/spot-qingliang.png"
+              src="/images/spot-qingliang.webp"
               alt=""
               caption={pick({ zh: '清凉峰 · 云海', en: 'Qingliang Peak · sea of clouds' })}
             />

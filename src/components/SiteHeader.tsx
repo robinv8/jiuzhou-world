@@ -1,26 +1,28 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { anthology, nav } from '@/i18n/content'
+import { LANG_META, LOCALES, isTranslated, type Lang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
+import { stripLocale, withLocale } from '@/lib/i18n-path'
 
 const linanLinks = [
-    { href: '/linan/mountains', label: nav.mountains },
-    { href: '/linan/scenic', label: nav.scenic },
-    { href: '/linan/history', label: nav.history },
-    { href: '/linan/culture', label: nav.culture },
+    { base: '/linan/mountains', label: nav.mountains },
+    { base: '/linan/scenic', label: nav.scenic },
+    { base: '/linan/history', label: nav.history },
+    { base: '/linan/culture', label: nav.culture },
 ]
-
-function isActive(path: string, href: string) {
-    return path === href
-}
 
 export default function SiteHeader({ path }: { path: string }) {
     const { lang, setLang, pick } = useLanguage()
     const [scrolled, setScrolled] = useState(false)
     const [hidden, setHidden] = useState(false)
     const [open, setOpen] = useState(false)
+    const [langOpen, setLangOpen] = useState(false)
 
-    const inLinan = path.startsWith('/linan')
+    const basePath = stripLocale(path)
+    const inLinan = basePath === '/linan' || basePath.startsWith('/linan/')
+    const href = (p: string) => withLocale(p, lang)
+    const active = (p: string) => basePath === p
 
     useEffect(() => {
         let lastY = window.scrollY
@@ -36,9 +38,14 @@ export default function SiteHeader({ path }: { path: string }) {
 
     useEffect(() => {
         setOpen(false)
+        setLangOpen(false)
     }, [path])
 
     const onDark = !scrolled
+
+    const langButtonClass = onDark
+        ? 'border-[#f7f5ee]/40 text-[#f7f5ee] hover:bg-[#f7f5ee] hover:text-[#1f2a26]'
+        : 'border-[#1f2a26]/30 text-[#1f2a26] hover:bg-[#1f2a26] hover:text-[#f7f5ee]'
 
     return (
         <header
@@ -52,7 +59,7 @@ export default function SiteHeader({ path }: { path: string }) {
                 }`}
             >
                 <div className="flex items-baseline gap-3">
-                    <a href="/" className="group flex items-baseline gap-3">
+                    <a href={href('/')} className="group flex items-baseline gap-3">
                         <span
                             className={`font-display text-xl md:text-2xl font-semibold tracking-wide transition-colors ${
                                 onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
@@ -72,14 +79,14 @@ export default function SiteHeader({ path }: { path: string }) {
                         <>
                             <span className={onDark ? 'text-[#f7f5ee]/40' : 'text-[#1f2a26]/30'}>/</span>
                             <a
-                                href="/linan"
+                                href={href('/linan')}
                                 className={`font-display text-base tracking-[0.15em] transition-colors ${
                                     onDark
                                         ? 'text-[#f7f5ee]/85 hover:text-[#f7f5ee]'
                                         : 'text-[#1f2a26]/70 hover:text-[#1f2a26]'
                                 }`}
                             >
-                                {lang === 'zh' ? '临安卷' : "Lin'an"}
+                                {pick({ zh: '临安卷', en: "Lin'an", ja: '臨安の巻', ko: '임안 권' })}
                             </a>
                         </>
                     )}
@@ -88,19 +95,19 @@ export default function SiteHeader({ path }: { path: string }) {
                 <nav className="hidden md:flex items-center gap-8">
                     {inLinan &&
                         linanLinks.map((l) => {
-                            const active = isActive(path, l.href)
+                            const isActive = active(l.base)
                             return (
-                                <a key={l.href} href={l.href}>
+                                <a key={l.base} href={href(l.base)}>
                                     <span
                                         className={`flex flex-col items-start transition-colors ${
                                             onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
-                                        } ${active ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
+                                        } ${isActive ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
                                     >
                                         <span className="micro-label">{l.label.en}</span>
                                         <span className="font-display text-base tracking-[0.2em]">
                                             {l.label.zh}
                                         </span>
-                                        {active && (
+                                        {isActive && (
                                             <span className="mt-1 h-px w-full bg-[#b03a2e]" aria-hidden />
                                         )}
                                     </span>
@@ -108,7 +115,7 @@ export default function SiteHeader({ path }: { path: string }) {
                             )
                         })}
                     {!inLinan && (
-                        <a href="/about">
+                        <a href={href('/about')}>
                             <span
                                 className={`flex flex-col items-start transition-colors opacity-70 hover:opacity-100 ${
                                     onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
@@ -121,17 +128,47 @@ export default function SiteHeader({ path }: { path: string }) {
                             </span>
                         </a>
                     )}
-                    <button
-                        onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
-                        className={`ml-4 border px-3 py-1.5 text-xs tracking-[0.25em] transition-colors font-display ${
-                            onDark
-                                ? 'border-[#f7f5ee]/40 text-[#f7f5ee] hover:bg-[#f7f5ee] hover:text-[#1f2a26]'
-                                : 'border-[#1f2a26]/30 text-[#1f2a26] hover:bg-[#1f2a26] hover:text-[#f7f5ee]'
-                        }`}
-                        aria-label="Switch language"
-                    >
-                        {lang === 'zh' ? 'EN' : '中文'}
-                    </button>
+
+                    <div className="relative ml-4">
+                        <button
+                            type="button"
+                            onClick={() => setLangOpen((v) => !v)}
+                            className={`border px-3 py-1.5 text-xs tracking-[0.2em] transition-colors font-display ${langButtonClass}`}
+                            aria-label="Language"
+                            aria-expanded={langOpen}
+                        >
+                            {LANG_META[lang].short}
+                        </button>
+                        {langOpen && (
+                            <ul
+                                className="absolute right-0 mt-2 min-w-[9rem] border border-[#1f2a26]/15 bg-[#f7f5ee] py-1 shadow-sm"
+                                role="listbox"
+                            >
+                                {LOCALES.map((code) => (
+                                    <li key={code}>
+                                        <button
+                                            type="button"
+                                            role="option"
+                                            aria-selected={code === lang}
+                                            onClick={() => setLang(code as Lang)}
+                                            className={`flex w-full items-center justify-between gap-3 px-3 py-2 text-left text-sm transition-colors hover:bg-[#1f2a26]/06 ${
+                                                code === lang ? 'text-[#b03a2e]' : 'text-[#1f2a26]'
+                                            }`}
+                                        >
+                                            <span className="font-display tracking-wide">
+                                                {LANG_META[code].label}
+                                            </span>
+                                            {!isTranslated(code) && (
+                                                <span className="text-[10px] tracking-wider text-[#8b958d]">
+                                                    β
+                                                </span>
+                                            )}
+                                        </button>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+                    </div>
                 </nav>
 
                 <button
@@ -145,33 +182,44 @@ export default function SiteHeader({ path }: { path: string }) {
 
             {open && (
                 <nav className="md:hidden bg-[#f7f5ee] border-t hairline px-6 py-6 flex flex-col gap-5">
-                    <a href="/" className="flex items-baseline gap-3 text-[#1f2a26]">
+                    <a href={href('/')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">{pick(anthology.name)}</span>
                         <span className="micro-label text-[#5a665e]">Home</span>
                     </a>
-                    <a href="/linan" className="flex items-baseline gap-3 text-[#1f2a26]">
+                    <a href={href('/linan')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">
-                            {lang === 'zh' ? '临安卷' : "Lin'an"}
+                            {pick({ zh: '临安卷', en: "Lin'an", ja: '臨安の巻', ko: '임안 권' })}
                         </span>
                         <span className="micro-label text-[#5a665e]">Vol. I</span>
                     </a>
                     {inLinan &&
                         linanLinks.map((l) => (
                             <a
-                                key={l.href}
-                                href={l.href}
+                                key={l.base}
+                                href={href(l.base)}
                                 className="flex items-baseline gap-3 pl-4 text-[#1f2a26]"
                             >
                                 <span className="font-display text-base">{l.label.zh}</span>
                                 <span className="micro-label text-[#5a665e]">{l.label.en}</span>
                             </a>
                         ))}
-                    <button
-                        onClick={() => setLang(lang === 'zh' ? 'en' : 'zh')}
-                        className="self-start border border-[#1f2a26]/30 px-3 py-1.5 text-xs tracking-[0.25em] font-display"
-                    >
-                        {lang === 'zh' ? 'EN' : '中文'}
-                    </button>
+                    <div className="flex flex-wrap gap-2 pt-2">
+                        {LOCALES.map((code) => (
+                            <button
+                                key={code}
+                                type="button"
+                                onClick={() => setLang(code as Lang)}
+                                className={`border px-3 py-1.5 text-xs tracking-[0.2em] font-display ${
+                                    code === lang
+                                        ? 'border-[#b03a2e] text-[#b03a2e]'
+                                        : 'border-[#1f2a26]/30 text-[#1f2a26]'
+                                }`}
+                            >
+                                {LANG_META[code].short}
+                                {!isTranslated(code) ? ' · β' : ''}
+                            </button>
+                        ))}
+                    </div>
                 </nav>
             )}
         </header>

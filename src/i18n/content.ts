@@ -1,12 +1,20 @@
 /**
- * 临安山水志 — bilingual content model (zh / en).
- * All copy lives here; components only render.
+ * 九州志 / 临安卷 — localized content.
+ * Add ja / ko fields when translations are ready; pick() falls back en → zh.
  */
 
-export interface Pair {
-  zh: string
-  en: string
-}
+import type { Lang } from '@/i18n/config'
+
+/** Extensible string bag. `zh` required; others optional until translated. */
+export type LocalizedString = {
+    zh: string
+    en?: string
+    ja?: string
+    ko?: string
+} & Partial<Record<Lang, string>>
+
+/** @deprecated alias — prefer LocalizedString */
+export type Pair = LocalizedString
 
 export const site = {
   name: { zh: '临安山水志', en: "Lin'an Anthology" } as Pair,
@@ -71,7 +79,7 @@ export const anthologyVolumes: AnthologyVolume[] = [
       zh: '天目之荫，吴越之故。山水、历史与风物。',
       en: 'Beneath Tianmu’s canopy, in the old homeland of Wuyue — mountains, memory and craft.',
     },
-    image: '/images/hero-tianmu.png',
+    image: '/images/hero-tianmu.webp',
     status: 'open',
   },
 ]
@@ -162,7 +170,7 @@ export const volumes: Volume[] = [
       zh: '天目的大树、大明的云海、清凉峰的极顶，与山中流下的水。',
       en: 'Tianmu’s ancient trees, Daming’s sea of clouds, Qingliang’s summit — and the water that leaves the mountains.',
     },
-    image: '/images/hero-tianmu.png',
+    image: '/images/hero-tianmu.webp',
   },
   {
     key: 'scenic',
@@ -173,7 +181,7 @@ export const volumes: Volume[] = [
       zh: '八处去处，一景一篇小传。实用信息收在文末，不喧宾夺主。',
       en: 'Eight places, each a short biography. Practical notes kept quiet at the end.',
     },
-    image: '/images/cover-scenic.png',
+    image: '/images/cover-scenic.webp',
   },
   {
     key: 'history',
@@ -184,7 +192,7 @@ export const volumes: Volume[] = [
       zh: '从钱镠到纳土归宋，一个地方的姓名如何成为一座都城的名字。',
       en: 'From Qian Liu to the peaceful handover to Song — how a town’s name became a capital’s name.',
     },
-    image: '/images/cover-history.png',
+    image: '/images/cover-history.webp',
   },
   {
     key: 'culture',
@@ -195,6 +203,6 @@ export const volumes: Volume[] = [
       zh: '山核桃、鸡血石、天目盏，与山里人的四季生计。',
       en: 'Hickory nuts, chicken-blood stone, tenmoku bowls — the working seasons of mountain people.',
     },
-    image: '/images/cover-culture.png',
+    image: '/images/cover-culture.webp',
   },
 ]

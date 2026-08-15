@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+import type { Lang } from '@/i18n/config'
 import AppShell from '@/components/AppShell'
 import Home from '@/views/Home'
 import About from '@/views/About'
@@ -6,59 +8,40 @@ import Mountains from '@/views/linan/Mountains'
 import Scenic from '@/views/linan/Scenic'
 import History from '@/views/linan/History'
 import Culture from '@/views/linan/Culture'
+import { withLocale } from '@/lib/i18n-path'
 
-export function HomeEntry() {
+function shell(basePath: string, lang: Lang, children: ReactNode) {
     return (
-        <AppShell path="/">
-            <Home />
+        <AppShell path={withLocale(basePath, lang)} lang={lang}>
+            {children}
         </AppShell>
     )
 }
 
-export function AboutEntry() {
-    return (
-        <AppShell path="/about">
-            <About />
-        </AppShell>
-    )
+export function HomeEntry({ lang }: { lang: Lang }) {
+    return shell('/', lang, <Home />)
 }
 
-export function LinanHomeEntry() {
-    return (
-        <AppShell path="/linan">
-            <LinanHome />
-        </AppShell>
-    )
+export function AboutEntry({ lang }: { lang: Lang }) {
+    return shell('/about', lang, <About />)
 }
 
-export function MountainsEntry() {
-    return (
-        <AppShell path="/linan/mountains">
-            <Mountains />
-        </AppShell>
-    )
+export function LinanHomeEntry({ lang }: { lang: Lang }) {
+    return shell('/linan', lang, <LinanHome />)
 }
 
-export function ScenicEntry() {
-    return (
-        <AppShell path="/linan/scenic">
-            <Scenic />
-        </AppShell>
-    )
+export function MountainsEntry({ lang }: { lang: Lang }) {
+    return shell('/linan/mountains', lang, <Mountains />)
 }
 
-export function HistoryEntry() {
-    return (
-        <AppShell path="/linan/history">
-            <History />
-        </AppShell>
-    )
+export function ScenicEntry({ lang }: { lang: Lang }) {
+    return shell('/linan/scenic', lang, <Scenic />)
 }
 
-export function CultureEntry() {
-    return (
-        <AppShell path="/linan/culture">
-            <Culture />
-        </AppShell>
-    )
+export function HistoryEntry({ lang }: { lang: Lang }) {
+    return shell('/linan/history', lang, <History />)
+}
+
+export function CultureEntry({ lang }: { lang: Lang }) {
+    return shell('/linan/culture', lang, <Culture />)
 }

@@ -4,8 +4,9 @@ import { HistoryEntry } from '@/views/entries'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan/history')
+const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo}>
-    <HistoryEntry client:load />
+<BaseLayout seo={seo} lang={lang}>
+    <HistoryEntry client:load lang={lang} />
 </BaseLayout>

@@ -24,7 +24,7 @@ export const historyPage = {
       id: 'birth',
       era: { zh: '唐 · 大中六年（852）', en: '852 · Tang dynasty' },
       title: { zh: '钱镠生于临安', en: 'Qian Liu is born in Lin’an' },
-      image: '/images/cover-history.png',
+      image: '/images/cover-history.webp',
       paragraphs: [
         {
           zh: '钱镠出生在临安石镜乡（今锦城街道一带）的一个农家。传说他出生时有异象，父亲欲弃之，祖母留下他的命——乡人因此称他"婆留"。今天的临安城里还留着婆留井。',
@@ -40,7 +40,7 @@ export const historyPage = {
       id: 'kingdom',
       era: { zh: '五代 · 907', en: '907 · Five Dynasties' },
       title: { zh: '吴越国：保境安民', en: 'Wuyue: peace held close' },
-      image: '/images/hero-tianmu.png',
+      image: '/images/hero-tianmu.webp',
       paragraphs: [
         {
           zh: '907年，钱镠受封吴越王，建立吴越国，定都杭州。当中原战火连天，吴越国却几十年不闻兵戈。钱氏修筑钱塘江海塘，疏浚西湖，兴修水利——今天杭州的城市格局，底子是那个时期打下的。',
@@ -56,7 +56,7 @@ export const historyPage = {
       id: 'song',
       era: { zh: '北宋 · 太平兴国三年（978）', en: '978 · Northern Song' },
       title: { zh: '纳土归宋', en: 'The peaceful handover' },
-      image: '/images/cover-scenic.png',
+      image: '/images/cover-scenic.webp',
       paragraphs: [
         {
           zh: '978年，钱镠之孙钱俶遵从祖父遗训，将吴越国十三州一军、八十六县和平献予宋朝，史称"纳土归宋"。一国之地，未经一战，完成统一。',
@@ -72,7 +72,7 @@ export const historyPage = {
       id: 'precept',
       era: { zh: '千年家训', en: 'A thousand-year precept' },
       title: { zh: '《钱氏家训》', en: 'The Qian family precept' },
-      image: '/images/cover-culture.png',
+      image: '/images/cover-culture.webp',
       paragraphs: [
         {
           zh: '钱镠留下家训，核心一句是："利在一身勿谋也，利在天下者必谋之。"——只为一人之利的事不做，利在天下的事必须去做。',
@@ -88,7 +88,7 @@ export const historyPage = {
       id: 'name',
       era: { zh: '南宋 · 1138 — 当代 · 2017', en: '1138 — 2017' },
       title: { zh: '名字的流转', en: 'The travels of a name' },
-      image: '/images/hero-lake.png',
+      image: '/images/hero-lake.webp',
       paragraphs: [
         {
           zh: '南宋定都杭州，升杭州为临安府——"临安"二字自此成为一个王朝都城的名字，在史书里代指那座"山外青山楼外楼"的城市。名字借出去了近八百年。',

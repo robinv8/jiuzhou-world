@@ -26,7 +26,7 @@ export const culturePage = {
       no: '一',
       title: { zh: '山核桃：白露开竿', en: 'Hickory: the White Dew harvest' },
       latin: 'Chinese Hickory',
-      image: '/images/cover-culture.png',
+      image: '/images/cover-culture.webp',
       paragraphs: [
         {
           zh: '临安是"中国山核桃之乡"，天目山区出产的壳薄肉香。每年白露节气，山里人持竿上树打核桃，称为"开竿"。这一天前后，整座山都是竹竿敲打枝叶的声音。',
@@ -43,7 +43,7 @@ export const culturePage = {
       no: '二',
       title: { zh: '昌化鸡血石：石上朱砂', en: 'Chicken-blood stone: cinnabar in rock' },
       latin: 'Changhua Bloodstone',
-      image: '/images/cover-history.png',
+      image: '/images/cover-history.webp',
       paragraphs: [
         {
           zh: '临安昌化镇出产的鸡血石，石质温润，上有鲜红如血的辰砂纹理，与田黄、芙蓉并称"印石三宝"。明清以来，它是印章石中的上品。',
@@ -60,7 +60,7 @@ export const culturePage = {
       no: '三',
       title: { zh: '天目盏：一盏星空', en: 'Tenmoku: a night sky in a bowl' },
       latin: 'Tenmoku Ware',
-      image: '/images/spot-taihuyuan.png',
+      image: '/images/spot-taihuyuan.webp',
       paragraphs: [
         {
           zh: '宋代，天目山一带的窑口烧制黑釉茶盏。日本僧人来天目山参禅，把茶盏带回国，称之为"天目"——至今日语中"天目"仍是黑釉茶盏的通称。一只茶盏的名字，成了一类器物的名字。',
@@ -77,7 +77,7 @@ export const culturePage = {
       no: '四',
       title: { zh: '村落：山里的人', en: 'Villages: the mountain people' },
       latin: 'Villages',
-      image: '/images/hero-village.png',
+      image: '/images/hero-village.webp',
       paragraphs: [
         {
           zh: '指南村的梯田、河桥的老街、湍口的温泉村落……临安的村庄依山而建，四季各有生计：春采茶，夏纳凉，秋收山核桃与香榧，冬晒腊肉与笋干。',

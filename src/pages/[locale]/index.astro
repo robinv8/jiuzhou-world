@@ -1,0 +1,18 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import { HomeEntry } from '@/views/entries'
+import { getPageSeo } from '@/lib/seo'
+import { localeStaticPaths } from '@/lib/i18n-path'
+import { type Lang } from '@/i18n/config'
+
+export function getStaticPaths() {
+    return localeStaticPaths()
+}
+
+const lang = Astro.params.locale as Lang
+const seo = getPageSeo('/')
+---
+
+<BaseLayout seo={seo} lang={lang}>
+    <HomeEntry client:load lang={lang} />
+</BaseLayout>

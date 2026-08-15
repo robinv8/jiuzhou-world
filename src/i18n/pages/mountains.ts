@@ -26,7 +26,7 @@ export const mountainsPage = {
       no: '一',
       title: { zh: '天目山：大树的时间', en: 'Tianmu: the time of great trees' },
       latin: 'Mount Tianmu',
-      image: '/images/hero-tianmu.png',
+      image: '/images/hero-tianmu.webp',
       paragraphs: [
         {
           zh: '天目山以树闻名。西天目山的老树林里，活着一棵树龄逾千年的柳杉，胸径要五六人才能合抱。宋人叫它"千秋树"，今人唤它"大树王"。树比山里的任何一座庙都老，也比庙更沉默。',
@@ -43,7 +43,7 @@ export const mountainsPage = {
       no: '二',
       title: { zh: '大明山：云上高台', en: 'Daming: a terrace above the clouds' },
       latin: 'Mount Daming',
-      image: '/images/cover-mountains.png',
+      image: '/images/cover-mountains.webp',
       paragraphs: [
         {
           zh: '大明山的高处是一片意料之外的高山台地——爬到千米之上，眼前忽然展开草甸与花海，像山把一块平原偷偷藏在了顶上。悬空栈道贴在花岗岩的崖壁上，脚下是深谷，谷中常有云海漫上来。',
@@ -60,7 +60,7 @@ export const mountainsPage = {
       no: '三',
       title: { zh: '清凉峰：浙西的屋脊', en: 'Qingliang: the roof of western Zhejiang' },
       latin: 'Qingliang Peak',
-      image: '/images/spot-qingliang.png',
+      image: '/images/spot-qingliang.webp',
       paragraphs: [
         {
           zh: '海拔1787.4米，清凉峰是浙西第一高峰，也是国家级自然保护区。这里没有索道和商铺，只有土路、矮松和不断变换高度的杜鹃。登山的人凌晨出发，为的是在日出时分站在云海之上。',
@@ -77,7 +77,7 @@ export const mountainsPage = {
       no: '四',
       title: { zh: '水：山的下文', en: 'Water: the mountain’s sequel' },
       latin: 'Headwaters',
-      image: '/images/spot-taihuyuan.png',
+      image: '/images/spot-taihuyuan.webp',
       paragraphs: [
         {
           zh: '山有多高，水就有多长。天目山系的溪流一路向东，在临安境内汇成苕溪，最终注入太湖。白沙村附近的一道山坞被称作"太湖源"——太湖水最初的来处之一。',

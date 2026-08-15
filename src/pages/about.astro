@@ -4,8 +4,9 @@ import { AboutEntry } from '@/views/entries'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/about')
+const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo}>
-    <AboutEntry client:load />
+<BaseLayout seo={seo} lang={lang}>
+    <AboutEntry client:load lang={lang} />
 </BaseLayout>

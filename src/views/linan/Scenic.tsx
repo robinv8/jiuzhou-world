@@ -13,7 +13,7 @@ export default function Scenic() {
         kicker={scenicPage.heroKicker}
         title={scenicPage.heroTitle}
         sub={scenicPage.heroSub}
-        image="/images/cover-scenic.png"
+        image="/images/cover-scenic.webp"
       />
 
       <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">

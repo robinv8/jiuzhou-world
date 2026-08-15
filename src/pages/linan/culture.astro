@@ -4,8 +4,9 @@ import { CultureEntry } from '@/views/entries'
 import { getPageSeo } from '@/lib/seo'
 
 const seo = getPageSeo('/linan/culture')
+const lang = 'zh' as const
 ---
 
-<BaseLayout seo={seo}>
-    <CultureEntry client:load />
+<BaseLayout seo={seo} lang={lang}>
+    <CultureEntry client:load lang={lang} />
 </BaseLayout>

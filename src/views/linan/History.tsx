@@ -49,7 +49,7 @@ export default function History() {
         kicker={historyPage.heroKicker}
         title={historyPage.heroTitle}
         sub={historyPage.heroSub}
-        image="/images/cover-history.png"
+        image="/images/cover-history.webp"
       />
 
       <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
