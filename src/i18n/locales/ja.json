@@ -1,0 +1,16 @@
+{
+  "ui": {
+    "openVolume": "開巻",
+    "linanVolume": "臨安の巻",
+    "oneCityOneVolume": "九州志 · 一巻一城",
+    "onlineGazetteer": "オンラインの方志",
+    "nineLands": "九州、一志",
+    "volumeTwoDash": "巻二 —",
+    "nextVolumeOnTheRoad": "次の巻は、道の上に。"
+  },
+  "seo": {
+    "place": {
+      "linan": "臨安"
+    }
+  }
+}

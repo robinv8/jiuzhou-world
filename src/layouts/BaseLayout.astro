@@ -9,7 +9,7 @@ import {
     type PageSeo,
 } from '@/lib/seo'
 import { LANG_META, LOCALES, isTranslated, type Lang } from '@/i18n/config'
-import { pickLocalized } from '@/i18n/pick'
+import { t } from '@/i18n/t'
 
 interface Props {
     seo: PageSeo
@@ -17,8 +17,8 @@ interface Props {
 }
 
 const { seo, lang = 'zh' } = Astro.props
-const title = pickLocalized(seo.title, lang)
-const description = pickLocalized(seo.description, lang)
+const title = t(`seo.${seo.key}.title`, lang)
+const description = t(`seo.${seo.key}.description`, lang)
 const canonical = pageUrl(seo.path, lang)
 const ogImage = seo.image ?? DEFAULT_OG_IMAGE
 const meta = LANG_META[lang]

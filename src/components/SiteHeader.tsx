@@ -1,19 +1,12 @@
 import { useEffect, useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { anthology, nav } from '@/i18n/content'
+import { linanNav } from '@/i18n/catalogs'
 import { LANG_META, LOCALES, isTranslated, type Lang } from '@/i18n/config'
 import { useLanguage } from '@/i18n/LanguageContext'
 import { stripLocale, withLocale } from '@/lib/i18n-path'
 
-const linanLinks = [
-    { base: '/linan/mountains', label: nav.mountains },
-    { base: '/linan/scenic', label: nav.scenic },
-    { base: '/linan/history', label: nav.history },
-    { base: '/linan/culture', label: nav.culture },
-]
-
 export default function SiteHeader({ path }: { path: string }) {
-    const { lang, setLang, pick } = useLanguage()
+    const { lang, setLang, t } = useLanguage()
     const [scrolled, setScrolled] = useState(false)
     const [hidden, setHidden] = useState(false)
     const [open, setOpen] = useState(false)
@@ -65,7 +58,7 @@ export default function SiteHeader({ path }: { path: string }) {
                                 onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                             }`}
                         >
-                            {pick(anthology.name)}
+                            {t('anthology.name')}
                         </span>
                         <span
                             className={`micro-label hidden sm:inline transition-colors ${
@@ -86,7 +79,7 @@ export default function SiteHeader({ path }: { path: string }) {
                                         : 'text-[#1f2a26]/70 hover:text-[#1f2a26]'
                                 }`}
                             >
-                                {pick({ zh: '临安卷', en: "Lin'an", ja: '臨安の巻', ko: '임안 권' })}
+                                {t('ui.linanVolume')}
                             </a>
                         </>
                     )}
@@ -94,7 +87,7 @@ export default function SiteHeader({ path }: { path: string }) {
 
                 <nav className="hidden md:flex items-center gap-8">
                     {inLinan &&
-                        linanLinks.map((l) => {
+                        linanNav.map((l) => {
                             const isActive = active(l.base)
                             return (
                                 <a key={l.base} href={href(l.base)}>
@@ -103,9 +96,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                             onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                         } ${isActive ? 'opacity-100' : 'opacity-70 hover:opacity-100'}`}
                                     >
-                                        <span className="micro-label">{l.label.en}</span>
+                                        <span className="micro-label">{t(l.key, 'en')}</span>
                                         <span className="font-display text-base tracking-[0.2em]">
-                                            {l.label.zh}
+                                            {t(l.key, 'zh')}
                                         </span>
                                         {isActive && (
                                             <span className="mt-1 h-px w-full bg-[#b03a2e]" aria-hidden />
@@ -121,9 +114,9 @@ export default function SiteHeader({ path }: { path: string }) {
                                     onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                 }`}
                             >
-                                <span className="micro-label">{anthology.about.en}</span>
+                                <span className="micro-label">{t('anthology.about', 'en')}</span>
                                 <span className="font-display text-base tracking-[0.2em]">
-                                    {anthology.about.zh}
+                                    {t('anthology.about', 'zh')}
                                 </span>
                             </span>
                         </a>
@@ -183,24 +176,24 @@ export default function SiteHeader({ path }: { path: string }) {
             {open && (
                 <nav className="md:hidden bg-[#f7f5ee] border-t hairline px-6 py-6 flex flex-col gap-5">
                     <a href={href('/')} className="flex items-baseline gap-3 text-[#1f2a26]">
-                        <span className="font-display text-lg">{pick(anthology.name)}</span>
+                        <span className="font-display text-lg">{t('anthology.name')}</span>
                         <span className="micro-label text-[#5a665e]">Home</span>
                     </a>
                     <a href={href('/linan')} className="flex items-baseline gap-3 text-[#1f2a26]">
                         <span className="font-display text-lg">
-                            {pick({ zh: '临安卷', en: "Lin'an", ja: '臨安の巻', ko: '임안 권' })}
+                            {t('ui.linanVolume')}
                         </span>
                         <span className="micro-label text-[#5a665e]">Vol. I</span>
                     </a>
                     {inLinan &&
-                        linanLinks.map((l) => (
+                        linanNav.map((l) => (
                             <a
                                 key={l.base}
                                 href={href(l.base)}
                                 className="flex items-baseline gap-3 pl-4 text-[#1f2a26]"
                             >
-                                <span className="font-display text-base">{l.label.zh}</span>
-                                <span className="micro-label text-[#5a665e]">{l.label.en}</span>
+                                <span className="font-display text-base">{t(l.key, 'zh')}</span>
+                                <span className="micro-label text-[#5a665e]">{t(l.key, 'en')}</span>
                             </a>
                         ))}
                     <div className="flex flex-wrap gap-2 pt-2">

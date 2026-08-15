@@ -1,0 +1,338 @@
+{
+  "site": {
+    "name": "Lin'an Anthology",
+    "tagline": "An online anthology of mountains, memory and craft"
+  },
+  "nav": {
+    "home": "Opening",
+    "mountains": "Mountains",
+    "scenic": "Places",
+    "history": "History",
+    "culture": "Craft"
+  },
+  "anthology": {
+    "name": "Jiuzhou",
+    "volumesLabel": "The volumes",
+    "volumesTitle": "Open a volume",
+    "about": "About",
+    "heroKicker": "One city, one volume",
+    "intro": [
+      "Ancient China was divided into Nine Lands — Jiuzhou. Each land was its mountains and rivers, its customs, the way its people lived. Jiuzhou is an online gazetteer of these lands: one city, one volume, written slowly.",
+      "The first volume is Lin’an — beneath Mount Tianmu, the old homeland of Wuyue."
+    ],
+    "volumes": {
+      "linan": {
+        "title": "Lin'an",
+        "place": "Hangzhou, Zhejiang",
+        "desc": "Beneath Tianmu’s canopy, in the old homeland of Wuyue — mountains, memory and craft."
+      }
+    }
+  },
+  "about": {
+    "heroTitle": "About",
+    "heroSub": "Why Jiuzhou exists.",
+    "sections": {
+      "gazetteer": {
+        "title": "A gazetteer, written slowly",
+        "paragraphs": [
+          "The gazetteer is China’s oldest tradition of local writing: a place’s mountains, its history, its people and its produce, recorded generation after generation. Jiuzhou brings this tradition online — not as an encyclopedia, but as one city at a time: visited, read, and written."
+        ]
+      },
+      "notPromotion": {
+        "title": "Not promotion",
+        "paragraphs": [
+          "These pages sell no tickets and push no routes. If a mountain takes root in your mind, or you find yourself wanting to see a place, they have done their work.",
+          "All images are AI-generated impressions, not photographs of the actual places; where details differ, official publications prevail."
+        ]
+      }
+    }
+  },
+  "home": {
+    "heroKicker": "Lin'an · Hangzhou · Zhejiang",
+    "heroTitle": "Lin'an Anthology",
+    "heroSub": "Beneath Tianmu’s canopy, in the old homeland of Wuyue. No itineraries here — only mountains, remembered.",
+    "heroScroll": "Scroll, into the hills",
+    "manifestoLabel": "Why this site",
+    "manifestoTitle": "Not promotion — remembrance",
+    "manifesto": [
+      "West of Hangzhou lies Lin’an, a town of mountains. Tianmu, Daming and Qingliang Peak fold in from the northwest, wrapping it in cloud and bamboo. It is also a town of history — eleven centuries ago Qian Liu walked out of these hills to found the kingdom of Wuyue, and centuries later the name “Lin’an” itself was borrowed by the Southern Song as the name of its capital.",
+      "This site sells no tickets and pushes no routes. It reads like an open local gazetteer: mountains, memory, one village and one craft at a time. If a mountain takes root in your mind after reading, it has done its work."
+    ],
+    "volumesLabel": "Four volumes",
+    "volumesTitle": "Open the volumes",
+    "closingQuote": "“A canopy of great trees, famed across the land.”",
+    "closingSource": "— An old verse on Mount Tianmu"
+  },
+  "linan": {
+    "volumes": {
+      "mountains": {
+        "title": "Mountains",
+        "desc": "Tianmu’s ancient trees, Daming’s sea of clouds, Qingliang’s summit — and the water that leaves the mountains."
+      },
+      "scenic": {
+        "title": "Places",
+        "desc": "Eight places, each a short biography. Practical notes kept quiet at the end."
+      },
+      "history": {
+        "title": "History",
+        "desc": "From Qian Liu to the peaceful handover to Song — how a town’s name became a capital’s name."
+      },
+      "culture": {
+        "title": "Craft",
+        "desc": "Hickory nuts, chicken-blood stone, tenmoku bowls — the working seasons of mountain people."
+      }
+    }
+  },
+  "mountains": {
+    "heroKicker": "Volume I",
+    "heroTitle": "Mountains",
+    "heroSub": "Mountains are not scenery. Mountains are time.",
+    "intro": "Lin’an’s mountains belong to the Tianmu range, entering from southern Anhui and easing eastward until they rest at the edge of Hangzhou. Within them stand some of East China’s oldest forests and highest summits, and the first trickles of Lake Tai’s water. Four essays on the mountains themselves.",
+    "colophon": "Old trees in the mountains, sources in the water. Lin’an’s mountains reward slow reading.",
+    "essays": {
+      "tianmu": {
+        "title": "Tianmu: the time of great trees",
+        "paragraphs": [
+          "Tianmu is famous for its trees. In the old-growth forest of West Tianmu stands a Chinese cedar over a thousand years old, its trunk so wide that five or six people cannot link arms around it. The Song people called it the Thousand-Autumn Tree; today it is simply the King of Trees — older than any temple on the mountain, and more silent.",
+          "It is a UNESCO Biosphere Reserve. Ginkgo, golden larch, the Tianmu ironwood — many plants carry the name “Tianmu” because this is where science first recorded them. When the bell of Chanyuan Temple sounds at the mountain’s foot, the whole forest seems to settle."
+        ]
+      },
+      "daming": {
+        "title": "Daming: a terrace above the clouds",
+        "paragraphs": [
+          "High on Daming lies an unexpected plateau — climb past a thousand metres and meadows and flower fields suddenly unfold, as if the mountain had hidden a plain on its summit. A plank walkway clings to the granite cliff, a deep valley below, and seas of cloud often rise out of it.",
+          "Legend says the future Hongwu Emperor once garrisoned troops here, giving the mountain its name. Legends need not be believed — but standing on the walkway watching the clouds turn over, one does briefly feel like a sovereign reading the Art of War."
+        ]
+      },
+      "qingliang": {
+        "title": "Qingliang: the roof of western Zhejiang",
+        "paragraphs": [
+          "At 1,787.4 metres, Qingliang Peak is the highest summit in western Zhejiang and a national nature reserve. There are no cable cars or shops here — only dirt paths, dwarf pines, and azaleas shifting with altitude. Hikers set out before dawn to stand above the sea of clouds at sunrise.",
+          "Wild sika deer still live in these mountains; Qingliang is one of their last large habitats in southeast China. The mountain’s height protects them — and protects a way of life that asks not to be disturbed."
+        ]
+      },
+      "water": {
+        "title": "Water: the mountain’s sequel",
+        "paragraphs": [
+          "However high the mountain, that long is its water. Streams of the Tianmu range run east, joining within Lin’an to form the Tiaoxi, which finally empties into Lake Tai. A ravine near Baisha village is called the Source of Taihu — one of the great lake’s first beginnings.",
+          "Each stretch of water has its own temper: the pools of the Zhexi Grand Canyon run a dark jade, while the Changnan stream outside Heqiao town flows slow enough to mirror the old houses. Once water leaves the mountain, it becomes the human world."
+        ]
+      }
+    }
+  },
+  "scenic": {
+    "heroKicker": "Volume II",
+    "heroTitle": "Places",
+    "heroSub": "A short biography for each place; practical notes kept at the end.",
+    "intro": "Eight places are gathered in this volume. The approach is unusual: first what a place is and why it matters; only in the final line, when to go. Prices and routes change; mountains do not.",
+    "footnote": "Details shift with seasons and management decisions; check official notices before travelling.",
+    "spots": {
+      "tianmu": {
+        "name": "Mount Tianmu",
+        "region": "Northwest Lin’an",
+        "essence": "A UNESCO Biosphere Reserve known for thousand-year-old cedar groves and Chanyuan Temple — the place behind the verse “a canopy of great trees, famed across the land.”",
+        "season": "All seasons; summer shade, autumn colour",
+        "note": "About 90 km from central Hangzhou; east and west scenic areas"
+      },
+      "daming": {
+        "name": "Mount Daming",
+        "region": "Western Lin’an",
+        "essence": "A high plateau a thousand metres up, a plank walkway bolted to granite cliffs, azaleas in spring, a ski field in winter.",
+        "season": "Spring azaleas, summer cool, winter skiing",
+        "note": "Reachable by cable car or on foot"
+      },
+      "qingshanhu": {
+        "name": "Qingshan Lake",
+        "region": "East of Lin’an town",
+        "essence": "A reservoir turned lake, metasequoia turned forest — trees rising straight from the water, reflections calmer than the trees. A greenway circles the shore for cycling.",
+        "season": "Best in late autumn when the redwoods turn",
+        "note": "At the town’s edge; Metro Line 16 reaches Lin’an"
+      },
+      "canyon": {
+        "name": "Zhexi Grand Canyon",
+        "region": "Western Lin’an",
+        "essence": "A canyon built along a stream — Zhelin Falls and Jiange Pass stringing together deep pools and sheer walls. The green here belongs to the water, not the trees.",
+        "season": "Fullest water in summer",
+        "note": "A half-to-full-day walk"
+      },
+      "taihuyuan": {
+        "name": "Source of Taihu",
+        "region": "Northern Lin’an",
+        "essence": "One of Lake Tai’s first sources. The ravine is narrow, strung with clear pools and small falls — only at its end do you grasp that the vast lake begins as a thread of water like this.",
+        "season": "Coolest in summer; clearest after rain",
+        "note": "Gentle paths, easy for all ages"
+      },
+      "zhinan": {
+        "name": "Zhinan Village",
+        "region": "Eastern Lin’an",
+        "essence": "An ancient village at nearly six hundred metres, ringed by more than three hundred old trees. In late autumn — ginkgo gold, maple red, terraces amber — photographers call it one of East China’s most beautiful autumn villages.",
+        "season": "Peak colour in mid-to-late November",
+        "note": "Guesthouses and farm kitchens in the village"
+      },
+      "heqiao": {
+        "name": "Heqiao Old Town",
+        "region": "Southwest Lin’an",
+        "essence": "A river-born old town of western Zhejiang. The Changnan stream bends here, and the old street still keeps its wharf-town layout — shops in front, river behind, steps down to the boats.",
+        "season": "Most evocative at dawn and dusk in spring and autumn",
+        "note": "Open freely; made for slow wandering"
+      },
+      "qingliang": {
+        "name": "Qingliang Peak",
+        "region": "Zhejiang–Anhui border",
+        "essence": "The highest peak in western Zhejiang, a national nature reserve. No cable cars — dirt paths and seas of cloud. One of the last large homes of wild sika deer in southeast China.",
+        "season": "Autumn climbs; best odds of cloud seas",
+        "note": "A full-day climb; entry managed as a reserve"
+      }
+    }
+  },
+  "history": {
+    "heroKicker": "Volume III",
+    "heroTitle": "History",
+    "heroSub": "How a town’s name became the name of a capital.",
+    "intro": "Lin’an’s history turns on a single surname: Qian. Amid the chaos of the late Tang, Qian Liu of Lin’an founded the kingdom of Wuyue and kept his corner of the country at peace for eighty years; his grandson handed the realm to the Song without a war and left a family precept that has lasted a millennium. Later, the Southern Song borrowed the very name “Lin’an” for its capital — and only in our own time has the name returned to the land it came from.",
+    "colophon": "Force to secure a realm, letters to sustain a family, wisdom to know when to yield — Lin’an’s first answer to history.",
+    "entries": {
+      "birth": {
+        "era": "852 · Tang dynasty",
+        "title": "Qian Liu is born in Lin’an",
+        "paragraphs": [
+          "Qian Liu was born to a farming family in Shijing township, in what is now central Lin’an. Legend says strange signs attended his birth and his father meant to abandon him; his grandmother saved him, and villagers nicknamed him “Poliu” — kept by grandma. A well by that name still exists in town.",
+          "He smuggled salt as a youth, then took up arms. In an age of collapse, the man from Lin’an fought his way to rule over the whole of Liangzhe."
+        ]
+      },
+      "kingdom": {
+        "era": "907 · Five Dynasties",
+        "title": "Wuyue: peace held close",
+        "paragraphs": [
+          "In 907 Qian Liu was enfeoffed as King of Wuyue, founding a kingdom with its capital at Hangzhou. While the Central Plains burned, Wuyue heard no drums of war for decades. The Qians walled the Qiantang tides, dredged West Lake, and built waterworks — the groundwork of Hangzhou’s cityscape was laid in those years.",
+          "“Guard the land, keep the people at peace, serve the Central Plain” was his state policy: hold your own ground, and always acknowledge the northern court. The choice spared the wealthy southeast the wars of the Five Dynasties."
+        ]
+      },
+      "song": {
+        "era": "978 · Northern Song",
+        "title": "The peaceful handover",
+        "paragraphs": [
+          "In 978 Qian Liu’s grandson Qian Chu, honouring his grandfather’s dying instruction, offered the kingdom — thirteen prefectures, eighty-six counties — to the Song without a fight. A whole realm, unified without a single battle.",
+          "The classic Hundred Family Surnames opens “Zhao, Qian, Sun, Li” — Qian ranked second only to the imperial surname, the Song’s tribute to what Wuyue had spared its people."
+        ]
+      },
+      "precept": {
+        "era": "A thousand-year precept",
+        "title": "The Qian family precept",
+        "paragraphs": [
+          "Qian Liu left a family precept whose heart is one line: “Seek nothing that profits only yourself; what profits all under heaven, you must do.”",
+          "A millennium on, Qian descendants include Qian Xuesen, Qian Sanqiang, Qian Zhongshu — a family’s culture outliving dynasties. The Qian Kings’ Mausoleum and the Wuyue royal tomb archaeological park in Lin’an still tell the story."
+        ]
+      },
+      "name": {
+        "era": "1138 — 2017",
+        "title": "The travels of a name",
+        "paragraphs": [
+          "When the Southern Song made Hangzhou its capital, it raised the city to “Lin’an Prefecture” — and the two characters became the name of an imperial capital, standing in verse for that city of “hills beyond hills and towers beyond towers.” The name was away for nearly eight centuries.",
+          "In 1996 Lin’an became a city, and in 2017 a district of Hangzhou. The name has come home."
+        ]
+      }
+    }
+  },
+  "culture": {
+    "heroKicker": "Volume IV",
+    "heroTitle": "Craft",
+    "heroSub": "Objects are the joints between people and their mountains.",
+    "intro": "Every soil grows its own goods. Lin’an’s hickory nuts, Changhua’s chicken-blood stone, Tianmu’s tea bowls — none are museum relics; all remain livelihoods and daily objects in mountain hands.",
+    "colophon": "Every village, every craft, has its season.",
+    "items": {
+      "hickory": {
+        "title": "Hickory: the White Dew harvest",
+        "paragraphs": [
+          "Lin’an is the home of the Chinese hickory; the nuts from the Tianmu range are thin-shelled and fragrant. At the White Dew solar term, mountain people climb the trees with long poles to knock the nuts down — “the opening of the poles.” For those days, the whole mountain rings with bamboo against branches.",
+          "It is the year’s most dangerous and most generous harvest. Hickory trees grow on steep slopes; striking them is skilled work, and a mountain family’s year hangs on it."
+        ]
+      },
+      "stone": {
+        "title": "Chicken-blood stone: cinnabar in rock",
+        "paragraphs": [
+          "From Changhua town comes chicken-blood stone — a warm, fine-grained stone veined with cinnabar red as fresh blood, counted with Tianhuang and Furong among the “three treasures” of seal stones. Since the Ming and Qing, it has been the seal-carver’s prize.",
+          "Fine stones grow rarer; the carving craft endures. A bloodstone seal is cinnabar dug from the mountain — and an inch of landscape on a scholar’s desk."
+        ]
+      },
+      "tenmoku": {
+        "title": "Tenmoku: a night sky in a bowl",
+        "paragraphs": [
+          "In the Song dynasty, kilns around Tianmu fired black-glazed tea bowls. Japanese monks came to the mountain for Chan study and carried the bowls home as “tenmoku” — to this day the word means black-glazed tea ware in Japanese. One bowl’s name became the name of a whole class of vessels.",
+          "Hare’s fur, oil-spot, yohen — the black glaze crystallises in the kiln into patterns like a night sky. The kiln sites remain on the mountain, and its fires are being lit again."
+        ]
+      },
+      "village": {
+        "title": "Villages: the mountain people",
+        "paragraphs": [
+          "The terraces of Zhinan, the old street of Heqiao, the hot-spring hamlets of Tuankou — Lin’an’s villages lean against the mountains, each season with its own work: tea in spring, cool air in summer, hickory and torreya in autumn, cured pork and dried bamboo shoots in winter.",
+          "In the end, local goods are local people. The mountains remain, the people remain, and the order of the seasons remains."
+        ]
+      }
+    }
+  },
+  "footer": {
+    "colophonLabel": "Colophon",
+    "colophon": "A non-profit cultural project with no commercial function. Where details differ, official publications prevail. All images on this site are AI-generated impressions, not photographs of the actual places.",
+    "credit": "Lin'an Anthology · an online gazetteer"
+  },
+  "seo": {
+    "home": {
+      "title": "Jiuzhou — An online gazetteer of Chinese cities",
+      "description": "Jiuzhou is an online gazetteer: one city, one volume, written slowly. Volume I: Lin’an, beneath Mount Tianmu."
+    },
+    "about": {
+      "title": "About · Jiuzhou",
+      "description": "Why Jiuzhou exists: bringing the gazetteer tradition online, one city at a time."
+    },
+    "linan": {
+      "title": "Lin'an · Jiuzhou",
+      "description": "Lin'an Anthology: mountains, memory and craft beneath Tianmu — no itineraries, only place."
+    },
+    "linan_mountains": {
+      "title": "Mountains · Lin'an · Jiuzhou",
+      "description": "Lin'an's mountains of the Tianmu range: Tianmu, Daming, Qingliang, and water as the mountain's sequel."
+    },
+    "linan_scenic": {
+      "title": "Places · Lin'an · Jiuzhou",
+      "description": "Eight places in Lin'an: Tianmu, Daming, Qingshan Lake, Zhexi Canyon, Source of Taihu, Zhinan, Heqiao, Qingliang."
+    },
+    "linan_history": {
+      "title": "History · Lin'an · Jiuzhou",
+      "description": "A timeline of Lin'an: from Qian Liu to the homeland of Wuyue, how a mountain city became Hangzhou's western gate."
+    },
+    "linan_culture": {
+      "title": "Craft · Lin'an · Jiuzhou",
+      "description": "Lin'an craft and produce: hickory nuts, tea, and the seasons behind local things."
+    },
+    "jsonld": {
+      "siteDescription": "An online gazetteer of Chinese cities — one volume at a time."
+    },
+    "place": {
+      "linan": "Lin'an",
+      "zhejiang": "Zhejiang"
+    }
+  },
+  "ui": {
+    "openVolume": "OPEN",
+    "season": "Season",
+    "note": "Note",
+    "linanVolume": "Lin'an",
+    "oneCityOneVolume": "Jiuzhou · one city, one volume",
+    "onlineGazetteer": "An online gazetteer",
+    "nineLands": "NINE LANDS, ONE ANTHOLOGY",
+    "volumeTwoDash": "Vol. II —",
+    "nextVolumeOnTheRoad": "The next volume is on the road.",
+    "alt": {
+      "lakeHills": "Lake and distant hills",
+      "zhinanAutumn": "Zhinan Village in autumn",
+      "qingliangClouds": "Qingliang Peak, sea of clouds"
+    },
+    "caption": {
+      "zhinanAutumn": "Zhinan Village, autumn",
+      "qingliangClouds": "Qingliang Peak · sea of clouds",
+      "heqiaoStream": "Heqiao Old Town · the Changnan stream"
+    },
+    "beneathTianmu": "BENEATH TIANMU, BESIDE WUYUE"
+  }
+}

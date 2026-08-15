@@ -1,16 +1,14 @@
 import { createContext, useContext, useEffect, useCallback, type ReactNode } from 'react'
 import { DEFAULT_LANG, type Lang } from '@/i18n/config'
-import type { LocalizedString } from '@/i18n/content'
-import { pickLocalized } from '@/i18n/pick'
+import { t as translate, tList as translateList } from '@/i18n/t'
 import { switchLocalePath } from '@/lib/i18n-path'
-
-export { pickLocalized } from '@/i18n/pick'
 
 interface LanguageContextValue {
     lang: Lang
     setLang: (lang: Lang) => void
-    /** Resolve a localized string with fallback: lang → en → zh */
-    pick: (pair: LocalizedString) => string
+    /** Resolve a catalog key. Optional locale override (e.g. bilingual labels). */
+    t: (key: string, locale?: Lang) => string
+    tList: (key: string, locale?: Lang) => string[]
 }
 
 const LanguageContext = createContext<LanguageContextValue | null>(null)
@@ -35,9 +33,11 @@ export function LanguageProvider({
         document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang
     }, [lang])
 
-    const pick = useCallback((pair: LocalizedString) => pickLocalized(pair, lang), [lang])
+    const t = useCallback((key: string, locale?: Lang) => translate(key, locale ?? lang), [lang])
+    const tList = useCallback((key: string, locale?: Lang) => translateList(key, locale ?? lang), [lang])
+
     return (
-        <LanguageContext.Provider value={{ lang, setLang, pick }}>
+        <LanguageContext.Provider value={{ lang, setLang, t, tList }}>
             {children}
         </LanguageContext.Provider>
     )
