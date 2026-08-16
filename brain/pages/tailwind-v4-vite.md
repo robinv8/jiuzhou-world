@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [tailwind, stack, astro]
 created: "2026-08-16T13:53:56"
-updated: "2026-08-16T13:54:06"
+updated: "2026-08-16T14:03:22"
 ---
 
 <!-- compiled_truth -->
@@ -28,4 +28,10 @@ updated: "2026-08-16T13:54:06"
   kind: decision
   summary: Rewrote compiled_truth to the new best understanding
   source: brain update-truth
+  affects: [tailwind-v4-vite]
+
+- time: 2026-08-16T14:03:22
+  kind: decision
+  summary: "删除未使用的 shadcn ui/ 套件与 cn 工具，卸载 cva/clsx/tailwind-merge/tw-animate-css 四个依赖"
+  source: code
   affects: [tailwind-v4-vite]
