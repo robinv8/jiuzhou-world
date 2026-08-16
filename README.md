@@ -15,7 +15,8 @@
 | 领域 | 选择 |
 |------|------|
 | 框架 | Astro 5，`output: 'static'` |
-| UI | React 19 + Tailwind CSS 3（`@astrojs/react` / `tailwind` / `sitemap` 官方集成） |
+| UI | React 19 + Tailwind CSS 4（经 `@tailwindcss/vite` 接入，CSS-first 配置在 `src/index.css`，无 `tailwind.config.js` / PostCSS） |
+| 集成 | `@astrojs/react` / `sitemap` 官方集成 |
 | 渲染 | 正文构建期出静态 HTML，**只有顶栏是 React island**（其余视图 SSR 后不再水合） |
 | 宿主 | Cloudflare Pages，GitHub Actions CI（`.github/workflows/deploy.yml`） |
 | 分析 | Google Analytics |

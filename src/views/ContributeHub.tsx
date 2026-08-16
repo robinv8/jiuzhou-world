@@ -47,11 +47,11 @@ export default function ContributeHub({ lang }: { lang: Lang }) {
                                 className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-12 border-t border-b hairline"
                             >
                                 <div className="md:col-span-5 overflow-hidden">
-                                    <div className="aspect-[3/2] overflow-hidden">
+                                    <div className="aspect-3/2 overflow-hidden">
                                         <img
                                             src={place.image}
                                             alt={t(`anthology.volumes.${place.key}.title`)}
-                                            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                         />
                                     </div>
                                 </div>

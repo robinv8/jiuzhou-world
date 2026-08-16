@@ -21,7 +21,7 @@ export default function Home({ lang }: { lang: Lang }) {
                     className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#1f2a26]/85 via-[#1f2a26]/30 to-[#1f2a26]/30"
+                    className="absolute inset-0 bg-linear-to-t from-[#1f2a26]/85 via-[#1f2a26]/30 to-[#1f2a26]/30"
                     aria-hidden
                 />
                 <div className="absolute right-6 md:right-14 top-1/2 -translate-y-1/2 hidden md:block">
@@ -93,11 +93,11 @@ export default function Home({ lang }: { lang: Lang }) {
                                 className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t border-b hairline"
                             >
                                 <div className="md:col-span-5 overflow-hidden">
-                                    <div className="aspect-[3/2] overflow-hidden">
+                                    <div className="aspect-3/2 overflow-hidden">
                                         <img
                                             src={v.image}
                                             alt={t(`anthology.volumes.${v.key}.title`)}
-                                            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.05]"
+                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
                                         />
                                     </div>
                                 </div>

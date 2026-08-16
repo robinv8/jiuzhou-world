@@ -23,7 +23,7 @@ export default function LinanHome({ lang }: { lang: Lang }) {
                     </div>
                 ))}
                 <div
-                    className="absolute inset-0 bg-gradient-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
+                    className="absolute inset-0 bg-linear-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
                     aria-hidden
                 />
 
@@ -109,12 +109,12 @@ export default function LinanHome({ lang }: { lang: Lang }) {
                                         i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''
                                     }`}
                                 >
-                                    <div className="aspect-[3/2] overflow-hidden">
+                                    <div className="aspect-3/2 overflow-hidden">
                                         <img
                                             src={v.image}
                                             alt={t(`linan.volumes.${v.key}.title`)}
                                             loading="lazy"
-                                            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.05]"
+                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
                                         />
                                     </div>
                                 </div>

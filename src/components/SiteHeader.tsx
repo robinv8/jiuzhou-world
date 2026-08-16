@@ -38,7 +38,7 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
         <header
             className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
                 hidden ? '-translate-y-full' : 'translate-y-0'
-            } ${scrolled ? 'bg-[#f7f5ee]/92 backdrop-blur-sm border-b hairline' : 'bg-transparent'}`}
+            } ${scrolled ? 'bg-[#f7f5ee]/92 backdrop-blur-xs border-b hairline' : 'bg-transparent'}`}
         >
             <div
                 className={`mx-auto flex max-w-7xl items-center justify-between px-6 md:px-16 transition-all duration-500 ${
@@ -143,7 +143,7 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                         </button>
                         {langOpen && (
                             <ul
-                                className="absolute right-0 mt-2 min-w-[9rem] border border-[#1f2a26]/15 bg-[#f7f5ee] py-1 shadow-sm"
+                                className="absolute right-0 mt-2 min-w-36 border border-[#1f2a26]/15 bg-[#f7f5ee] py-1 shadow-xs"
                                 role="listbox"
                             >
                                 {locales.map((item) => (

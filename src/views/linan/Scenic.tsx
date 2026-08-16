@@ -31,12 +31,12 @@ export default function Scenic({ lang }: { lang: Lang }) {
                     {scenicSpots.map((spot, i) => (
                         <Reveal key={spot.id} delay={(i % 2) * 80}>
                             <article className="group">
-                                <div className="aspect-[3/2] overflow-hidden">
+                                <div className="aspect-3/2 overflow-hidden">
                                     <img
                                         src={spot.image}
                                         alt={t(`scenic.spots.${spot.id}.name`)}
                                         loading="lazy"
-                                        className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+                                        className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                     />
                                 </div>
                                 <div className="mt-6 flex items-baseline gap-4">

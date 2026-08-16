@@ -20,7 +20,7 @@ export default function PageHero({ lang, kicker, title, sub, image, imageAlt }: 
         <header className="relative h-[78vh] min-h-[520px] overflow-hidden">
             <img src={image} alt={alt} className="absolute inset-0 h-full w-full object-cover" />
             <div
-                className="absolute inset-0 bg-gradient-to-t from-[#1f2a26]/85 via-[#1f2a26]/25 to-[#1f2a26]/20"
+                className="absolute inset-0 bg-linear-to-t from-[#1f2a26]/85 via-[#1f2a26]/25 to-[#1f2a26]/20"
                 aria-hidden
             />
             <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-16 md:pb-24">

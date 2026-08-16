@@ -51,12 +51,12 @@ export default function Culture({ lang }: { lang: Lang }) {
                                 className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
                             >
                                 <Reveal delay={80}>
-                                    <div className="aspect-[3/2] overflow-hidden group">
+                                    <div className="aspect-3/2 overflow-hidden group">
                                         <img
                                             src={item.image}
                                             alt={t(`culture.items.${item.id}.title`)}
                                             loading="lazy"
-                                            className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out group-hover:scale-[1.04]"
+                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                         />
                                     </div>
                                 </Reveal>

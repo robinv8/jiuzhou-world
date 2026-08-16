@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
 import sitemap from '@astrojs/sitemap'
+import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
@@ -12,9 +12,6 @@ export default defineConfig({
     output: 'static',
     integrations: [
         react(),
-        tailwind({
-            applyBaseStyles: false,
-        }),
         sitemap({
             filter: (page) => !page.includes('/404'),
             i18n: {
@@ -29,6 +26,7 @@ export default defineConfig({
         }),
     ],
     vite: {
+        plugins: [tailwindcss()],
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),

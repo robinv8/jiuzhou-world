@@ -1,6 +1,230 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-xs: calc(var(--radius) - 6px);
+
+  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+  --animate-caret-blink: caret-blink 1.25s ease-out infinite;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+  @keyframes caret-blink {
+    0%,
+    70%,
+    100% {
+      opacity: 1;
+    }
+    20%,
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility font-display {
+  /* Serif display stack: Latin first, Chinese falls to Song-style serif */
+  font-family: 'EB Garamond', 'Noto Serif SC', 'Songti SC', 'STSong', serif;
+
+  html[lang='ja'] & {
+    font-family:
+      'EB Garamond', 'Noto Serif JP', 'Noto Serif SC', 'Hiragino Mincho ProN',
+      'Yu Mincho', serif;
+  }
+
+  html[lang='ko'] & {
+    font-family:
+      'EB Garamond', 'Noto Serif KR', 'Noto Serif SC', 'Apple Myungjo',
+      'Batang', serif;
+  }
+
+  html[lang='en'] & {
+    font-family: 'EB Garamond', 'Noto Serif SC', Georgia, serif;
+  }
+}
+
+@utility font-body-sans {
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', sans-serif;
+}
+
+@utility micro-label {
+  /* Uppercase Latin micro-label with letterspacing */
+  font-family: 'EB Garamond', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+}
+
+@utility vertical-rl {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+}
+
+@utility link-underline {
+  /* Editorial link underline: 25% opacity -> full on hover */
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: currentColor;
+  text-underline-offset: 4px;
+  text-decoration-skip-ink: none;
+  transition: text-decoration-color 0.25s ease-out;
+}
+
+@utility link-underline-faint {
+  text-decoration-color: rgba(31, 42, 38, 0.25);
+  &:hover {
+    text-decoration-color: rgba(31, 42, 38, 1);
+  }
+}
+
+@utility reveal {
+  /* Fade-up on first paint — CSS only, works without JS */
+  animation: revealIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0ms);
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility ken-burns-slide {
+  @media (prefers-reduced-motion: reduce) {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  /* Ken Burns hero slideshow — 24s cycle, 3 slides */
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: kenBurnsCycle 24s infinite;
+  will-change: transform, opacity;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &:nth-child(1) {
+    animation-delay: 0s;
+  }
+  &:nth-child(2) {
+    animation-delay: 8s;
+  }
+  &:nth-child(3) {
+    animation-delay: 16s;
+  }
+}
+
+@utility sticky-visual {
+  /* Sticky-steps (history timeline) visual crossfade */
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@utility is-active {
+  &.sticky-visual {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@utility hairline {
+  /* Thin rule */
+  border-color: var(--line);
+}
+
+@utility seal-stamp {
+  /* Seal stamp */
+  background: var(--seal);
+  color: #f7f5ee;
+  box-shadow: inset 0 0 0 2px rgba(247, 245, 238, 0.5);
+}
 
 @layer base {
   :root {
@@ -87,64 +311,6 @@
 }
 
 @layer utilities {
-  /* Serif display stack: Latin first, Chinese falls to Song-style serif */
-  .font-display {
-    font-family: 'EB Garamond', 'Noto Serif SC', 'Songti SC', 'STSong', serif;
-  }
-
-  html[lang='ja'] .font-display {
-    font-family: 'EB Garamond', 'Noto Serif JP', 'Noto Serif SC', 'Hiragino Mincho ProN', 'Yu Mincho',
-      serif;
-  }
-
-  html[lang='ko'] .font-display {
-    font-family: 'EB Garamond', 'Noto Serif KR', 'Noto Serif SC', 'Apple Myungjo', 'Batang', serif;
-  }
-
-  html[lang='en'] .font-display {
-    font-family: 'EB Garamond', 'Noto Serif SC', Georgia, serif;
-  }
-
-  .font-body-sans {
-    font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB',
-      'Microsoft YaHei', sans-serif;
-  }
-
-  /* Uppercase Latin micro-label with letterspacing */
-  .micro-label {
-    font-family: 'EB Garamond', serif;
-    text-transform: uppercase;
-    letter-spacing: 0.22em;
-    font-size: 0.72rem;
-  }
-
-  .vertical-rl {
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-  }
-
-  /* Editorial link underline: 25% opacity -> full on hover */
-  .link-underline {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-decoration-color: currentColor;
-    text-underline-offset: 4px;
-    text-decoration-skip-ink: none;
-    transition: text-decoration-color 0.25s ease-out;
-  }
-  .link-underline-faint {
-    text-decoration-color: rgba(31, 42, 38, 0.25);
-  }
-  .link-underline-faint:hover {
-    text-decoration-color: rgba(31, 42, 38, 1);
-  }
-
-  /* Fade-up on first paint — CSS only, works without JS */
-  .reveal {
-    animation: revealIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-    animation-delay: var(--reveal-delay, 0ms);
-  }
-
   @keyframes revealIn {
     from {
       opacity: 0;
@@ -154,39 +320,6 @@
       opacity: 1;
       transform: none;
     }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal {
-      animation: none;
-    }
-    .ken-burns-slide {
-      animation: none !important;
-      opacity: 1;
-    }
-  }
-
-  /* Ken Burns hero slideshow — 24s cycle, 3 slides */
-  .ken-burns-slide {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    animation: kenBurnsCycle 24s infinite;
-    will-change: transform, opacity;
-  }
-  .ken-burns-slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .ken-burns-slide:nth-child(1) {
-    animation-delay: 0s;
-  }
-  .ken-burns-slide:nth-child(2) {
-    animation-delay: 8s;
-  }
-  .ken-burns-slide:nth-child(3) {
-    animation-delay: 16s;
   }
 
   @keyframes kenBurnsCycle {
@@ -209,28 +342,5 @@
       opacity: 0;
       transform: scale(1.08);
     }
-  }
-
-  /* Sticky-steps (history timeline) visual crossfade */
-  .sticky-visual {
-    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
-    opacity: 0;
-    visibility: hidden;
-  }
-  .sticky-visual.is-active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Thin rule */
-  .hairline {
-    border-color: var(--line);
-  }
-
-  /* Seal stamp */
-  .seal-stamp {
-    background: var(--seal);
-    color: #f7f5ee;
-    box-shadow: inset 0 0 0 2px rgba(247, 245, 238, 0.5);
   }
 }
