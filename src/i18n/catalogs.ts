@@ -33,49 +33,49 @@ export const linanVolumes = [
         image: '/images/cover-scenic.webp',
     },
     {
-        key: 'history',
-        route: '/linan/history',
-        latin: 'Chapter III — History',
-        image: '/images/cover-history.webp',
-    },
-    {
         key: 'culture',
         route: '/linan/culture',
-        latin: 'Chapter IV — Craft',
+        latin: 'Chapter III — Craft',
         image: '/images/cover-culture.webp',
+    },
+    {
+        key: 'history',
+        route: '/linan/history',
+        latin: 'Chapter IV — History',
+        image: '/images/cover-history.webp',
     },
 ]
 
 export const mountainEssays = [
     { id: 'tianmu', no: '一', latin: 'Mount Tianmu', image: '/images/hero-tianmu.webp' },
-    { id: 'daming', no: '二', latin: 'Mount Daming', image: '/images/cover-mountains.webp' },
+    { id: 'daming', no: '二', latin: 'Mount Daming', image: '/images/spot-daming.webp' },
     { id: 'qingliang', no: '三', latin: 'Qingliang Peak', image: '/images/spot-qingliang.webp' },
     { id: 'water', no: '四', latin: 'Headwaters', image: '/images/spot-taihuyuan.webp' },
 ]
 
 export const scenicSpots = [
-    { id: 'tianmu', no: '01', latin: 'Mount Tianmu', image: '/images/hero-tianmu.webp' },
-    { id: 'daming', no: '02', latin: 'Mount Daming', image: '/images/cover-mountains.webp' },
-    { id: 'qingshanhu', no: '03', latin: 'Qingshan Lake', image: '/images/hero-lake.webp' },
-    { id: 'canyon', no: '04', latin: 'Zhexi Grand Canyon', image: '/images/cover-scenic.webp' },
-    { id: 'taihuyuan', no: '05', latin: 'Source of Taihu', image: '/images/spot-taihuyuan.webp' },
-    { id: 'zhinan', no: '06', latin: 'Zhinan Village', image: '/images/hero-village.webp' },
-    { id: 'heqiao', no: '07', latin: 'Heqiao Old Town', image: '/images/spot-heqiao.webp' },
-    { id: 'qingliang', no: '08', latin: 'Qingliang Peak', image: '/images/spot-qingliang.webp' },
+    { id: 'qingliang', no: '01', latin: 'Qingliang Peak', image: '/images/spot-qingliang.webp' },
+    { id: 'tianmu', no: '02', latin: 'Mount Tianmu', image: '/images/hero-tianmu.webp' },
+    { id: 'daming', no: '03', latin: 'Mount Daming', image: '/images/spot-daming.webp' },
+    { id: 'taihuyuan', no: '04', latin: 'Source of Taihu', image: '/images/spot-taihuyuan.webp' },
+    { id: 'canyon', no: '05', latin: 'Zhexi Grand Canyon', image: '/images/spot-canyon.webp' },
+    { id: 'qingshanhu', no: '06', latin: 'Qingshan Lake', image: '/images/hero-lake.webp' },
+    { id: 'zhinan', no: '07', latin: 'Zhinan Village', image: '/images/hero-village.webp' },
+    { id: 'heqiao', no: '08', latin: 'Heqiao Old Town', image: '/images/spot-heqiao.webp' },
 ]
 
 export const historyEntries = [
-    { id: 'birth', image: '/images/cover-history.webp' },
-    { id: 'kingdom', image: '/images/hero-tianmu.webp' },
-    { id: 'song', image: '/images/cover-scenic.webp' },
-    { id: 'precept', image: '/images/cover-culture.webp' },
-    { id: 'name', image: '/images/hero-lake.webp' },
+    { id: 'birth', image: '/images/history-birth.webp' },
+    { id: 'kingdom', image: '/images/history-kingdom.webp' },
+    { id: 'song', image: '/images/history-song.webp' },
+    { id: 'precept', image: '/images/history-precept.webp' },
+    { id: 'name', image: '/images/history-name.webp' },
 ]
 
 export const cultureItems = [
-    { id: 'hickory', no: '一', latin: 'Chinese Hickory', image: '/images/cover-culture.webp' },
-    { id: 'stone', no: '二', latin: 'Changhua Bloodstone', image: '/images/cover-history.webp' },
-    { id: 'tenmoku', no: '三', latin: 'Tenmoku Ware', image: '/images/spot-taihuyuan.webp' },
+    { id: 'hickory', no: '一', latin: 'Chinese Hickory', image: '/images/culture-hickory.webp' },
+    { id: 'stone', no: '二', latin: 'Changhua Bloodstone', image: '/images/culture-stone.webp' },
+    { id: 'tenmoku', no: '三', latin: 'Tenmoku Ware', image: '/images/culture-tenmoku.webp' },
     { id: 'village', no: '四', latin: 'Villages', image: '/images/hero-village.webp' },
 ]
 
@@ -114,8 +114,8 @@ export function getContributePlace(key: string) {
 export const linanNav = [
     { base: '/linan/mountains', key: 'nav.mountains' },
     { base: '/linan/scenic', key: 'nav.scenic' },
-    { base: '/linan/history', key: 'nav.history' },
     { base: '/linan/culture', key: 'nav.culture' },
+    { base: '/linan/history', key: 'nav.history' },
 ] as const
 
 export type SeoPageType = 'website' | 'article' | 'collection'
