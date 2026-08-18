@@ -5,3 +5,5 @@ dist
 .dev.vars
 .DS_Store
 *.local
+_photo_candidates
+artifacts
