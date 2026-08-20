@@ -1,6 +1,6 @@
 # Brain Index
 
-_Auto-generated. Last updated 2026-08-20T06:14:25.486Z._
+_Auto-generated. Last updated 2026-08-20T06:55:07.915Z._
 
 - [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目不加地域层：一卷一城
 - [astro-static-ssg](pages/astro-static-ssg.md) — category: decision | 采用 Astro（static output）承载九州志：页面以 SSG 产出静态资源，交互部分用 React islands。
