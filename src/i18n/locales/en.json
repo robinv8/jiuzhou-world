@@ -174,6 +174,7 @@
     "heroTitle": "Places",
     "heroSub": "A short biography for each place; practical notes kept at the end.",
     "intro": "Eight places are gathered in this volume, ordered as the water runs: from the roof of western Zhejiang down the streams to the lake, the village, the wharves of the old town. The approach is unusual: first what a place is and why it matters; only in the final line, when to go. Prices and routes change; mountains do not.",
+    "colophon": "At the wharf, the water has become the human world. The next chapter reads the goods that mountains and water raise.",
     "footnote": "Details shift with seasons and management decisions; check official notices before travelling.",
     "spots": {
       "tianmu": {
@@ -374,6 +375,8 @@
     "language": "Language",
     "menu": "Menu",
     "openVolume": "OPEN",
+    "nextChapter": "Next",
+    "backToOpening": "Back to the opening",
     "season": "Season",
     "note": "Note",
     "linanVolume": "Lin'an",

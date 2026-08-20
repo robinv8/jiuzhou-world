@@ -4,7 +4,8 @@ import { messages } from '@/i18n/t'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
 import ParallaxImage from '@/components/ParallaxImage'
-import Seal from '@/components/Seal'
+import ChapterClose from '@/components/ChapterClose'
+import { withLocale } from '@/lib/i18n-path'
 
 export default function Culture({ lang }: { lang: Lang }) {
     const { t, tList } = messages(lang)
@@ -73,16 +74,12 @@ export default function Culture({ lang }: { lang: Lang }) {
                 </div>
             ))}
 
-            <section className="bg-[#edeae0]">
-                <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
-                    <Reveal>
-                        <Seal char="物" />
-                        <p className="mt-8 font-display text-2xl md:text-3xl leading-relaxed">
-                            {t('culture.colophon')}
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <ChapterClose
+                seal="物"
+                colophon={t('culture.colophon')}
+                nextHref={withLocale('/linan/history', lang)}
+                nextLabel={`${t('ui.nextChapter')} · ${t('linan.volumes.history.title')}`}
+            />
         </main>
     )
 }

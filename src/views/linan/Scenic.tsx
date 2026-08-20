@@ -3,7 +3,8 @@ import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
-import Seal from '@/components/Seal'
+import ChapterClose from '@/components/ChapterClose'
+import { withLocale } from '@/lib/i18n-path'
 
 export default function Scenic({ lang }: { lang: Lang }) {
     const { t } = messages(lang)
@@ -64,16 +65,14 @@ export default function Scenic({ lang }: { lang: Lang }) {
                 </div>
             </section>
 
-            <section className="bg-[#1f2a26] text-[#f7f5ee]">
-                <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
-                    <Reveal>
-                        <Seal char="景" />
-                        <p className="mt-8 font-display text-xl md:text-2xl leading-relaxed text-[#f7f5ee]/85">
-                            {t('scenic.footnote')}
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <ChapterClose
+                seal="景"
+                tone="ink"
+                colophon={t('scenic.colophon')}
+                nextHref={withLocale('/linan/culture', lang)}
+                nextLabel={`${t('ui.nextChapter')} · ${t('linan.volumes.culture.title')}`}
+                footnote={t('scenic.footnote')}
+            />
         </main>
     )
 }

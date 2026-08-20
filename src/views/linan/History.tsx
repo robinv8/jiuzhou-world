@@ -3,7 +3,8 @@ import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import PageHero from '@/components/PageHero'
 import Reveal from '@/components/Reveal'
-import Seal from '@/components/Seal'
+import ChapterClose from '@/components/ChapterClose'
+import { withLocale } from '@/lib/i18n-path'
 
 export default function History({ lang }: { lang: Lang }) {
     const { t, tList } = messages(lang)
@@ -61,16 +62,13 @@ export default function History({ lang }: { lang: Lang }) {
                 </section>
             ))}
 
-            <section className="bg-[#1f2a26] text-[#f7f5ee]">
-                <div className="mx-auto max-w-3xl px-6 py-20 md:py-28 text-center">
-                    <Reveal>
-                        <Seal char="史" />
-                        <p className="mt-8 font-display text-2xl md:text-3xl leading-relaxed text-[#f7f5ee]/90">
-                            {t('history.colophon')}
-                        </p>
-                    </Reveal>
-                </div>
-            </section>
+            <ChapterClose
+                seal="史"
+                tone="ink"
+                colophon={t('history.colophon')}
+                nextHref={withLocale('/linan', lang)}
+                nextLabel={t('ui.backToOpening')}
+            />
         </main>
     )
 }
