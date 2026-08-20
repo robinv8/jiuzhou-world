@@ -120,7 +120,7 @@
       },
       "scenic": {
         "title": "Places",
-        "desc": "Eight places read downhill, from the roof of peaks to the wharves of the old town."
+        "desc": "Five places along the water: source, canyon, lake, village, old town."
       },
       "history": {
         "title": "History",
@@ -172,25 +172,11 @@
   "scenic": {
     "heroKicker": "Volume II",
     "heroTitle": "Places",
-    "heroSub": "A short biography for each place; practical notes kept at the end.",
-    "intro": "Eight places are gathered in this volume, ordered as the water runs: from the roof of western Zhejiang down the streams to the lake, the village, the wharves of the old town. The approach is unusual: first what a place is and why it matters; only in the final line, when to go. Prices and routes change; mountains do not.",
+    "heroSub": "From the source to the wharf: five short lives.",
+    "intro": "The three mountains are written in Mountains. This volume follows the water only: the Source of Taihu, Zhexi Grand Canyon, Qingshan Lake, Zhinan Village, Heqiao Old Town — a thread of water down to the wharves. First what a place is and why it matters; only in the final line, when to go. Prices and routes change; water does not.",
     "colophon": "At the wharf, the water has become the human world. The next chapter reads the goods that mountains and water raise.",
     "footnote": "Details shift with seasons and management decisions; check official notices before travelling.",
     "spots": {
-      "tianmu": {
-        "name": "Mount Tianmu",
-        "region": "Northwest Lin’an",
-        "essence": "A UNESCO Biosphere Reserve. The thousand-year-old King of Trees still stands, and the bell of Chanyuan Temple still sounds — the place behind the verse “a canopy of great trees, famed across the land.”",
-        "season": "All seasons; summer shade, autumn colour",
-        "note": "About 90 km from central Hangzhou; east and west scenic areas"
-      },
-      "daming": {
-        "name": "Mount Daming",
-        "region": "Western Lin’an",
-        "essence": "A thousand metres up, the mountain hides a plain on its summit: meadows, flower fields, and a plank walkway bolted to the granite cliff. Azaleas in spring, skiing in winter.",
-        "season": "Spring azaleas, summer cool, winter skiing",
-        "note": "Reachable by cable car or on foot"
-      },
       "qingshanhu": {
         "name": "Qingshan Lake",
         "region": "East of Lin’an town",
@@ -225,13 +211,6 @@
         "essence": "The Changnan stream bends here, and the bend made a river-born old town. The old street still keeps its wharf-town layout — shops in front, river behind, steps down to the boats. The water slows, and the days slow with it.",
         "season": "Most evocative at dawn and dusk in spring and autumn",
         "note": "Open freely; made for slow wandering"
-      },
-      "qingliang": {
-        "name": "Qingliang Peak",
-        "region": "Zhejiang–Anhui border",
-        "essence": "The highest peak in western Zhejiang, a national nature reserve. No cable cars — dirt paths and seas of cloud. One of the last large homes of wild sika deer in southeast China; the mountain’s height protects a life that asks not to be disturbed.",
-        "season": "Autumn climbs; best odds of cloud seas",
-        "note": "A full-day climb; entry managed as a reserve"
       }
     }
   },
@@ -345,7 +324,7 @@
     },
     "linan_scenic": {
       "title": "Places · Lin'an · Jiuzhou",
-      "description": "Eight places in Lin'an, read along the water: Qingliang Peak, Tianmu, Daming, Source of Taihu, Zhexi Canyon, Qingshan Lake, Zhinan, Heqiao."
+      "description": "Five places in Lin'an, read along the water: Source of Taihu, Zhexi Canyon, Qingshan Lake, Zhinan, Heqiao. The mountains are in Mountains."
     },
     "linan_history": {
       "title": "History · Lin'an · Jiuzhou",

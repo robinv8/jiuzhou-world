@@ -54,14 +54,11 @@ export const mountainEssays = [
 ]
 
 export const scenicSpots = [
-    { id: 'qingliang', no: '01', latin: 'Qingliang Peak', image: '/images/spot-qingliang.webp' },
-    { id: 'tianmu', no: '02', latin: 'Mount Tianmu', image: '/images/hero-tianmu.webp' },
-    { id: 'daming', no: '03', latin: 'Mount Daming', image: '/images/spot-daming.webp' },
-    { id: 'taihuyuan', no: '04', latin: 'Source of Taihu', image: '/images/spot-taihuyuan.webp' },
-    { id: 'canyon', no: '05', latin: 'Zhexi Grand Canyon', image: '/images/spot-canyon.webp' },
-    { id: 'qingshanhu', no: '06', latin: 'Qingshan Lake', image: '/images/hero-lake.webp' },
-    { id: 'zhinan', no: '07', latin: 'Zhinan Village', image: '/images/hero-village.webp' },
-    { id: 'heqiao', no: '08', latin: 'Heqiao Old Town', image: '/images/spot-heqiao.webp' },
+    { id: 'taihuyuan', no: '01', latin: 'Source of Taihu', image: '/images/spot-taihuyuan.webp' },
+    { id: 'canyon', no: '02', latin: 'Zhexi Grand Canyon', image: '/images/spot-canyon.webp' },
+    { id: 'qingshanhu', no: '03', latin: 'Qingshan Lake', image: '/images/hero-lake.webp' },
+    { id: 'zhinan', no: '04', latin: 'Zhinan Village', image: '/images/hero-village.webp' },
+    { id: 'heqiao', no: '05', latin: 'Heqiao Old Town', image: '/images/spot-heqiao.webp' },
 ]
 
 export const historyEntries = [
