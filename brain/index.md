@@ -1,7 +1,8 @@
 # Brain Index
 
-_Auto-generated. Last updated 2026-08-18T04:20:11.765Z._
+_Auto-generated. Last updated 2026-08-20T06:14:25.486Z._
 
+- [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目不加地域层：一卷一城
 - [astro-static-ssg](pages/astro-static-ssg.md) — category: decision | 采用 Astro（static output）承载九州志：页面以 SSG 产出静态资源，交互部分用 React islands。
 - [cloudflare-pages-ci](pages/cloudflare-pages-ci.md) — category: decision | 推送 main 触发构建：Node 22、npm install、astro build，再用 wrangler pages deploy 发布到项目 jiuzhou-world。
 - [i18n-locale-routing](pages/i18n-locale-routing.md) — category: decision | 站点默认语言是中文：无 URL 前缀，x-default 指向中文。
