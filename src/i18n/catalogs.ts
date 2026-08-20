@@ -56,7 +56,7 @@ export const mountainEssays = [
 export const scenicSpots = [
     { id: 'taihuyuan', no: '01', latin: 'Source of Taihu', image: '/images/spot-taihuyuan.webp' },
     { id: 'canyon', no: '02', latin: 'Zhexi Grand Canyon', image: '/images/spot-canyon.webp' },
-    { id: 'qingshanhu', no: '03', latin: 'Qingshan Lake', image: '/images/hero-lake.webp' },
+    { id: 'qingshanhu', no: '03', latin: 'Qingshan Lake', image: '/images/spot-qingshanhu.webp' },
     { id: 'zhinan', no: '04', latin: 'Zhinan Village', image: '/images/hero-village.webp' },
     { id: 'heqiao', no: '05', latin: 'Heqiao Old Town', image: '/images/spot-heqiao.webp' },
 ]
