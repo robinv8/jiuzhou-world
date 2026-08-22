@@ -1,0 +1,12 @@
+---
+import PageShell from '@/layouts/PageShell.astro'
+import VolumeHome from '@/views/VolumeHome'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/hangzhou/jiande')
+const lang = 'zh' as const
+---
+
+<PageShell seo={seo} lang={lang}>
+    <VolumeHome lang={lang} volume="jiande" />
+</PageShell>

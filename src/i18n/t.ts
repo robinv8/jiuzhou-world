@@ -1,5 +1,6 @@
 import { DEFAULT_LANG, type Lang } from '@/i18n/config'
 import zh from '@/i18n/locales/zh.json'
+import zhHant from '@/i18n/locales/zh-hant.json'
 import en from '@/i18n/locales/en.json'
 import ja from '@/i18n/locales/ja.json'
 import ko from '@/i18n/locales/ko.json'
@@ -8,6 +9,7 @@ type MessageNode = string | string[] | { [key: string]: MessageNode }
 
 const catalogs: Record<Lang, MessageNode> = {
     zh: zh as MessageNode,
+    'zh-hant': zhHant as MessageNode,
     en: en as MessageNode,
     ja: ja as MessageNode,
     ko: ko as MessageNode,

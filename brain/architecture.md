@@ -1,13 +1,15 @@
 ---
 slug: architecture
-kind: root-page
-title: Architecture
-updated: "2026-08-16T14:07:19"
+title: System architecture
+role: system architecture
+updated: "2026-08-22T16:22:59"
 ---
 
-# Architecture
+# System architecture
 
 九州志是一个 **Astro 5 static output** 站点。页面在构建期生成静态 HTML；正文视图以 React 组件表达，但不在客户端整页水合。客户端运行时主要集中在 `SiteHeader`：滚动隐藏、移动菜单与语言切换。
+
+内容层级与读法见 [[anthology-spine]]，不在本页展开。
 
 ```mermaid
 graph TD
@@ -16,7 +18,7 @@ graph TD
   Shell --> Header["SiteHeader.tsx\nclient:load island"]
   Shell --> Views["src/views/*.tsx\n构建期渲染正文"]
   Shell --> Footer["SiteFooter.tsx\n静态页脚"]
-  Views --> Catalogs["src/i18n/catalogs.ts\n非翻译结构"]
+  Views --> Catalogs["src/i18n/catalogs.ts\n省 / 市卷 / 下辖卷"]
   Views --> Messages["src/i18n/locales/*.json\n四语言正文"]
   Messages --> T["t() / tList() / messages()"]
   Layout --> SEO["src/lib/seo.ts\ncanonical / hreflang / JSON-LD / OG"]
@@ -28,38 +30,48 @@ graph TD
 
 ### 路由层：`src/pages/`
 
-- 中文默认无前缀：`/`、`/about`、`/contribute`、`/linan/*`。
-- 非默认语言走平行路由树：`/[locale]/...`，由 `localeStaticPaths()` 生成 `en / ja / ko`。
-- 每个页面只做三件事：取 `seo`、锁定 `lang`、把对应 view 放进 `PageShell`。
+中文默认无前缀。非默认语言走平行树 `/[locale]/...`（`en / ja / ko`）。
+
+- 全站：`/`、`/about`、`/contribute`
+- 省：`/zhejiang`（导航，无正文）
+- 市卷：`/hangzhou`、`/hangzhou/{mountains,scenic,culture,history}`
+- 下辖卷：`/hangzhou/linan`、`/hangzhou/linan/{mountains,scenic,culture,history,contribute}`
+- 旧 `/linan/*` 301 到 `/hangzhou/linan/*`
+- 杭州供图 `/hangzhou/contribute` 已定、尚未做页，见 [[photo-contribute]]
+
+每个页面只做三件事：取 `seo`、锁定 `lang`、把对应 view 放进 `PageShell`。
 
 ### 布局层：`src/layouts/`
 
-- `BaseLayout.astro`：加载全局 CSS、字体、SEO meta、canonical、hreflang、JSON-LD、Google Analytics。
-- `PageShell.astro`：组合 `SiteHeader client:load`、正文 slot、`SiteFooter`，并根据当前路径生成 header copy。
+- `BaseLayout.astro`：全局 CSS、字体、SEO meta、canonical、hreflang、JSON-LD、Google Analytics。
+- `PageShell.astro`：`SiteHeader client:load`、正文 slot、`SiteFooter`，按路径生成 header copy。
 
 ### 视图层：`src/views/`
 
-- `Home.tsx`、`About.tsx`、`ContributeHub.tsx`、`ContributePlace.tsx` 是全站级页面主体。
-- `src/views/linan/*` 是临安卷章节：`LinanHome`、`Mountains`、`Scenic`、`History`、`Culture`。
-- 视图组件通过 `messages(lang)` 取文案，通过 `withLocale()` 生成语言正确的链接。
+- 全站：`Home`、`About`、`ContributeHub`、`ContributePlace`
+- 省：`ProvinceHome`
+- 卷：`VolumeHome`（杭州 / 临安共用）
+- 章：`Mountains`、`Scenic`、`History`、`Culture`（按 `volume` 取 catalog + 文案）
+
+内部章 key 仍是 `mountains / scenic / culture / history`；中文标签为山川 / 景 / 物 / 史，见 [[chapter-skeleton]]。
 
 ### 组件层：`src/components/`
 
-- `SiteHeader.tsx` 是唯一明确水合的交互岛：滚动状态、隐藏状态、移动菜单、语言下拉。
-- `Reveal`、`ParallaxImage`、`PageHero`、`MiniTitle`、`Seal`、`SiteFooter` 等用于静态展示与视觉结构。
+- `SiteHeader.tsx` 是唯一明确水合的交互岛。
+- `Reveal`、`ParallaxImage`、`PageHero`、`MiniTitle`、`Seal`、`SiteFooter` 等用于静态展示。
 
 ### 内容与 i18n：`src/i18n/`
 
-- `config.ts` 定义 `LOCALES = zh/en/ja/ko`、默认语言 `zh`、字体与 hreflang 元信息。
-- `catalogs.ts` 保存不翻译的结构：卷、章节、景点、图片、供图城市、SEO 页面清单。
-- `locales/*.json` 保存四语言正文；中文是 canonical key tree。
-- `t.ts` 当前语言优先，缺失或空值回退中文。
+- `config.ts`：`LOCALES = zh/en/ja/ko`，默认 `zh`。
+- `catalogs.ts`：省、市卷、下辖卷、章节、条目、供图、SEO 清单。不翻译。
+- `locales/*.json`：四语言正文；中文是 canonical key tree。
+- `t.ts`：当前语言优先，空值回退中文。
 
-### SEO 与路径工具：`src/lib/`
+### SEO 与路径：`src/lib/`
 
-- `i18n-path.ts` 负责去除 / 添加语言前缀、语言检测、静态语言路径。
-- `seo.ts` 负责 canonical、hreflang、OG、Twitter card、JSON-LD，以及临安页面的 `Place` 结构化数据。
-- `header-copy.ts` 为 Header 提供当前语言、当前路径与双语小字。
+- `i18n-path.ts`：去 / 加语言前缀。
+- `seo.ts`：canonical、hreflang、OG、JSON-LD。
+- `header-copy.ts`：当前语言、路径、双语小字。
 
 ## 部署边界
 

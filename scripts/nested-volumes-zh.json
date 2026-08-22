@@ -1,0 +1,9 @@
+{
+  "district": {
+    "fuyang": { "title": "富阳", "desc": "中游叫富春。两山夹一江。" },
+    "tonglu": { "title": "桐庐", "desc": "严陵。两江在此相会。" },
+    "jiande": { "title": "建德", "desc": "三江口在梅城。坝在建德。" },
+    "chunan": { "title": "淳安", "desc": "江成库，城在水下。" },
+    "xiaoshan": { "title": "萧山", "desc": "自己的水叫浦阳。" }
+  }
+}

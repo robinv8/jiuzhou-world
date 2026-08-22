@@ -1,0 +1,12 @@
+---
+import PageShell from '@/layouts/PageShell.astro'
+import Mountains from '@/views/Mountains'
+import { getPageSeo } from '@/lib/seo'
+
+const seo = getPageSeo('/hangzhou/mountains')
+const lang = 'zh' as const
+---
+
+<PageShell seo={seo} lang={lang}>
+    <Mountains lang={lang} volume="hangzhou" />
+</PageShell>

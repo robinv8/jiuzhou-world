@@ -1,15 +1,15 @@
 ---
 slug: flow
-kind: root-page
-title: Key Flows
-updated: "2026-08-16T14:07:19"
+title: Key flows
+role: key flows
+updated: "2026-08-22T16:22:59"
 ---
 
-# Key Flows
+# Key flows
 
 ## 1. 读者打开一个多语言章节页
 
-典型例子：读者访问 `/en/linan/history`。
+典型例子：读者访问 `/en/hangzhou/history`。
 
 ```mermaid
 sequenceDiagram
@@ -17,7 +17,7 @@ sequenceDiagram
   participant CDN as Cloudflare Pages
   participant HTML as Static HTML
   participant H as SiteHeader island
-  U->>CDN: GET /en/linan/history
+  U->>CDN: GET /en/hangzhou/history
   CDN-->>U: Astro 构建好的 HTML / CSS / assets
   HTML->>H: client:load 只水合顶栏
   H-->>U: 滚动隐藏 / 菜单 / 语言切换
@@ -27,7 +27,8 @@ sequenceDiagram
 
 - 正文由 Astro 在构建期渲染，不依赖客户端 React 才能阅读。
 - `BaseLayout` 在 HTML head 写入 canonical、hreflang、OG、JSON-LD 与字体。
-- `SiteHeader` 是主要客户端交互层；正文 reveal、Ken Burns、hover zoom 等主要由 CSS 完成。
+- `SiteHeader` 是主要客户端交互层；正文动效主要由 CSS 完成。
+- 下辖卷路径是 `/hangzhou/linan/...`；旧 `/linan/...` 301 过来。
 
 ## 2. 页面生成流程
 
@@ -38,8 +39,8 @@ flowchart TD
   Lang --> Shell["PageShell"]
   SEO --> Shell
   Shell --> HeaderCopy["headerCopy(lang, path)"]
-  Shell --> View["Home / Linan / Chapter / Contribute view"]
-  View --> Catalogs["catalogs.ts 结构"]
+  Shell --> View["Home / Province / Volume / Chapter / Contribute"]
+  View --> Catalogs["catalogs.ts 省市区与卷"]
   View --> Locale["messages(lang)"]
   Locale --> JSON["locales/*.json"]
   Shell --> Layout["BaseLayout SEO 输出"]
@@ -60,23 +61,40 @@ flowchart LR
 - `en / ja / ko` 加语言前缀。
 - `hreflang` 包含 `zh-CN / en / ja / ko / x-default`，其中 `x-default` 指向中文。
 
-## 4. 供图流程
+## 4. 下行阅读
+
+```mermaid
+flowchart TD
+  Home["首页 / 只列市卷"] --> HZ["杭州卷一 /hangzhou"]
+  Home -.-> ZJ["省页 /zhejiang 导航"]
+  ZJ --> HZ
+  HZ --> Ch["山川 / 景 / 物 / 史"]
+  HZ --> LA["临安下辖 /hangzhou/linan"]
+  LA --> ChL["临安四章"]
+```
+
+古州身份：省页 kicker「古扬州之南」；首页市卷卡小字「古扬州之地」。卷首 kicker 只写今制。见 [[root-pulse-mountains-rivers]]。
+
+## 5. 供图流程
 
 ```mermaid
 sequenceDiagram
   participant R as Reader
   participant Hub as /contribute
-  participant Place as /linan/contribute
+  participant HZ as /hangzhou/contribute
+  participant LA as /hangzhou/linan/contribute
   participant Mail as hello@jiuzhou.world
-  R->>Hub: 查看当前开放中的卷
-  Hub->>Place: 进入临安卷供图规则
-  Place-->>R: why / what / how / license
+  R->>Hub: 查看开放中的卷
+  Hub->>HZ: 杭州：湖与城（正文落地时做页）
+  Hub->>LA: 临安：山与水（已上线）
+  HZ-->>R: why / what / how / license
+  LA-->>R: why / what / how / license
   R->>Mail: mailto，subject 带卷名
 ```
 
-产品约束：供图按“一卷一城”拆分标准。全站总入口只列出开放卷；每一卷自己的 `/{city}/contribute` 才写完整规则。
+见 [[photo-contribute]]。
 
-## 5. 构建与发布流程
+## 6. 构建与发布流程
 
 ```mermaid
 sequenceDiagram

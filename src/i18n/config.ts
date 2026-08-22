@@ -1,5 +1,5 @@
 /** Supported UI / route locales. Add a code here when opening a new language. */
-export const LOCALES = ['zh', 'en', 'ja', 'ko'] as const
+export const LOCALES = ['zh', 'zh-hant', 'en', 'ja', 'ko'] as const
 export type Lang = (typeof LOCALES)[number]
 
 /** Default site language (no URL prefix). */
@@ -18,13 +18,22 @@ export const LANG_META: Record<
     }
 > = {
     zh: {
-        label: '中文',
-        short: '中',
+        label: '简体中文',
+        short: '简',
         hreflang: 'zh-CN',
         htmlLang: 'zh-CN',
         ogLocale: 'zh_CN',
         fontHref:
             'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap',
+    },
+    'zh-hant': {
+        label: '繁體中文',
+        short: '繁',
+        hreflang: 'zh-Hant',
+        htmlLang: 'zh-Hant',
+        ogLocale: 'zh_TW',
+        fontHref:
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+TC:wght@400;600;700&display=swap',
     },
     en: {
         label: 'English',
@@ -68,5 +77,5 @@ export function isLang(value: string): value is Lang {
  * Chinese is the default gloss; Chinese pages gloss in English.
  */
 export function counterpartLang(lang: Lang): Lang {
-    return lang === 'zh' ? 'en' : 'zh'
+    return lang === 'zh' || lang === 'zh-hant' ? 'en' : 'zh'
 }

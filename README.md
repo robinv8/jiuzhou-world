@@ -48,7 +48,7 @@ src/
     ├── config.ts       # LOCALES、LANG_META（标签 / hreflang / 字体）
     ├── catalogs.ts     # 不翻译的结构：卷目、景点、图片、供图地点
     ├── t.ts            # 取文案 + 回退逻辑
-    └── locales/        # zh / en / ja / ko 四份 JSON
+    └── locales/        # zh / zh-hant / en / ja / ko
 scripts/
 ├── check-locales.mjs   # locale key 对齐校验
 └── sync-locales.mjs    # locale 同步辅助
@@ -58,18 +58,19 @@ scripts/
 
 | 代码 | URL | 说明 |
 |------|-----|------|
-| `zh` | `/…`（默认无前缀） | 底本语言，`x-default` 指向它 |
+| `zh` | `/…`（默认无前缀） | 简体中文底本，`x-default` 指向它 |
+| `zh-hant` | `/zh-hant/…` | 繁體中文（字形轉換，不是台灣用詞） |
 | `en` | `/en/…` | 全文 |
 | `ja` | `/ja/…` | 全文 |
 | `ko` | `/ko/…` | 全文 |
 
 规则：
 
-- 四份 locale 必须覆盖同一套 key；缺 key 回退到中文（不再先走英文）。
-- 文案是**改写**，不是逐句对译：同一事实与语气，在各语言里独立成篇。
+- 各 locale 必须覆盖同一套 key；缺 key 回退到简体中文（不再先走英文）。
+- 文案是**改写**，不是逐句对译：同一事实与语气，在各语言里独立成篇。繁體由简体底本做字形轉換（地鐵不改成捷運）。
 - 印章字、卷次编号、拉丁学名不进语言文件，写在 `catalogs.ts`。
-- 刊头双语小字：中文页配英文，其余语言页配中文。
-- 字体按 `html[lang]` 加载 Noto Serif SC / JP / KR；日韩页额外加载 SC（供中文小字）。
+- 刊头双语小字：简体 / 繁體页配英文，其余语言页配简体中文。
+- 字体按 `html[lang]` 加载 Noto Serif SC / TC / JP / KR；日韩页额外加载 SC（供中文小字）。
 - 新增语言：复制 `en.json` 改写为该语言全文，加入 `config.ts` 的 `LOCALES` 与 `LANG_META`。
 
 ## 供图

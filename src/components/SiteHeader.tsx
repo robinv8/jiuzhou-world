@@ -8,7 +8,7 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
     const [open, setOpen] = useState(false)
     const [langOpen, setLangOpen] = useState(false)
 
-    const { inLinan, basePath, glossLang, hrefs, nav, locales } = copy
+    const { inVolume, basePath, glossLang, hrefs, nav, locales, volumeTitle } = copy
     const active = (p: string) => basePath === p
 
     useEffect(() => {
@@ -63,25 +63,25 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                             {copy.nameGloss}
                         </span>
                     </a>
-                    {inLinan && (
+                    {inVolume && (
                         <>
                             <span className={onDark ? 'text-[#f7f5ee]/40' : 'text-[#1f2a26]/30'}>/</span>
                             <a
-                                href={hrefs.linan}
+                                href={hrefs.volume}
                                 className={`font-display text-base tracking-[0.15em] transition-colors ${
                                     onDark
                                         ? 'text-[#f7f5ee]/85 hover:text-[#f7f5ee]'
                                         : 'text-[#1f2a26]/70 hover:text-[#1f2a26]'
                                 }`}
                             >
-                                {copy.linanVolume}
+                                {volumeTitle}
                             </a>
                         </>
                     )}
                 </div>
 
                 <nav className="hidden md:flex items-center gap-8">
-                    {inLinan &&
+                    {inVolume &&
                         nav.map((l) => {
                             const isActive = active(l.base)
                             return (
@@ -102,7 +102,7 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                                 </a>
                             )
                         })}
-                    {!inLinan && (
+                    {!inVolume && (
                         <>
                             <a href={hrefs.about}>
                                 <span
@@ -183,11 +183,13 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                             {copy.homeGloss}
                         </span>
                     </a>
-                    <a href={hrefs.linan} className="flex items-baseline gap-3 text-[#1f2a26]">
-                        <span className="font-display text-lg">{copy.linanVolume}</span>
-                        <span className="micro-label text-[#5a665e]">{copy.volumeI}</span>
-                    </a>
-                    {inLinan &&
+                    {inVolume && (
+                        <a href={hrefs.volume} className="flex items-baseline gap-3 text-[#1f2a26]">
+                            <span className="font-display text-lg">{volumeTitle}</span>
+                            <span className="micro-label text-[#5a665e]">{copy.volumeLatin}</span>
+                        </a>
+                    )}
+                    {inVolume &&
                         nav.map((l) => (
                             <a key={l.base} href={l.href} className="flex items-baseline gap-3 pl-4 text-[#1f2a26]">
                                 <span className="font-display text-base">{l.label}</span>

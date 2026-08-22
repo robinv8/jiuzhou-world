@@ -1,0 +1,18 @@
+---
+import PageShell from '@/layouts/PageShell.astro'
+import ContributePlace from '@/views/ContributePlace'
+import { getPageSeo } from '@/lib/seo'
+import { localeStaticPaths } from '@/lib/i18n-path'
+import { type Lang } from '@/i18n/config'
+
+export function getStaticPaths() {
+    return localeStaticPaths()
+}
+
+const lang = Astro.params.locale as Lang
+const seo = getPageSeo('/hangzhou/linan/contribute')
+---
+
+<PageShell seo={seo} lang={lang}>
+    <ContributePlace lang={lang} place="linan" />
+</PageShell>

@@ -1,4 +1,4 @@
-import { linanNav, VOLUME_I_LATIN } from '@/i18n/catalogs'
+import { provinces, volumeForPath, volumeNav, VOLUME_I_LATIN } from '@/i18n/catalogs'
 import { LANG_META, LOCALES, counterpartLang, type Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import { stripLocale, switchLocalePath, withLocale } from '@/lib/i18n-path'
@@ -8,15 +8,28 @@ export function headerCopy(lang: Lang, path: string) {
     const gloss = counterpartLang(lang)
     const basePath = stripLocale(path)
 
+    const currentVolume = volumeForPath(basePath)
+    const inVolume = Boolean(currentVolume)
+    const volumeTitle = currentVolume ? t(`${currentVolume.key}.volumeTitle`) : ''
+    const volumeLatin = currentVolume ? currentVolume.latin : VOLUME_I_LATIN
+    const nav = currentVolume ? volumeNav(currentVolume.key) : []
+
+    const currentProvince = provinces.find((p) => basePath === p.route || basePath.startsWith(`${p.route}/`))
+    const inProvince = Boolean(currentProvince) && !inVolume
+
     return {
         lang,
         basePath,
-        inLinan: basePath === '/linan' || basePath.startsWith('/linan/'),
+        inVolume,
+        inProvince,
+        volumeKey: currentVolume?.key ?? '',
+        volumeTitle,
+        volumeLatin,
+        provinceKey: currentProvince?.key ?? '',
+        provinceTitle: currentProvince ? t(`province.${currentProvince.key}.title`) : '',
         glossLang: LANG_META[gloss].htmlLang,
-        volumeI: VOLUME_I_LATIN,
         name: t('anthology.name'),
         nameGloss: t('anthology.name', gloss),
-        linanVolume: t('ui.linanVolume'),
         about: t('anthology.about'),
         aboutGloss: t('anthology.about', gloss),
         contribute: t('anthology.contribute'),
@@ -26,12 +39,12 @@ export function headerCopy(lang: Lang, path: string) {
         menu: t('ui.menu'),
         hrefs: {
             home: withLocale('/', lang),
-            linan: withLocale('/linan', lang),
+            volume: currentVolume ? withLocale(currentVolume.route, lang) : withLocale('/', lang),
+            province: currentProvince ? withLocale(currentProvince.route, lang) : withLocale('/', lang),
             about: withLocale('/about', lang),
-            // Hub lists every open volume; each volume has its own 收什么.
             contribute: withLocale('/contribute', lang),
         },
-        nav: linanNav.map((l) => ({
+        nav: nav.map((l) => ({
             base: l.base,
             href: withLocale(l.base, lang),
             label: t(l.key),

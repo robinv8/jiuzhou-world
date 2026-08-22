@@ -1,4 +1,4 @@
-import { ANTHOLOGY_DOMAIN, VOLUME_I_LATIN, linanNav } from '@/i18n/catalogs'
+import { ANTHOLOGY_DOMAIN, anthologyVolumes, provinces, volumeNav } from '@/i18n/catalogs'
 import { LANG_META, counterpartLang, type Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import { withLocale } from '@/lib/i18n-path'
@@ -25,23 +25,43 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
                         <p className="mt-6 text-sm leading-7 text-[#f7f5ee]/70">{t('footer.colophon')}</p>
                     </div>
                     <nav className="grid grid-cols-2 gap-x-16 gap-y-4">
-                        <a href={href('/linan')} className="group col-span-2">
-                            <span className="micro-label text-[#b0c6b3]/70 block">{VOLUME_I_LATIN}</span>
-                            <span className="font-display text-lg tracking-[0.2em] text-[#f7f5ee]/90 group-hover:text-[#b0c6b3] transition-colors">
-                                {t('ui.linanVolume')}
-                            </span>
-                        </a>
-                        {linanNav.map((l) => (
-                            <a key={l.base} href={href(l.base)} className="group pl-0">
-                                <span className="micro-label text-[#b0c6b3]/50 block" lang={glossLang}>
-                                    {t(l.key, gloss)}
-                                </span>
-                                <span className="font-display text-base tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
-                                    {t(l.key)}
-                                </span>
-                            </a>
+                        {provinces.map((prov) => (
+                            <div key={prov.key} className="col-span-2">
+                                <a href={href(prov.route)} className="group">
+                                    <span className="micro-label text-[#b0c6b3]/70 block">{prov.latin}</span>
+                                    <span className="font-display text-lg tracking-[0.2em] text-[#f7f5ee]/90 group-hover:text-[#b0c6b3] transition-colors">
+                                        {t(`province.${prov.key}.title`)}
+                                    </span>
+                                </a>
+                                <div className="mt-3 grid grid-cols-2 gap-x-8 gap-y-2">
+                                    {prov.cities.map((city) => (
+                                        <div key={city.key}>
+                                            <a href={href(city.route)} className="group">
+                                                <span className="micro-label text-[#b0c6b3]/50 block" lang={glossLang}>
+                                                    {city.latin}
+                                                </span>
+                                                <span className="font-display text-sm tracking-[0.2em] text-[#f7f5ee]/70 group-hover:text-[#b0c6b3] transition-colors">
+                                                    {t(`city.${city.key}.title`)}
+                                                </span>
+                                            </a>
+                                            <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1">
+                                                {city.districts.map((district) => (
+                                                    <a key={district.key} href={href(district.route)} className="group pl-0">
+                                                        <span className="micro-label text-[#b0c6b3]/40 block" lang={glossLang}>
+                                                            {district.latin}
+                                                        </span>
+                                                        <span className="font-display text-xs tracking-[0.2em] text-[#f7f5ee]/50 group-hover:text-[#b0c6b3] transition-colors">
+                                                            {t(`district.${district.key}.title`)}
+                                                        </span>
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         ))}
-                        <a href={href('/about')} className="group col-span-2 mt-2">
+                        <a href={href('/about')} className="group col-span-2 mt-4">
                             <span className="micro-label text-[#b0c6b3]/70 block" lang={glossLang}>
                                 {t('anthology.about', gloss)}
                             </span>

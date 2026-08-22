@@ -14,33 +14,53 @@ export default function Home({ lang }: { lang: Lang }) {
 
     return (
         <main>
-            <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#1f2a26]">
+            <section className="relative h-screen min-h-[640px] overflow-hidden bg-[#101613]">
                 <img
-                    src="/images/hero-lake.webp"
-                    alt={t('ui.alt.lakeHills')}
+                    src="/images/hero-jiuzhou.webp"
+                    alt={t('ui.alt.thousandLi')}
                     className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div
-                    className="absolute inset-0 bg-linear-to-t from-[#1f2a26]/85 via-[#1f2a26]/30 to-[#1f2a26]/30"
+                    className="absolute inset-0 bg-linear-to-t from-[#101613]/85 via-[#101613]/15 to-[#101613]/40"
                     aria-hidden
                 />
                 <div className="absolute right-6 md:right-14 top-1/2 -translate-y-1/2 hidden md:block">
-                    <p className="vertical-rl font-display text-[#f7f5ee]/60 tracking-[0.5em] text-sm">
+                    <p className="vertical-rl font-display text-[#f7f5ee]/75 tracking-[0.6em] text-base">
                         {t('ui.nineLands')}
                     </p>
                 </div>
-                <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-24 md:pb-28">
+                <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-16 md:pb-20">
                     <Reveal>
-                        <p className="micro-label text-[#b0c6b3]">{ANTHOLOGY_DOMAIN}</p>
+                        <p className="micro-label text-[#d8e2d4]">{ANTHOLOGY_DOMAIN}</p>
                     </Reveal>
                     <Reveal delay={150}>
-                        <h1 className="mt-5 font-display font-semibold text-[#f7f5ee] leading-none tracking-wide text-7xl md:text-9xl">
-                            {t('anthology.name')}
-                        </h1>
+                        <div className="mt-6 flex items-start gap-4 md:gap-8">
+                            <h1 className="font-display font-semibold text-[#f7f5ee] leading-[0.95] tracking-[0.1em] text-[26vw] md:text-[13rem]">
+                                {t('anthology.name')}
+                            </h1>
+                            <span
+                                aria-hidden
+                                className="seal-stamp mt-[3vw] md:mt-10 inline-flex h-11 w-11 md:h-16 md:w-16 shrink-0 items-center justify-center font-display text-2xl md:text-4xl leading-none select-none rounded-[3px] -rotate-3"
+                            >
+                                志
+                            </span>
+                        </div>
                     </Reveal>
-                    <Reveal delay={300}>
-                        <p className="mt-6 max-w-xl font-display text-lg md:text-2xl text-[#f7f5ee]/85 leading-relaxed">
+                    <Reveal delay={320}>
+                        <p className="mt-7 whitespace-nowrap font-display text-[11px] md:text-lg tracking-[0.28em] md:tracking-[0.5em] text-[#f7f5ee]/65">
+                            {lang === 'en'
+                                ? t('ui.nineLands')
+                                : [...t('ui.nineLands')].join(' · ')}
+                        </p>
+                    </Reveal>
+                    <Reveal delay={450}>
+                        <p className="mt-7 max-w-xl font-display text-lg md:text-2xl text-[#f7f5ee]/90 leading-relaxed">
                             {t('anthology.heroKicker')}
+                        </p>
+                    </Reveal>
+                    <Reveal delay={560}>
+                        <p className="mt-12 text-[11px] tracking-[0.18em] text-[#f7f5ee]/45">
+                            {t('ui.caption.thousandLi')}
                         </p>
                     </Reveal>
                 </div>
@@ -86,7 +106,7 @@ export default function Home({ lang }: { lang: Lang }) {
                 </Reveal>
 
                 <div className="mt-16 flex flex-col">
-                    {anthologyVolumes.map((v) => (
+                    {anthologyVolumes.filter((v) => !v.parent).map((v) => (
                         <Reveal key={v.key}>
                             <a
                                 href={href(v.route)}
@@ -109,6 +129,11 @@ export default function Home({ lang }: { lang: Lang }) {
                                     <p className="mt-2 text-xs tracking-[0.2em] text-[#8b958d]">
                                         {t(`anthology.volumes.${v.key}.place`)}
                                     </p>
+                                    {v.zhou && (
+                                        <p className="mt-1 text-xs tracking-[0.2em] text-[#8ca693]">
+                                            {t(`anthology.volumes.${v.key}.identity`)}
+                                        </p>
+                                    )}
                                     <p className="mt-4 max-w-md text-[#5a665e] leading-7">
                                         {t(`anthology.volumes.${v.key}.desc`)}
                                     </p>

@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [imagery, ai-generation, photo-pipeline]
 created: "2026-08-18T11:09:44"
-updated: "2026-08-20T16:01:40"
+updated: "2026-08-22T20:21:34"
 ---
 
 <!-- compiled_truth -->
@@ -64,3 +64,15 @@ updated: "2026-08-20T16:01:40"
   summary: "确认最终视觉标准：真实地方最好的一刻"
   source: "青山湖 v3-v5 对比"
   affects: [imagery-ai-first]
+
+- time: 2026-08-22T15:23:11
+  kind: decision
+  summary: "首页 hero 例外：改用公有领域古画——王希孟《千里江山图》（1113，故宫博物院藏）局部，青绿山水直接承载「华夏九州」意象；此为例外而非推翻 AI 重画策略，地方场景图仍按原策略。图源 Wikimedia Commons 全卷 39974×1600，cwebp 裁 2844×1600（x=13200 段）存为 hero-jiuzhou.webp"
+  source: "当前聊天"
+  affects: [imagery-ai-first]
+
+- time: 2026-08-22T20:21:34
+  kind: decision
+  summary: "富阳 hero 按青山湖流程入库：Wikimedia 实景作地理底（两山夹一江、沙洲分汊、渔船），AI 重画不搬原片；用户确认 sandbar-v4 → public/images/hero-fuyang.webp（16:9）与 fuyang-fuchun.webp（3:2）。"
+  source: "当前聊天"
+  affects: [fuyang-gazetteer]

@@ -1,6 +1,6 @@
 /**
  * zh.json is the canonical key tree.
- * en / ja / ko must have the same keys (full translation).
+ * en / ja / ko / zh-hant must have the same keys (full translation).
  * Extra keys (not in zh) are always an error.
  */
 import { readFileSync } from 'node:fs'
@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', 'src', 'i18n', 'locales')
-const FULL = ['en', 'ja', 'ko']
+const FULL = ['en', 'ja', 'ko', 'zh-hant']
 
 function paths(node, prefix = '') {
     if (typeof node === 'string' || Array.isArray(node)) return [prefix]

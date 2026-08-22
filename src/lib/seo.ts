@@ -1,5 +1,5 @@
 import { DEFAULT_LANG, LANG_META, LOCALES, counterpartLang, type Lang } from '@/i18n/config'
-import { seoPages, type SeoPageType } from '@/i18n/catalogs'
+import { seoPages, volumeForPath, type SeoPageType } from '@/i18n/catalogs'
 import { t } from '@/i18n/t'
 import { withLocale } from '@/lib/i18n-path'
 
@@ -106,13 +106,15 @@ export function buildJsonLd(seo: PageSeo, lang: Lang): Record<string, unknown>[]
         publisher,
     }
 
-    if (seo.path.startsWith('/linan')) {
+    const volumeKey = volumeForPath(seo.path)?.key ?? null
+
+    if (volumeKey) {
         webPage.about = {
             '@type': 'Place',
-            name: t('seo.place.linan', lang),
+            name: t(`seo.place.${volumeKey}`, lang),
             address: {
                 '@type': 'PostalAddress',
-                addressLocality: t('seo.place.linan', lang),
+                addressLocality: t(`seo.place.${volumeKey}`, lang),
                 addressRegion: t('seo.place.zhejiang', lang),
                 addressCountry: 'CN',
             },
