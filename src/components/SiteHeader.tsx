@@ -28,7 +28,7 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
         setLangOpen(false)
     }, [copy.basePath])
 
-    const onDark = !scrolled
+    const onDark = copy.photoHero && !scrolled
 
     const langButtonClass = onDark
         ? 'border-[#f7f5ee]/40 text-[#f7f5ee] hover:bg-[#f7f5ee] hover:text-[#1f2a26]'
@@ -38,7 +38,11 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
         <header
             className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
                 hidden ? '-translate-y-full' : 'translate-y-0'
-            } ${scrolled ? 'bg-[#f7f5ee]/92 backdrop-blur-xs border-b hairline' : 'bg-transparent'}`}
+            } ${
+                onDark
+                    ? 'bg-linear-to-b from-[#1f2a26]/55 via-[#1f2a26]/20 to-transparent'
+                    : 'bg-[#f7f5ee]/92 backdrop-blur-xs border-b hairline'
+            }`}
         >
             <div
                 className={`mx-auto flex max-w-7xl items-center justify-between px-6 md:px-16 transition-all duration-500 ${

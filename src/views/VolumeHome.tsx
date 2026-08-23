@@ -1,5 +1,13 @@
 import { ArrowRight } from 'lucide-react'
-import { anthologyVolumes, getVolume, getVolumeContent } from '@/i18n/catalogs'
+import {
+    anthologyVolumes,
+    chapterCoverRef,
+    getVolume,
+    getVolumeContent,
+    placeCaptionKey,
+    volumeKernel,
+    volumeParallaxRef,
+} from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
@@ -8,41 +16,30 @@ import ParallaxImage from '@/components/ParallaxImage'
 import Seal from '@/components/Seal'
 import { withLocale } from '@/lib/i18n-path'
 
-const heroImages: Record<string, string[]> = {
-    linan: ['/images/hero-tianmu.webp', '/images/hero-lake.webp', '/images/hero-village.webp'],
-    hangzhou: ['/images/hero-hangzhou.webp', '/images/hangzhou-westlake.webp', '/images/hangzhou-hills.webp'],
-    fuyang: ['/images/hero-fuyang.webp', '/images/hero-fuyang.webp', '/images/hero-fuyang.webp'],
-}
-
-const parallaxImages: Record<string, { src: string; altKey: string; captionKey: string }> = {
-    linan: { src: '/images/spot-qingliang.webp', altKey: 'ui.alt.qingliangClouds', captionKey: 'ui.caption.qingliangClouds' },
-    hangzhou: { src: '/images/hangzhou-hills.webp', altKey: 'ui.alt.hangzhouHills', captionKey: 'ui.caption.hangzhouHills' },
-    fuyang: { src: '/images/fuyang-fuchun.webp', altKey: 'ui.alt.fuchunSandbar', captionKey: 'ui.caption.fuchunSandbar' },
-}
-
 export default function VolumeHome({ lang, volume }: { lang: Lang; volume: string }) {
     const { t, tList } = messages(lang)
     const href = (p: string) => withLocale(p, lang)
     const vol = getVolume(volume)
     const content = getVolumeContent(volume)
-    const heroes = heroImages[volume] ?? heroImages.linan
-    const parallax = parallaxImages[volume] ?? parallaxImages.linan
 
     if (!vol || !content) return null
 
+    const kernel = volumeKernel(volume)
+    const heroSrc = kernel?.image ?? vol.image
+    const heroSlot = kernel?.slotId
+    const parallax = volumeParallaxRef(volume)
+
     const parentVol = vol.parent ? getVolume(vol.parent) : null
-    const subVolumes = anthologyVolumes.filter((v) => v.parent === volume)
+    const subVolumes = anthologyVolumes.filter((v) => v.parent === volume && v.status === 'open')
 
     return (
         <main>
             <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#1f2a26]">
-                {heroes.map((src, i) => (
-                    <div className="ken-burns-slide" key={i}>
-                        <img src={src} alt={t(`${volume}.heroTitle`)} />
-                    </div>
-                ))}
+                <div className="ken-burns-still">
+                    <img src={heroSrc} alt={t(`${volume}.heroTitle`)} data-imagery-slot={heroSlot} />
+                </div>
                 <div
-                    className="absolute inset-0 bg-linear-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
+                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
                     aria-hidden
                 />
 
@@ -98,7 +95,14 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                 </div>
             </section>
 
-            <ParallaxImage src={parallax.src} alt={t(parallax.altKey)} caption={t(parallax.captionKey)} />
+            {parallax && (
+                <ParallaxImage
+                    src={parallax.image}
+                    alt={t(placeCaptionKey(parallax))}
+                    caption={t(placeCaptionKey(parallax))}
+                    slotId={parallax.slotId}
+                />
+            )}
 
             <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
                 <Reveal>
@@ -119,7 +123,9 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                 )}
 
                 <div className="mt-16 flex flex-col">
-                    {vol.chapters.map((v, i) => (
+                    {vol.chapters.map((v, i) => {
+                        const cover = chapterCoverRef(volume, v.key)
+                        return (
                         <Reveal key={v.key} delay={i * 80}>
                             <a
                                 href={href(`${vol.route}/${v.key}`)}
@@ -134,7 +140,7 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                                 >
                                     <div className="aspect-3/2 overflow-hidden">
                                         <img
-                                            src={v.image}
+                                            src={cover?.image ?? heroSrc}
                                             alt={t(`${volume}.chapters.${v.key}.title`)}
                                             loading="lazy"
                                             className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
@@ -161,7 +167,8 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                                 </div>
                             </a>
                         </Reveal>
-                    ))}
+                        )
+                    })}
                 </div>
 
                 {subVolumes.length > 0 && (
@@ -172,12 +179,14 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                             </h3>
                         </Reveal>
                         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {subVolumes.map((sub) => (
+                            {subVolumes.map((sub) => {
+                                const subKernel = volumeKernel(sub.key)
+                                return (
                                 <Reveal key={sub.key}>
                                     <a href={href(sub.route)} className="group block">
                                         <div className="aspect-3/2 overflow-hidden">
                                             <img
-                                                src={sub.image}
+                                                src={subKernel?.image ?? sub.image}
                                                 alt={t(`${sub.key}.volumeTitle`)}
                                                 loading="lazy"
                                                 className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
@@ -192,7 +201,8 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                                         </p>
                                     </a>
                                 </Reveal>
-                            ))}
+                                )
+                            })}
                         </div>
                     </div>
                 )}

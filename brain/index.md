@@ -1,6 +1,6 @@
 # Brain Index
 
-_Auto-generated. Last updated 2026-08-22T12:21:34.795Z._
+_Auto-generated. Last updated 2026-08-23T13:34:56.619Z._
 
 - [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目：省 → 市 → 区/县 三级
 - [anthology-spine](pages/anthology-spine.md) — category: concept | tags: [spine, gazetteer, overview] | # 九州志整体脉络
@@ -14,6 +14,7 @@ _Auto-generated. Last updated 2026-08-22T12:21:34.795Z._
 - [hangzhou-subvolumes-roster](pages/hangzhou-subvolumes-roster.md) — category: decision | tags: [hangzhou, nested-volume, editorial] | # 杭州下辖卷名录：能立 / 并入 / 不写
 - [i18n-locale-routing](pages/i18n-locale-routing.md) — category: decision | # 中文无前缀，其他语言 /[locale]
 - [imagery-ai-first](pages/imagery-ai-first.md) — category: decision | tags: [imagery, ai-generation, photo-pipeline] | # 站点图像策略：原图作底，AI 重画入库
+- [imagery-workbench](pages/imagery-workbench.md) — category: decision | tags: [imagery, studio, local-only] | # 配图工作台：左预览、右选底
 - [jiande-gazetteer](pages/jiande-gazetteer.md) — category: reference | tags: [hangzhou, jiande, gazetteer] | # 建德：三江口（已开）
 - [not-a-scenic-encyclopedia](pages/not-a-scenic-encyclopedia.md) — category: decision | tags: [editorial, scope] | # 九州志不是景区百科
 - [photo-contribute](pages/photo-contribute.md) — category: decision | # 供图：按卷收稿，邮件，不是相册社区

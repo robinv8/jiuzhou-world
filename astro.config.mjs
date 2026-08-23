@@ -4,6 +4,7 @@ import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { imageryStudio } from './scripts/imagery-studio-plugin.mjs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -24,7 +25,16 @@ export default defineConfig({
     integrations: [
         react(),
         sitemap({
-            filter: (page) => !page.includes('/404'),
+            filter: (page) => {
+                if (page.includes('/404')) return false
+                return ![
+                    '/hangzhou/fuyang',
+                    '/hangzhou/tonglu',
+                    '/hangzhou/jiande',
+                    '/hangzhou/chunan',
+                    '/hangzhou/xiaoshan',
+                ].some((route) => page.includes(route))
+            },
             i18n: {
                 defaultLocale: 'zh',
                 locales: {
@@ -38,10 +48,20 @@ export default defineConfig({
         }),
     ],
     vite: {
-        plugins: [tailwindcss()],
+        plugins: [tailwindcss(), imageryStudio()],
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, './src'),
+            },
+        },
+        server: {
+            watch: {
+                ignored: [
+                    '**/node_modules/**',
+                    '**/.git/**',
+                    '**/_photo_candidates/**',
+                    '**/artifacts/**',
+                ],
             },
         },
     },

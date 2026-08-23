@@ -16,12 +16,17 @@ export function headerCopy(lang: Lang, path: string) {
 
     const currentProvince = provinces.find((p) => basePath === p.route || basePath.startsWith(`${p.route}/`))
     const inProvince = Boolean(currentProvince) && !inVolume
+    const photoHero =
+        basePath === '/' ||
+        Boolean(currentProvince && currentProvince.route === basePath) ||
+        Boolean(currentVolume && currentVolume.route === basePath)
 
     return {
         lang,
         basePath,
         inVolume,
         inProvince,
+        photoHero,
         volumeKey: currentVolume?.key ?? '',
         volumeTitle,
         volumeLatin,

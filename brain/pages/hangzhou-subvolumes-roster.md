@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [hangzhou, nested-volume, editorial]
 created: "2026-08-22T18:30:33"
-updated: "2026-08-22T19:36:07"
+updated: "2026-08-23T21:34:56"
 ---
 
 <!-- compiled_truth -->
@@ -18,6 +18,8 @@ updated: "2026-08-22T19:36:07"
 **下辖卷不是区县配额。** 一卷一城是写作单位，不是行政对等，见 [[anthology-one-city-one-volume]]、[[root-pulse-mountains-rivers]]。问的是：不写它，杭州还是不是杭州？它自己的山川杭州卷装不装得下？装不下才立下辖卷。不是景区百科，见 [[not-a-scenic-encyclopedia]]。
 
 **页上只列已开。** 杭州卷「下辖卷」不摆空位、不预告未写的区。名录只在脑里。
+
+**上线范围：** 读者能走到的只有杭州卷一与临安。富阳、桐庐、建德、淳安、萧山可立，稿留在仓库，导航、页脚、sitemap 不列；直链 noindex。可立 ≠ 马上写。
 
 景点（天子地、瑶琳、千岛湖）不成卷，挂在所属县下面。
 
@@ -56,11 +58,11 @@ updated: "2026-08-22T19:36:07"
 
 | 今制 | 判 | 可能的核 | 不写 |
 |---|---|---|---|
-| 富阳区 | 可立 | 从江读起：中游叫富春，两山夹一江。见 [[fuyang-gazetteer]] | 不抢杭州「钱塘江」条目标题 |
-| 桐庐县 | 可立 | 严陵。天子地、瑶琳挂此。见 [[tonglu-gazetteer]] | 不进杭州景 |
-| 建德市 | 可立 | 三江口在梅城；坝在建德。见 [[jiande-gazetteer]] | 千岛湖不写成建德景区 |
-| 淳安县 | 可立 | 江成库，城在水下。千岛湖挂此。见 [[chunan-gazetteer]] | 不进杭州景 |
-| 萧山区 | 可立 | 自己的水叫浦阳。湘湖挂山川/景，跨湖桥入史。见 [[xiaoshan-gazetteer]] | 不抢杭州「钱塘江」条目标题 |
+| 富阳区 | 可立（暂不上线） | 从江读起：中游叫富春，两山夹一江。见 [[fuyang-gazetteer]] | 不抢杭州「钱塘江」条目标题 |
+| 桐庐县 | 可立（暂不上线） | 严陵。天子地、瑶琳挂此。见 [[tonglu-gazetteer]] | 不进杭州景 |
+| 建德市 | 可立（暂不上线） | 三江口在梅城；坝在建德。见 [[jiande-gazetteer]] | 千岛湖不写成建德景区 |
+| 淳安县 | 可立（暂不上线） | 江成库，城在水下。千岛湖挂此。见 [[chunan-gazetteer]] | 不进杭州景 |
+| 萧山区 | 可立（暂不上线） | 自己的水叫浦阳。湘湖挂山川/景，跨湖桥入史。见 [[xiaoshan-gazetteer]] | 不抢杭州「钱塘江」条目标题 |
 
 ## 不做
 
@@ -101,5 +103,11 @@ updated: "2026-08-22T19:36:07"
 - time: 2026-08-22T19:36:07
   kind: note
   summary: "五座可立下辖卷已挂站点（富阳、桐庐、建德、淳安、萧山），临安仍在。页上只列已开。"
+  source: "当前聊天"
+  affects: [hangzhou-subvolumes-roster]
+
+- time: 2026-08-23T21:34:56
+  kind: decision
+  summary: "上线只开杭州与临安；富阳桐庐建德淳安萧山可立但暂不上线，页上不列。"
   source: "当前聊天"
   affects: [hangzhou-subvolumes-roster]

@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { getProvince } from '@/i18n/catalogs'
+import { getProvince, volumeKernel } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
@@ -14,14 +14,20 @@ export default function ProvinceHome({ lang, province }: { lang: Lang; province:
 
     if (!prov) return null
 
+    const provinceKernel = volumeKernel(prov.cities[0]?.key ?? 'hangzhou')
+
     return (
         <main>
             <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#1f2a26]">
-                <div className="ken-burns-slide">
-                    <img src={prov.image} alt={t(`province.${province}.heroTitle`)} />
+                <div className="ken-burns-still">
+                    <img
+                        src={provinceKernel?.image ?? prov.image}
+                        alt={t(`province.${province}.heroTitle`)}
+                        data-imagery-slot={provinceKernel?.slotId}
+                    />
                 </div>
                 <div
-                    className="absolute inset-0 bg-linear-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
+                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
                     aria-hidden
                 />
 
@@ -53,7 +59,9 @@ export default function ProvinceHome({ lang, province }: { lang: Lang; province:
                 </Reveal>
 
                 <div className="mt-16 flex flex-col">
-                    {prov.cities.map((city, i) => (
+                    {prov.cities.map((city, i) => {
+                        const kernel = volumeKernel(city.key)
+                        return (
                         <Reveal key={city.key} delay={i * 80}>
                             <a
                                 href={href(city.route)}
@@ -68,7 +76,7 @@ export default function ProvinceHome({ lang, province }: { lang: Lang; province:
                                 >
                                     <div className="aspect-3/2 overflow-hidden">
                                         <img
-                                            src={city.image}
+                                            src={kernel?.image ?? city.image}
                                             alt={t(`city.${city.key}.title`)}
                                             loading="lazy"
                                             className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
@@ -95,7 +103,8 @@ export default function ProvinceHome({ lang, province }: { lang: Lang; province:
                                 </div>
                             </a>
                         </Reveal>
-                    ))}
+                        )
+                    })}
                 </div>
             </section>
         </main>

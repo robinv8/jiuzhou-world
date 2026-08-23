@@ -45,7 +45,7 @@ export default function SiteFooter({ lang }: { lang: Lang }) {
                                                 </span>
                                             </a>
                                             <div className="mt-2 grid grid-cols-2 gap-x-4 gap-y-1">
-                                                {city.districts.map((district) => (
+                                                {city.districts.filter((district) => district.status === 'open').map((district) => (
                                                     <a key={district.key} href={href(district.route)} className="group pl-0">
                                                         <span className="micro-label text-[#b0c6b3]/40 block" lang={glossLang}>
                                                             {district.latin}

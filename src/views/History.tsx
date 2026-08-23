@@ -1,7 +1,7 @@
 import { getVolume, getVolumeContent } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
-import PageHero from '@/components/PageHero'
+import ChapterLead from '@/components/ChapterLead'
 import Reveal from '@/components/Reveal'
 import ChapterClose from '@/components/ChapterClose'
 import { withLocale } from '@/lib/i18n-path'
@@ -15,21 +15,13 @@ export default function History({ lang, volume }: { lang: Lang; volume: string }
 
     return (
         <main>
-            <PageHero
+            <ChapterLead
                 lang={lang}
                 kicker={`${volume}.history.heroKicker`}
                 title={`${volume}.history.heroTitle`}
                 sub={`${volume}.history.heroSub`}
-                image={vol.chapters[3].image}
+                intro={`${volume}.history.intro`}
             />
-
-            <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-                <Reveal>
-                    <p className="text-lg md:text-xl leading-9 md:leading-10 text-[#3d4842] font-display">
-                        {t(`${volume}.history.intro`)}
-                    </p>
-                </Reveal>
-            </section>
 
             {content.history.map((entry, i) => (
                 <section key={entry.id} className="mx-auto max-w-7xl px-6 md:px-16 py-14 md:py-20">
@@ -57,6 +49,7 @@ export default function History({ lang, volume }: { lang: Lang; volume: string }
                                         src={entry.image}
                                         alt={t(`${volume}.history.entries.${entry.id}.title`)}
                                         loading="lazy"
+                                        data-imagery-slot={`${volume}.history.entries.${entry.id}`}
                                         className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                     />
                                 </div>

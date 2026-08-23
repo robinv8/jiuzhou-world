@@ -1,45 +1,30 @@
-import { getVolume, getVolumeContent } from '@/i18n/catalogs'
+import { getVolume, getVolumeContent, volumeParallaxRef, placeCaptionKey } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
-import PageHero from '@/components/PageHero'
+import ChapterLead from '@/components/ChapterLead'
 import Reveal from '@/components/Reveal'
 import ParallaxImage from '@/components/ParallaxImage'
 import ChapterClose from '@/components/ChapterClose'
 import { withLocale } from '@/lib/i18n-path'
 
-const parallaxImages: Record<string, { src: string; captionKey: string }> = {
-    linan: { src: '/images/spot-qingliang.webp', captionKey: 'ui.caption.qingliangClouds' },
-    hangzhou: { src: '/images/hangzhou-hills.webp', captionKey: 'ui.caption.hangzhouHills' },
-    fuyang: { src: '/images/fuyang-fuchun.webp', captionKey: 'ui.caption.fuchunSandbar' },
-}
-
 export default function Mountains({ lang, volume }: { lang: Lang; volume: string }) {
     const { t, tList } = messages(lang)
     const vol = getVolume(volume)
     const content = getVolumeContent(volume)
-    const parallax = parallaxImages[volume] ?? parallaxImages.linan
-
     if (!vol || !content) return null
 
+    const parallax = volumeParallaxRef(volume)
     const next = vol.chapters[1]
 
     return (
         <main>
-            <PageHero
+            <ChapterLead
                 lang={lang}
                 kicker={`${volume}.mountains.heroKicker`}
                 title={`${volume}.mountains.heroTitle`}
                 sub={`${volume}.mountains.heroSub`}
-                image={vol.chapters[0].image}
+                intro={`${volume}.mountains.intro`}
             />
-
-            <section className="mx-auto max-w-3xl px-6 py-20 md:py-28">
-                <Reveal>
-                    <p className="text-lg md:text-xl leading-9 md:leading-10 text-[#3d4842] font-display">
-                        {t(`${volume}.mountains.intro`)}
-                    </p>
-                </Reveal>
-            </section>
 
             {content.essays.map((essay, i) => (
                 <div key={essay.id}>
@@ -70,6 +55,7 @@ export default function Mountains({ lang, volume }: { lang: Lang; volume: string
                                             src={essay.image}
                                             alt={t(`${volume}.mountains.essays.${essay.id}.title`)}
                                             loading="lazy"
+                                            data-imagery-slot={`${volume}.mountains.essays.${essay.id}`}
                                             className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                         />
                                     </div>
@@ -77,8 +63,13 @@ export default function Mountains({ lang, volume }: { lang: Lang; volume: string
                             </div>
                         </div>
                     </section>
-                    {i === 1 && (
-                        <ParallaxImage src={parallax.src} alt="" caption={t(parallax.captionKey)} />
+                    {i === 1 && parallax && (
+                        <ParallaxImage
+                            src={parallax.image}
+                            alt=""
+                            caption={t(placeCaptionKey(parallax))}
+                            slotId={parallax.slotId}
+                        />
                     )}
                 </div>
             ))}

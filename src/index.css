@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@source not "../_photo_candidates";
+@source not "../artifacts";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -167,6 +169,21 @@
   }
 }
 
+@utility ken-burns-still {
+  position: absolute;
+  inset: 0;
+  animation: kenBurnsStill 24s ease-in-out infinite alternate;
+  will-change: transform;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    animation: none !important;
+  }
+}
+
 @utility sticky-visual {
   /* Sticky-steps (history timeline) visual crossfade */
   transition:
@@ -320,6 +337,15 @@
     100% {
       opacity: 0;
       transform: scale(1.08);
+    }
+  }
+
+  @keyframes kenBurnsStill {
+    0% {
+      transform: scale(1.06);
+    }
+    100% {
+      transform: scale(1);
     }
   }
 }

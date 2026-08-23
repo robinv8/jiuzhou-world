@@ -5,13 +5,13 @@ category: decision
 status: active
 tags: [imagery, ai-generation, photo-pipeline]
 created: "2026-08-18T11:09:44"
-updated: "2026-08-22T20:21:34"
+updated: "2026-08-22T23:28:19"
 ---
 
 <!-- compiled_truth -->
 # 站点图像策略：原图作底，AI 重画入库
 
-站点图像以 AI 重画为主，不直接把网上风景照放进页面。
+站点图像以 AI 重画为主，不直接把网上风景照放进页面。抓哪一处、封面用哪一处，见 [[imagery-workbench]] 地名规则：一次一个能拍到的真地方；hero 只要代表点。
 
 ## 做法
 
@@ -76,3 +76,15 @@ updated: "2026-08-22T20:21:34"
   summary: "富阳 hero 按青山湖流程入库：Wikimedia 实景作地理底（两山夹一江、沙洲分汊、渔船），AI 重画不搬原片；用户确认 sandbar-v4 → public/images/hero-fuyang.webp（16:9）与 fuyang-fuchun.webp（3:2）。"
   source: "当前聊天"
   affects: [fuyang-gazetteer]
+
+- time: 2026-08-22T21:35:33
+  kind: decision
+  summary: "选底改走本地 /_studio 工作台（左预览右候选），见 [[imagery-workbench]]。"
+  source: "当前聊天"
+  affects: [imagery-workbench]
+
+- time: 2026-08-22T23:28:19
+  kind: decision
+  summary: "生成对着 catalogs.place 的一个真地方；封面用该卷/该章代表点。细则见工作台。"
+  source: "当前聊天"
+  affects: [imagery-ai-first]

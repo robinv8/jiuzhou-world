@@ -11,7 +11,8 @@
     "brain": "brain",
     "brain:reindex": "brain reindex",
     "brain:lint": "brain lint-links",
-    "i18n:check": "node scripts/check-locales.mjs && node scripts/check-nested-volumes.mjs"
+    "i18n:check": "node scripts/check-locales.mjs && node scripts/check-nested-volumes.mjs",
+    "imagery:keep-cap": "node scripts/check-imagery-keep-cap.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",

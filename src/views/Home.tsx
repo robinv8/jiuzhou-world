@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { anthologyVolumes, ANTHOLOGY_DOMAIN } from '@/i18n/catalogs'
+import { anthologyVolumes, ANTHOLOGY_DOMAIN, placeRefByPlace, volumeKernel } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
@@ -11,6 +11,7 @@ import { withLocale } from '@/lib/i18n-path'
 export default function Home({ lang }: { lang: Lang }) {
     const { t, tList } = messages(lang)
     const href = (p: string) => withLocale(p, lang)
+    const zhinan = placeRefByPlace('linan', '临安指南村')
 
     return (
         <main>
@@ -18,10 +19,11 @@ export default function Home({ lang }: { lang: Lang }) {
                 <img
                     src="/images/hero-jiuzhou.webp"
                     alt={t('ui.alt.thousandLi')}
+                    data-imagery-slot="home.hero"
                     className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div
-                    className="absolute inset-0 bg-linear-to-t from-[#101613]/85 via-[#101613]/15 to-[#101613]/40"
+                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#101613]/85 via-[#101613]/15 to-[#101613]/40"
                     aria-hidden
                 />
                 <div className="absolute right-6 md:right-14 top-1/2 -translate-y-1/2 hidden md:block">
@@ -90,9 +92,10 @@ export default function Home({ lang }: { lang: Lang }) {
             </section>
 
             <ParallaxImage
-                src="/images/hero-village.webp"
+                src={zhinan?.image ?? '/images/spot-zhinan.webp'}
                 alt={t('ui.alt.zhinanAutumn')}
                 caption={t('ui.caption.zhinanAutumn')}
+                slotId={zhinan?.slotId}
             />
 
             <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
@@ -106,7 +109,9 @@ export default function Home({ lang }: { lang: Lang }) {
                 </Reveal>
 
                 <div className="mt-16 flex flex-col">
-                    {anthologyVolumes.filter((v) => !v.parent).map((v) => (
+                    {anthologyVolumes.filter((v) => !v.parent).map((v) => {
+                        const kernel = volumeKernel(v.key)
+                        return (
                         <Reveal key={v.key}>
                             <a
                                 href={href(v.route)}
@@ -115,7 +120,7 @@ export default function Home({ lang }: { lang: Lang }) {
                                 <div className="md:col-span-5 overflow-hidden">
                                     <div className="aspect-3/2 overflow-hidden">
                                         <img
-                                            src={v.image}
+                                            src={kernel?.image ?? v.image}
                                             alt={t(`anthology.volumes.${v.key}.title`)}
                                             className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
                                         />
@@ -147,7 +152,8 @@ export default function Home({ lang }: { lang: Lang }) {
                                 </div>
                             </a>
                         </Reveal>
-                    ))}
+                        )
+                    })}
 
                     <Reveal delay={100}>
                         <div className="py-10 md:py-14 border-b hairline opacity-60">
