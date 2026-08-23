@@ -21,6 +21,7 @@ const legacyLinanRedirects = Object.fromEntries(
 export default defineConfig({
     site: 'https://jiuzhou.world',
     output: 'static',
+    trailingSlash: 'always',
     redirects: legacyLinanRedirects,
     integrations: [
         react(),

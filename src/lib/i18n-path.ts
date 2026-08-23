@@ -15,11 +15,11 @@ export function stripLocale(pathname: string): string {
     return p || '/'
 }
 
-/** Prefix a language-neutral path with locale (zh has no prefix). */
+/** Prefix a language-neutral path with locale (zh has no prefix). Trailing slash matches the live site. */
 export function withLocale(basePath: string, lang: Lang): string {
     const base = basePath === '/' ? '' : basePath.replace(/\/$/, '')
-    if (lang === DEFAULT_LANG) return base || '/'
-    return base ? `/${lang}${base}` : `/${lang}`
+    if (lang === DEFAULT_LANG) return base ? `${base}/` : '/'
+    return base ? `/${lang}${base}/` : `/${lang}/`
 }
 
 export function switchLocalePath(pathname: string, next: Lang): string {

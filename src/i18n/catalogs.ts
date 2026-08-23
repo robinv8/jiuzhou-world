@@ -264,7 +264,7 @@ export const volumeContent: Record<string, VolumeContent> = {
             { id: 'birth', image: '/images/history-birth.webp', place: '临安婆留井' },
             { id: 'kingdom', image: '/images/history-kingdom.webp', place: '临安衣锦城' },
             { id: 'song', image: '/images/history-song.webp', place: '临安钱王陵' },
-            { id: 'precept', image: '/images/history-song.webp', place: '临安钱王陵' },
+            { id: 'precept', image: '/images/history-precept.webp', place: '临安钱王陵' },
             { id: 'name', image: '/images/history-name.webp', place: '临安功臣山' },
         ],
         culture: [

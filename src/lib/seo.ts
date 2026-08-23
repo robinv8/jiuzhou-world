@@ -21,8 +21,9 @@ export const pages: PageSeo[] = seoPages.map((p) => ({
 }))
 
 export function absoluteUrl(path: string): string {
-    if (path === '/') return SITE_URL
-    return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
+    if (path === '/') return `${SITE_URL}/`
+    const trimmed = (path.startsWith('/') ? path : `/${path}`).replace(/\/$/, '')
+    return `${SITE_URL}${trimmed}/`
 }
 
 export function getPageSeo(basePath: string): PageSeo {
