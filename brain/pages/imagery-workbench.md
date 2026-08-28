@@ -5,13 +5,22 @@ category: decision
 status: active
 tags: [imagery, studio, local-only]
 created: "2026-08-22T21:35:13"
-updated: "2026-08-23T15:31:16"
+updated: "2026-08-28T04:41:24"
 ---
 
 <!-- compiled_truth -->
 # 配图工作台：左预览、右选底
 
 本地选图后台，不是方志 CMS，也不把网上原片换上站点。
+
+## 锁定
+
+见 [[imagery-lock]]。
+
+- **已锁定：** 杭州卷、临安卷（线上现图，含卷核图与各章正文槽）
+- **未锁定：** 富阳、桐庐、建德、淳安、萧山
+
+已锁定的槽不要重选、不要重生成。未上线卷借用杭州/临安文件当占位，不算选定封面。首页 hero《千里江山图》不是这把锁，见 [[imagery-ai-first]]。
 
 ## 入口
 
@@ -48,6 +57,7 @@ updated: "2026-08-23T15:31:16"
 - 候选原片不上 `public/images`。
 - 不在读者页露出 `place`。
 - AI 不代替人点「确定进队列」。
+- 不重选、不重生成 [[imagery-lock]] 已锁定的槽。
 
 
 ## Timeline
@@ -152,4 +162,10 @@ updated: "2026-08-23T15:31:16"
   kind: decision
   summary: "龙井村与狮峰茶山分图；史·人间用当代湖滨稿，不再复用山川西湖。"
   source: "当前聊天"
+  affects: [imagery-workbench]
+
+- time: 2026-08-28T04:41:24
+  kind: decision
+  summary: "挂上 [[imagery-lock]]：杭州、临安已锁；五城未锁，占位不算选定。"
+  source: "Robin, 2026-08-28"
   affects: [imagery-workbench]
