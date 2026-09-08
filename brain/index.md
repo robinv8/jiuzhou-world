@@ -1,6 +1,6 @@
 # Brain Index
 
-_Auto-generated. Last updated 2026-08-23T13:34:56.619Z._
+_Auto-generated. Last updated 2026-09-08T10:19:45.792Z._
 
 - [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目：省 → 市 → 区/县 三级
 - [anthology-spine](pages/anthology-spine.md) — category: concept | tags: [spine, gazetteer, overview] | # 九州志整体脉络

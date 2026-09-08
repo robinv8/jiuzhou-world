@@ -4,7 +4,7 @@ title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
 created: "2026-08-15T07:32:31"
-updated: "2026-08-22T17:07:06"
+updated: "2026-09-08T10:19:45"
 ---
 
 <!-- compiled_truth -->
@@ -13,6 +13,8 @@ updated: "2026-08-22T17:07:06"
 站点默认语言是**简体中文**：无 URL 前缀，`x-default` 指向它。
 
 语言：`zh`（简体，默认）/ `zh-hant`（繁體，`/zh-hant`）/ `en` / `ja` / `ko`。各 locale JSON 共用同一套 key。en / ja / ko 正文是改写；繁體由简体底本做 **OpenCC s2t 字形轉換**（地鐵不改成捷運，方志的「志」不改成「誌」）。
+
+Robin 2026-09-08 签字的杭州景之卷 essence（灵隐、西溪、运河、钱塘江）只钉在 `zh.json`。他语不是这份正文的译本，不要按签字稿发明翻译；繁體也不在本轮跟改。
 
 刊头双语小字：简体 / 繁體页配英文，英 / 日 / 韩页配简体中文。缺 key 回退当前语言 → 简体中文。印章字、卷次编号、拉丁学名不进语言文件。
 
@@ -81,4 +83,10 @@ updated: "2026-08-22T17:07:06"
   kind: decision
   summary: "增加繁體中文 /zh-hant：字形轉換，刊頭配英文，字體 Noto Serif TC。"
   source: "当前聊天"
+  affects: [i18n-locale-routing]
+
+- time: 2026-09-08T10:19:45
+  kind: decision
+  summary: "签字中文景之卷 essence 不是他语底本；不要按签字稿发明 en/ja/ko/zh-hant 译文。"
+  source: "Robin 签字稿 2026-09-08"
   affects: [i18n-locale-routing]

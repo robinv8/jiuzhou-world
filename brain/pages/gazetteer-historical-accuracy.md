@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [gazetteer, history, copy]
 created: "2026-08-22T16:46:20"
-updated: "2026-08-22T20:14:12"
+updated: "2026-09-08T10:19:35"
 ---
 
 <!-- compiled_truth -->
@@ -37,6 +37,9 @@ updated: "2026-08-22T20:14:12"
 - 杭帮菜来历用「相传」。观潮胜地盐官在海宁，不标成杭州城里。
 - 吴越+南宋加起来约两百年，不写「都城三百年」。
 - 良渚在余杭，是杭州史「更早的城」。跨湖桥在萧山，另一文化，不替代良渚。
+- 灵隐寺在飞来峰后，不在峰上。东南来先遇石头与造像；冷泉在峰下。峰从何处飞来是传说。
+- 西溪不是园，也不在环湖那一圈。十景不列。
+- 运河景之卷只写去处记忆（拱宸桥到塘栖；丝绸、粮食、盐北上）。都城脐带写在史之卷。夜景游船不写。
 
 ## 富阳
 
@@ -91,4 +94,10 @@ updated: "2026-08-22T20:14:12"
   kind: decision
   summary: "补：贺城狮城写沉入库底；千岛湖风景名 1984 才定、1982 已有千岛之称；富阳中游感潮不写近口；库区用绝大部分不写死 99%"
   source: "史地 review 后改文案"
+  affects: [gazetteer-historical-accuracy]
+
+- time: 2026-09-08T10:19:35
+  kind: decision
+  summary: "补杭州景之卷签字稿史地：灵隐在飞来峰后不在峰上；西溪不在环湖圈；运河脐带归史之卷。"
+  source: "Robin 签字稿 2026-09-08"
   affects: [gazetteer-historical-accuracy]
