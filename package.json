@@ -12,6 +12,7 @@
     "brain:reindex": "brain reindex",
     "brain:lint": "brain lint-links",
     "i18n:check": "node scripts/check-locales.mjs && node scripts/check-nested-volumes.mjs",
+    "404:check": "node scripts/check-404.mjs",
     "imagery:keep-cap": "node scripts/check-imagery-keep-cap.mjs"
   },
   "dependencies": {

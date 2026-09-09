@@ -2,7 +2,7 @@
 slug: flow
 title: Key flows
 role: key flows
-updated: "2026-08-22T16:22:59"
+updated: "2026-09-09T02:46:33"
 ---
 
 # Key flows
@@ -30,7 +30,23 @@ sequenceDiagram
 - `SiteHeader` 是主要客户端交互层；正文动效主要由 CSS 完成。
 - 下辖卷路径是 `/hangzhou/linan/...`；旧 `/linan/...` 301 过来。
 
-## 2. 页面生成流程
+## 2. 未知路径必须 404
+
+```mermaid
+sequenceDiagram
+  participant U as Reader
+  participant CDN as Cloudflare Pages
+  U->>CDN: GET /this-path-does-not-exist-xyz
+  alt dist/404.html exists
+    CDN-->>U: HTTP 404 + 404.html
+  else no 404.html
+    CDN-->>U: HTTP 200 + index.html（SPA 回落，错误）
+  end
+```
+
+真实页面与资源保持 200。不要把未知路径 200/301 到首页。见 [[unknown-paths-http-404]]。
+
+## 3. 页面生成流程
 
 ```mermaid
 flowchart TD
@@ -46,7 +62,9 @@ flowchart TD
   Shell --> Layout["BaseLayout SEO 输出"]
 ```
 
-## 3. 语言切换流程
+404 不走 `getPageSeo`：未知 path 会回退成首页 SEO。
+
+## 4. 语言切换流程
 
 ```mermaid
 flowchart LR
@@ -61,7 +79,7 @@ flowchart LR
 - `en / ja / ko` 加语言前缀。
 - `hreflang` 包含 `zh-CN / en / ja / ko / x-default`，其中 `x-default` 指向中文。
 
-## 4. 下行阅读
+## 5. 下行阅读
 
 ```mermaid
 flowchart TD
@@ -75,7 +93,7 @@ flowchart TD
 
 古州身份：省页 kicker「古扬州之南」；首页市卷卡小字「古扬州之地」。卷首 kicker 只写今制。见 [[root-pulse-mountains-rivers]]。
 
-## 5. 供图流程
+## 6. 供图流程
 
 ```mermaid
 sequenceDiagram
@@ -94,7 +112,7 @@ sequenceDiagram
 
 见 [[photo-contribute]]。
 
-## 6. 构建与发布流程
+## 7. 构建与发布流程
 
 ```mermaid
 sequenceDiagram
@@ -102,13 +120,15 @@ sequenceDiagram
   participant CI as GitHub Actions
   participant Check as scripts/check-locales.mjs
   participant Build as astro build
+  participant Guard as scripts/check-404.mjs
   participant CF as Cloudflare Pages
   Dev->>CI: push main/master
   CI->>CI: npm install --no-fund --no-audit
   CI->>Check: npm run i18n:check
   Check-->>CI: en/ja/ko keys must match zh
   CI->>Build: npm run build
-  Build-->>CI: dist/
+  Build-->>CI: dist/ including 404.html
+  CI->>Guard: npm run 404:check
   CI->>CF: wrangler pages deploy dist --project-name=jiuzhou-world
 ```
 

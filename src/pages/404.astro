@@ -1,0 +1,53 @@
+---
+/**
+ * Emits dist/404.html. Cloudflare Pages treats a missing top-level 404.html
+ * as an SPA and serves /index.html with HTTP 200 for every unmatched path.
+ * Shipping this file is what makes unknown URLs return a real 404.
+ */
+import '@/index.css'
+import SiteHeader from '@/components/SiteHeader'
+import SiteFooter from '@/components/SiteFooter'
+import { headerCopy } from '@/lib/header-copy'
+import { LANG_META } from '@/i18n/config'
+import { t } from '@/i18n/t'
+import { withLocale } from '@/lib/i18n-path'
+
+const lang = 'zh' as const
+const copy = headerCopy(lang, '/404')
+const siteName = t('anthology.name', lang)
+const title = `404 · ${siteName}`
+const homeHref = withLocale('/', lang)
+---
+
+<!doctype html>
+<html lang={LANG_META[lang].htmlLang}>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="theme-color" content="#1f2a26" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href={LANG_META[lang].fontHref} />
+    </head>
+    <body>
+        <SiteHeader client:load copy={copy} />
+        <main>
+            <header class="mx-auto max-w-3xl px-6 pt-40 md:pt-52 pb-24 md:pb-36">
+                <p class="micro-label text-[#8ca693]">404</p>
+                <h1 class="mt-6 font-display text-5xl md:text-7xl font-semibold tracking-wide">页不存在</h1>
+                <p class="mt-10">
+                    <a
+                        href={homeHref}
+                        class="font-display text-lg tracking-[0.2em] text-[#b03a2e] transition-opacity hover:opacity-70"
+                    >
+                        {t('ui.backToOpening', lang)}
+                    </a>
+                </p>
+            </header>
+        </main>
+        <SiteFooter lang={lang} />
+    </body>
+</html>
