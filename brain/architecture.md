@@ -2,7 +2,7 @@
 slug: architecture
 title: System architecture
 role: system architecture
-updated: "2026-08-22T16:22:59"
+updated: "2026-09-09T02:46:18"
 ---
 
 # System architecture
@@ -24,6 +24,8 @@ graph TD
   Layout --> SEO["src/lib/seo.ts\ncanonical / hreflang / JSON-LD / OG"]
   Build["astro build"] --> Dist["dist/"]
   Dist --> CF["Cloudflare Pages\njiuzhou-world"]
+  NotFound["src/pages/404.astro"] --> Dist404["dist/404.html"]
+  Dist404 --> CF
 ```
 
 ## 主要边界
@@ -38,8 +40,9 @@ graph TD
 - 下辖卷：`/hangzhou/linan`、`/hangzhou/linan/{mountains,scenic,culture,history,contribute}`
 - 旧 `/linan/*` 301 到 `/hangzhou/linan/*`
 - 杭州供图 `/hangzhou/contribute` 已定、尚未做页，见 [[photo-contribute]]
+- 未知路径：`src/pages/404.astro` 产出顶层 `dist/404.html`。Cloudflare Pages 缺少它时会按 SPA 把未匹配路径以 200 回落到 `/`。约束见 [[unknown-paths-http-404]]。
 
-每个页面只做三件事：取 `seo`、锁定 `lang`、把对应 view 放进 `PageShell`。
+每个真实页面只做三件事：取 `seo`、锁定 `lang`、把对应 view 放进 `PageShell`。404 不走 `getPageSeo`（未知 path 会回退成首页 SEO）。
 
 ### 布局层：`src/layouts/`
 
@@ -85,7 +88,8 @@ sequenceDiagram
   GH->>GH: npm install --no-fund --no-audit
   GH->>GH: npm run i18n:check
   GH->>Astro: npm run build
-  Astro-->>GH: dist/
+  Astro-->>GH: dist/ including 404.html
+  GH->>GH: npm run 404:check
   GH->>CF: wrangler pages deploy dist --project-name=jiuzhou-world
 ```
 
