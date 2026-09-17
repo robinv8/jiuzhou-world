@@ -1,9 +1,12 @@
 import { getVolume, getVolumeContent } from '@/i18n/catalogs'
+import { entriesLinkedFrom, extraEntriesForChapter } from '@/i18n/entries'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import ChapterLead from '@/components/ChapterLead'
 import Reveal from '@/components/Reveal'
 import ChapterClose from '@/components/ChapterClose'
+import EntryLinks from '@/components/EntryLinks'
+import ChapterEntries from '@/components/ChapterEntries'
 import { withLocale } from '@/lib/i18n-path'
 
 export default function Scenic({ lang, volume }: { lang: Lang; volume: string }) {
@@ -58,11 +61,17 @@ export default function Scenic({ lang, volume }: { lang: Lang; volume: string })
                                         {t(`${volume}.scenic.spots.${spot.id}.note`)}
                                     </p>
                                 </div>
+                                <EntryLinks
+                                    lang={lang}
+                                    entries={entriesLinkedFrom(volume, 'scenic', spot.id)}
+                                />
                             </article>
                         </Reveal>
                     ))}
                 </div>
             </section>
+
+            <ChapterEntries lang={lang} entries={extraEntriesForChapter(volume, 'scenic')} />
 
             <ChapterClose
                 seal="景"

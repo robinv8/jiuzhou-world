@@ -4,7 +4,7 @@ title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
 created: "2026-08-15T07:32:31"
-updated: "2026-09-08T10:19:45"
+updated: "2026-09-17T09:34:39"
 ---
 
 <!-- compiled_truth -->
@@ -90,3 +90,9 @@ Robin 2026-09-08 签字的杭州景之卷 essence（灵隐、西溪、运河、�
   summary: "签字中文景之卷 essence 不是他语底本；不要按签字稿发明 en/ja/ko/zh-hant 译文。"
   source: "Robin 签字稿 2026-09-08"
   affects: [i18n-locale-routing]
+
+- time: 2026-09-17T09:34:39
+  kind: decision
+  summary: "专条长文不进 locale JSON；他语只 stub 标题与摘句以过 key parity，正文回退简体。"
+  source: SHIP 10 gazetteer entries
+  affects: [gazetteer-entry-pages, i18n-locale-routing]

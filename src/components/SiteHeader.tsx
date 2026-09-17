@@ -9,7 +9,7 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
     const [langOpen, setLangOpen] = useState(false)
 
     const { inVolume, basePath, glossLang, hrefs, nav, locales, volumeTitle } = copy
-    const active = (p: string) => basePath === p
+    const active = (p: string) => basePath === p || basePath.startsWith(`${p}/`)
 
     useEffect(() => {
         let lastY = window.scrollY

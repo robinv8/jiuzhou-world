@@ -79,6 +79,38 @@ export function buildJsonLd(seo: PageSeo, lang: Lang): Record<string, unknown>[]
         return [webSite, { ...publisher, '@context': 'https://schema.org' }]
     }
 
+    if (seo.type === 'entry') {
+        const article: Record<string, unknown> = {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: name,
+            description,
+            url,
+            inLanguage,
+            image,
+            isPartOf: {
+                '@type': 'WebSite',
+                name: siteName,
+                url: SITE_URL,
+            },
+            publisher,
+        }
+        const volumeKey = volumeForPath(seo.path)?.key ?? null
+        if (volumeKey) {
+            article.about = {
+                '@type': 'Place',
+                name: t(`seo.place.${volumeKey}`, lang),
+                address: {
+                    '@type': 'PostalAddress',
+                    addressLocality: t(`seo.place.${volumeKey}`, lang),
+                    addressRegion: t('seo.place.zhejiang', lang),
+                    addressCountry: 'CN',
+                },
+            }
+        }
+        return [article]
+    }
+
     const pageType =
         seo.path.endsWith('/contribute')
             ? 'ContactPage'

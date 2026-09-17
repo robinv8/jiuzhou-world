@@ -764,6 +764,46 @@
     "xiaoshan_culture": {
       "title": "物之卷 · 萧山 · 九州志",
       "description": "印纹陶。湖边的田。"
+    },
+    "entry_westlake": {
+      "title": "西湖はなぜ湖となり、なぜ西湖と呼ばれるか · 九州志",
+      "description": "潟湖を疏浚で保ち、城の西にあるから西湖。本文は中国語。"
+    },
+    "entry_su-bai-causeway": {
+      "title": "蘇堤と白堤：堤は梳妆 · 九州志",
+      "description": "蘇堤は蘇軾が築き、今の白堤は白居易を記念する。本文は中国語。"
+    },
+    "entry_tianmu": {
+      "title": "天目山：分水の山 · 九州志",
+      "description": "両目の名、分水の骨。本文は中国語。"
+    },
+    "entry_linan-gazetteers": {
+      "title": "臨安三志 · 九州志",
+      "description": "南宋の乾道・淳祐・咸淳『臨安志』。本文は中国語。"
+    },
+    "entry_qian-liu": {
+      "title": "銭鏐：臨安から出た呉越王 · 九州志",
+      "description": "銭鏐は臨安の人、呉越の開国の王。本文は中国語。"
+    },
+    "entry_liangzhu": {
+      "title": "良渚：より早い城 · 九州志",
+      "description": "杭州史の、より早い一層。本文は中国語。"
+    },
+    "entry_lingyin": {
+      "title": "霊隠と飛来峰 · 九州志",
+      "description": "寺は峰の後ろ。先に石、後に寺。本文は中国語。"
+    },
+    "entry_tea": {
+      "title": "龍井茶：山が天候を、人が忍耐を · 九州志",
+      "description": "山場が天候を、手が寸法を。本文は中国語。"
+    },
+    "entry_canal": {
+      "title": "京杭大運河・杭州端 · 九州志",
+      "description": "運河の南端は杭州。船は替わり、河は残る。本文は中国語。"
+    },
+    "entry_zhinan": {
+      "title": "指南村 · 九州志",
+      "description": "天目の東麓、苕渓の源辺の村。本文は中国語。"
     }
   },
   "ui": {
@@ -795,7 +835,10 @@
       "hangzhouCanal": "京杭大運河 · 杭州",
       "fuchunSandbar": "富春江 · 中洲",
       "thousandLi": "北宋・王希孟『千里江山図』（部分）・故宮博物院蔵"
-    }
+    },
+    "readEntry": "専条を読む",
+    "entriesOnThisChapter": "この章の専条",
+    "backToChapter": "本章へ戻る"
   },
   "fuyang": {
     "volumeTitle": "富陽の巻",
@@ -1785,6 +1828,48 @@
           ]
         }
       }
+    }
+  },
+  "entries": {
+    "westlake": {
+      "title": "西湖はなぜ湖となり、なぜ西湖と呼ばれるか",
+      "excerpt": "潟湖を疏浚で保ち、城の西にあるから西湖。本文は中国語。"
+    },
+    "su-bai-causeway": {
+      "title": "蘇堤と白堤：堤は梳妆",
+      "excerpt": "蘇堤は蘇軾が築き、今の白堤は白居易を記念する。本文は中国語。"
+    },
+    "tianmu": {
+      "title": "天目山：分水の山",
+      "excerpt": "両目の名、分水の骨。本文は中国語。"
+    },
+    "linan-gazetteers": {
+      "title": "臨安三志",
+      "excerpt": "南宋の乾道・淳祐・咸淳『臨安志』。本文は中国語。"
+    },
+    "qian-liu": {
+      "title": "銭鏐：臨安から出た呉越王",
+      "excerpt": "銭鏐は臨安の人、呉越の開国の王。本文は中国語。"
+    },
+    "liangzhu": {
+      "title": "良渚：より早い城",
+      "excerpt": "杭州史の、より早い一層。本文は中国語。"
+    },
+    "lingyin": {
+      "title": "霊隠と飛来峰",
+      "excerpt": "寺は峰の後ろ。先に石、後に寺。本文は中国語。"
+    },
+    "tea": {
+      "title": "龍井茶：山が天候を、人が忍耐を",
+      "excerpt": "山場が天候を、手が寸法を。本文は中国語。"
+    },
+    "canal": {
+      "title": "京杭大運河・杭州端",
+      "excerpt": "運河の南端は杭州。船は替わり、河は残る。本文は中国語。"
+    },
+    "zhinan": {
+      "title": "指南村",
+      "excerpt": "天目の東麓、苕渓の源辺の村。本文は中国語。"
     }
   }
 }

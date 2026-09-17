@@ -1,3 +1,5 @@
+import { entrySeoPages } from '@/i18n/entries'
+
 /** Non-translated structure: ids, routes, images, latin labels. Copy lives in locales/*.json */
 
 export const ANTHOLOGY_DOMAIN = 'jiuzhou.world'
@@ -630,7 +632,7 @@ export function volumeNav(volumeKey: string) {
     }))
 }
 
-export type SeoPageType = 'website' | 'article' | 'collection'
+export type SeoPageType = 'website' | 'article' | 'collection' | 'entry'
 
 export const seoPages = [
     { path: '/', key: 'home', type: 'website' as SeoPageType, image: '/images/hero-jiuzhou.webp' },
@@ -721,4 +723,5 @@ export const seoPages = [
             })),
         ]
     }),
+    ...entrySeoPages,
 ]
