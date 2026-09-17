@@ -1,0 +1,23 @@
+---
+import PageShell from '@/layouts/PageShell.astro'
+import Entry from '@/views/Entry'
+import { getPageSeo } from '@/lib/seo'
+import { gazetteerEntries, getEntryByHangzhouRest } from '@/i18n/entries'
+
+export function getStaticPaths() {
+    return gazetteerEntries.map((entry) => ({
+        params: { entry: entry.path.replace(/^\/hangzhou\//, '') },
+    }))
+}
+
+const rest = Astro.params.entry
+const record = getEntryByHangzhouRest(rest)
+if (!record) throw new Error(`[entries] unknown path /hangzhou/${rest}`)
+
+const seo = getPageSeo(record.path)
+const lang = 'zh' as const
+---
+
+<PageShell seo={seo} lang={lang}>
+    <Entry lang={lang} slug={record.slug} />
+</PageShell>

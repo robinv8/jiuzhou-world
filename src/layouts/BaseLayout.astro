@@ -42,7 +42,7 @@ const indexable = isPublishedPath(seo.path)
             <link rel="alternate" hreflang={a.hreflang} href={a.href} />
         ))}
 
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content={seo.type === 'entry' ? 'article' : 'website'} />
         <meta property="og:site_name" content={siteName} />
         <meta property="og:locale" content={meta.ogLocale} />
         {LOCALES.filter((l) => l !== lang).map((l) => (

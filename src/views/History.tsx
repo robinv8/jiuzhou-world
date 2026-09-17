@@ -1,9 +1,12 @@
 import { getVolume, getVolumeContent } from '@/i18n/catalogs'
+import { entriesLinkedFrom, extraEntriesForChapter } from '@/i18n/entries'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import ChapterLead from '@/components/ChapterLead'
 import Reveal from '@/components/Reveal'
 import ChapterClose from '@/components/ChapterClose'
+import EntryLinks from '@/components/EntryLinks'
+import ChapterEntries from '@/components/ChapterEntries'
 import { withLocale } from '@/lib/i18n-path'
 
 export default function History({ lang, volume }: { lang: Lang; volume: string }) {
@@ -39,6 +42,12 @@ export default function History({ lang, volume }: { lang: Lang; volume: string }
                                     <p className="mt-6 leading-8 text-[#3d4842]">{p}</p>
                                 </Reveal>
                             ))}
+                            <Reveal delay={280}>
+                                <EntryLinks
+                                    lang={lang}
+                                    entries={entriesLinkedFrom(volume, 'history', entry.id)}
+                                />
+                            </Reveal>
                         </div>
                         <div
                             className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
@@ -58,6 +67,8 @@ export default function History({ lang, volume }: { lang: Lang; volume: string }
                     </div>
                 </section>
             ))}
+
+            <ChapterEntries lang={lang} entries={extraEntriesForChapter(volume, 'history')} />
 
             <ChapterClose
                 seal="史"

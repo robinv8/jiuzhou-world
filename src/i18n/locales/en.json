@@ -764,6 +764,46 @@
     "xiaoshan_culture": {
       "title": "物之 · 萧山 · Jiuzhou",
       "description": "印纹陶。湖边的田。"
+    },
+    "entry_westlake": {
+      "title": "How West Lake Formed, and Why It Is Called West · Jiuzhou",
+      "description": "A lagoon kept open by dredging; named West because it sits west of the city. Full essay in Chinese."
+    },
+    "entry_su-bai-causeway": {
+      "title": "Su Causeway and Bai Causeway: The Dikes as Dressing · Jiuzhou",
+      "description": "Su Causeway was built by Su Shi; today’s Bai Causeway memorializes Bai Juyi but is not his dike. Full essay in Chinese."
+    },
+    "entry_tianmu": {
+      "title": "Mount Tianmu: A Watershed · Jiuzhou",
+      "description": "Named for two pools like eyes; its spine splits water north and south. Full essay in Chinese."
+    },
+    "entry_linan-gazetteers": {
+      "title": "The Three Lin’an Gazetteers · Jiuzhou",
+      "description": "Three Southern Song Lin’an zhi: Qiandao, Chunyou, Xianchun. Full essay in Chinese."
+    },
+    "entry_qian-liu": {
+      "title": "Qian Liu: The King of Wuyue from Lin’an · Jiuzhou",
+      "description": "Qian Liu was a Lin’an man who founded Wuyue. Full essay in Chinese."
+    },
+    "entry_liangzhu": {
+      "title": "Liangzhu: An Earlier City · Jiuzhou",
+      "description": "Liangzhu is the earlier city in Hangzhou’s historical layers. Full essay in Chinese."
+    },
+    "entry_lingyin": {
+      "title": "Lingyin and Feilai Peak · Jiuzhou",
+      "description": "The temple sits behind the peak; stone first, then the monastery. Full essay in Chinese."
+    },
+    "entry_tea": {
+      "title": "Longjing Tea: Weather from the Hills, Patience from the Hand · Jiuzhou",
+      "description": "Hills give weather; hands give the measure of a bud and a leaf. Full essay in Chinese."
+    },
+    "entry_canal": {
+      "title": "The Grand Canal at Hangzhou · Jiuzhou",
+      "description": "The canal’s southern end is in Hangzhou. Boats change; the river stays. Full essay in Chinese."
+    },
+    "entry_zhinan": {
+      "title": "Zhinan Village · Jiuzhou",
+      "description": "A foothill village on the east of Tianmu, by the upper Tiaoxi. Full essay in Chinese."
     }
   },
   "ui": {
@@ -795,7 +835,10 @@
       "hangzhouCanal": "The Grand Canal · Hangzhou",
       "fuchunSandbar": "Fuchun River · sandbar",
       "thousandLi": "Wang Ximeng, A Thousand Li of Rivers and Mountains (detail), Northern Song, 1113 · The Palace Museum"
-    }
+    },
+    "readEntry": "Read the entry",
+    "entriesOnThisChapter": "Entries in this chapter",
+    "backToChapter": "Back to the chapter"
   },
   "fuyang": {
     "volumeTitle": "Fuyang",
@@ -1785,6 +1828,48 @@
           ]
         }
       }
+    }
+  },
+  "entries": {
+    "westlake": {
+      "title": "How West Lake Formed, and Why It Is Called West",
+      "excerpt": "A lagoon kept open by dredging; named West because it sits west of the city. Full essay in Chinese."
+    },
+    "su-bai-causeway": {
+      "title": "Su Causeway and Bai Causeway: The Dikes as Dressing",
+      "excerpt": "Su Causeway was built by Su Shi; today’s Bai Causeway memorializes Bai Juyi but is not his dike. Full essay in Chinese."
+    },
+    "tianmu": {
+      "title": "Mount Tianmu: A Watershed",
+      "excerpt": "Named for two pools like eyes; its spine splits water north and south. Full essay in Chinese."
+    },
+    "linan-gazetteers": {
+      "title": "The Three Lin’an Gazetteers",
+      "excerpt": "Three Southern Song Lin’an zhi: Qiandao, Chunyou, Xianchun. Full essay in Chinese."
+    },
+    "qian-liu": {
+      "title": "Qian Liu: The King of Wuyue from Lin’an",
+      "excerpt": "Qian Liu was a Lin’an man who founded Wuyue. Full essay in Chinese."
+    },
+    "liangzhu": {
+      "title": "Liangzhu: An Earlier City",
+      "excerpt": "Liangzhu is the earlier city in Hangzhou’s historical layers. Full essay in Chinese."
+    },
+    "lingyin": {
+      "title": "Lingyin and Feilai Peak",
+      "excerpt": "The temple sits behind the peak; stone first, then the monastery. Full essay in Chinese."
+    },
+    "tea": {
+      "title": "Longjing Tea: Weather from the Hills, Patience from the Hand",
+      "excerpt": "Hills give weather; hands give the measure of a bud and a leaf. Full essay in Chinese."
+    },
+    "canal": {
+      "title": "The Grand Canal at Hangzhou",
+      "excerpt": "The canal’s southern end is in Hangzhou. Boats change; the river stays. Full essay in Chinese."
+    },
+    "zhinan": {
+      "title": "Zhinan Village",
+      "excerpt": "A foothill village on the east of Tianmu, by the upper Tiaoxi. Full essay in Chinese."
     }
   }
 }

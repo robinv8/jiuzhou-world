@@ -1,6 +1,6 @@
 # Brain Index
 
-_Auto-generated. Last updated 2026-09-09T02:46:06.812Z._
+_Auto-generated. Last updated 2026-09-17T09:34:39.617Z._
 
 - [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目：省 → 市 → 区/县 三级
 - [anthology-spine](pages/anthology-spine.md) — category: concept | tags: [spine, gazetteer, overview] | # 九州志整体脉络
@@ -9,6 +9,7 @@ _Auto-generated. Last updated 2026-09-09T02:46:06.812Z._
 - [chunan-gazetteer](pages/chunan-gazetteer.md) — category: reference | tags: [hangzhou, chunan, gazetteer] | # 淳安：江成库，城在水下（已开）
 - [cloudflare-pages-ci](pages/cloudflare-pages-ci.md) — category: decision | 推送 main 触发构建：Node 22、npm install、i18n:check、astro build、`npm run 404:check`，再用 wrangler pages deploy 发布到项目 jiuzhou-world。
 - [fuyang-gazetteer](pages/fuyang-gazetteer.md) — category: reference | tags: [hangzhou, fuyang, gazetteer] | # 富阳：从江读起（已开）
+- [gazetteer-entry-pages](pages/gazetteer-entry-pages.md) — category: decision | tags: [architecture, routing, i18n] | # 专条挂在章下，不另开 /entries
 - [gazetteer-historical-accuracy](pages/gazetteer-historical-accuracy.md) — category: decision | tags: [gazetteer, history, copy] | # 方志史地：已核对的硬约束
 - [hangzhou-narrative-spine](pages/hangzhou-narrative-spine.md) — category: decision | tags: [hangzhou, vol1, narrative, editorial] | # 杭州叙事脉络：从湖读起，向城而行
 - [hangzhou-subvolumes-roster](pages/hangzhou-subvolumes-roster.md) — category: decision | tags: [hangzhou, nested-volume, editorial] | # 杭州下辖卷名录：能立 / 并入 / 不写

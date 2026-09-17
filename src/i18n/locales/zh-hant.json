@@ -764,6 +764,46 @@
     "xiaoshan_culture": {
       "title": "物之卷 · 蕭山 · 九州志",
       "description": "印紋陶。湖邊的田。"
+    },
+    "entry_westlake": {
+      "title": "西湖何以成湖、何以稱西湖 · 九州志",
+      "description": "西湖本是海灣潟湖，靠歷代疏浚存住；湖在州城之西，故稱西湖。全文簡體。"
+    },
+    "entry_su-bai-causeway": {
+      "title": "蘇堤與白堤：堤是梳妝 · 九州志",
+      "description": "蘇堤是蘇軾所築；今白堤紀念白居易，卻不是白公堤。全文簡體。"
+    },
+    "entry_tianmu": {
+      "title": "天目山：分水之山 · 九州志",
+      "description": "天目以兩目如眼得名，骨在分水。全文簡體。"
+    },
+    "entry_linan-gazetteers": {
+      "title": "臨安三志：乾道、淳祐、咸淳 · 九州志",
+      "description": "南宋三部《臨安志》：乾道、淳祐殘，咸淳較全。全文簡體。"
+    },
+    "entry_qian-liu": {
+      "title": "錢鏐：從臨安走出的吳越王 · 九州志",
+      "description": "錢鏐是臨安人，吳越開國之王。全文簡體。"
+    },
+    "entry_liangzhu": {
+      "title": "良渚：更早的城 · 九州志",
+      "description": "良渚是杭州史敘事裡更早的一層城。全文簡體。"
+    },
+    "entry_lingyin": {
+      "title": "靈隱與飛來峯 · 九州志",
+      "description": "寺在飛來峯後；先石後寺。全文簡體。"
+    },
+    "entry_tea": {
+      "title": "龍井茶：山給天氣，人給耐心 · 九州志",
+      "description": "山場給天氣，人手給尺寸。全文簡體。"
+    },
+    "entry_canal": {
+      "title": "京杭大運河·杭州端 · 九州志",
+      "description": "運河南端在杭州。船換了一茬，河還在。全文簡體。"
+    },
+    "entry_zhinan": {
+      "title": "指南村 · 九州志",
+      "description": "天目東麓、苕溪源邊的山村。全文簡體。"
     }
   },
   "ui": {
@@ -795,7 +835,10 @@
       "hangzhouCanal": "京杭大運河 · 杭州段",
       "fuchunSandbar": "富春江 · 沙洲",
       "thousandLi": "北宋 · 王希孟《千里江山圖》局部 · 故宮博物院藏"
-    }
+    },
+    "readEntry": "讀專條",
+    "entriesOnThisChapter": "本章專條",
+    "backToChapter": "回本章"
   },
   "fuyang": {
     "volumeTitle": "富陽卷",
@@ -1785,6 +1828,48 @@
           ]
         }
       }
+    }
+  },
+  "entries": {
+    "westlake": {
+      "title": "西湖何以成湖、何以稱西湖",
+      "excerpt": "西湖本是海灣潟湖，靠歷代疏浚存住；湖在州城之西，故稱西湖。全文簡體。"
+    },
+    "su-bai-causeway": {
+      "title": "蘇堤與白堤：堤是梳妝",
+      "excerpt": "蘇堤是蘇軾所築；今白堤紀念白居易，卻不是白公堤。全文簡體。"
+    },
+    "tianmu": {
+      "title": "天目山：分水之山",
+      "excerpt": "天目以兩目如眼得名，骨在分水。全文簡體。"
+    },
+    "linan-gazetteers": {
+      "title": "臨安三志：乾道、淳祐、咸淳",
+      "excerpt": "南宋三部《臨安志》：乾道、淳祐殘，咸淳較全。全文簡體。"
+    },
+    "qian-liu": {
+      "title": "錢鏐：從臨安走出的吳越王",
+      "excerpt": "錢鏐是臨安人，吳越開國之王。全文簡體。"
+    },
+    "liangzhu": {
+      "title": "良渚：更早的城",
+      "excerpt": "良渚是杭州史敘事裡更早的一層城。全文簡體。"
+    },
+    "lingyin": {
+      "title": "靈隱與飛來峯",
+      "excerpt": "寺在飛來峯後；先石後寺。全文簡體。"
+    },
+    "tea": {
+      "title": "龍井茶：山給天氣，人給耐心",
+      "excerpt": "山場給天氣，人手給尺寸。全文簡體。"
+    },
+    "canal": {
+      "title": "京杭大運河·杭州端",
+      "excerpt": "運河南端在杭州。船換了一茬，河還在。全文簡體。"
+    },
+    "zhinan": {
+      "title": "指南村",
+      "excerpt": "天目東麓、苕溪源邊的山村。全文簡體。"
     }
   }
 }

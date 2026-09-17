@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [editorial, structure, chapters]
 created: "2026-08-22T16:04:19"
-updated: "2026-08-22T16:09:10"
+updated: "2026-09-17T09:34:39"
 ---
 
 <!-- compiled_truth -->
@@ -48,3 +48,9 @@ updated: "2026-08-22T16:09:10"
   summary: "补章号规则：卷一只指市卷；章可称山川之卷，kicker 不用卷一、卷二。"
   source: "当前聊天"
   affects: [chapter-skeleton]
+
+- time: 2026-09-17T09:34:39
+  kind: decision
+  summary: "章下可挂长文专条；短条仍留在章页，专条走 /{volume}/{chapter}/{id}/。"
+  source: SHIP 10 gazetteer entries
+  affects: [gazetteer-entry-pages, chapter-skeleton]

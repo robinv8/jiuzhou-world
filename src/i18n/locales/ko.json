@@ -764,6 +764,46 @@
     "xiaoshan_culture": {
       "title": "物之卷 · 萧山 · 구주지",
       "description": "印纹陶。湖边的田。"
+    },
+    "entry_westlake": {
+      "title": "서호는 어떻게 호수가 되었고 왜 서호라 불리는가 · 구주지",
+      "description": "석호를 준설로 지켰고, 성 서쪽에 있어 서호라 한다. 본문은 중국어."
+    },
+    "entry_su-bai-causeway": {
+      "title": "소제와 백제: 둑은 단장 · 구주지",
+      "description": "소제는 소식의 공사이고, 지금의 백제는 백거이를 기린다. 본문은 중국어."
+    },
+    "entry_tianmu": {
+      "title": "천목산: 분수령 · 구주지",
+      "description": "두 눈처럼 이름 붙었고, 뼈대는 분수. 본문은 중국어."
+    },
+    "entry_linan-gazetteers": {
+      "title": "임안 삼지 · 구주지",
+      "description": "남송 건도·순우·함순 《임안지》. 본문은 중국어."
+    },
+    "entry_qian-liu": {
+      "title": "전유: 임안에서 나온 오월왕 · 구주지",
+      "description": "전유는 임안 사람, 오월의 개국왕. 본문은 중국어."
+    },
+    "entry_liangzhu": {
+      "title": "량주: 더 이른 성 · 구주지",
+      "description": "항저우 역사에서 더 이른 층의 성. 본문은 중국어."
+    },
+    "entry_lingyin": {
+      "title": "영은과 비래봉 · 구주지",
+      "description": "절은 봉우리 뒤. 먼저 돌, 그다음 절. 본문은 중국어."
+    },
+    "entry_tea": {
+      "title": "용정차: 산은 날씨를, 사람은 인내를 · 구주지",
+      "description": "산이 날씨를, 손이 치수를. 본문은 중국어."
+    },
+    "entry_canal": {
+      "title": "경항대운하·항저우 끝 · 구주지",
+      "description": "운하 남단은 항저우. 배는 바뀌고 강은 남는다. 본문은 중국어."
+    },
+    "entry_zhinan": {
+      "title": "지남촌 · 구주지",
+      "description": "천목 동쪽 기슭, 조계 상류의 산촌. 본문은 중국어."
     }
   },
   "ui": {
@@ -795,7 +835,10 @@
       "hangzhouCanal": "경항대운하 · 항주 구간",
       "fuchunSandbar": "부춘강 · 사주",
       "thousandLi": "북송 · 왕희맹 『천리강산도』(부분) · 고궁박물원 소장"
-    }
+    },
+    "readEntry": "전조 읽기",
+    "entriesOnThisChapter": "이 장의 전조",
+    "backToChapter": "이 장으로"
   },
   "fuyang": {
     "volumeTitle": "부양 권",
@@ -1785,6 +1828,48 @@
           ]
         }
       }
+    }
+  },
+  "entries": {
+    "westlake": {
+      "title": "서호는 어떻게 호수가 되었고 왜 서호라 불리는가",
+      "excerpt": "석호를 준설로 지켰고, 성 서쪽에 있어 서호라 한다. 본문은 중국어."
+    },
+    "su-bai-causeway": {
+      "title": "소제와 백제: 둑은 단장",
+      "excerpt": "소제는 소식의 공사이고, 지금의 백제는 백거이를 기린다. 본문은 중국어."
+    },
+    "tianmu": {
+      "title": "천목산: 분수령",
+      "excerpt": "두 눈처럼 이름 붙었고, 뼈대는 분수. 본문은 중국어."
+    },
+    "linan-gazetteers": {
+      "title": "임안 삼지",
+      "excerpt": "남송 건도·순우·함순 《임안지》. 본문은 중국어."
+    },
+    "qian-liu": {
+      "title": "전유: 임안에서 나온 오월왕",
+      "excerpt": "전유는 임안 사람, 오월의 개국왕. 본문은 중국어."
+    },
+    "liangzhu": {
+      "title": "량주: 더 이른 성",
+      "excerpt": "항저우 역사에서 더 이른 층의 성. 본문은 중국어."
+    },
+    "lingyin": {
+      "title": "영은과 비래봉",
+      "excerpt": "절은 봉우리 뒤. 먼저 돌, 그다음 절. 본문은 중국어."
+    },
+    "tea": {
+      "title": "용정차: 산은 날씨를, 사람은 인내를",
+      "excerpt": "산이 날씨를, 손이 치수를. 본문은 중국어."
+    },
+    "canal": {
+      "title": "경항대운하·항저우 끝",
+      "excerpt": "운하 남단은 항저우. 배는 바뀌고 강은 남는다. 본문은 중국어."
+    },
+    "zhinan": {
+      "title": "지남촌",
+      "excerpt": "천목 동쪽 기슭, 조계 상류의 산촌. 본문은 중국어."
     }
   }
 }
