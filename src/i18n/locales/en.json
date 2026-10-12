@@ -14,6 +14,8 @@
     "name": "Jiuzhou",
     "volumesLabel": "The volumes",
     "volumesTitle": "Open a volume",
+    "provincesLabel": "Provinces",
+    "provincesTitle": "Open",
     "about": "About",
     "contribute": "Photographs",
     "heroKicker": "One city, one volume",
@@ -810,6 +812,14 @@
     "language": "Language",
     "menu": "Menu",
     "openVolume": "OPEN",
+    "districtsLabel": "Districts",
+    "cityPagesLabel": "Pages",
+    "cityPagesTitle": "Open",
+    "cityCategory": {
+      "mountains": "Landscape",
+      "scenic": "Places",
+      "heritage": "History"
+    },
     "nextChapter": "Next",
     "backToOpening": "Back to the opening",
     "season": "Season",

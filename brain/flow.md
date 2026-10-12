@@ -2,7 +2,7 @@
 slug: flow
 title: Key flows
 role: key flows
-updated: "2026-09-09T02:46:33"
+updated: "2026-10-12T15:46:05"
 ---
 
 # Key flows
@@ -83,15 +83,16 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-  Home["首页 / 只列市卷"] --> HZ["杭州卷一 /hangzhou"]
-  Home -.-> ZJ["省页 /zhejiang 导航"]
-  ZJ --> HZ
-  HZ --> Ch["山川 / 景 / 物 / 史"]
-  HZ --> LA["临安下辖 /hangzhou/linan"]
-  LA --> ChL["临安四章"]
+  Home["首页 / 只列已开的省"] --> ZJ["省页 /zhejiang"]
+  ZJ --> HZ["杭州 /hangzhou"]
+  ZJ --> LA["临安区县 挂在杭州下"]
+  HZ --> Cat["山川美景 / 名胜古迹 / 历史文化"]
+  Cat --> Pages["已刊专条 URL 不改"]
+  HZ --> LA2["区县 /hangzhou/linan"]
+  LA2 --> ChL["临安四章"]
 ```
 
-古州身份：省页 kicker「古扬州之南」；首页市卷卡小字「古扬州之地」。卷首 kicker 只写今制。见 [[root-pulse-mountains-rivers]]。
+读者路线见 [[reader-route-province-city]]。古州身份：省页 kicker「古扬州之南」。卷首 kicker 只写今制。见 [[root-pulse-mountains-rivers]]。
 
 ## 6. 供图流程
 

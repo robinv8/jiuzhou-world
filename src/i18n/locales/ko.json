@@ -14,6 +14,8 @@
     "name": "구주지",
     "volumesLabel": "여러 권",
     "volumesTitle": "개권",
+    "provincesLabel": "성",
+    "provincesTitle": "개권",
     "about": "연원",
     "contribute": "사진",
     "heroKicker": "한 권에 한 성. 서두르지 않는다",
@@ -810,6 +812,14 @@
     "language": "언어",
     "menu": "차례",
     "openVolume": "개권",
+    "districtsLabel": "구",
+    "cityPagesLabel": "목차",
+    "cityPagesTitle": "개권",
+    "cityCategory": {
+      "mountains": "산천",
+      "scenic": "명소",
+      "heritage": "역사"
+    },
     "nextChapter": "다음 장",
     "backToOpening": "권수로 돌아가다",
     "season": "시령",

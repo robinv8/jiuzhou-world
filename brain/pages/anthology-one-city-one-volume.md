@@ -5,19 +5,19 @@ category: decision
 status: active
 tags: [anthology, structure]
 created: "2026-08-20T14:14:25"
-updated: "2026-08-22T18:31:42"
+updated: "2026-10-12T15:46:57"
 ---
 
 <!-- compiled_truth -->
-# 总目：省 → 市 → 区/县 三级
+# 总目：省 → 市 → 区/县
 
-根上总脉是山川为纲，见 [[root-pulse-mountains-rivers]]。「一卷一城」指写作单位是城，不是行政对等，也不是古州配额。总图见 [[anthology-spine]]。
+根上总脉是山川为纲，见 [[root-pulse-mountains-rivers]]。「一卷一城」指写作单位是城，不是行政对等，也不是古州配额。总图见 [[anthology-spine]]。读者路线见 [[reader-route-province-city]]。
 
-- **省**（/zhejiang）：今制轮廓。只做导航，kicker 写古州身份（浙江 = 古扬州之南）。不做正文、不设读法。市多了再扩列表。
-- **市卷**（/hangzhou）：真正的单位，参与全站编号。杭州为卷一。页内「下辖卷」**只链已开的区/县卷**，不摆空位。首页卷卡：今制「浙江 · 杭州」+ 小字「古扬州之地」。卷首 kicker 只写今制「浙江 · 杭州」。
-- **区/县下辖卷**（/hangzhou/linan）：保持独立，不编号。有自己的山川、杭州卷装不下才立。不是每个区都要一卷。归属从简——hero 顶部小字只写上级城市名「杭州」；开卷处直接显示「杭州」链接，不写「属于」、不挂省名、不加古扬州。
-- **总目首页**只列顶层市卷（无 parent）；区/县卷不进首页。
-- 旧 /linan/* 全部 301 到 /hangzhou/linan/*。
+- **首页**：只列已开的省。现在只有浙江，链到 `/zhejiang/`。不列未写的省，不摆空位。
+- **省**（`/zhejiang`）：今制轮廓。一句身份（kicker 写古州：浙江 = 古扬州之南）+ 已开的市。杭州为开。临安是杭州的区县，挂在杭州下面，不是并列的市。页上只列已开区县。
+- **市**（`/hangzhou`）：真正的写作单位，参与全站编号。杭州为卷一。页上已刊专条按三类陈列（山川美景 / 名胜古迹 / 历史文化），区县栏只链已开的区/县。不摆空位。卷首 kicker 只写今制「浙江 · 杭州」。
+- **区/县**（`/hangzhou/linan`）：保持独立，不编号。有自己的山川、杭州卷装不下才立。不是每个区都要一卷。归属从简——hero 顶部小字只写上级城市名「杭州」。
+- 旧 `/linan/*` 全部 301 到 `/hangzhou/linan/*`。
 
 杭州今制下辖谁能立、谁并入、谁不写，见 [[hangzhou-subvolumes-roster]]。临安不并进杭州。
 
@@ -117,3 +117,15 @@ updated: "2026-08-22T18:31:42"
   summary: "下辖卷不是区县配额；页上只列已开；杭州名录见 hangzhou-subvolumes-roster。"
   source: "当前聊天"
   affects: [anthology-one-city-one-volume]
+
+- time: 2026-10-12T15:46:05
+  kind: decision
+  summary: "首页改为只列已开的省；临安在省页挂在杭州下作区县"
+  source: Robin 2026-10-12
+  affects: [anthology-one-city-one-volume]
+
+- time: 2026-10-12T15:46:57
+  kind: reversal
+  summary: "撤回「首页只列顶层市卷」：首页只列已开的省；临安不再作为与杭州并列的市。"
+  source: Robin 2026-10-12
+  affects: [reader-route-province-city, volume-hangzhou]

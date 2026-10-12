@@ -5,20 +5,20 @@ category: decision
 status: active
 tags: [zhejiang, hangzhou, vol1]
 created: "2026-08-21T11:53:48"
-updated: "2026-08-22T18:31:18"
+updated: "2026-10-12T15:46:05"
 ---
 
 <!-- compiled_truth -->
 # 浙江下开杭州卷
 
-浙江下面不只临安。**杭州是卷一**（顶层市卷），临安是其下辖卷。
+浙江下面不只临安。**杭州是卷一**（顶层市卷），临安是其下辖区县卷。读者路线见 [[reader-route-province-city]]。
 
 - 写作单位仍是城，见 [[anthology-one-city-one-volume]]、[[root-pulse-mountains-rivers]]。
-- 省页 /zhejiang 存在：一句古州身份 + 诸市导航，不做正文。
-- 杭州卷沿用四章骨架：山川、景、物、史。读法与条目见 [[hangzhou-narrative-spine]]。
+- 省页 `/zhejiang`：一句古州身份 + 已开的市；杭州开，临安挂在杭州下作区县。
+- 杭州卷写作骨架仍是四章：山川、景、物、史。市页把已刊专条收成三类（山川美景 / 名胜古迹 / 历史文化）。读法与条目见 [[hangzhou-narrative-spine]]。
 - 古州身份：杭州、临安属古扬州。这是标记，不是「扬州已占满、下一卷必须换州」。
-- **临安不并进杭州。** 留下因核（天目、钱氏、府名县名），不是因区划。不按临安把其他区抄成下辖卷。
-- 杭州今制下辖一次列完，能立 / 并入 / 不写，见 [[hangzhou-subvolumes-roster]]。页上只列已开。
+- **临安不并进杭州。** 留下因核（天目、钱氏、府名县名），不是因区划。不按临安把其他区抄成下辖卷。市页「区县」只链已开。
+- 杭州今制下辖一次列完，能立 / 并入 / 不写，见 [[hangzhou-subvolumes-roster]]。
 - 民乐扁都口暂缓，见 [[second-volume-candidate-minle-biandukou]]。
 
 关联 [[vol1-narrative-spine]]。
@@ -72,4 +72,10 @@ updated: "2026-08-22T18:31:18"
   kind: decision
   summary: "临安不并入；下辖不是配额；名录见 hangzhou-subvolumes-roster。"
   source: "当前聊天"
+  affects: [volume-hangzhou]
+
+- time: 2026-10-12T15:46:05
+  kind: decision
+  summary: "杭州市页三类专条 + 区县临安；四章路由保留"
+  source: Robin 2026-10-12
   affects: [volume-hangzhou]

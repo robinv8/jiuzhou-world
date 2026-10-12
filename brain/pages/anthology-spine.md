@@ -5,7 +5,7 @@ category: concept
 status: active
 tags: [spine, gazetteer, overview]
 created: "2026-08-22T16:11:11"
-updated: "2026-08-22T19:02:48"
+updated: "2026-10-12T15:46:05"
 ---
 
 <!-- compiled_truth -->
@@ -21,16 +21,16 @@ updated: "2026-08-22T19:02:48"
 
 ## 层级
 
-省 → 市卷 → 下辖卷。详见 [[anthology-one-city-one-volume]]。
+省 → 市 → 区/县。读者路线见 [[reader-route-province-city]]，细则见 [[anthology-one-city-one-volume]]。
 
-- **首页**：只列顶层市卷。九州铭文是底色，不是进度条。市卷卡：今制「浙江 · 杭州」+ 小字「古扬州之地」。
-- **省**（/zhejiang）：今制轮廓。kicker「古扬州之南」+ 诸市导航。无正文、无读法。
-- **市卷**（/hangzhou）：真正的单位。杭州为卷一。卷首 kicker 只写今制「浙江 · 杭州」。
-- **下辖卷**（/hangzhou/linan）：不编号、不进首页。归属从简，只标「杭州」。不加古扬州。页上只列已开，不摆区县空位。名录见 [[hangzhou-subvolumes-roster]]。
+- **首页**：只列已开的省。现在只有浙江。不列未写的省，不摆空位。九州铭文是底色，不是进度条。
+- **省**（/zhejiang）：今制轮廓。kicker「古扬州之南」+ 已开的市。杭州为开。临安是杭州的区县，不是并列的市。
+- **市**（/hangzhou）：真正的单位。杭州为卷一。卷首 kicker 只写今制「浙江 · 杭州」。市页把已刊专条收成三类（山川美景 / 名胜古迹 / 历史文化），区县栏只链已开。
+- **区/县**（/hangzhou/linan）：不编号、不进首页。归属从简，只标「杭州」。不加古扬州。页上只列已开。名录见 [[hangzhou-subvolumes-roster]]。
 
 ## 卷内骨架
 
-四章全国统一：**山川 / 景 / 物 / 史**。见 [[chapter-skeleton]]。
+四章全国统一：**山川 / 景 / 物 / 史**。见 [[chapter-skeleton]]。路由不变。市页呈现三类：山川美景 = mountains，名胜古迹 = scenic，历史文化 = history + culture。
 
 - 山川写系统，景写去处，两章不抢同一个名字。
 - 「卷一」只指市卷。章可称「山川之卷」，kicker 不用卷一 / 卷二。
@@ -53,7 +53,7 @@ updated: "2026-08-22T19:02:48"
 
 读法：从山读起，随水而下。天目是分水岭。见 [[vol1-narrative-spine]]。
 
-临安留下因核，不因区划，不并进杭州。
+临安留下因核，不因区划，不并进杭州。读者路线上它是杭州的区县。
 
 | 章 | 条目 | 核 |
 |---|---|---|
@@ -176,4 +176,10 @@ updated: "2026-08-22T19:02:48"
   kind: decision
   summary: "萧山核钉为浦阳江；可立五城均有核。下一座仍不钉写谁。"
   source: "当前聊天"
+  affects: [anthology-spine]
+
+- time: 2026-10-12T15:46:05
+  kind: decision
+  summary: "总图改为省→市→区县；市页三类呈现"
+  source: Robin 2026-10-12
   affects: [anthology-spine]

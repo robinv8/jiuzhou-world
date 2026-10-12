@@ -2,12 +2,16 @@ import { ArrowRight } from 'lucide-react'
 import {
     anthologyVolumes,
     chapterCoverRef,
+    cityDisplayCategories,
+    findCity,
     getVolume,
     getVolumeContent,
+    openDistricts,
     placeCaptionKey,
     volumeKernel,
     volumeParallaxRef,
 } from '@/i18n/catalogs'
+import { entriesForVolumeChapters } from '@/i18n/entries'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
@@ -30,6 +34,9 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
     const parallax = volumeParallaxRef(volume)
 
     const parentVol = vol.parent ? getVolume(vol.parent) : null
+    const city = findCity(volume)
+    const districts = city ? openDistricts(city) : []
+    const showCityIndex = Boolean(city)
     const subVolumes = anthologyVolumes.filter((v) => v.parent === volume && v.status === 'open')
 
     return (
@@ -106,11 +113,11 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
 
             <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
                 <Reveal>
-                    <MiniTitle i18nKey={`${volume}.volumesLabel`} lang={lang} />
+                    <MiniTitle i18nKey={showCityIndex ? 'ui.cityPagesLabel' : `${volume}.volumesLabel`} lang={lang} />
                 </Reveal>
                 <Reveal delay={100}>
                     <h2 className="mt-10 font-display text-4xl md:text-5xl font-semibold">
-                        {t(`${volume}.volumesTitle`)}
+                        {t(showCityIndex ? 'ui.cityPagesTitle' : `${volume}.volumesTitle`)}
                     </h2>
                 </Reveal>
 
@@ -122,56 +129,149 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                     </Reveal>
                 )}
 
-                <div className="mt-16 flex flex-col">
-                    {vol.chapters.map((v, i) => {
-                        const cover = chapterCoverRef(volume, v.key)
-                        return (
-                        <Reveal key={v.key} delay={i * 80}>
-                            <a
-                                href={href(`${vol.route}/${v.key}`)}
-                                className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t hairline ${
-                                    i === vol.chapters.length - 1 ? 'border-b' : ''
-                                }`}
-                            >
-                                <div
-                                    className={`md:col-span-5 overflow-hidden ${
-                                        i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''
-                                    }`}
-                                >
-                                    <div className="aspect-3/2 overflow-hidden">
-                                        <img
-                                            src={cover?.image ?? heroSrc}
-                                            alt={t(`${volume}.chapters.${v.key}.title`)}
-                                            loading="lazy"
-                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                        />
+                {showCityIndex ? (
+                    <div className="mt-16 flex flex-col gap-16">
+                        {cityDisplayCategories.map((cat) => {
+                            const pages = entriesForVolumeChapters(volume, cat.chapters)
+                            if (!pages.length) return null
+                            return (
+                                <div key={cat.key}>
+                                    <Reveal>
+                                        <p className="micro-label text-[#8ca693]">{cat.latin}</p>
+                                        <h3 className="mt-3 font-display text-2xl md:text-3xl font-semibold tracking-wide">
+                                            {t(`ui.cityCategory.${cat.key}`)}
+                                        </h3>
+                                    </Reveal>
+                                    <div className="mt-8 flex flex-col">
+                                        {pages.map((entry, i) => (
+                                            <Reveal key={entry.slug} delay={i * 80}>
+                                                <a
+                                                    href={href(entry.path)}
+                                                    className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-8 md:py-10 border-t hairline ${
+                                                        i === pages.length - 1 ? 'border-b' : ''
+                                                    }`}
+                                                >
+                                                    <div className="md:col-span-5 overflow-hidden">
+                                                        <div className="aspect-3/2 overflow-hidden">
+                                                            <img
+                                                                src={entry.image}
+                                                                alt={t(`entries.${entry.slug}.title`)}
+                                                                loading="lazy"
+                                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                    <div className="md:col-span-6 md:col-start-7">
+                                                        <p className="micro-label text-[#8ca693]">{entry.latin}</p>
+                                                        <h4 className="mt-3 font-display text-2xl md:text-3xl font-semibold tracking-wide">
+                                                            {t(`entries.${entry.slug}.title`)}
+                                                        </h4>
+                                                        <p className="mt-4 max-w-md text-[#5a665e] leading-7">
+                                                            {t(`entries.${entry.slug}.excerpt`)}
+                                                        </p>
+                                                        <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
+                                                            {t('ui.readEntry')}
+                                                            <ArrowRight
+                                                                size={16}
+                                                                className="transition-transform duration-500 group-hover:translate-x-1.5"
+                                                            />
+                                                        </span>
+                                                    </div>
+                                                </a>
+                                            </Reveal>
+                                        ))}
                                     </div>
                                 </div>
-                                <div
-                                    className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
+                            )
+                        })}
+                    </div>
+                ) : (
+                    <div className="mt-16 flex flex-col">
+                        {vol.chapters.map((v, i) => {
+                            const cover = chapterCoverRef(volume, v.key)
+                            return (
+                            <Reveal key={v.key} delay={i * 80}>
+                                <a
+                                    href={href(`${vol.route}/${v.key}`)}
+                                    className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t hairline ${
+                                        i === vol.chapters.length - 1 ? 'border-b' : ''
+                                    }`}
                                 >
-                                    <p className="micro-label text-[#8ca693]">{v.latin}</p>
-                                    <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
-                                        {t(`${volume}.chapters.${v.key}.title`)}
-                                    </h3>
-                                    <p className="mt-4 max-w-md text-[#5a665e] leading-7">
-                                        {t(`${volume}.chapters.${v.key}.desc`)}
-                                    </p>
-                                    <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
-                                        {t('ui.openVolume')}
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-500 group-hover:translate-x-1.5"
-                                        />
-                                    </span>
-                                </div>
-                            </a>
-                        </Reveal>
-                        )
-                    })}
-                </div>
+                                    <div
+                                        className={`md:col-span-5 overflow-hidden ${
+                                            i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''
+                                        }`}
+                                    >
+                                        <div className="aspect-3/2 overflow-hidden">
+                                            <img
+                                                src={cover?.image ?? heroSrc}
+                                                alt={t(`${volume}.chapters.${v.key}.title`)}
+                                                loading="lazy"
+                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
+                                    >
+                                        <p className="micro-label text-[#8ca693]">{v.latin}</p>
+                                        <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
+                                            {t(`${volume}.chapters.${v.key}.title`)}
+                                        </h3>
+                                        <p className="mt-4 max-w-md text-[#5a665e] leading-7">
+                                            {t(`${volume}.chapters.${v.key}.desc`)}
+                                        </p>
+                                        <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
+                                            {t('ui.openVolume')}
+                                            <ArrowRight
+                                                size={16}
+                                                className="transition-transform duration-500 group-hover:translate-x-1.5"
+                                            />
+                                        </span>
+                                    </div>
+                                </a>
+                            </Reveal>
+                            )
+                        })}
+                    </div>
+                )}
 
-                {subVolumes.length > 0 && (
+                {districts.length > 0 ? (
+                    <div className="mt-20">
+                        <Reveal>
+                            <h3 className="font-display text-2xl md:text-3xl font-semibold">
+                                {t('ui.districtsLabel')}
+                            </h3>
+                        </Reveal>
+                        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            {districts.map((district) => {
+                                const subKernel = volumeKernel(district.key)
+                                return (
+                                <Reveal key={district.key}>
+                                    <a href={href(district.route)} className="group block">
+                                        <div className="aspect-3/2 overflow-hidden">
+                                            <img
+                                                src={subKernel?.image ?? district.image}
+                                                alt={t(`district.${district.key}.title`)}
+                                                loading="lazy"
+                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
+                                            />
+                                        </div>
+                                        <p className="mt-4 micro-label text-[#8ca693]">{district.latin}</p>
+                                        <h4 className="mt-2 font-display text-xl md:text-2xl font-semibold">
+                                            {t(`district.${district.key}.title`)}
+                                        </h4>
+                                        <p className="mt-2 text-sm text-[#5a665e]">
+                                            {t(`district.${district.key}.desc`)}
+                                        </p>
+                                    </a>
+                                </Reveal>
+                                )
+                            })}
+                        </div>
+                    </div>
+                ) : (
+                    subVolumes.length > 0 && (
                     <div className="mt-20">
                         <Reveal>
                             <h3 className="font-display text-2xl md:text-3xl font-semibold">
@@ -205,6 +305,7 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                             })}
                         </div>
                     </div>
+                    )
                 )}
             </section>
 

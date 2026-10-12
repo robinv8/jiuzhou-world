@@ -14,6 +14,8 @@
     "name": "九州志",
     "volumesLabel": "諸巻",
     "volumesTitle": "開巻",
+    "provincesLabel": "省",
+    "provincesTitle": "開巻",
     "about": "縁起",
     "contribute": "供図",
     "heroKicker": "一巻に一城。急がない",
@@ -810,6 +812,14 @@
     "language": "言語",
     "menu": "目次",
     "openVolume": "開巻",
+    "districtsLabel": "区県",
+    "cityPagesLabel": "目次",
+    "cityPagesTitle": "開巻",
+    "cityCategory": {
+      "mountains": "山川美景",
+      "scenic": "名勝",
+      "heritage": "歴史"
+    },
     "nextChapter": "次の章",
     "backToOpening": "巻首へ戻る",
     "season": "時令",

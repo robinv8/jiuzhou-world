@@ -5,13 +5,13 @@ category: decision
 status: active
 tags: [editorial, structure, chapters]
 created: "2026-08-22T16:04:19"
-updated: "2026-09-17T09:34:39"
+updated: "2026-10-12T15:46:57"
 ---
 
 <!-- compiled_truth -->
 # 四章骨架：山川、景、物、史
 
-全国各卷同一套容器。第一章原称「山之卷」，因总脉为山川为纲，改为「山川之卷」。见 [[root-pulse-mountains-rivers]]。
+全国各卷同一套**写作容器**。第一章原称「山之卷」，因总脉为山川为纲，改为「山川之卷」。见 [[root-pulse-mountains-rivers]]。
 
 | 章 | 写什么 | 不写什么 |
 |---|---|---|
@@ -20,7 +20,17 @@ updated: "2026-09-17T09:34:39"
 | 物 | 山川养出来的人间 | 不把山川里的地貌再当一条物产写一遍 |
 | 史 | 这座城如何成为它自己 | 不与下辖卷复读同一段史 |
 
-内部路由 / catalog key 仍为 `mountains` / `scenic` / `culture` / `history`。中文标签为山川 / 景 / 物 / 史。英文等改写时，第一章对应 landscape，不必硬译成 Mountains。
+内部路由 / catalog key 仍为 `mountains` / `scenic` / `culture` / `history`。中文标签为山川 / 景 / 物 / 史。英文等改写时，第一章对应 landscape，不必硬译成 Mountains。四章落地页 URL 不改。
+
+## 市页三类（只改呈现）
+
+杭州市页把已刊专条收成三类，见 [[reader-route-province-city]]：
+
+- 山川美景 = `mountains`
+- 名胜古迹 = `scenic`
+- 历史文化 = `history` + `culture`（茶等物产归此）
+
+不新建合并路由。章页与专条路径保持原样。
 
 ## 章号
 
@@ -54,3 +64,15 @@ updated: "2026-09-17T09:34:39"
   summary: "章下可挂长文专条；短条仍留在章页，专条走 /{volume}/{chapter}/{id}/。"
   source: SHIP 10 gazetteer entries
   affects: [gazetteer-entry-pages, chapter-skeleton]
+
+- time: 2026-10-12T15:46:05
+  kind: decision
+  summary: "市页三类是呈现层；四章 key 与 URL 不变"
+  source: Robin 2026-10-12
+  affects: [chapter-skeleton]
+
+- time: 2026-10-12T15:46:57
+  kind: reversal
+  summary: "撤回杭州市页直接列四章卡：市页按三类陈列已刊专条，四章 URL 仍在。"
+  source: Robin 2026-10-12
+  affects: [reader-route-province-city]
