@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [hangzhou, nested-volume, editorial]
 created: "2026-08-22T18:30:33"
-updated: "2026-08-23T21:34:56"
+updated: "2026-10-12T15:46:05"
 ---
 
 <!-- compiled_truth -->
@@ -13,11 +13,11 @@ updated: "2026-08-23T21:34:56"
 
 杭州卷一已开，临安已开。膈应来自把临安当成区县名额：写了一个，其余像欠着。本页一次列完杭州今制下辖，避免想起一处补一处。
 
-**临安不并进杭州。** 它留下是因为核与杭州不是同一个：天目分水岭、钱氏五则、府名被借而县名未走。见 [[vol1-narrative-spine]]、[[hangzhou-narrative-spine]]。
+**临安不并进杭州。** 它留下是因为核与杭州不是同一个：天目分水岭、钱氏五则、府名被借而县名未走。见 [[vol1-narrative-spine]]、[[hangzhou-narrative-spine]]。在读者路线上，临安是杭州下面的区县，不是与杭州并列的市，见 [[reader-route-province-city]]。
 
 **下辖卷不是区县配额。** 一卷一城是写作单位，不是行政对等，见 [[anthology-one-city-one-volume]]、[[root-pulse-mountains-rivers]]。问的是：不写它，杭州还是不是杭州？它自己的山川杭州卷装不装得下？装不下才立下辖卷。不是景区百科，见 [[not-a-scenic-encyclopedia]]。
 
-**页上只列已开。** 杭州卷「下辖卷」不摆空位、不预告未写的区。名录只在脑里。
+**页上只列已开。** 省页把临安挂在杭州下；杭州市页「区县」栏只链临安。不摆空位、不预告未写的区。名录只在脑里。
 
 **上线范围：** 读者能走到的只有杭州卷一与临安。富阳、桐庐、建德、淳安、萧山可立，稿留在仓库，导航、页脚、sitemap 不列；直链 noindex。可立 ≠ 马上写。
 
@@ -110,4 +110,10 @@ updated: "2026-08-23T21:34:56"
   kind: decision
   summary: "上线只开杭州与临安；富阳桐庐建德淳安萧山可立但暂不上线，页上不列。"
   source: "当前聊天"
+  affects: [hangzhou-subvolumes-roster]
+
+- time: 2026-10-12T15:46:05
+  kind: decision
+  summary: "临安在读者路线上是杭州的区县，页上只列已开"
+  source: Robin 2026-10-12
   affects: [hangzhou-subvolumes-roster]

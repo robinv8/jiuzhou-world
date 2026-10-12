@@ -1,5 +1,5 @@
 import { ArrowRight } from 'lucide-react'
-import { anthologyVolumes, ANTHOLOGY_DOMAIN, placeRefByPlace, volumeKernel } from '@/i18n/catalogs'
+import { provinces, ANTHOLOGY_DOMAIN, placeRefByPlace, volumeKernel } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
@@ -100,47 +100,39 @@ export default function Home({ lang }: { lang: Lang }) {
 
             <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
                 <Reveal>
-                    <MiniTitle i18nKey="anthology.volumesLabel" lang={lang} />
+                    <MiniTitle i18nKey="anthology.provincesLabel" lang={lang} />
                 </Reveal>
                 <Reveal delay={100}>
                     <h2 className="mt-10 font-display text-4xl md:text-5xl font-semibold">
-                        {t('anthology.volumesTitle')}
+                        {t('anthology.provincesTitle')}
                     </h2>
                 </Reveal>
 
                 <div className="mt-16 flex flex-col">
-                    {anthologyVolumes.filter((v) => !v.parent).map((v) => {
-                        const kernel = volumeKernel(v.key)
+                    {provinces.map((prov) => {
+                        const kernel = volumeKernel(prov.cities[0]?.key ?? '')
                         return (
-                        <Reveal key={v.key}>
+                        <Reveal key={prov.key}>
                             <a
-                                href={href(v.route)}
+                                href={href(prov.route)}
                                 className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t border-b hairline"
                             >
                                 <div className="md:col-span-5 overflow-hidden">
                                     <div className="aspect-3/2 overflow-hidden">
                                         <img
-                                            src={kernel?.image ?? v.image}
-                                            alt={t(`anthology.volumes.${v.key}.title`)}
+                                            src={kernel?.image ?? prov.image}
+                                            alt={t(`province.${prov.key}.title`)}
                                             className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
                                         />
                                     </div>
                                 </div>
                                 <div className="md:col-span-6 md:col-start-7">
-                                    <p className="micro-label text-[#8ca693]">{v.latin}</p>
+                                    <p className="micro-label text-[#8ca693]">{prov.latin}</p>
                                     <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
-                                        {t(`anthology.volumes.${v.key}.title`)}
+                                        {t(`province.${prov.key}.title`)}
                                     </h3>
-                                    <p className="mt-2 text-xs tracking-[0.2em] text-[#8b958d]">
-                                        {t(`anthology.volumes.${v.key}.place`)}
-                                    </p>
-                                    {v.zhou && (
-                                        <p className="mt-1 text-xs tracking-[0.2em] text-[#8ca693]">
-                                            {t(`anthology.volumes.${v.key}.identity`)}
-                                        </p>
-                                    )}
                                     <p className="mt-4 max-w-md text-[#5a665e] leading-7">
-                                        {t(`anthology.volumes.${v.key}.desc`)}
+                                        {t(`province.${prov.key}.heroSub`)}
                                     </p>
                                     <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
                                         {t('ui.openVolume')}
@@ -154,15 +146,6 @@ export default function Home({ lang }: { lang: Lang }) {
                         </Reveal>
                         )
                     })}
-
-                    <Reveal delay={100}>
-                        <div className="py-10 md:py-14 border-b hairline opacity-60">
-                            <p className="micro-label text-[#8ca693]">{t('ui.volumeTwoDash')}</p>
-                            <p className="mt-3 font-display text-2xl md:text-3xl text-[#5a665e]">
-                                {t('ui.nextVolumeOnTheRoad')}
-                            </p>
-                        </div>
-                    </Reveal>
                 </div>
             </section>
         </main>

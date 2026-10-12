@@ -214,6 +214,17 @@ export function entriesLinkedFrom(volume: string, chapter: ChapterKey, itemId: s
     )
 }
 
+/** Published entries for a city-page display group. Order follows `chapters`, then catalog order. */
+export function entriesForVolumeChapters(
+    volume: string,
+    chapters: readonly ChapterKey[],
+): GazetteerEntry[] {
+    const rank = new Map(chapters.map((ch, i) => [ch, i]))
+    return gazetteerEntries
+        .filter((e) => e.volume === volume && rank.has(e.chapter))
+        .sort((a, b) => rank.get(a.chapter)! - rank.get(b.chapter)!)
+}
+
 /** Entries whose parent is this chapter, but that are not already linked from a 条 on it. */
 export function extraEntriesForChapter(volume: string, chapter: ChapterKey): GazetteerEntry[] {
     return gazetteerEntries.filter(

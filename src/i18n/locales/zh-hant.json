@@ -14,6 +14,8 @@
     "name": "九州志",
     "volumesLabel": "諸卷",
     "volumesTitle": "開卷",
+    "provincesLabel": "諸省",
+    "provincesTitle": "開卷",
     "about": "緣起",
     "contribute": "供圖",
     "heroKicker": "一卷一城 · 慢慢寫",
@@ -810,6 +812,14 @@
     "language": "語言",
     "menu": "目錄",
     "openVolume": "開卷",
+    "districtsLabel": "區縣",
+    "cityPagesLabel": "目錄",
+    "cityPagesTitle": "開卷",
+    "cityCategory": {
+      "mountains": "山川美景",
+      "scenic": "名勝古蹟",
+      "heritage": "歷史文化"
+    },
     "nextChapter": "下一章",
     "backToOpening": "回捲首",
     "season": "時令",

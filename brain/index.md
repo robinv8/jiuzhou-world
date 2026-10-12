@@ -1,8 +1,8 @@
 # Brain Index
 
-_Auto-generated. Last updated 2026-09-17T09:34:39.617Z._
+_Auto-generated. Last updated 2026-10-12T07:46:57.664Z._
 
-- [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目：省 → 市 → 区/县 三级
+- [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目：省 → 市 → 区/县
 - [anthology-spine](pages/anthology-spine.md) — category: concept | tags: [spine, gazetteer, overview] | # 九州志整体脉络
 - [astro-static-ssg](pages/astro-static-ssg.md) — category: decision | 采用 Astro（static output）承载九州志：页面以 SSG 产出静态资源，交互部分用 React islands。
 - [chapter-skeleton](pages/chapter-skeleton.md) — category: decision | tags: [editorial, structure, chapters] | # 四章骨架：山川、景、物、史
@@ -19,6 +19,7 @@ _Auto-generated. Last updated 2026-09-17T09:34:39.617Z._
 - [jiande-gazetteer](pages/jiande-gazetteer.md) — category: reference | tags: [hangzhou, jiande, gazetteer] | # 建德：三江口（已开）
 - [not-a-scenic-encyclopedia](pages/not-a-scenic-encyclopedia.md) — category: decision | tags: [editorial, scope] | # 九州志不是景区百科
 - [photo-contribute](pages/photo-contribute.md) — category: decision | # 供图：按卷收稿，邮件，不是相册社区
+- [reader-route-province-city](pages/reader-route-province-city.md) — category: decision | tags: [structure, navigation] | # 读者路线：省 → 市 → 三类页面
 - [root-pulse-mountains-rivers](pages/root-pulse-mountains-rivers.md) — category: decision | tags: [root, narrative, yugong, gazetteer] | # 根上总脉：山川为纲
 - [second-volume-candidate-minle-biandukou](pages/second-volume-candidate-minle-biandukou.md) — category: decision | tags: [second-volume, minle, biandukou] | # 候选：民乐扁都口（暂缓）
 - [tailwind-v4-vite](pages/tailwind-v4-vite.md) — category: decision | tags: [tailwind, stack, astro] | 2026-08-16 完成 Tailwind CSS 3.4 → 4.3 迁移。

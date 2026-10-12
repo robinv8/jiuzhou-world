@@ -2,14 +2,14 @@
 slug: architecture
 title: System architecture
 role: system architecture
-updated: "2026-09-17T09:34:39"
+updated: "2026-10-12T15:46:05"
 ---
 
 # System architecture
 
 九州志是一个 **Astro 5 static output** 站点。页面在构建期生成静态 HTML；正文视图以 React 组件表达，但不在客户端整页水合。客户端运行时主要集中在 `SiteHeader`：滚动隐藏、移动菜单与语言切换。
 
-内容层级与读法见 [[anthology-spine]]，不在本页展开。专条路由见 [[gazetteer-entry-pages]]。
+内容层级与读法见 [[anthology-spine]]，读者路线见 [[reader-route-province-city]]。专条路由见 [[gazetteer-entry-pages]]。
 
 ```mermaid
 graph TD
@@ -18,7 +18,7 @@ graph TD
   Shell --> Header["SiteHeader.tsx\nclient:load island"]
   Shell --> Views["src/views/*.tsx\n构建期渲染正文"]
   Shell --> Footer["SiteFooter.tsx\n静态页脚"]
-  Views --> Catalogs["src/i18n/catalogs.ts\n省 / 市卷 / 下辖卷"]
+  Views --> Catalogs["src/i18n/catalogs.ts\n省 / 市 / 区县"]
   Views --> Entries["src/i18n/entries.ts\n专条登记"]
   Views --> Bodies["src/entries/bodies/*.md\n专条 zh 长文"]
   Views --> Messages["src/i18n/locales/*.json\n多语言短文案"]
@@ -37,8 +37,8 @@ graph TD
 中文默认无前缀。非默认语言走平行树 `/[locale]/...`（`zh-hant / en / ja / ko`）。
 
 - 全站：`/`、`/about`、`/contribute`
-- 省：`/zhejiang`（导航，无正文）
-- 市卷：`/hangzhou`、`/hangzhou/{mountains,scenic,culture,history}`
+- 省：`/zhejiang`（已开的市 + 市下已开区县）
+- 市卷：`/hangzhou`、`/hangzhou/{mountains,scenic,culture,history}`。市页把已刊专条收成三类，四章 URL 不改。
 - 下辖卷：`/hangzhou/linan`、`/hangzhou/linan/{mountains,scenic,culture,history,contribute}`
 - 专条：`/hangzhou/{chapter}/{id}/` 与 `/hangzhou/linan/{chapter}/{id}/`，由 `hangzhou/[...entry].astro` 与 locale 镜像生成。叶 slug 优先 catalog id。见 [[gazetteer-entry-pages]]。
 - 旧 `/linan/*` 301 到 `/hangzhou/linan/*`
@@ -53,9 +53,9 @@ graph TD
 
 ### 视图层：`src/views/`
 
-- 全站：`Home`、`About`、`ContributeHub`、`ContributePlace`
-- 省：`ProvinceHome`
-- 卷：`VolumeHome`（杭州 / 临安共用）
+- 全站：`Home`（只列已开的省）、`About`、`ContributeHub`、`ContributePlace`
+- 省：`ProvinceHome`（市 + 市下已开区县）
+- 卷：`VolumeHome`（杭州市页三类专条 + 区县；临安等下辖卷仍列四章）
 - 章：`Mountains`、`Scenic`、`History`、`Culture`（按 `volume` 取 catalog + 文案；短条旁链到专条）
 - 专条：`Entry`（长文，不是景点卡片）
 
@@ -70,7 +70,7 @@ graph TD
 ### 内容与 i18n：`src/i18n/`
 
 - `config.ts`：`LOCALES = zh/zh-hant/en/ja/ko`，默认 `zh`。
-- `catalogs.ts`：省、市卷、下辖卷、章节、条目、供图、SEO 清单。不翻译。
+- `catalogs.ts`：省、市、区县、章节、条目、供图、SEO 清单。不翻译。
 - `entries.ts`：已刊专条登记（path、父章、hero slot、条级外链）。
 - `locales/*.json`：多语言短文案；中文是 canonical key tree。专条长文不在此，只放 title + excerpt。
 - `src/entries/bodies/*.md`：专条简体长文。

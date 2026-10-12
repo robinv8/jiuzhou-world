@@ -229,6 +229,27 @@ export function getDistrict(provinceKey: string, cityKey: string, districtKey: s
     return getCity(provinceKey, cityKey)?.districts.find((d) => d.key === districtKey)
 }
 
+export function findCity(cityKey: string): City | undefined {
+    for (const province of provinces) {
+        const city = province.cities.find((c) => c.key === cityKey)
+        if (city) return city
+    }
+}
+
+export function openDistricts(city: City): District[] {
+    return city.districts.filter((d) => d.status === 'open')
+}
+
+/** City-page display groups. URLs stay on the four chapter keys. */
+export const cityDisplayCategories = [
+    { key: 'mountains', chapters: ['mountains'] as ChapterKey[], latin: 'Landscape' },
+    { key: 'scenic', chapters: ['scenic'] as ChapterKey[], latin: 'Places' },
+    { key: 'heritage', chapters: ['history', 'culture'] as ChapterKey[], latin: 'Heritage' },
+] as const
+
+export type CityDisplayCategoryKey = (typeof cityDisplayCategories)[number]['key']
+
+
 /**
  * `place` is the default Bing query (one real toponym).
  * `places` lists the other named locations in the same essay — studio switches one at a time.

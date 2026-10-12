@@ -1,10 +1,9 @@
 import { ArrowRight } from 'lucide-react'
-import { getProvince, volumeKernel } from '@/i18n/catalogs'
+import { getProvince, openDistricts, volumeKernel } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
 import Reveal from '@/components/Reveal'
 import MiniTitle from '@/components/MiniTitle'
-import Seal from '@/components/Seal'
 import { withLocale } from '@/lib/i18n-path'
 
 export default function ProvinceHome({ lang, province }: { lang: Lang; province: string }) {
@@ -61,47 +60,100 @@ export default function ProvinceHome({ lang, province }: { lang: Lang; province:
                 <div className="mt-16 flex flex-col">
                     {prov.cities.map((city, i) => {
                         const kernel = volumeKernel(city.key)
+                        const districts = openDistricts(city)
                         return (
                         <Reveal key={city.key} delay={i * 80}>
-                            <a
-                                href={href(city.route)}
-                                className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t hairline ${
+                            <article
+                                className={`border-t hairline ${
                                     i === prov.cities.length - 1 ? 'border-b' : ''
                                 }`}
                             >
-                                <div
-                                    className={`md:col-span-5 overflow-hidden ${
-                                        i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''
+                                <a
+                                    href={href(city.route)}
+                                    className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 ${
+                                        districts.length ? 'pb-6 md:pb-8' : ''
                                     }`}
                                 >
-                                    <div className="aspect-3/2 overflow-hidden">
-                                        <img
-                                            src={kernel?.image ?? city.image}
-                                            alt={t(`city.${city.key}.title`)}
-                                            loading="lazy"
-                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                        />
+                                    <div
+                                        className={`md:col-span-5 overflow-hidden ${
+                                            i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''
+                                        }`}
+                                    >
+                                        <div className="aspect-3/2 overflow-hidden">
+                                            <img
+                                                src={kernel?.image ?? city.image}
+                                                alt={t(`city.${city.key}.title`)}
+                                                loading="lazy"
+                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
+                                            />
+                                        </div>
                                     </div>
-                                </div>
-                                <div
-                                    className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
-                                >
-                                    <p className="micro-label text-[#8ca693]">{city.latin}</p>
-                                    <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
-                                        {t(`city.${city.key}.title`)}
-                                    </h3>
-                                    <p className="mt-4 max-w-md text-[#5a665e] leading-7">
-                                        {t(`city.${city.key}.desc`)}
-                                    </p>
-                                    <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
-                                        {t('ui.openVolume')}
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-500 group-hover:translate-x-1.5"
-                                        />
-                                    </span>
-                                </div>
-                            </a>
+                                    <div
+                                        className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
+                                    >
+                                        <p className="micro-label text-[#8ca693]">{city.latin}</p>
+                                        <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
+                                            {t(`city.${city.key}.title`)}
+                                        </h3>
+                                        <p className="mt-4 max-w-md text-[#5a665e] leading-7">
+                                            {t(`city.${city.key}.desc`)}
+                                        </p>
+                                        <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
+                                            {t('ui.openVolume')}
+                                            <ArrowRight
+                                                size={16}
+                                                className="transition-transform duration-500 group-hover:translate-x-1.5"
+                                            />
+                                        </span>
+                                    </div>
+                                </a>
+                                {districts.length > 0 && (
+                                    <div className="pb-10 md:pb-14 md:grid md:grid-cols-12 md:gap-10">
+                                        <div
+                                            className={`md:col-span-6 ${
+                                                i % 2 === 1 ? 'md:col-start-1' : 'md:col-start-7'
+                                            }`}
+                                        >
+                                            <p className="micro-label text-[#8ca693]">
+                                                {t('ui.districtsLabel')}
+                                            </p>
+                                            <ul className="mt-6 flex flex-col gap-6">
+                                                {districts.map((district) => {
+                                                    const districtKernel = volumeKernel(district.key)
+                                                    return (
+                                                        <li key={district.key}>
+                                                            <a
+                                                                href={href(district.route)}
+                                                                className="group grid grid-cols-[5.5rem_1fr] gap-4 items-center"
+                                                            >
+                                                                <div className="aspect-3/2 overflow-hidden">
+                                                                    <img
+                                                                        src={districtKernel?.image ?? district.image}
+                                                                        alt={t(`district.${district.key}.title`)}
+                                                                        loading="lazy"
+                                                                        className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
+                                                                    />
+                                                                </div>
+                                                                <div>
+                                                                    <p className="micro-label text-[#8ca693]">
+                                                                        {district.latin}
+                                                                    </p>
+                                                                    <h4 className="mt-1 font-display text-xl md:text-2xl font-semibold tracking-wide">
+                                                                        {t(`district.${district.key}.title`)}
+                                                                    </h4>
+                                                                    <p className="mt-1 text-sm text-[#5a665e] leading-6">
+                                                                        {t(`district.${district.key}.desc`)}
+                                                                    </p>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    )
+                                                })}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                )}
+                            </article>
                         </Reveal>
                         )
                     })}
