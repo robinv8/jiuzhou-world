@@ -1,6 +1,6 @@
 # MindMux Brain Index
 
-_Auto-generated. Last updated 2026-10-15T02:47:50.218Z._
+_Auto-generated. Last updated 2026-10-15T02:57:18.855Z._
 
 - [agent-roles-design-vs-build](pages/agent-roles-design-vs-build.md) — category: decision | tags: [process, agents, design] | # 分工：Cursor 只做设计，本机 grok CLI 写代码 
 - [anthology-one-city-one-volume](pages/anthology-one-city-one-volume.md) — category: decision | tags: [anthology, structure] | # 总目：省 → 市 → 区/县 
@@ -20,7 +20,8 @@ _Auto-generated. Last updated 2026-10-15T02:47:50.218Z._
 - [imagery-ai-first](pages/imagery-ai-first.md) — category: decision | tags: [imagery, ai-generation, photo-pipeline] | # 站点图像策略：老图优先，AI 仿古兜底 
 - [imagery-workbench](pages/imagery-workbench.md) — category: decision | tags: [imagery, studio, local-only] | # 配图工作台：左预览、右选底 
 - [jiande-gazetteer](pages/jiande-gazetteer.md) — category: reference | tags: [hangzhou, jiande, gazetteer] | # 建德：三江口（已开） 
-- [not-a-scenic-encyclopedia](pages/not-a-scenic-encyclopedia.md) — category: decision | tags: [editorial, scope] | # 九州志不是景区百科 
+- [not-a-scenic-encyclopedia](pages/not-a-scenic-encyclopedia.md) — category: decision | tags: [editorial, scope] | # 九州志不是景区百科
+- [open-source-license](pages/open-source-license.md) — category: decision | tags: [license, open-source] | # 开源许可：代码 MIT，正文与图版不放开 
 - [photo-contribute](pages/photo-contribute.md) — category: decision | # 供图：按卷收稿，邮件，不是相册社区 
 - [public-domain-maps](pages/public-domain-maps.md) — category: decision | tags: [design, maps, provenance, accuracy] | # 设计稿舆图：只用公版真图，出处入表 
 - [reader-route-province-city](pages/reader-route-province-city.md) — category: decision | tags: [structure, navigation] | # 读者路线：省 → 市 → 三类页面 

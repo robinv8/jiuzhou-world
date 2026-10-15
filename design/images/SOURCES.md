@@ -1,6 +1,6 @@
 # 设计稿古图出处
 
-均为公有领域（Public domain），经 Wikimedia Commons 获取。
+均为公有领域（Public domain），经 Wikimedia Commons 获取。这些图不在仓库 MIT 许可之内；标了「AI 仿绘」的图版权仍归作者。
 
 | 文件 | 图名 | 年代 | 原件出处 | Commons |
 | --- | --- | --- | --- | --- |

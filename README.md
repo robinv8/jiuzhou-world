@@ -105,4 +105,16 @@ scripts/            # locale、404、下辖卷校验
 
 ## 图
 
-站点图在 `public/images/`。古籍、方志版画和古地图的出处在 `design/images/SOURCES.md`。用这些图时保留出处，不要改成没有来源的现代照片。
+站点图在 `public/images/`。古籍、方志版画和古地图的出处在 `design/images/SOURCES.md`。用这些图时保留出处，不要改成没有来源的现代照片。这些图不在下面的 MIT 许可里。
+
+## 许可
+
+程序代码用 [MIT License](LICENSE)：`src/` 里的程序（不含方志正文）、`scripts/`、配置文件和 `.github/workflows`。
+
+下面这些不在 MIT 里，版权仍归作者或原权利人：
+
+- 方志正文：`src/i18n/locales/`、`src/entries/`
+- 设计稿和 AI 仿绘：`design/`
+- 图片：`public/images/`、`design/images/`。古籍图按 `design/images/SOURCES.md` 的出处使用
+
+读者供来的照片也不在此列。版权仍归拍摄者，只授权本站做非商业展示。

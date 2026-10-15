@@ -5,7 +5,7 @@ category: decision
 status: active
 tags: [brain, mindmux, process]
 created: "2026-10-13T09:02:43.211Z"
-updated: "2026-10-15T02:48:04.538Z"
+updated: "2026-10-15T02:57:18.855Z"
 ---
 
 <!-- compiled_truth -->
@@ -42,3 +42,17 @@ MindMux OAuth 同意后用 307 跳回调，浏览器以 POST 访问，`mcp-remot
   summary: 仓库 brain/ 改为云端快照：提交前从 Cloud Brain 整份导出，与云端保持一致。日常仍只写云端，不在仓库文件上改。
   source: Robin 2026-10-15
   affects: [cloud-brain-source-of-truth]
+
+- time: 2026-10-15T02:52:10.447Z
+  kind: decision
+  author: "user:robin"
+  summary: GitHub 仓库 robinv8/jiuzhou-world 已是 public。开源包装进行中：本地 MindMux 绑定不再入库，仓库只留 preferences.example.json。许可证尚未选定，文章与古籍图版不随代码一并放开，除非另行决定。
+  source: Robin 2026-10-15「准备开源」
+  affects: [cloud-brain-source-of-truth]
+
+- time: 2026-10-15T02:57:18.853Z
+  kind: decision
+  author: "user:robin"
+  summary: 许可证已定，见 [[open-source-license]]：代码 MIT；方志正文、设计稿和 AI 仿绘不放开；古籍图按出处表。
+  source: Robin 2026-10-15
+  affects: [open-source-license, cloud-brain-source-of-truth]
