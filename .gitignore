@@ -7,3 +7,6 @@ dist
 *.local
 _photo_candidates
 artifacts
+.mindmux/*
+!.mindmux/preferences.example.json
+.playwright-mcp/

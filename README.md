@@ -1,8 +1,9 @@
 # 九州志 · jiuzhou.world
 
-一卷一城，线上的中国地方志。第一卷：临安（Vol. I — Lin'an）。
+一卷一城，线上的中国地方志。已开：浙江、杭州卷、其下临安卷。
 
 - 站点：https://jiuzhou.world
+- 仓库：https://github.com/robinv8/jiuzhou-world
 
 ## 它是什么
 
@@ -20,7 +21,7 @@
 | 渲染 | 正文构建期出静态 HTML，**只有顶栏是 React island**（其余视图 SSR 后不再水合） |
 | 宿主 | Cloudflare Pages，GitHub Actions CI（`.github/workflows/deploy.yml`） |
 | 分析 | Google Analytics |
-| 项目记忆 | [`@mindmux/brain-md`](https://projectbrain.md) — 决策与约束写在 `brain/` |
+| 项目记忆 | [`@mindmux/brain-md`](https://projectbrain.md) — 云端为准，仓库 `brain/` 是快照 |
 
 ## 开发
 
@@ -29,29 +30,32 @@ npm install
 npm run dev          # 本地开发
 npm run build        # 构建到 dist/
 npm run preview      # 预览构建产物
-npm run i18n:check   # 校验四份 locale key 对齐（CI 构建前也会跑）
+npm run i18n:check   # 校验五种 locale 的 key 对齐（CI 构建前也会跑）
 ```
 
-CI 需要 GitHub secrets：`CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID`。
+`package.json` 里的 `"private": true` 只是防止被误发到 npm。这是一个站点，不是要安装的包。
+
+部署密钥放在 GitHub Actions secrets，不进仓库：`CLOUDFLARE_API_TOKEN`、`CLOUDFLARE_ACCOUNT_ID`。没有这两项时，本地 `npm run build` 仍然可以跑。
 
 ## 目录结构
 
 ```
 src/
-├── pages/          # 路由壳：zh 无前缀 + [locale]/ 前缀，两个平行树
-│   ├── linan/      # 卷一：mountains / scenic / history / culture / contribute
-│   └── [locale]/linan/
+├── pages/          # 路由壳：简体无前缀，其他语言走 [locale]/
+│   ├── zhejiang/   # 省页
+│   ├── hangzhou/   # 杭州卷、临安卷，以及富阳等下辖卷
+│   └── [locale]/   # zh-hant / en / ja / ko 的平行树
 ├── views/          # 页面主体（React 组件，构建期渲染为静态 HTML）
-├── components/     # 共享组件：SiteHeader（唯一 island）、Seal、PageHero 等
+├── components/     # SiteHeader（唯一 island）、图注、落款等
 ├── layouts/        # BaseLayout（SEO / 字体 / GA）+ PageShell
 └── i18n/
-    ├── config.ts       # LOCALES、LANG_META（标签 / hreflang / 字体）
-    ├── catalogs.ts     # 不翻译的结构：卷目、景点、图片、供图地点
-    ├── t.ts            # 取文案 + 回退逻辑
+    ├── config.ts       # LOCALES、LANG_META
+    ├── catalogs.ts     # 不翻译的结构：卷目、图位、供图地点
+    ├── t.ts            # 取文案 + 回退
     └── locales/        # zh / zh-hant / en / ja / ko
-scripts/
-├── check-locales.mjs   # locale key 对齐校验
-└── sync-locales.mjs    # locale 同步辅助
+design/             # 设计稿、图版出处、交接说明（不参与构建）
+public/images/      # 站点用图
+scripts/            # locale、404、下辖卷校验
 ```
 
 ## 多语言
@@ -78,7 +82,7 @@ scripts/
 供图按「卷」分标准，不是全站统一页：
 
 - `/contribute` — 总入口：说明各地标准不同，列出开放中的卷（卡片带该卷收稿摘要）
-- `/{city}/contribute`（如 `/linan/contribute`）— 该卷完整规则：why / what / how / license
+- `/hangzhou/linan/contribute` — 该卷完整规则：why / what / how / license
 - 投稿走邮件 `hello@jiuzhou.world`，subject 带卷名便于分拣
 
 新增一城：在 `catalogs.ts` 的 `contributePlaces` 加条目 + locale 里补 `contribute.{city}` 文案
@@ -91,15 +95,14 @@ scripts/
 - JSON-LD（`WebSite` / `CollectionPage` / `AboutPage`）
 - `robots.txt` + 自动生成的 `sitemap-index.xml`
 - 图片 WebP + 关键 alt
-- 旧路径（如 `/mountains`）通过 `public/_redirects` 301 到 `/linan/*`
+- 旧路径（如 `/linan`、`/mountains`）通过 `public/_redirects` 301 到 `/hangzhou/linan/...`
 
-## 项目脑（BRAIN.md）
+## 项目记忆
 
-决策、约束与路线图记录在 `brain/`，经 CLI 读写，**不要手改**：
+决定以 MindMux Cloud Brain 为准。仓库里的 `brain/` 是提交时导出的快照，不要手改。
 
-```bash
-npm run brain -- list-pages       # 知识页索引
-npm run brain -- read-root stack  # 读根页（background / architecture / stack / roadmap …）
-```
+本地绑定写在 `.mindmux/preferences.json`，这个文件不进仓库。可从 `.mindmux/preferences.example.json` 复制一份再填自己的 brain。
 
-协议全文见根目录 `BRAIN.md`。
+## 图
+
+站点图在 `public/images/`。古籍、方志版画和古地图的出处在 `design/images/SOURCES.md`。用这些图时保留出处，不要改成没有来源的现代照片。
