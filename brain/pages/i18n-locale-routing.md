@@ -4,7 +4,7 @@ title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
 created: "2026-10-13T08:58:36.263Z"
-updated: "2026-10-13T08:58:36.646Z"
+updated: "2026-10-15T16:42:36"
 ---
 
 <!-- compiled_truth -->
@@ -12,7 +12,7 @@ updated: "2026-10-13T08:58:36.646Z"
 
 站点默认语言是**简体中文**：无 URL 前缀，`x-default` 指向它。
 
-语言：`zh`（简体，默认）/ `zh-hant`（繁體，`/zh-hant`）/ `en` / `ja` / `ko`。各 locale JSON 共用同一套 key。en / ja / ko 正文是改写；繁體由简体底本做 **OpenCC s2t 字形轉換**（地鐵不改成捷運，方志的「志」不改成「誌」）。
+语言：`zh`（简体，默认）/ `zh-hant`（繁體，`/zh-hant`）/ `en` / `ja` / `ko`。各 locale JSON 共用同一套 key。en / ja / ko 正文是改写。繁體字符串值用 OpenCC **s2tw**（台湾字形，不含 s2twp 词汇：地铁不改捷运）。转完要改回这些错转：方志／地方志的「志」不改成「誌」；里程和地名里（一百许里、七里泷、千里、百里、公里、里畈、茅湾里、故里、里巷）保持「里」，「里面」才用「裡」；余姚、余杭、余暨在本志用古典「餘」；咸淳、范仲淹不改成鹹、範；于潜作「於潛」；纪念、苧萝、花岗岩按原词；拱宸桥西是「西历史街区」；钱塘江干流是「幹流」（不要被地名「江干」挡住）；「云漫上来」是「雲」；分水制笔作「製筆」，沙地划走作「劃走」。专条 markdown 是简体原文，繁体页照刊（文案写「全文简体」），不转换。日文只改 `seo.place` 里仍是简体的地名：富阳→富陽、桐庐→桐廬、萧山→蕭山；建德、淳安不动。
 
 Robin 2026-09-08 签字的杭州景之卷 essence（灵隐、西溪、运河、钱塘江）只钉在 `zh.json`。他语不是这份正文的译本，不要按签字稿发明翻译；繁體也不在本轮跟改。
 
@@ -21,6 +21,7 @@ Robin 2026-09-08 签字的杭州景之卷 essence（灵隐、西溪、运河、�
 字体按 `html[lang]` 加载 Noto Serif SC / TC / JP / KR；日韩页额外加载 SC，供中文小字。`hreflang`：`zh-CN` / `zh-Hant` / `en` / `ja` / `ko`。
 
 `npm run i18n:check`：en / ja / ko / zh-hant 必须与 zh 全 key 对齐；CI 构建前会跑。
+
 
 ## Timeline
 
@@ -137,3 +138,9 @@ Robin 2026-09-08 签字的杭州景之卷 essence（灵隐、西溪、运河、�
   affects: [gazetteer-entry-pages, i18n-locale-routing]
   source_entry_id: "local:i18n-locale-routing:11"
   imported_at: 2026-10-13T08:58:36.641Z
+
+- time: 2026-10-15T16:42:36
+  kind: decision
+  summary: "繁体用 OpenCC s2tw 字形，并记下里/志/余/干流等必须改回的错转；专条 markdown 不转"
+  source: fix/zh-hant-chars
+  affects: [i18n-locale-routing]
