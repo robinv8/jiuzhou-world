@@ -690,15 +690,15 @@
       "description": "杭州的山川：西湖、環湖諸山、茶山，以及水作爲湖的上下文。"
     },
     "hangzhou_scenic": {
-      "title": "名胜古迹 · 杭州 · 九州志",
+      "title": "名勝古蹟 · 杭州 · 九州志",
       "description": "杭州五處去處：靈隱寺、西溪溼地、大運河、錢塘江、吳山。"
     },
     "hangzhou_history": {
-      "title": "历史文化 · 杭州 · 九州志",
+      "title": "歷史文化 · 杭州 · 九州志",
       "description": "從良渚到人間：杭州怎樣成爲都城，又怎樣卸下。"
     },
     "hangzhou_culture": {
-      "title": "历史文化 · 杭州 · 九州志",
+      "title": "歷史文化 · 杭州 · 九州志",
       "description": "杭州風物：龍井茶、絲綢、杭幫菜背後的人與時節。"
     },
     "jsonld": {
@@ -775,15 +775,15 @@
       "description": "新安江會合蘭江，以下稱富春。"
     },
     "jiande_scenic": {
-      "title": "名胜古迹 · 建德 · 九州志",
+      "title": "名勝古蹟 · 建德 · 九州志",
       "description": "梅城、銅官壩、入峽。千島湖不在此。"
     },
     "jiande_history": {
-      "title": "历史文化 · 建德 · 九州志",
+      "title": "歷史文化 · 建德 · 九州志",
       "description": "府城梅城。壩與湖拆開。"
     },
     "jiande_culture": {
-      "title": "历史文化 · 建德 · 九州志",
+      "title": "歷史文化 · 建德 · 九州志",
       "description": "嚴州苞茶、嚴東關五加皮。"
     },
     "chunan": {
@@ -795,15 +795,15 @@
       "description": "被攔住的新安江。島是沒頂的山。"
     },
     "chunan_scenic": {
-      "title": "名胜古迹 · 淳安 · 九州志",
+      "title": "名勝古蹟 · 淳安 · 九州志",
       "description": "千島湖、獅城、排嶺。"
     },
     "chunan_history": {
-      "title": "历史文化 · 淳安 · 九州志",
+      "title": "歷史文化 · 淳安 · 九州志",
       "description": "1959 截流。賀城與獅城在水下。"
     },
     "chunan_culture": {
-      "title": "历史文化 · 淳安 · 九州志",
+      "title": "歷史文化 · 淳安 · 九州志",
       "description": "鳩坑茶。庫裏的魚。"
     },
     "xiaoshan": {
