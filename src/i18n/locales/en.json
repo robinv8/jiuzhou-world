@@ -4,30 +4,30 @@
     "tagline": "An online anthology of mountains, memory and craft"
   },
   "nav": {
-    "home": "Opening",
-    "volumes": "Volumes",
+    "home": "Home",
+    "volumes": "Cities",
     "provinces": "Provinces",
-    "mountains": "Landscape",
-    "scenic": "Places",
-    "history": "History",
-    "culture": "Craft"
+    "mountains": "Mountains & scenery",
+    "scenic": "Historic sites",
+    "history": "History & culture",
+    "culture": "History & culture"
   },
   "anthology": {
     "name": "Jiuzhou",
-    "volumesLabel": "The volumes",
-    "volumesTitle": "Open a volume",
+    "volumesLabel": "Cities",
+    "volumesTitle": "Contents",
     "provincesLabel": "Provinces",
-    "provincesTitle": "Open",
+    "provincesTitle": "Contents",
     "about": "About",
     "contribute": "Photographs",
-    "heroKicker": "One city, one volume",
+    "heroKicker": "City by city, written slowly",
     "intro": [
-      "Ancient China was divided into Nine Lands. Yu set down the high mountains and great rivers to tell them apart — a land was not a district, but mountains, rivers, and the way a people lived. The old names are gone from the map; the mountains and rivers remain. Jiuzhou rewrites them as gazetteer: one city, one volume, written slowly.",
-      "The first volume is Hangzhou — beside West Lake, the old capital of the Southern Song. Under it sits Lin’an — beneath Mount Tianmu, the old homeland of Wuyue."
+      "Ancient China was divided into Nine Lands. Yu set down the high mountains and great rivers to tell them apart — a land was not a district, but mountains, rivers, and the way a people lived. The old names are gone from the map; the mountains and rivers remain. Jiuzhou rewrites them as gazetteer: city by city, written slowly.",
+      "We begin with Hangzhou — beside West Lake, the old capital of the Southern Song. Lin’an is a district of Hangzhou — beneath Mount Tianmu, the old homeland of Wuyue."
     ],
     "volumes": {
       "linan": {
-        "title": "Lin'an",
+        "title": "Lin’an",
         "place": "Lin’an, Hangzhou, Zhejiang",
         "desc": "Beneath Tianmu’s canopy, in the old homeland of Wuyue — mountains, memory and craft."
       },
@@ -46,7 +46,7 @@
       "heroTitle": "Zhejiang",
       "heroSub": "Seven parts mountain, one part water, two parts field. From the hills of the west to the sea of the east, from Jiangnan’s rivers to the coastal ports.",
       "citiesLabel": "The cities",
-      "citiesTitle": "Open a city"
+      "citiesTitle": "Contents"
     }
   },
   "city": {
@@ -88,7 +88,7 @@
       "gazetteer": {
         "title": "A gazetteer, written slowly",
         "paragraphs": [
-          "Yu laid down the high mountains and great rivers to tell the Nine Provinces apart. A province is landscape, not an administrative box. Jiuzhou takes mountains and rivers as its spine: one volume, one city, written slowly in the gazetteer tradition — not as an encyclopedia, but visited, read, and written one city at a time."
+          "Yu laid down the high mountains and great rivers to tell the Nine Provinces apart. A province is landscape, not an administrative box. Jiuzhou takes mountains and rivers as its spine: city by city, written slowly in the gazetteer tradition — not as an encyclopedia, but visited, read, and written one city at a time."
         ]
       },
       "notPromotion": {
@@ -103,18 +103,18 @@
   "contribute": {
     "hub": {
       "heroTitle": "Photographs",
-      "heroSub": "One city, one volume. Each place asks for different pictures.",
+      "heroSub": "City by city. Each place asks for different pictures.",
       "intro": [
-        "Jiuzhou takes photographs by volume: Lin’an is mountain and water; Hangzhou is lake and city. Choose the volume you walked, read what it takes, then send.",
+        "Jiuzhou takes photographs by place: Hangzhou is lake and city; Lin’an, a district of Hangzhou, is mountain and water. Choose the place you walked, read what it takes, then send.",
         "Not a contest, not a prize. Your own shutter only. Copyright stays yours."
       ],
-      "openLabel": "Volumes open now",
-      "openCta": "What this volume takes",
+      "openLabel": "Open now",
+      "openCta": "What this place takes",
       "plannedNote": "When the next city opens, another line will appear here."
     },
     "hangzhou": {
       "heroTitle": "Hangzhou · Photographs",
-      "heroSub": "A place you photographed in Hangzhou can be kept in this volume.",
+      "heroSub": "A place you photographed in Hangzhou can be kept here.",
       "write": "Write · Hangzhou photographs",
       "sections": {
         "why": {
@@ -127,7 +127,7 @@
           "title": "What we take",
           "paragraphs": [
             "Hangzhou’s lake, the hills around it, the tea slopes, temple, wetland, canal, river, Wu Hill, and the city’s human world. Your own shutter only. No watermarks, no tour-agency marks. Faces, if recognisable, only with consent.",
-            "Lin’an’s mountains and canyons belong to the Lin’an volume. Two inboxes; do not send to the wrong one."
+            "Lin’an’s mountains and canyons belong to the Lin’an pages. Two inboxes; do not send to the wrong one."
           ]
         },
         "how": {
@@ -148,7 +148,7 @@
     },
     "linan": {
       "heroTitle": "Lin’an · Photographs",
-      "heroSub": "A place you photographed in Lin’an can be kept in this volume.",
+      "heroSub": "A place you photographed in Lin’an can be kept here.",
       "write": "Write · Lin’an photographs",
       "sections": {
         "why": {
@@ -161,7 +161,7 @@
           "title": "What to send",
           "paragraphs": [
             "Lin’an’s mountains, water, villages, and things. Your own photographs. No watermarks, no tour-company marks. Faces that can be recognised should stay out of frame unless you have their consent.",
-            "The Lin’an volume only takes what belongs to Lin’an: Tianmu and Qingliang, canyon and lake, village and produce. Scenes of another city wait for that volume."
+            "Lin’an only takes what belongs to Lin’an: Tianmu and Qingliang, canyon and lake, village and produce. Scenes of another city wait for that place."
           ]
         },
         "how": {
@@ -177,12 +177,12 @@
           ]
         }
       },
-      "mailSubject": "Photographs · Lin’an volume",
+      "mailSubject": "Photographs · Lin’an",
       "blurb": "Beneath Tianmu: mountains, water, villages, craft."
     }
   },
   "linan": {
-    "volumeTitle": "Lin'an",
+    "volumeTitle": "Lin’an",
     "heroKicker": "Hangzhou",
     "heroTitle": "Lin'an Anthology",
     "heroSub": "Beneath Tianmu’s canopy, in the old homeland of Wuyue. No itineraries here — only mountains, remembered.",
@@ -194,34 +194,34 @@
     "prefaceNote": "However high the mountains, that long is their water",
     "manifesto": [
       "West of Hangzhou lies Lin’an, a town of mountains. The Tianmu range folds in from southern Anhui and eases eastward, coming to rest at the edge of Hangzhou. Tianmu is a divide: streams on the north slope join the Tiaoxi and empty into Lake Tai; streams on the west slope join the Changhua and enter the Qiantang. However high the mountains, that long is their water.",
-      "Read this volume from the mountains. Begin at the summits, with great trees and seas of cloud; then come down — past a source, a canyon, a lake, to the wharves of the old town. Once water leaves the mountain, it becomes the human world. The human world has its goods: hickory nuts, bloodstone, tenmoku bowls. And it has its history: a man of Lin’an named Qian Liu walked out of these hills and carried the two characters “Lin’an” into a thousand years of history books.",
+      "Read Lin’an from the mountains. Begin at the summits, with great trees and seas of cloud; then come down — past a source, a canyon, a lake, to the wharves of the old town. Once water leaves the mountain, it becomes the human world. The human world has its goods: hickory nuts, bloodstone, tenmoku bowls. And it has its history: a man of Lin’an named Qian Liu walked out of these hills and carried the two characters “Lin’an” into a thousand years of history books.",
       "This site sells no tickets and pushes no routes. If, after reading, a mountain and a river take root in your mind, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
     "closingQuote": "The names changed. The forest remained.",
     "closingSource": "— Tianmu, Lin’an",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "Tianmu’s ancient trees, Daming’s high terrace, Qingliang’s ridge — and water that parts two ways."
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "Five places along the water: source, canyon, lake, village, old town."
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "Hickory nuts, chicken-blood stone, tenmoku bowls — the human world raised by mountain and water."
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "From the Poliu Well to the peaceful handover — Qian Liu of Lin’an, and how the two characters were lent to a capital."
       }
     },
     "mountains": {
       "heroKicker": "Lin’an",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "Mountains are not scenery. Mountains are time.",
       "intro": "Lin’an’s mountains belong to the Tianmu range, entering from southern Anhui and easing eastward until they rest at the edge of Hangzhou. Tianmu is a watershed: water on the north slope runs to Lake Tai, water on the west to the Qiantang. Within them stand some of East China’s oldest forests, and the highest summit of western Zhejiang. Four essays on the mountains themselves — from a single tree to how the water parts.",
       "colophon": "Old trees in the mountains, sources in the water. The mountains are read; follow the water down.",
@@ -258,9 +258,9 @@
     },
     "scenic": {
       "heroKicker": "Lin’an",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "From the source to the wharf: five short lives.",
-      "intro": "The three mountains are written in Landscape. This volume writes the water after it leaves the hills: the Source of Taihu, Zhexi Grand Canyon, Qingshan Lake, Zhinan Village, Heqiao Old Town. Source, lake and village run north to Lake Tai; canyon and town run west to the Qiantang. First what a place is and why it matters; only in the final line, when to go. Prices and routes change; water does not.",
+      "intro": "The three mountains are written under Mountains & scenery. Here we write the water after it leaves the hills: the Source of Taihu, Zhexi Grand Canyon, Qingshan Lake, Zhinan Village, Heqiao Old Town. Source, lake and village run north to Lake Tai; canyon and town run west to the Qiantang. First what a place is and why it matters; only in the final line, when to go. Prices and routes change; water does not.",
       "colophon": "At the wharf, the water has become the human world. The next chapter reads the goods that mountains and water raise.",
       "footnote": "Details shift with seasons and management decisions; check official notices before travelling.",
       "spots": {
@@ -303,10 +303,10 @@
     },
     "history": {
       "heroKicker": "Lin’an",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "How a town’s name became the name of a capital.",
       "intro": "Lin’an’s history turns on a single surname: Qian. Amid the chaos of the late Tang, Qian Liu of Lin’an founded the kingdom of Wuyue and kept his corner of the country at peace for eighty years; his descendants handed the realm to the Song without a war and left a family precept that has lasted a millennium. Later the Southern Song raised Hangzhou to Lin’an Prefecture — the two characters became a capital’s name. The county name never left. Five entries: a man, and how those two characters were lent to a capital. The years as capital are written in Hangzhou.",
-      "colophon": "Force to secure a realm, letters to sustain a family, wisdom to know when to yield, and a good end. The prefecture’s name was laid down; the county’s name remains. This volume closes.",
+      "colophon": "Force to secure a realm, letters to sustain a family, wisdom to know when to yield, and a good end. The prefecture’s name was laid down; the county’s name remains. This part pauses here.",
       "entries": {
         "birth": {
           "era": "852 · Tang dynasty",
@@ -320,7 +320,7 @@
           "era": "907 · Five Dynasties",
           "title": "Wuyue: peace held close",
           "paragraphs": [
-            "In 907 Qian Liu was enfeoffed as King of Wuyue. The capital at Hangzhou, the walls and the dredging, are written in the Hangzhou volume. This entry keeps only what he took from Lin’an: holding the peace. While the Central Plains burned, Wuyue was relatively still — not because there was no war, but because the war was kept outside the gate.",
+            "In 907 Qian Liu was enfeoffed as King of Wuyue. The capital at Hangzhou, the walls and the dredging, are written in the Hangzhou pages. This entry keeps only what he took from Lin’an: holding the peace. While the Central Plains burned, Wuyue was relatively still — not because there was no war, but because the war was kept outside the gate.",
             "As the Qiantang seawalls rose, the bore battered them day and night, works wrecked as fast as they were built. Legend says Qian Liu ranked his archers along the bank and shot the tide-god into retreat — the “King shoots the tide” story may not be fact; the policy of “guarding the land and serving the Central Plain” was: hold your own ground, and the wealthy southeast was spared the wars of the Five Dynasties."
           ]
         },
@@ -345,14 +345,14 @@
           "title": "The travels of a name",
           "paragraphs": [
             "As a county name, Lin’an has stood since 280, the first year of Taikang in the Western Jin. When the Southern Song raised Hangzhou to Lin’an Prefecture, it was the prefecture’s name that was borrowed — the two characters became the name of an imperial capital. Splendour and borrowed peace are written in Hangzhou. This entry keeps only the name itself: the prefecture’s name was lent; the county’s name never left the hills.",
-            "When the Song fell, the prefecture’s name was dropped; the county’s name stayed. In 1996 Lin’an became a city; in 2017, a district of Hangzhou. The administration changed more than once; the two characters did not. The name never left, so it need not come home — and with that, this volume ends."
+            "When the Song fell, the prefecture’s name was dropped; the county’s name stayed. In 1996 Lin’an became a city; in 2017, a district of Hangzhou. The administration changed more than once; the two characters did not. The name never left, so it need not come home — and with that, this part ends."
           ]
         }
       }
     },
     "culture": {
       "heroKicker": "Lin’an",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "Objects are the joints between people and their mountains.",
       "intro": "Where water reaches the human world, goods appear. Lin’an’s hickory nuts, Changhua’s chicken-blood stone, Tianmu’s tea bowls — none are museum relics; all remain livelihoods and daily objects in mountain hands.",
       "colophon": "Every village, every craft, has its season. Mountains and water raise the people; the people make history — the next chapter reads a single surname.",
@@ -429,35 +429,35 @@
     "prefaceNote": "The lake is Hangzhou’s measure",
     "manifesto": [
       "Hangzhou is a city of the lake. West Lake has hills on three sides and the city on the fourth — the hills are not steep but graceful, the water not deep but broad. The lake is Hangzhou’s eyes and brows, and also its measure: however large the city, that still is the lake.",
-      "Read this volume along the lake. Begin with the lake itself — the Su and Bai causeways, the three pools mirroring the moon; then read the hills around it, and the tea slopes in the hills; then walk toward the city: Lingyin, Xixi, the canal, the Qiantang, Wu Hill; then read the human world the lake has raised: Longjing, silk, craft, the dishes of Hangzhou; and last, read the city’s history: Liangzhu’s earlier city, the founding of Wuyue, the Southern Song’s borrowed peace, and the human world after the capital was laid down.",
+      "Read Hangzhou along the lake. Begin with the lake itself — the Su and Bai causeways, the three pools mirroring the moon; then read the hills around it, and the tea slopes in the hills; then walk toward the city: Lingyin, Xixi, the canal, the Qiantang, Wu Hill; then read the human world the lake has raised: Longjing, silk, craft, the dishes of Hangzhou; and last, read the city’s history: Liangzhu’s earlier city, the founding of Wuyue, the Southern Song’s borrowed peace, and the human world after the capital was laid down.",
       "This site sells no tickets and pushes no routes. If, after reading, a lake and a city take root in your mind, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
-    "subVolumesTitle": "Sub-volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
+    "subVolumesTitle": "Districts",
     "closingQuote": "“West Lake compares to the fair Xizi — light or heavy make-up, always becoming.”",
     "closingSource": "— Su Shi, “Drinking on the Lake, First Clear then Rain”",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "West Lake, the hills around it, and the tea slopes in the hills."
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "Temple, wetland, canal, river, the hill in the city — five short lives."
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "Longjing tea, silk, crafts still in the hand, Hangzhou dishes — the human world raised by lake and hills."
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "From Liangzhu to the human world — how a city became a capital, and how it laid the title down."
       }
     },
     "mountains": {
       "heroKicker": "Hangzhou",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "The hills are not a wall; they are the lake’s eyes and brows.",
       "intro": "Hangzhou’s hills are not steep, but they are full of feeling. West Lake is ringed on three sides: Precious Stone Hill and Ge Ridge to the north, North Peak and Feilai Peak to the west, Wu Hill and Jade Emperor Hill to the south. The hills are not high — what matters is that they face the lake. The hills are graceful because of the lake; the lake is secluded because of the hills. Four essays: from the lake to the hills, to the tea slopes in the hills.",
       "colophon": "The lake has hills, the hills have tea. Landscape is read; walk toward the city.",
@@ -494,9 +494,9 @@
     },
     "scenic": {
       "heroKicker": "Hangzhou",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "Temple, wetland, canal, river, the hill in the city — five short lives.",
-      "intro": "West Lake is written in Landscape. This chapter walks toward the city: Lingyin, Xixi, the canal, the Qiantang, Wu Hill — from bells in the hills to the bore on the river, then to the hill from which the city is seen. First what a place is and why it matters; only in the final line, when to go. Prices and routes change; water does not.",
+      "intro": "West Lake is written under Mountains & scenery. This chapter walks toward the city: Lingyin, Xixi, the canal, the Qiantang, Wu Hill — from bells in the hills to the bore on the river, then to the hill from which the city is seen. First what a place is and why it matters; only in the final line, when to go. Prices and routes change; water does not.",
       "colophon": "When the lake reaches the city, it becomes the human world. The next chapter reads the goods that lake and hills raise.",
       "footnote": "Details shift with seasons and management decisions; check official notices before travelling.",
       "spots": {
@@ -539,10 +539,10 @@
     },
     "history": {
       "heroKicker": "Hangzhou",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "How a city became a capital, and how it laid the title down.",
       "intro": "Before Hangzhou was Hangzhou, this ground already knew how to make a city. Liangzhu is the earlier city; Wuyue made Hangzhou a metropolis of the southeast; the Southern Song made it a capital; after the capital was laid down, lake and hills remained. The canal is woven into the last entry as fact. Qian Liu’s birth, the peaceful handover, and the family precept are written in Lin’an.",
-      "colophon": "Capitals fall; lake and hills do not. Volume I closes here.",
+      "colophon": "Capitals fall; lake and hills do not. Hangzhou’s history pauses here.",
       "entries": {
         "liangzhu": {
           "era": "c. 5300–4300 years ago",
@@ -580,7 +580,7 @@
     },
     "culture": {
       "heroKicker": "Hangzhou",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "Objects are the joints between people and their lake and hills.",
       "intro": "Where the lake reaches the human world, goods appear. Hangzhou’s Longjing tea, silk, crafts, and dishes are not museum relics; they remain livelihoods and daily objects in Hangzhou hands.",
       "colophon": "Every tea, every dish, has its season. Lake and hills raise the people; the people make history — the next chapter reads a city.",
@@ -588,7 +588,7 @@
         "tea": {
           "title": "Longjing tea: one bud and one leaf before Qingming",
           "paragraphs": [
-            "One bud and one leaf before Qingming. The tea of Lion Peak, Wengjia Hill, and Manjuelong is dear not because it is early, but because the hand must be light and the heart still. The cloud of the hills is written in Landscape; this entry is how people take the leaf from the branch.",
+            "One bud and one leaf before Qingming. The tea of Lion Peak, Wengjia Hill, and Manjuelong is dear not because it is early, but because the hand must be light and the heart still. The cloud of the hills is written under Mountains & scenery; this entry is how people take the leaf from the branch.",
             "Around Qingming the tea farmers go up. One bud and one leaf is not a ritual adjective; it is a measure in the hand. The tea is given by the hills, and also by the people — the hills give weather, the people give patience."
           ]
         },
@@ -651,7 +651,7 @@
   "seo": {
     "home": {
       "title": "Jiuzhou — An online gazetteer of Chinese cities",
-      "description": "Jiuzhou is an online gazetteer: one city, one volume, written slowly. Volume I: Hangzhou, beside West Lake. Under it: Lin’an, beneath Mount Tianmu."
+      "description": "Jiuzhou is an online gazetteer: city by city, written slowly. It begins with Hangzhou, beside West Lake. Lin’an, a district of Hangzhou, lies beneath Mount Tianmu."
     },
     "about": {
       "title": "About · Jiuzhou",
@@ -667,7 +667,7 @@
     },
     "linan_scenic": {
       "title": "Places · Lin'an · Jiuzhou",
-      "description": "Five places in Lin'an, read along the water: Source of Taihu, Zhexi Canyon, Qingshan Lake, Zhinan, Heqiao. The mountains are in Landscape."
+      "description": "Five places in Lin'an, read along the water: Source of Taihu, Zhexi Canyon, Qingshan Lake, Zhinan, Heqiao. The mountains are under Mountains & scenery."
     },
     "linan_history": {
       "title": "History · Lin'an · Jiuzhou",
@@ -702,7 +702,7 @@
       "description": "Hangzhou craft and produce: Longjing tea, silk, Hangzhou dishes, and the seasons behind local things."
     },
     "jsonld": {
-      "siteDescription": "An online gazetteer of Chinese cities — one volume at a time."
+      "siteDescription": "An online gazetteer of Chinese cities — one city at a time."
     },
     "place": {
       "linan": "Lin'an",
@@ -716,115 +716,115 @@
     },
     "linan_contribute": {
       "title": "Photographs · Lin’an · Jiuzhou",
-      "description": "Contribute photographs for the Lin’an volume: mountains, water, villages, craft — by letter. Copyright stays yours."
+      "description": "Contribute photographs for the Lin’an pages: mountains, water, villages, craft — by letter. Copyright stays yours."
     },
     "hangzhou_contribute": {
       "title": "Photographs · Hangzhou · Jiuzhou",
-      "description": "Contribute photographs for the Hangzhou volume: lake, hills, city, the human world — by letter. Copyright stays yours."
+      "description": "Contribute photographs for the Hangzhou pages: lake, hills, city, the human world — by letter. Copyright stays yours."
     },
     "contribute": {
       "title": "Photographs · Jiuzhou",
-      "description": "One city, one volume — each place takes different photographs. Choose a volume, then write."
+      "description": "City by city — each place takes different photographs. Choose a place, then write."
     },
     "fuyang": {
       "title": "富阳 · Jiuzhou",
-      "description": "从江读起。中游叫富春，两山夹一江。"
+      "description": "Start from the river. Midstream is called Fuchun, one river between two ranges."
     },
     "fuyang_mountains": {
       "title": "山川之 · 富阳 · Jiuzhou",
-      "description": "富春江中游。两山夹一江。"
+      "description": "The middle reach of the Fuchun. Two ranges, one river."
     },
     "fuyang_scenic": {
       "title": "景之 · 富阳 · Jiuzhou",
-      "description": "鹳山、龙门、东洲、庙山坞、新登。"
+      "description": "Guan Hill, Longmen, Dongzhou, Miaoshanwu, Xindeng."
     },
     "fuyang_history": {
       "title": "史之 · 富阳 · Jiuzhou",
-      "description": "籍贯不是出生地。画的是江。"
+      "description": "A native place is not a birthplace. The painting is of the river."
     },
     "fuyang_culture": {
       "title": "物之 · 富阳 · Jiuzhou",
-      "description": "竹纸还在山坞里。"
+      "description": "Bamboo paper is still made in the valleys."
     },
     "tonglu": {
       "title": "桐庐 · Jiuzhou",
-      "description": "严陵。天子地挂此。刘裕出生是传说。"
+      "description": "Yanling. Tianzi Di is here. That Liu Yu was born here is legend."
     },
     "tonglu_mountains": {
       "title": "山川之 · 桐庐 · Jiuzhou",
-      "description": "桐江与分水江。严陵山。"
+      "description": "The Tong River and the Fenshui River. Yanling Mountain."
     },
     "tonglu_scenic": {
       "title": "景之 · 桐庐 · Jiuzhou",
-      "description": "钓台、瑶琳、天子地、桐君山、分水。"
+      "description": "The fishing terrace, Yaolin, Tianzi Di, Tongjun Hill, Fenshui."
     },
     "tonglu_history": {
       "title": "史之 · 桐庐 · Jiuzhou",
-      "description": "严光余姚人。范仲淹知睦州。"
+      "description": "Yan Guang was from Yuyao. Fan Zhongyan governed Muzhou."
     },
     "tonglu_culture": {
       "title": "物之 · 桐庐 · Jiuzhou",
-      "description": "茶不叫龙井。"
+      "description": "The tea is not called Longjing."
     },
     "jiande": {
       "title": "建德 · Jiuzhou",
-      "description": "三江口在梅城。坝在建德。"
+      "description": "The three rivers meet at Meicheng. The dam is in Jiande."
     },
     "jiande_mountains": {
       "title": "山川之 · 建德 · Jiuzhou",
-      "description": "新安江会合兰江，以下称富春。"
+      "description": "The Xin’an meets the Lan. Below that, the river is called Fuchun."
     },
     "jiande_scenic": {
       "title": "景之 · 建德 · Jiuzhou",
-      "description": "梅城、铜官坝、入峡。千岛湖不在此。"
+      "description": "Meicheng, the Tongguan dam, the way into the gorge. Qiandao Lake is not here."
     },
     "jiande_history": {
       "title": "史之 · 建德 · Jiuzhou",
-      "description": "府城梅城。坝与湖拆开。"
+      "description": "The prefectural seat was Meicheng. The dam and the lake are kept apart."
     },
     "jiande_culture": {
       "title": "物之 · 建德 · Jiuzhou",
-      "description": "严州苞茶、严东关五加皮。"
+      "description": "Yanzhou bud tea, and Yandongguan wujiapi."
     },
     "chunan": {
       "title": "淳安 · Jiuzhou",
-      "description": "江成库，城在水下。千岛湖挂此。"
+      "description": "The river became a reservoir, and the city is under the water. Qiandao Lake is here."
     },
     "chunan_mountains": {
       "title": "山川之 · 淳安 · Jiuzhou",
-      "description": "被拦住的新安江。岛是没顶的山。"
+      "description": "The Xin’an, held back. The islands are hilltops that stayed above water."
     },
     "chunan_scenic": {
       "title": "景之 · 淳安 · Jiuzhou",
-      "description": "千岛湖、狮城、排岭。"
+      "description": "Qiandao Lake, Lion City, Pailing."
     },
     "chunan_history": {
       "title": "史之 · 淳安 · Jiuzhou",
-      "description": "1959 截流。贺城与狮城在水下。"
+      "description": "Dammed in 1959. Hecheng and Lion City are under the water."
     },
     "chunan_culture": {
       "title": "物之 · 淳安 · Jiuzhou",
-      "description": "鸠坑茶。库里的鱼。"
+      "description": "Jiukeng tea. Fish in the reservoir."
     },
     "xiaoshan": {
       "title": "萧山 · Jiuzhou",
-      "description": "自己的水叫浦阳。从南岸的江读起。"
+      "description": "Its own water is called the Puyang. Start from the river on the south bank."
     },
     "xiaoshan_mountains": {
       "title": "山川之 · 萧山 · Jiuzhou",
-      "description": "浦阳江。湘湖是江南岸的库。"
+      "description": "The Puyang River. Xiang Lake is a reservoir on the south bank."
     },
     "xiaoshan_scenic": {
       "title": "景之 · 萧山 · Jiuzhou",
-      "description": "湘湖、碛堰、渔浦、临浦、城山。"
+      "description": "Xiang Lake, Qiyan, Yupu, Linpu, Chengshan."
     },
     "xiaoshan_history": {
       "title": "史之 · 萧山 · Jiuzhou",
-      "description": "跨湖桥是另一处遗址。碛堰开堵两说并存。"
+      "description": "Kuahuqiao is another site. Two accounts remain of Qiyan, open or blocked."
     },
     "xiaoshan_culture": {
       "title": "物之 · 萧山 · Jiuzhou",
-      "description": "印纹陶。湖边的田。"
+      "description": "Stamped pottery. Fields beside the lake."
     },
     "entry_westlake": {
       "title": "How West Lake Formed, and Why It Is Called West · Jiuzhou",
@@ -875,26 +875,26 @@
     "online": "Issued online",
     "coldDew": "Bingwu · Cold Dew",
     "juan": [
-      "Juan I",
-      "Juan II",
-      "Juan III",
-      "Juan IV"
+      "Mountains & scenery",
+      "Historic sites",
+      "History & culture",
+      "History & culture"
     ],
     "fourPian": "Four chapters",
-    "oneSub": "One nested volume",
-    "tocNote": "Essays listed under each chapter",
+    "oneSub": "A district under the city",
+    "tocNote": "Listed under each part",
     "under": "Nested",
     "underHangzhou": "Under Hangzhou",
-    "openScroll": "Open",
+    "openScroll": "Read",
     "openIntoHangzhou": "Open, into Hangzhou",
     "enterVolume": "Enter",
     "opened": "Open",
     "openedOneProvince": "One province open",
     "openedOneCity": "One city open",
-    "oneCity": "One city, one volume",
-    "scrollOpen": "Scroll, open the volume",
+    "oneCity": "City by city",
+    "scrollOpen": "Scroll to read",
     "scrollCities": "Scroll, to the cities",
-    "publishedHangzhou": "Issued · Juan I · Hangzhou",
+    "publishedHangzhou": "Issued · Hangzhou",
     "openedHangzhou": "One city open · Hangzhou",
     "eastChina": "East China",
     "openSeal": "开",
@@ -902,8 +902,8 @@
     "jiuzhouLabel": "Nine Lands",
     "jiuzhouHeadline": "The old names are gone from the map; the mountains and rivers remain.",
     "jiuzhouBody": "The name “Nine Lands” (Jiuzhou) comes from the Tribute of Yu in the Book of Documents; it roughly covered the Yellow River and Yangtze basins and the southeast coast. China today is far larger, so this gazetteer is bound by present-day provinces, and only borrows the name.",
-    "prefaceTitle": "One city, one volume, written slowly",
-    "prefaceNote": "One city one volume written slowly",
+    "prefaceTitle": "City by city, written slowly",
+    "prefaceNote": "City by city, written slowly",
     "titleSealHome": "九",
     "titleSealZhejiang": "浙",
     "titleSealHangzhou": "湖",
@@ -925,24 +925,24 @@
   "ui": {
     "language": "Language",
     "menu": "Menu",
-    "openVolume": "OPEN",
+    "openVolume": "Contents",
     "districtsLabel": "Districts",
     "cityPagesLabel": "Pages",
-    "cityPagesTitle": "Open",
+    "cityPagesTitle": "Contents",
     "cityCategory": {
       "mountains": "Landscape",
       "scenic": "Places",
       "heritage": "History"
     },
     "nextChapter": "Next",
-    "backToOpening": "Back to the opening",
+    "backToOpening": "Back to the start",
     "season": "Season",
     "note": "Note",
-    "oneCityOneVolume": "Jiuzhou · one city, one volume",
+    "oneCityOneVolume": "Jiuzhou · city by city",
     "onlineGazetteer": "An online gazetteer",
     "nineLands": "NINE LANDS, ONE ANTHOLOGY",
-    "volumeTwoDash": "Vol. II —",
-    "nextVolumeOnTheRoad": "The next volume is on the road.",
+    "volumeTwoDash": "Next —",
+    "nextVolumeOnTheRoad": "The next place is still on the way.",
     "alt": {
       "lakeHills": "Lake and distant hills",
       "zhinanAutumn": "Zhinan Village in autumn",
@@ -976,34 +976,34 @@
     "manifestoTitle": "Begin with the river, walk the banks",
     "manifesto": [
       "Hangzhou is a city of a lake. Fuyang is a city of a river. Here the trunk stream is not yet the bore; it is called Fuchun. Two ranges hold it; sandbars grow in the middle.",
-      "Read this volume from the river. Tide belongs downstream. Salt-watching is at Yanguan in Haining.",
+      "Read it from the river. Tide belongs downstream. Salt-watching is at Yanguan in Haining.",
       "No tickets. If a stretch of river takes root in your mind, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
     "closingQuote": "“From Fuyang to Tonglu, a hundred li of strange hills and stranger water.”",
     "closingSource": "— Wu Jun",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "Midstream is Fuchun. Two ranges, one river."
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "Stork Hill, Longmen, Dongzhou, Miaoshanwu, Xindeng."
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "Bamboo paper still in the ravines."
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "A native place is not a birthplace."
       }
     },
     "mountains": {
       "heroKicker": "Fuyang",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "The river is not the lake. Midstream has its own name.",
       "intro": "Below Meicheng the trunk stream is called the Fuchun. Fuyang sits below Tonglu and above Hangzhou’s city reach. It is not the same water as West Lake. Four essays: begin with the river.",
       "colophon": "The ranges hold the river. The river is read; go ashore.",
@@ -1012,7 +1012,7 @@
           "title": "The Fuchun: a midstream name",
           "paragraphs": [
             "Begin with the river. After the meeting at Meicheng this reach is called Fuchun. Wide water, sandbars, no wall of tide. Hangzhou’s place-entry on the bore does not sit here.",
-            "Wu Jun’s hundred li runs across two counties. Neither volume owns “the most unique under heaven.”"
+            "Wu Jun’s hundred li runs across two counties. Neither county owns “the most unique under heaven.”"
           ]
         },
         "ranges": {
@@ -1040,7 +1040,7 @@
     },
     "scenic": {
       "heroKicker": "Fuyang",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "Five places on the bank.",
       "intro": "Landscape wrote the river. This chapter writes the bank: a spur in town, an old street south of the water, an islet in the stream.",
       "colophon": "Days on the bank are paper and villages. Next chapter, craft.",
@@ -1085,10 +1085,10 @@
     },
     "history": {
       "heroKicker": "Fuyang",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "The county name came from the river; the man left from a native place.",
-      "intro": "The years as capital are written in Hangzhou. This volume keeps the midstream county: once Fuchun, a native place, a long scroll, a workshop.",
-      "colophon": "The name changed; the river is still Fuchun. This volume closes.",
+      "intro": "The years as capital are written in Hangzhou. This place keeps the midstream county: once Fuchun, a native place, a long scroll, a workshop.",
+      "colophon": "The name changed; the river is still Fuchun. This part pauses here.",
       "entries": {
         "name": {
           "era": "Qin — Eastern Jin",
@@ -1126,7 +1126,7 @@
     },
     "culture": {
       "heroKicker": "Fuyang",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "Paper comes from bamboo.",
       "intro": "Where the river reaches people, paper appears. Not a badge of invention — the sheet still lifted in the ravine.",
       "colophon": "A sheet, a reach of river. Next chapter, history.",
@@ -1167,7 +1167,7 @@
     "heroKicker": "Hangzhou",
     "heroTitle": "Tonglu Anthology",
     "heroSub": "Yanling. He would not serve; the mountain is high, the water long.",
-    "heroScroll": "Scroll, into the volume",
+    "heroScroll": "Scroll, and read on",
     "beneath": "YANLING",
     "seal": "桐",
     "manifestoLabel": "How to read",
@@ -1177,31 +1177,31 @@
       "Tianzi Di hangs at Baijiang in this county. Liu Yu’s birth here is legend. The terrace is a memorial, not a tomb. Fan Zhongyan governed Muzhou, seated at Meicheng in Jiande.",
       "No tickets. If a terrace and a river take root, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
     "closingQuote": "「云山苍苍，江水泱泱。先生之风，山高水长。」",
     "closingSource": "—— 范仲淹《严先生祠堂记》",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "桐江与分水江。严陵山在左岸。"
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "钓台、瑶琳、天子地、桐君山、分水。"
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "茶不叫龙井。笔是当代的杆。"
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "严光余姚人。刘裕不生于此。"
       }
     },
     "mountains": {
       "heroKicker": "Tonglu",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "两江，一台。",
       "intro": "干流入境称桐江，至桐君山脚左纳分水江。七里泷跨建德与桐庐，钓台在桐庐左岸。天目的源与大树仍在临安。",
       "colophon": "山因人而立。下一章，上台。",
@@ -1217,14 +1217,14 @@
           "title": "严陵山：因人得名",
           "paragraphs": [
             "严陵。山在七里泷左岸，前临大江。汉时属富春县，今址在桐庐。",
-            "不独占「富春江」条目标题。富春是走廊的名字，富阳也要立江。本卷立的是这座山。"
+            "富春是沿江共用的名字，这里写的是这座山。"
           ]
         },
         "tongjun": {
           "title": "桐君山：汇口的一峰",
           "paragraphs": [
             "翼然一峰，正在两江交带。县名传说挂在这里，是传说层。",
-            "山是节点，不是核。核仍是严陵。"
+            "山是节点，不是中心。中心仍是严陵。"
           ]
         },
         "water": {
@@ -1238,7 +1238,7 @@
     },
     "scenic": {
       "heroKicker": "Tonglu",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "台上，洞里，百江的山。",
       "intro": "山川写两江与严陵山。景写去处。天子地、瑶琳挂在本县。",
       "colophon": "台上风长。下一章，读物。",
@@ -1283,10 +1283,10 @@
     },
     "history": {
       "heroKicker": "Tonglu",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "人不来，山还在。",
-      "intro": "严光是余姚人。范仲淹是睦州知州。刘裕不生于此。本卷五则，把传说与史实分开。",
-      "colophon": "山高水长。此卷合上。",
+      "intro": "严光是余姚人。范仲淹是睦州知州。刘裕不生于此。这里四则，把传说与史实分开。",
+      "colophon": "山高水长。先读到这里。",
       "entries": {
         "county": {
           "era": "吴 · 225",
@@ -1324,7 +1324,7 @@
     },
     "culture": {
       "heroKicker": "Tonglu",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "茶是自己的茶。",
       "intro": "茶是本地的名字，不借龙井。分水制笔是当代圆珠笔，不是湖笔。",
       "colophon": "一茶一杆。下一章，读史。",
@@ -1340,7 +1340,7 @@
           "title": "分水笔：竹做的杆",
           "paragraphs": [
             "1970 年代末，玉竹做圆珠笔杆。当代块状经济，不是千年毛笔。",
-            "写物就写杆。它不是湖笔，也不是宣笔。"
+            "它不是湖笔，也不是宣笔。"
           ]
         },
         "herb": {
@@ -1365,41 +1365,41 @@
     "heroKicker": "Hangzhou",
     "heroTitle": "Jiande Anthology",
     "heroSub": "The confluence is at Meicheng. The dam is in Jiande; the lake is not.",
-    "heroScroll": "Scroll, into the volume",
+    "heroScroll": "Scroll, and read on",
     "beneath": "THE MOUTH",
     "seal": "建",
     "manifestoLabel": "How to read",
     "manifestoTitle": "Begin at the mouth",
     "manifesto": [
       "The Xin’an from the west, the Lan from the south, become the Fuchun at Meicheng. The kernel is this mouth. Today’s seat is Baisha below the dam, not the prefectural city.",
-      "The dam is at Tongguan. Almost all of Qiandao Lake’s water lies in Chun’an. This volume writes the dam, the river below it, the city at the mouth. Yanling’s terrace is in Tonglu.",
+      "The dam is at Tongguan. Almost all of Qiandao Lake’s water lies in Chun’an. Here we write the dam, the river below it, the city at the mouth. Yanling’s terrace is in Tonglu.",
       "No tickets. If a river-mouth takes root, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
     "closingQuote": "「移舟泊烟渚。」",
     "closingSource": "—— 孟浩然《宿建德江》",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "两源在梅城改名。"
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "梅城、严东关、铜官坝、坝下、入峡。"
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "苞茶、五加皮、船上的人。"
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "府城在梅城。一九六〇年迁治。"
       }
     },
     "mountains": {
       "heroKicker": "Jiande",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "口在梅城。",
       "intro": "三江口在梅城：新安江会合兰江，以下称富春江。不是三源并入。杭州景里的江，不在这个口上。",
       "colophon": "口读完了，进城。",
@@ -1407,8 +1407,8 @@
         "confluence": {
           "title": "三江口：两源第三名",
           "paragraphs": [
-            "西来的新安江，南来的兰江，在梅城东关会合。以下才叫富春。核在这个口。",
-            "杭州东江嘴、兰溪也有叫三江口的地方。本卷只指梅城这一处。"
+            "西来的新安江，南来的兰江，在梅城东关会合。以下才叫富春。要看就在这个口。",
+            "杭州东江嘴、兰溪也有叫三江口的地方。这里只指梅城这一处。"
           ]
         },
         "wulong": {
@@ -1428,15 +1428,15 @@
         "water": {
           "title": "水：口的上下文",
           "paragraphs": [
-            "寿昌江是西南半壁的支流，来自旧寿昌县。不是另一条核。",
-            "水出峡入桐庐。钓台不在本卷。下一章，到口上看城。"
+            "寿昌江是西南半壁的支流，来自旧寿昌县。不另立一条江。",
+            "水出峡入桐庐。钓台不在这里。再到口上看城。"
           ]
         }
       }
     },
     "scenic": {
       "heroKicker": "Jiande",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "口上与坝下。",
       "intro": "坝在建德，可以去看。湖的名字挂在淳安。",
       "colophon": "城在口上。下一章，读物。",
@@ -1481,10 +1481,10 @@
     },
     "history": {
       "heroKicker": "Jiande",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "府城不是今治。",
       "intro": "严州府六县，建德是附郭，不是全府。坝与湖必须拆开。",
-      "colophon": "口还在。城搬了。此卷合上。",
+      "colophon": "口还在。城搬了。先读到这里。",
       "entries": {
         "county": {
           "era": "吴 · 225",
@@ -1507,7 +1507,7 @@
           "title": "坝在建德",
           "paragraphs": [
             "新安江水电站坝在铜官。库区水域绝大部分在淳安。",
-            "建德写坝。湖的名字、沉在水下的城，写在淳安卷。"
+            "建德写坝。湖的名字、沉在水下的城，写在淳安的条目里。"
           ]
         },
         "move": {
@@ -1522,7 +1522,7 @@
     },
     "culture": {
       "heroKicker": "Jiande",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "口上的茶与酒。",
       "intro": "苞茶不是包茶。五加皮出严东关。九姓渔民用「相传」。",
       "colophon": "一口茶，一盏酒。下一章，读史。",
@@ -1544,7 +1544,7 @@
         "fishers": {
           "title": "九姓：船上的人",
           "paragraphs": [
-            "终生船居新安、兰、富春。上岸后多在三都。来源多说，用相传。",
+            "终生船居新安、兰、富春。上岸后多在三都。",
             "口上还能遇见这个名字。人怎样过四季，比码头说明书要紧。"
           ]
         },
@@ -1562,8 +1562,8 @@
     "volumeTitle": "Chun’an",
     "heroKicker": "Hangzhou",
     "heroTitle": "Chun’an Anthology",
-    "heroSub": "The river became a reservoir. The cities lie under the water. Qiandao Lake belongs to this volume.",
-    "heroScroll": "Scroll, into the volume",
+    "heroSub": "The river became a reservoir. The cities lie under the water. Qiandao Lake belongs to this place.",
+    "heroScroll": "Scroll, and read on",
     "beneath": "CITIES UNDER WATER",
     "seal": "淳",
     "manifestoLabel": "How to read",
@@ -1573,31 +1573,31 @@
       "The dam is at Tongguan in Jiande. The water is in Chun’an. Cutoff in 1959. The works were the Xin’an Reservoir; “Qiandao Lake” was fixed as the scenic name in 1984. The kernel is the reservoir.",
       "No tickets. If a sunken city takes root, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
     "closingQuote": "「岛是山的头顶。」",
     "closingSource": "—— 库区",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "被拦住的新安江。"
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "湖、水下城、排岭、威坪、鸠坑。"
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "鸠坑茶。库里的鱼。"
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "截流、两城、遂安、县名。"
       }
     },
     "mountains": {
       "heroKicker": "Chun’an",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "山谷被坝拦住。",
       "intro": "与西湖不是一种水。西湖是潟湖要梳妆；这里是山谷成库。坝在建德，水在淳安。",
       "colophon": "山没了顶。下一章，看还露出的那些。",
@@ -1605,7 +1605,7 @@
         "xinan": {
           "title": "新安江：来路",
           "paragraphs": [
-            "发源安徽休宁，街口入浙。来路跨皖。下游建德、桐庐、富阳都要写江。淳安被改写的不是「还有一条江」。",
+            "发源安徽休宁，街口入浙。来路跨皖。",
             "入浙即成库。四周山溪羽状汇入。"
           ]
         },
@@ -1634,7 +1634,7 @@
     },
     "scenic": {
       "heroKicker": "Chun’an",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "湖挂在这里。",
       "intro": "千岛湖不成杭州景。水下城不向公众开放观光潜水。岸上的复原是景区，不是水下城。",
       "colophon": "新城在排岭。下一章，读物。",
@@ -1679,10 +1679,10 @@
     },
     "history": {
       "heroKicker": "Chun’an",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "两座城沉下去。",
       "intro": "截流与发电不是同一天。移民约二十九万，用县志口径。遂安县名止于 1958。",
-      "colophon": "县还在。城在水下。此卷合上。",
+      "colophon": "县还在。城在水下。先读到这里。",
       "entries": {
         "cutoff": {
           "era": "1959 — 1960",
@@ -1720,7 +1720,7 @@
     },
     "culture": {
       "heroKicker": "Chun’an",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "茶是睦州的。鱼是库里的。",
       "intro": "鸠坑茶不是龙井。《茶经》睦州条写的是桐庐山谷，茶名各有各的山。鱼是放流鲢鳙，不是千年江鲜。",
       "colophon": "一叶一鱼。下一章，读史。",
@@ -1761,7 +1761,7 @@
     "heroKicker": "Hangzhou",
     "heroTitle": "Xiaoshan Anthology",
     "heroSub": "Its own water is called the Puyang. Begin with the river on the south bank.",
-    "heroScroll": "Scroll, into the volume",
+    "heroScroll": "Scroll, and read on",
     "beneath": "THE PUYANG",
     "seal": "萧",
     "manifestoLabel": "How to read",
@@ -1771,31 +1771,31 @@
       "Xianghu is a reservoir on the south bank. Kuahuqiao enters History, not the kernel. Xi Shi is legend; Zhuji contests her too. Reclamation is not the kernel.",
       "No tickets. If a south-bank river takes root, it has done its work."
     ],
-    "volumesLabel": "Four volumes",
-    "volumesTitle": "Open the volumes",
+    "volumesLabel": "Four parts",
+    "volumesTitle": "Contents",
     "closingQuote": "「余暨，萧山，潘水所出，东入海。」",
     "closingSource": "—— 《汉书·地理志》",
     "chapters": {
       "mountains": {
-        "title": "Landscape",
+        "title": "Mountains & scenery",
         "desc": "浦阳江。湘湖是岸上的库。"
       },
       "scenic": {
-        "title": "Places",
+        "title": "Historic sites",
         "desc": "湘湖、碛堰、渔浦、临浦、城山。"
       },
       "culture": {
-        "title": "Craft",
+        "title": "History & culture",
         "desc": "印纹陶。湖边的田。"
       },
       "history": {
-        "title": "History",
+        "title": "History & culture",
         "desc": "跨湖桥是另一处遗址。江曾经东去。"
       }
     },
     "mountains": {
       "heroKicker": "Xiaoshan",
-      "heroTitle": "Landscape",
+      "heroTitle": "Mountains & scenery",
       "heroSub": "南岸的江。",
       "intro": "自己的水叫浦阳。境内约三十公里，至闻堰小砾山入干流。上游在浦江、诸暨。湘湖与西湖同型，不是同一个湖。",
       "colophon": "江有两条旧路。下一章，到碛堰去看。",
@@ -1817,8 +1817,8 @@
         "south": {
           "title": "南岸：越地",
           "paragraphs": [
-            "长期属绍兴府，1959 年才改属杭州。江是天堑。西兴已划滨江，运河的头不在本卷。",
-            "围垦大块已属钱塘区。造地不是这一卷的山川。"
+            "长期属绍兴府，1959 年才改属杭州。江是天堑。西兴已划滨江，运河的头不在这里。",
+            "围垦大块已属钱塘区。造地不是这里的山川。"
           ]
         },
         "water": {
@@ -1832,7 +1832,7 @@
     },
     "scenic": {
       "heroKicker": "Xiaoshan",
-      "heroTitle": "Places",
+      "heroTitle": "Historic sites",
       "heroSub": "湖、堰、浦。",
       "intro": "跨湖桥入史，不当条目标题。观潮胜地在海宁。",
       "colophon": "岸上的田还在。下一章，读物。",
@@ -1841,7 +1841,7 @@
         "xianghu": {
           "name": "湘湖",
           "region": "萧山城西",
-          "essence": "九乡水仓。跨湖桥遗址在湖南岸，史写在史之卷。湖不是西湖。",
+          "essence": "九乡水仓。跨湖桥遗址在湖南岸，史写在历史文化里。湖不是西湖。",
           "season": "春秋",
           "note": "城西"
         },
@@ -1877,10 +1877,10 @@
     },
     "history": {
       "heroKicker": "Xiaoshan",
-      "heroTitle": "History",
+      "heroTitle": "History & culture",
       "heroSub": "更早的遗址，不是那座城。",
       "intro": "良渚仍是杭州史「更早的城」。跨湖桥是另一文化、另一地点。西施标传说。",
-      "colophon": "南岸还是南岸。此卷合上。",
+      "colophon": "南岸还是南岸。先读到这里。",
       "entries": {
         "name": {
           "era": "唐 · 742",
@@ -1918,9 +1918,9 @@
     },
     "culture": {
       "heroKicker": "Xiaoshan",
-      "heroTitle": "Craft",
+      "heroTitle": "History & culture",
       "heroSub": "陶在土里。田在湖边。",
-      "intro": "茅湾里的印纹陶还在土里。西施故里是后来的名字，不是这一卷的物。",
+      "intro": "茅湾里的印纹陶还在土里。西施故里是后来的名字，不是这里的物。",
       "colophon": "一陶一田。下一章，读史。",
       "items": {
         "ware": {
@@ -1933,15 +1933,14 @@
         "lakeside": {
           "title": "湖边：水仓的日常",
           "paragraphs": [
-            "九乡要水。湖是给田的。后来才是给眼睛的。",
-            "湖是给田的。后来才有人来看。"
+            "九乡要水。湖先是给田的，后来才给人看。"
           ]
         },
         "fields": {
           "title": "田：塘内的岁",
           "paragraphs": [
             "西江塘、麻溪坝，争的是哪边淹。田在争里活下来。",
-            "沙地大块已划走。本则写还在萧山的田。"
+            "沙地大块已划走。萧山还有田。"
           ]
         },
         "village": {

@@ -62,7 +62,7 @@
 
 ## 参见
 
-* [/hangzhou/scenic/](/hangzhou/scenic/) · 景之卷
-* [/hangzhou/mountains/](/hangzhou/mountains/) · 山川之卷
+* [/hangzhou/scenic/](/hangzhou/scenic/) · 名胜古迹
+* [/hangzhou/mountains/](/hangzhou/mountains/) · 山川美景
 * [/hangzhou/mountains/westlake/](/hangzhou/mountains/westlake/) · 西湖
 * [/hangzhou/scenic/canal/](/hangzhou/scenic/canal/) · 运河杭州端

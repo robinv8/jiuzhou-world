@@ -101,7 +101,7 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
             : t(`${volume}.heroKicker`)
     const colophonAffiliation = theme.stele
         ? `${t('anthology.name')}\u3000${t('book.underHangzhou')}`
-        : `${t('anthology.name')}\u3000${vol.no ?? juan[0]}`
+        : `${t('anthology.name')}\u3000${t(`${volume}.volumeTitle`)}`
     const colophonSeal = t(theme.stele ? 'book.titleSealLinan' : 'book.titleSealHangzhou')
     const colophonSealSize = theme.stele ? 48 : 50
 
@@ -248,7 +248,7 @@ export default function VolumeHome({ lang, volume }: { lang: Lang; volume: strin
                                     style={{ borderColor: `${theme.tocInk}22` }}
                                 >
                                     <p
-                                        className="w-14 shrink-0 pt-1 text-sm tracking-[0.2em]"
+                                        className="w-20 shrink-0 pt-1 text-sm tracking-[0.12em]"
                                         style={{ color: theme.juan }}
                                     >
                                         {juan[i]}
