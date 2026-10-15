@@ -4,8 +4,8 @@ title: "杭州下辖卷名录：能立 / 并入 / 不写"
 category: decision
 status: active
 tags: [hangzhou, nested-volume, editorial]
-created: "2026-08-22T18:30:33"
-updated: "2026-10-12T15:46:05"
+created: "2026-10-13T08:58:35.603Z"
+updated: "2026-10-13T08:58:35.990Z"
 ---
 
 <!-- compiled_truth -->
@@ -73,47 +73,73 @@ updated: "2026-10-12T15:46:05"
 
 关联 [[volume-hangzhou]]、[[anthology-spine]]。
 
-
 ## Timeline
 
-- time: 2026-08-22T18:30:33
+- time: 2026-10-13T08:58:35.606Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [hangzhou-subvolumes-roster]
+
+- time: 2026-08-22T18:30:33+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 杭州下辖卷名录：能立 / 并入 / 不写"
-  source: "当前聊天"
+  source: 当前聊天
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:0"
+  imported_at: 2026-10-13T08:58:35.985Z
 
-- time: 2026-08-22T18:30:53
+- time: 2026-08-22T18:30:53+08:00
   kind: decision
-  summary: "钉死杭州下辖今制全表：临安留下因核不是因区划；其余按能立/并入杭州/不写；页上只列已开，不当区县配额。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死杭州下辖今制全表：临安留下因核不是因区划；其余按能立/并入杭州/不写；页上只列已开，不当区县配额。
+  source: 当前聊天
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:1"
+  imported_at: 2026-10-13T08:58:35.985Z
 
-- time: 2026-08-22T18:48:00
+- time: 2026-08-22T18:48:00+08:00
   kind: decision
-  summary: "五城并行搜集入库：可立核写清并互链；萧山仍待核；临安不并入，并入/不写区不变。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 五城并行搜集入库：可立核写清并互链；萧山仍待核；临安不并入，并入/不写区不变。
+  source: 五城并行搜集
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:2"
+  imported_at: 2026-10-13T08:58:35.985Z
 
-- time: 2026-08-22T19:02:23
+- time: 2026-08-22T19:02:23+08:00
   kind: decision
-  summary: "萧山从待核改为可立：核是浦阳江，不抢钱塘江标题。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 萧山从待核改为可立：核是浦阳江，不抢钱塘江标题。
+  source: 当前聊天
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:3"
+  imported_at: 2026-10-13T08:58:35.985Z
 
-- time: 2026-08-22T19:36:07
+- time: 2026-08-22T19:36:07+08:00
   kind: note
-  summary: "五座可立下辖卷已挂站点（富阳、桐庐、建德、淳安、萧山），临安仍在。页上只列已开。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 五座可立下辖卷已挂站点（富阳、桐庐、建德、淳安、萧山），临安仍在。页上只列已开。
+  source: 当前聊天
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:4"
+  imported_at: 2026-10-13T08:58:35.985Z
 
-- time: 2026-08-23T21:34:56
+- time: 2026-08-23T21:34:56+08:00
   kind: decision
-  summary: "上线只开杭州与临安；富阳桐庐建德淳安萧山可立但暂不上线，页上不列。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 上线只开杭州与临安；富阳桐庐建德淳安萧山可立但暂不上线，页上不列。
+  source: 当前聊天
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:5"
+  imported_at: 2026-10-13T08:58:35.985Z
 
-- time: 2026-10-12T15:46:05
+- time: 2026-10-12T15:46:05+08:00
   kind: decision
-  summary: "临安在读者路线上是杭州的区县，页上只列已开"
+  author: "user:robin"
+  summary: 临安在读者路线上是杭州的区县，页上只列已开
   source: Robin 2026-10-12
   affects: [hangzhou-subvolumes-roster]
+  source_entry_id: "local:hangzhou-subvolumes-roster:6"
+  imported_at: 2026-10-13T08:58:35.985Z

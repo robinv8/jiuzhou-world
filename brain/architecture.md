@@ -1,8 +1,8 @@
 ---
 slug: architecture
-title: System architecture
+title: "System architecture"
 role: system architecture
-updated: "2026-10-12T15:46:05"
+updated: "2026-10-13T08:59:20"
 ---
 
 # System architecture

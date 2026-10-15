@@ -4,8 +4,8 @@ title: "淳安：江成库，城在水下（可立）"
 category: reference
 status: active
 tags: [hangzhou, chunan, gazetteer]
-created: "2026-08-22T18:46:06"
-updated: "2026-08-22T20:14:37"
+created: "2026-10-13T08:58:30.708Z"
+updated: "2026-10-13T08:58:31.171Z"
 ---
 
 <!-- compiled_truth -->
@@ -41,23 +41,37 @@ updated: "2026-08-22T20:14:37"
 
 游船攻略、门票、秀水节营销、「天下第一秀水」、把 1078 岛当景点名录、1994 千岛湖刑案当史核。
 
-
 ## Timeline
 
-- time: 2026-08-22T18:46:06
+- time: 2026-10-13T08:58:30.711Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [chunan-gazetteer]
+
+- time: 2026-08-22T18:46:06+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 淳安：江成库，城在水下（可立）"
-  source: "并行搜集 2026-08-22"
+  source: 并行搜集 2026-08-22
   affects: [chunan-gazetteer]
+  source_entry_id: "local:chunan-gazetteer:0"
+  imported_at: 2026-10-13T08:58:31.166Z
 
-- time: 2026-08-22T18:47:13
+- time: 2026-08-22T18:47:13+08:00
   kind: decision
-  summary: "并行搜集后写入淳安：核是江成库、城在水下；千岛湖不进杭州景；坝在建德。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 并行搜集后写入淳安：核是江成库、城在水下；千岛湖不进杭州景；坝在建德。
+  source: 五城并行搜集
   affects: [chunan-gazetteer]
+  source_entry_id: "local:chunan-gazetteer:1"
+  imported_at: 2026-10-13T08:58:31.166Z
 
-- time: 2026-08-22T20:14:37
+- time: 2026-08-22T20:14:37+08:00
   kind: decision
-  summary: "贺城狮城改为沉入库底；库区用绝大部分；风景名 1984 才定、1982 已有千岛之称；已开卷"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 贺城狮城改为沉入库底；库区用绝大部分；风景名 1984 才定、1982 已有千岛之称；已开卷
+  source: 史地 review 后改文案
   affects: [chunan-gazetteer]
+  source_entry_id: "local:chunan-gazetteer:2"
+  imported_at: 2026-10-13T08:58:31.166Z

@@ -4,8 +4,8 @@ title: "卷一叙事脉络：水脉脊柱 + 故事化改写"
 category: decision
 status: active
 tags: [vol1, narrative, editorial]
-created: "2026-08-18T12:20:11"
-updated: "2026-08-22T17:28:12"
+created: "2026-10-13T08:58:45.044Z"
+updated: "2026-10-13T08:58:45.500Z"
 ---
 
 <!-- compiled_truth -->
@@ -84,65 +84,100 @@ updated: "2026-08-22T17:28:12"
 卷末印可用树的意象，不把「大树华盖」写成古人咏天目的诗题。
 供图：`/hangzhou/linan/contribute`，收山与水。杭州的湖与城请寄杭州卷。
 
-
 ## Timeline
 
-- time: 2026-08-18T12:20:11
+- time: 2026-10-13T08:58:45.051Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [vol1-narrative-spine]
+
+- time: 2026-08-18T12:20:11+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 卷一叙事脉络：水脉脊柱 + 故事化改写"
-  source: "当前聊天"
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:0"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-18T12:20:11
+- time: 2026-08-18T12:20:11+08:00
   kind: decision
-  summary: "初始决策"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 初始决策
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:1"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-20T14:55:07
+- time: 2026-08-20T14:55:07+08:00
   kind: decision
-  summary: "景之卷去掉三座山，只留源谷湖村镇"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 景之卷去掉三座山，只留源谷湖村镇
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:2"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T15:31:48
+- time: 2026-08-22T15:31:48+08:00
   kind: decision
+  author: "user:robin"
   summary: Rewrote compiled_truth to the new best understanding
   source: brain update-truth
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:3"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T16:02:12
+- time: 2026-08-22T16:02:12+08:00
   kind: decision
-  summary: "临安水脉是总脉「山川为纲」的分支；杭州为卷一后，本页专指临安下辖卷的读法。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 临安水脉是总脉「山川为纲」的分支；杭州为卷一后，本页专指临安下辖卷的读法。
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:4"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T16:04:37
+- time: 2026-08-22T16:04:37+08:00
   kind: decision
-  summary: "章序改为山川→景→物→史，与全国骨架对齐。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 章序改为山川→景→物→史，与全国骨架对齐。
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:5"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T16:09:10
+- time: 2026-08-22T16:09:10+08:00
   kind: decision
-  summary: "临安史守钱氏五则；吴越只写保境与射潮，定都细节和林升归杭州卷。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 临安史守钱氏五则；吴越只写保境与射潮，定都细节和林升归杭州卷。
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:6"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T16:46:51
+- time: 2026-08-22T16:46:51+08:00
   kind: decision
-  summary: "推翻「名字回家了」：府名被借、县名未走；水脉标明两条水系"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 推翻「名字回家了」：府名被借、县名未走；水脉标明两条水系
+  source: 史地 review 后改文案
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:7"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T16:46:51
+- time: 2026-08-22T16:46:51+08:00
   kind: reversal
-  summary: "推翻「名字回家了」收束：县名从未离开，2017 设区不是回家。水脉标明苕溪与钱塘江两条水系。"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 推翻「名字回家了」收束：县名从未离开，2017 设区不是回家。水脉标明苕溪与钱塘江两条水系。
+  source: 史地 review 后改文案
   affects: [hangzhou-narrative-spine, anthology-spine]
+  source_entry_id: "local:vol1-narrative-spine:8"
+  imported_at: 2026-10-13T08:58:45.495Z
 
-- time: 2026-08-22T17:28:12
+- time: 2026-08-22T17:28:12+08:00
   kind: decision
-  summary: "钉死临安卷每则写法与密度：山川/景/物/史全部条目的核、不写什么、与杭州互文。天目、开竿、河桥、名字的流转已达密度，其余按此补。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死临安卷每则写法与密度：山川/景/物/史全部条目的核、不写什么、与杭州互文。天目、开竿、河桥、名字的流转已达密度，其余按此补。
+  source: 当前聊天
   affects: [vol1-narrative-spine]
+  source_entry_id: "local:vol1-narrative-spine:9"
+  imported_at: 2026-10-13T08:58:45.495Z

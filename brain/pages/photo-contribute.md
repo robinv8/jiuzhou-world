@@ -3,8 +3,8 @@ id: photo-contribute
 title: "供图入口：邮件投稿，不是相册社区"
 category: decision
 status: active
-created: "2026-08-15T12:41:49"
-updated: "2026-08-22T16:18:55"
+created: "2026-10-13T08:58:39.754Z"
+updated: "2026-10-13T08:58:40.159Z"
 ---
 
 <!-- compiled_truth -->
@@ -27,41 +27,64 @@ updated: "2026-08-22T16:18:55"
 
 关联 [[anthology-one-city-one-volume]]、[[hangzhou-narrative-spine]]、[[imagery-ai-first]]。
 
-
 ## Timeline
 
-- time: 2026-08-15T12:41:49
+- time: 2026-10-13T08:58:39.757Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [photo-contribute]
+
+- time: 2026-08-15T12:41:49+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 供图入口：邮件投稿，不是相册社区"
   source: product
   affects: [photo-contribute]
+  source_entry_id: "local:photo-contribute:0"
+  imported_at: 2026-10-13T08:58:40.154Z
 
-- time: 2026-08-15T12:41:49
+- time: 2026-08-15T12:41:49+08:00
   kind: decision
-  summary: "邮件供图入口，授权写在页上"
+  author: "user:robin"
+  summary: 邮件供图入口，授权写在页上
   source: product
   affects: [photo-contribute]
+  source_entry_id: "local:photo-contribute:1"
+  imported_at: 2026-10-13T08:58:40.154Z
 
-- time: 2026-08-15T21:22:12
+- time: 2026-08-15T21:22:12+08:00
   kind: decision
-  summary: "供图按卷拆分，非全站统一页"
+  author: "user:robin"
+  summary: 供图按卷拆分，非全站统一页
   source: product
   affects: [photo-contribute]
+  source_entry_id: "local:photo-contribute:2"
+  imported_at: 2026-10-13T08:58:40.154Z
 
-- time: 2026-08-15T21:22:12
+- time: 2026-08-15T21:22:12+08:00
   kind: decision
-  summary: "供图改为按地方/卷独立页（/linan/contribute），旧全局路径 301"
+  author: "user:robin"
+  summary: 供图改为按地方/卷独立页（/linan/contribute），旧全局路径 301
   source: product
   affects: [photo-contribute, i18n-locale-routing]
+  source_entry_id: "local:photo-contribute:3"
+  imported_at: 2026-10-13T08:58:40.154Z
 
-- time: 2026-08-15T21:27:06
+- time: 2026-08-15T21:27:06+08:00
   kind: decision
-  summary: "供图：总入口 + 各地不同收稿标准"
+  author: "user:robin"
+  summary: 供图：总入口 + 各地不同收稿标准
   source: product
   affects: [photo-contribute]
+  source_entry_id: "local:photo-contribute:4"
+  imported_at: 2026-10-13T08:58:40.154Z
 
-- time: 2026-08-22T16:18:55
+- time: 2026-08-22T16:18:55+08:00
   kind: decision
-  summary: "杭州卷也单开供图：收湖与城，不收临安的山与谷。落地正文时做页，仍走邮件。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 杭州卷也单开供图：收湖与城，不收临安的山与谷。落地正文时做页，仍走邮件。
+  source: 当前聊天
   affects: [photo-contribute]
+  source_entry_id: "local:photo-contribute:5"
+  imported_at: 2026-10-13T08:58:40.154Z

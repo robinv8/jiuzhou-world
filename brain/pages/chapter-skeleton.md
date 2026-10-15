@@ -4,8 +4,8 @@ title: "四章骨架：山川、景、物、史"
 category: decision
 status: active
 tags: [editorial, structure, chapters]
-created: "2026-08-22T16:04:19"
-updated: "2026-10-12T15:46:57"
+created: "2026-10-13T08:58:30.069Z"
+updated: "2026-10-13T08:58:30.491Z"
 ---
 
 <!-- compiled_truth -->
@@ -38,41 +38,64 @@ updated: "2026-10-12T15:46:57"
 
 临安已遵守「不抢名」：山川是天目、大明、清凉、水；景是太湖源、峡谷、青山湖、指南村、河桥。杭州名单见 [[hangzhou-narrative-spine]]。
 
-
 ## Timeline
 
-- time: 2026-08-22T16:04:19
+- time: 2026-10-13T08:58:30.076Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [chapter-skeleton]
+
+- time: 2026-08-22T16:04:19+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 四章骨架：山川、景、物、史"
-  source: "当前聊天"
+  source: 当前聊天
   affects: [chapter-skeleton]
+  source_entry_id: "local:chapter-skeleton:0"
+  imported_at: 2026-10-13T08:58:30.487Z
 
-- time: 2026-08-22T16:04:37
+- time: 2026-08-22T16:04:37+08:00
   kind: decision
-  summary: "全国四章容器定为山川、景、物、史；第一章从「山」改为「山川」。内部 key 仍为 mountains。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 全国四章容器定为山川、景、物、史；第一章从「山」改为「山川」。内部 key 仍为 mountains。
+  source: 当前聊天
   affects: [chapter-skeleton]
+  source_entry_id: "local:chapter-skeleton:1"
+  imported_at: 2026-10-13T08:58:30.487Z
 
-- time: 2026-08-22T16:09:10
+- time: 2026-08-22T16:09:10+08:00
   kind: decision
-  summary: "补章号规则：卷一只指市卷；章可称山川之卷，kicker 不用卷一、卷二。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 补章号规则：卷一只指市卷；章可称山川之卷，kicker 不用卷一、卷二。
+  source: 当前聊天
   affects: [chapter-skeleton]
+  source_entry_id: "local:chapter-skeleton:2"
+  imported_at: 2026-10-13T08:58:30.487Z
 
-- time: 2026-09-17T09:34:39
+- time: 2026-09-17T09:34:39+08:00
   kind: decision
-  summary: "章下可挂长文专条；短条仍留在章页，专条走 /{volume}/{chapter}/{id}/。"
+  author: "user:robin"
+  summary: 章下可挂长文专条；短条仍留在章页，专条走 /{volume}/{chapter}/{id}/。
   source: SHIP 10 gazetteer entries
   affects: [gazetteer-entry-pages, chapter-skeleton]
+  source_entry_id: "local:chapter-skeleton:3"
+  imported_at: 2026-10-13T08:58:30.487Z
 
-- time: 2026-10-12T15:46:05
+- time: 2026-10-12T15:46:05+08:00
   kind: decision
-  summary: "市页三类是呈现层；四章 key 与 URL 不变"
+  author: "user:robin"
+  summary: 市页三类是呈现层；四章 key 与 URL 不变
   source: Robin 2026-10-12
   affects: [chapter-skeleton]
+  source_entry_id: "local:chapter-skeleton:4"
+  imported_at: 2026-10-13T08:58:30.487Z
 
-- time: 2026-10-12T15:46:57
+- time: 2026-10-12T15:46:57+08:00
   kind: reversal
-  summary: "撤回杭州市页直接列四章卡：市页按三类陈列已刊专条，四章 URL 仍在。"
+  author: "user:robin"
+  summary: 撤回杭州市页直接列四章卡：市页按三类陈列已刊专条，四章 URL 仍在。
   source: Robin 2026-10-12
   affects: [reader-route-province-city]
+  source_entry_id: "local:chapter-skeleton:5"
+  imported_at: 2026-10-13T08:58:30.487Z

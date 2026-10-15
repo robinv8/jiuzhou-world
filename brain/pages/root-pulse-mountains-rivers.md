@@ -4,8 +4,8 @@ title: "根上总脉：山川为纲"
 category: decision
 status: active
 tags: [root, narrative, yugong, gazetteer]
-created: "2026-08-22T16:01:28"
-updated: "2026-08-22T18:31:56"
+created: "2026-10-13T08:58:41.762Z"
+updated: "2026-10-13T08:58:42.204Z"
 ---
 
 <!-- compiled_truth -->
@@ -45,41 +45,73 @@ updated: "2026-08-22T18:31:56"
 
 关联 [[anthology-one-city-one-volume]]、[[hangzhou-narrative-spine]]、[[vol1-narrative-spine]]、[[not-a-scenic-encyclopedia]]、[[volume-hangzhou]]。
 
-
 ## Timeline
 
-- time: 2026-08-22T16:01:28
+- time: 2026-10-13T08:58:41.765Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [root-pulse-mountains-rivers]
+
+- time: 2026-08-22T16:01:28+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 根上总脉：山川为纲"
-  source: "当前聊天"
+  source: 当前聊天
   affects: [root-pulse-mountains-rivers]
+  source_entry_id: "local:root-pulse-mountains-rivers:0"
+  imported_at: 2026-10-13T08:58:42.190Z
 
-- time: 2026-08-22T16:01:38
+- time: 2026-08-22T16:01:38+08:00
   kind: decision
-  summary: "钉死根上总脉：山川为纲；古州是身份不配额；省页一句身份"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死根上总脉：山川为纲；古州是身份不配额；省页一句身份
+  source: 当前聊天
   affects: [root-pulse-mountains-rivers]
+  source_entry_id: "local:root-pulse-mountains-rivers:1"
+  imported_at: 2026-10-13T08:58:42.190Z
 
-- time: 2026-08-22T16:04:48
+- time: 2026-08-22T16:04:48+08:00
   kind: decision
-  summary: "补上四章容器：山川、景、物、史，是总脉落到卷内的骨架。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 补上四章容器：山川、景、物、史，是总脉落到卷内的骨架。
+  source: 当前聊天
   affects: [root-pulse-mountains-rivers]
+  source_entry_id: "local:root-pulse-mountains-rivers:2"
+  imported_at: 2026-10-13T08:58:42.190Z
 
-- time: 2026-08-22T16:12:04
+- time: 2026-08-22T16:12:04+08:00
   kind: decision
-  summary: "总图改挂 [[anthology-spine]]。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 总图改挂 [[anthology-spine]]。
+  source: 当前聊天
   affects: [root-pulse-mountains-rivers]
+  source_entry_id: "local:root-pulse-mountains-rivers:3"
+  imported_at: 2026-10-13T08:58:42.190Z
 
-- time: 2026-08-22T16:13:22
+- time: 2026-08-22T16:13:22+08:00
   kind: decision
-  summary: "钉死古州落点：省页 kicker + 市卷卡小字；卷首 kicker 只写今制；临安不加。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死古州落点：省页 kicker + 市卷卡小字；卷首 kicker 只写今制；临安不加。
+  source: 当前聊天
   affects: [root-pulse-mountains-rivers]
+  source_entry_id: "local:root-pulse-mountains-rivers:4"
+  imported_at: 2026-10-13T08:58:42.190Z
 
-- time: 2026-08-22T18:31:56
+- time: 2026-08-22T18:31:56+08:00
   kind: decision
-  summary: "下辖卷：杭州卷装不下的山川才立；不是区县配额。名录见 hangzhou-subvolumes-roster。扁都口暂缓。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 下辖卷：杭州卷装不下的山川才立；不是区县配额。名录见 hangzhou-subvolumes-roster。扁都口暂缓。
+  source: 当前聊天
   affects: [root-pulse-mountains-rivers]
+  source_entry_id: "local:root-pulse-mountains-rivers:5"
+  imported_at: 2026-10-13T08:58:42.190Z
+
+- time: 2026-10-13T16:24:15+08:00
+  kind: decision
+  author: "user:robin"
+  summary: 设计稿（2026-10-13）确认：目录按今省（首页 → 浙江 → 杭州 → 临安），九州只进序与注脚；首页以《禹迹图》大图承载九州一节，引语「州名不在地图上了，山川还在」。不改古州落点规则。见 [[design-jacket-titlepage-body]]。
+  source: Robin 2026-10-13 设计评审
+  affects: [root-pulse-mountains-rivers, design-jacket-titlepage-body]
+  source_entry_id: "local:root-pulse-mountains-rivers:6"
+  imported_at: 2026-10-13T08:58:42.190Z

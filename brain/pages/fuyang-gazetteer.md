@@ -4,8 +4,8 @@ title: "富阳：从江读起（可立）"
 category: reference
 status: active
 tags: [hangzhou, fuyang, gazetteer]
-created: "2026-08-22T18:46:06"
-updated: "2026-08-22T20:14:37"
+created: "2026-10-13T08:58:32.656Z"
+updated: "2026-10-13T08:58:33.113Z"
 ---
 
 <!-- compiled_truth -->
@@ -36,23 +36,37 @@ updated: "2026-08-22T20:14:37"
 
 景区目录、攻略、孙权出生地、画中定点实景、造纸发明地。
 
-
 ## Timeline
 
-- time: 2026-08-22T18:46:06
+- time: 2026-10-13T08:58:32.659Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [fuyang-gazetteer]
+
+- time: 2026-08-22T18:46:06+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 富阳：从江读起（可立）"
-  source: "并行搜集 2026-08-22"
+  source: 并行搜集 2026-08-22
   affects: [fuyang-gazetteer]
+  source_entry_id: "local:fuyang-gazetteer:0"
+  imported_at: 2026-10-13T08:58:33.109Z
 
-- time: 2026-08-22T18:46:21
+- time: 2026-08-22T18:46:21+08:00
   kind: decision
-  summary: "并行搜集后写入富阳：核从江读起；孙权籍贯非出生地；画非定点；不抢钱塘江标题。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 并行搜集后写入富阳：核从江读起；孙权籍贯非出生地；画非定点；不抢钱塘江标题。
+  source: 五城并行搜集
   affects: [fuyang-gazetteer]
+  source_entry_id: "local:fuyang-gazetteer:1"
+  imported_at: 2026-10-13T08:58:33.109Z
 
-- time: 2026-08-22T20:14:37
+- time: 2026-08-22T20:14:37+08:00
   kind: decision
-  summary: "中游已感潮汐，不写近口段；已开卷"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 中游已感潮汐，不写近口段；已开卷
+  source: 史地 review 后改文案
   affects: [fuyang-gazetteer]
+  source_entry_id: "local:fuyang-gazetteer:2"
+  imported_at: 2026-10-13T08:58:33.109Z

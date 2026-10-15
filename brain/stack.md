@@ -1,8 +1,8 @@
 ---
 slug: stack
-kind: root-page
-title: Tech Stack
-updated: "2026-08-16T14:07:19"
+title: "Tech Stack"
+role: stack
+updated: "2026-10-13T08:59:20"
 ---
 
 # Tech Stack

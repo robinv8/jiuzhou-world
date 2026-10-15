@@ -4,8 +4,8 @@ title: "方志史地：已核对的硬约束"
 category: decision
 status: active
 tags: [gazetteer, history, copy]
-created: "2026-08-22T16:46:20"
-updated: "2026-09-08T10:19:35"
+created: "2026-10-13T08:58:34.043Z"
+updated: "2026-10-13T08:58:34.431Z"
 ---
 
 <!-- compiled_truth -->
@@ -63,41 +63,64 @@ updated: "2026-09-08T10:19:35"
 
 关联 [[vol1-narrative-spine]]、[[hangzhou-narrative-spine]]、[[anthology-spine]]、[[hangzhou-subvolumes-roster]]。
 
-
 ## Timeline
 
-- time: 2026-08-22T16:46:20
+- time: 2026-10-13T08:58:34.047Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [gazetteer-historical-accuracy]
+
+- time: 2026-08-22T16:46:20+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 方志史地：已核对的硬约束"
-  source: "史地 review 后改文案"
+  source: 史地 review 后改文案
   affects: [gazetteer-historical-accuracy]
+  source_entry_id: "local:gazetteer-historical-accuracy:0"
+  imported_at: 2026-10-13T08:58:34.426Z
 
-- time: 2026-08-22T16:46:36
+- time: 2026-08-22T16:46:36+08:00
   kind: decision
-  summary: "钉死本轮史地核对后的硬约束，避免再写成旅游传说"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 钉死本轮史地核对后的硬约束，避免再写成旅游传说
+  source: 史地 review 后改文案
   affects: [gazetteer-historical-accuracy]
+  source_entry_id: "local:gazetteer-historical-accuracy:1"
+  imported_at: 2026-10-13T08:58:34.426Z
 
-- time: 2026-08-22T18:48:20
+- time: 2026-08-22T18:48:20+08:00
   kind: decision
-  summary: "补富阳、桐庐、建德、淳安、萧山史地硬约束；不改变杭州/临安已钉条目。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 补富阳、桐庐、建德、淳安、萧山史地硬约束；不改变杭州/临安已钉条目。
+  source: 五城并行搜集
   affects: [gazetteer-historical-accuracy]
+  source_entry_id: "local:gazetteer-historical-accuracy:2"
+  imported_at: 2026-10-13T08:58:34.426Z
 
-- time: 2026-08-22T19:01:57
+- time: 2026-08-22T19:01:57+08:00
   kind: decision
-  summary: "萧山核已钉：自己的水叫浦阳；改道两说并存；不抢钱塘江标题。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 萧山核已钉：自己的水叫浦阳；改道两说并存；不抢钱塘江标题。
+  source: 当前聊天
   affects: [gazetteer-historical-accuracy]
+  source_entry_id: "local:gazetteer-historical-accuracy:3"
+  imported_at: 2026-10-13T08:58:34.426Z
 
-- time: 2026-08-22T20:14:12
+- time: 2026-08-22T20:14:12+08:00
   kind: decision
-  summary: "补：贺城狮城写沉入库底；千岛湖风景名 1984 才定、1982 已有千岛之称；富阳中游感潮不写近口；库区用绝大部分不写死 99%"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 补：贺城狮城写沉入库底；千岛湖风景名 1984 才定、1982 已有千岛之称；富阳中游感潮不写近口；库区用绝大部分不写死 99%
+  source: 史地 review 后改文案
   affects: [gazetteer-historical-accuracy]
+  source_entry_id: "local:gazetteer-historical-accuracy:4"
+  imported_at: 2026-10-13T08:58:34.426Z
 
-- time: 2026-09-08T10:19:35
+- time: 2026-09-08T10:19:35+08:00
   kind: decision
-  summary: "补杭州景之卷签字稿史地：灵隐在飞来峰后不在峰上；西溪不在环湖圈；运河脐带归史之卷。"
-  source: "Robin 签字稿 2026-09-08"
+  author: "user:robin"
+  summary: 补杭州景之卷签字稿史地：灵隐在飞来峰后不在峰上；西溪不在环湖圈；运河脐带归史之卷。
+  source: Robin 签字稿 2026-09-08
   affects: [gazetteer-historical-accuracy]
+  source_entry_id: "local:gazetteer-historical-accuracy:5"
+  imported_at: 2026-10-13T08:58:34.426Z

@@ -4,8 +4,8 @@ title: "杭州叙事脉络：从湖读起，向城而行"
 category: decision
 status: active
 tags: [hangzhou, vol1, narrative, editorial]
-created: "2026-08-22T16:07:11"
-updated: "2026-09-08T10:19:18"
+created: "2026-10-13T08:58:34.689Z"
+updated: "2026-10-13T08:58:35.212Z"
 ---
 
 <!-- compiled_truth -->
@@ -54,53 +54,82 @@ updated: "2026-09-08T10:19:18"
 
 不写：婆留井、纳土归宋、钱氏家训、府名与县名——这些只在临安。
 
-
 ## Timeline
 
-- time: 2026-08-22T16:07:11
+- time: 2026-10-13T08:58:34.692Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [hangzhou-narrative-spine]
+
+- time: 2026-08-22T16:07:11+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 杭州叙事脉络：从湖读起，向城而行"
-  source: "当前聊天"
+  source: 当前聊天
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:0"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-08-22T16:07:28
+- time: 2026-08-22T16:07:28+08:00
   kind: decision
-  summary: "钉死杭州读法与不抢名名单：山川留西湖与茶山，景补吴山，龙井归物。史待分家。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死杭州读法与不抢名名单：山川留西湖与茶山，景补吴山，龙井归物。史待分家。
+  source: 当前聊天
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:1"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-08-22T16:09:10
+- time: 2026-08-22T16:09:10+08:00
   kind: decision
-  summary: "钉死杭州史四则：良渚 → 吴越定都 → 南宋都城 → 回到人间。运河织进人间；林升归杭州；与临安互指不复述。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死杭州史四则：良渚 → 吴越定都 → 南宋都城 → 回到人间。运河织进人间；林升归杭州；与临安互指不复述。
+  source: 当前聊天
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:2"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-08-22T16:16:41
+- time: 2026-08-22T16:16:41+08:00
   kind: decision
-  summary: "钉死茶山、吴山、良渚叙事核。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死茶山、吴山、良渚叙事核。
+  source: 当前聊天
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:3"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-08-22T16:47:06
+- time: 2026-08-22T16:47:06+08:00
   kind: decision
-  summary: "西湖改为潟湖+疏浚；南宋分开升府与定都；与临安互文改为府名被借"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 西湖改为潟湖+疏浚；南宋分开升府与定都；与临安互文改为府名被借
+  source: 史地 review 后改文案
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:4"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-08-22T16:47:06
+- time: 2026-08-22T16:47:06+08:00
   kind: reversal
-  summary: "撤回与临安「名字回家了」互文；南宋升府与定都不再并年；西湖不写成人工湖。"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 撤回与临安「名字回家了」互文；南宋升府与定都不再并年；西湖不写成人工湖。
+  source: 史地 review 后改文案
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:5"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-08-22T17:14:54
+- time: 2026-08-22T17:14:54+08:00
   kind: decision
-  summary: "钉死杭州卷每则写法与密度：山川/景/物/史全部条目的核、不写什么、史地约束。吴山已达密度，其余按此补。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉死杭州卷每则写法与密度：山川/景/物/史全部条目的核、不写什么、史地约束。吴山已达密度，其余按此补。
+  source: 当前聊天
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:6"
+  imported_at: 2026-10-13T08:58:35.208Z
 
-- time: 2026-09-08T10:19:18
+- time: 2026-09-08T10:19:18+08:00
   kind: decision
-  summary: "Robin 签字钉死杭州景之卷四则 zh-CN essence（灵隐/西溪/运河/钱塘江）；吴山不动；他语不是这份正文的译本。"
-  source: "Robin 签字稿 2026-09-08"
+  author: "user:robin"
+  summary: Robin 签字钉死杭州景之卷四则 zh-CN essence（灵隐/西溪/运河/钱塘江）；吴山不动；他语不是这份正文的译本。
+  source: Robin 签字稿 2026-09-08
   affects: [hangzhou-narrative-spine]
+  source_entry_id: "local:hangzhou-narrative-spine:7"
+  imported_at: 2026-10-13T08:58:35.208Z

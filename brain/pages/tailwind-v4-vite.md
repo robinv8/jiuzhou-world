@@ -4,8 +4,8 @@ title: "Tailwind CSS 3 → 4：@tailwindcss/vite + CSS-first 配置"
 category: decision
 status: active
 tags: [tailwind, stack, astro]
-created: "2026-08-16T13:53:56"
-updated: "2026-08-16T14:03:22"
+created: "2026-10-13T08:58:43.073Z"
+updated: "2026-10-13T08:58:43.463Z"
 ---
 
 <!-- compiled_truth -->
@@ -15,23 +15,37 @@ updated: "2026-08-16T14:03:22"
 
 注意：`src/components/ui/` 整个 shadcn 套件当前没有任何页面引用，是唯一消费 `tw-animate-css` 动画类的地方。关联：[[astro-static-ssg]]、[[i18n-locale-routing]]。
 
-
 ## Timeline
 
-- time: 2026-08-16T13:53:56
+- time: 2026-10-13T08:58:43.076Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [tailwind-v4-vite]
+
+- time: 2026-08-16T13:53:56+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: Tailwind CSS 3 → 4：@tailwindcss/vite + CSS-first 配置"
   source: code
   affects: [tailwind-v4-vite]
+  source_entry_id: "local:tailwind-v4-vite:0"
+  imported_at: 2026-10-13T08:58:43.458Z
 
-- time: 2026-08-16T13:54:06
+- time: 2026-08-16T13:54:06+08:00
   kind: decision
+  author: "user:robin"
   summary: Rewrote compiled_truth to the new best understanding
   source: brain update-truth
   affects: [tailwind-v4-vite]
+  source_entry_id: "local:tailwind-v4-vite:1"
+  imported_at: 2026-10-13T08:58:43.458Z
 
-- time: 2026-08-16T14:03:22
+- time: 2026-08-16T14:03:22+08:00
   kind: decision
-  summary: "删除未使用的 shadcn ui/ 套件与 cn 工具，卸载 cva/clsx/tailwind-merge/tw-animate-css 四个依赖"
+  author: "user:robin"
+  summary: 删除未使用的 shadcn ui/ 套件与 cn 工具，卸载 cva/clsx/tailwind-merge/tw-animate-css 四个依赖
   source: code
   affects: [tailwind-v4-vite]
+  source_entry_id: "local:tailwind-v4-vite:2"
+  imported_at: 2026-10-13T08:58:43.458Z

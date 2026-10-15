@@ -1,8 +1,8 @@
 ---
 slug: background
-title: Project background
+title: "Project background"
 role: project background
-updated: "2026-10-12T15:46:05"
+updated: "2026-10-13T08:59:09"
 ---
 
 # Project background

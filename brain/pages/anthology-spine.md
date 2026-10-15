@@ -4,8 +4,8 @@ title: "九州志整体脉络"
 category: concept
 status: active
 tags: [spine, gazetteer, overview]
-created: "2026-08-22T16:11:11"
-updated: "2026-10-12T15:46:05"
+created: "2026-10-13T08:58:28.818Z"
+updated: "2026-10-13T08:58:29.204Z"
 ---
 
 <!-- compiled_truth -->
@@ -91,95 +91,145 @@ updated: "2026-10-12T15:46:05"
 - 下一座下辖卷从可立名单里选。本轮不钉写谁。
 - 民乐扁都口暂缓，见 [[second-volume-candidate-minle-biandukou]]。
 
-
 ## Timeline
 
-- time: 2026-08-22T16:11:11
+- time: 2026-10-13T08:58:28.821Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [anthology-spine]
+
+- time: 2026-08-22T16:11:11+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 九州志整体脉络"
-  source: "当前聊天"
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:0"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:11:37
+- time: 2026-08-22T16:11:37+08:00
   kind: decision
-  summary: "收束本轮从根到两卷的脉络总图；列出尚未钉死项。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 收束本轮从根到两卷的脉络总图；列出尚未钉死项。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:1"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:13:38
+- time: 2026-08-22T16:13:38+08:00
   kind: decision
-  summary: "古州落点已钉：省页 kicker + 市卷卡小字。尚未钉死项去掉这一条。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 古州落点已钉：省页 kicker + 市卷卡小字。尚未钉死项去掉这一条。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:2"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:16:41
+- time: 2026-08-22T16:16:41+08:00
   kind: decision
-  summary: "茶山、吴山、良渚叙事核已钉。尚未钉死只剩供图与下一座市卷。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 茶山、吴山、良渚叙事核已钉。尚未钉死只剩供图与下一座市卷。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:3"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:18:55
+- time: 2026-08-22T16:18:55+08:00
   kind: decision
-  summary: "杭州供图已钉：单开、收湖与城。尚未钉死只剩下一座市卷与未落地。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 杭州供图已钉：单开、收湖与城。尚未钉死只剩下一座市卷与未落地。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:4"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:20:36
+- time: 2026-08-22T16:20:36+08:00
   kind: note
-  summary: "本轮从根到供图的脉络梳理收束。下一座市卷挂起，不占卷二。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 本轮从根到供图的脉络梳理收束。下一座市卷挂起，不占卷二。
+  source: 当前聊天
   affects: [second-volume-candidate-minle-biandukou, volume-hangzhou, root-pulse-mountains-rivers]
+  source_entry_id: "local:anthology-spine:5"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:41:20
+- time: 2026-08-22T16:41:20+08:00
   kind: decision
-  summary: "脉络已落地到站点：章名山川、古州落点、杭州去重与史、供图页。下一座市卷仍挂起。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 脉络已落地到站点：章名山川、古州落点、杭州去重与史、供图页。下一座市卷仍挂起。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:6"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:47:33
+- time: 2026-08-22T16:47:33+08:00
   kind: decision
-  summary: "临安史收束改为名字的流转；互文改为府名被借、县名未走；去掉都城三百年"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 临安史收束改为名字的流转；互文改为府名被借、县名未走；去掉都城三百年
+  source: 史地 review 后改文案
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:7"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T16:47:33
+- time: 2026-08-22T16:47:33+08:00
   kind: reversal
-  summary: "撤回「名字回家了」与「都城三百年」：府名被借、县名未走。"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 撤回「名字回家了」与「都城三百年」：府名被借、县名未走。
+  source: 史地 review 后改文案
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:8"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T17:28:32
+- time: 2026-08-22T17:28:32+08:00
   kind: decision
-  summary: "临安总图表补上每则的核，与杭州表对齐。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 临安总图表补上每则的核，与杭州表对齐。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:9"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T18:20:37
+- time: 2026-08-22T18:20:37+08:00
   kind: decision
-  summary: "下一座市卷若开先在浙江；民乐扁都口暂缓，不再并列候选。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 下一座市卷若开先在浙江；民乐扁都口暂缓，不再并列候选。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:10"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T18:31:18
+- time: 2026-08-22T18:31:18+08:00
   kind: decision
-  summary: "杭州下辖卷名录已钉；下一座从可立名单里选；页上只列已开。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 杭州下辖卷名录已钉；下一座从可立名单里选；页上只列已开。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:11"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T18:48:49
+- time: 2026-08-22T18:48:49+08:00
   kind: decision
-  summary: "可立五城已有 gazetteer 页；萧山仍待核；下一座仍不钉。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 可立五城已有 gazetteer 页；萧山仍待核；下一座仍不钉。
+  source: 五城并行搜集
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:12"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-08-22T19:02:48
+- time: 2026-08-22T19:02:48+08:00
   kind: decision
-  summary: "萧山核钉为浦阳江；可立五城均有核。下一座仍不钉写谁。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 萧山核钉为浦阳江；可立五城均有核。下一座仍不钉写谁。
+  source: 当前聊天
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:13"
+  imported_at: 2026-10-13T08:58:29.199Z
 
-- time: 2026-10-12T15:46:05
+- time: 2026-10-12T15:46:05+08:00
   kind: decision
-  summary: "总图改为省→市→区县；市页三类呈现"
+  author: "user:robin"
+  summary: 总图改为省→市→区县；市页三类呈现
   source: Robin 2026-10-12
   affects: [anthology-spine]
+  source_entry_id: "local:anthology-spine:14"
+  imported_at: 2026-10-13T08:58:29.199Z

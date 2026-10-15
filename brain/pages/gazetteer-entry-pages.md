@@ -4,8 +4,8 @@ title: "专条挂在章下，不另开 /entries"
 category: decision
 status: active
 tags: [architecture, routing, i18n]
-created: "2026-09-17T09:34:39"
-updated: "2026-09-17T09:34:39"
+created: "2026-10-13T08:58:33.338Z"
+updated: "2026-10-13T08:58:33.812Z"
 ---
 
 <!-- compiled_truth -->
@@ -31,17 +31,28 @@ zh 长文在 `src/entries/bodies/*.md`（H1→参见），不进 locale JSON。`
 
 复用已有 hero slot，不新做 AI 封面。已刊专条进 sitemap / `seoPages`，JSON-LD 为 `Article`，**不要** noindex。
 
-
 ## Timeline
 
-- time: 2026-09-17T09:34:39
+- time: 2026-10-13T08:58:33.345Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [gazetteer-entry-pages]
+
+- time: 2026-09-17T09:34:39+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 专条挂在章下，不另开 /entries"
   source: SHIP 10 gazetteer entries
   affects: [gazetteer-entry-pages]
+  source_entry_id: "local:gazetteer-entry-pages:0"
+  imported_at: 2026-10-13T08:58:33.800Z
 
-- time: 2026-09-17T09:34:39
+- time: 2026-09-17T09:34:39+08:00
   kind: decision
-  summary: "专条是章下的长文页：catalog id 作叶 slug，zh 正文存 markdown，他语只 stub 标题与摘句。"
-  source: "SHIP.md + implementation"
+  author: "user:robin"
+  summary: 专条是章下的长文页：catalog id 作叶 slug，zh 正文存 markdown，他语只 stub 标题与摘句。
+  source: SHIP.md + implementation
   affects: [gazetteer-entry-pages]
+  source_entry_id: "local:gazetteer-entry-pages:1"
+  imported_at: 2026-10-13T08:58:33.800Z

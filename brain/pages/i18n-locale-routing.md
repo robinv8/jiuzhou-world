@@ -3,8 +3,8 @@ id: i18n-locale-routing
 title: "中文无前缀，其他语言 /[locale]；ja/ko 可回退"
 category: decision
 status: active
-created: "2026-08-15T07:32:31"
-updated: "2026-09-17T09:34:39"
+created: "2026-10-13T08:58:36.263Z"
+updated: "2026-10-13T08:58:36.646Z"
 ---
 
 <!-- compiled_truth -->
@@ -22,77 +22,118 @@ Robin 2026-09-08 签字的杭州景之卷 essence（灵隐、西溪、运河、�
 
 `npm run i18n:check`：en / ja / ko / zh-hant 必须与 zh 全 key 对齐；CI 构建前会跑。
 
-
 ## Timeline
 
-- time: 2026-08-15T07:32:31
+- time: 2026-10-13T08:58:36.266Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [i18n-locale-routing]
+
+- time: 2026-08-15T07:32:31+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 中文无前缀，其他语言 /[locale]；ja/ko 可回退"
   source: src/i18n/config.ts
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:0"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T07:32:31
+- time: 2026-08-15T07:32:31+08:00
   kind: decision
-  summary: "确立可扩展多语言路由与翻译完备度分层"
+  author: "user:robin"
+  summary: 确立可扩展多语言路由与翻译完备度分层
   source: code
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:1"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T07:47:01
+- time: 2026-08-15T07:47:01+08:00
   kind: decision
-  summary: "文案改为按语言分 JSON 文件，不再在 TS 里写 { zh, en }"
+  author: "user:robin"
+  summary: 文案改为按语言分 JSON 文件，不再在 TS 里写 { zh, en }
   source: code
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:2"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T07:50:38
+- time: 2026-08-15T07:50:38+08:00
   kind: decision
-  summary: "四份 locale JSON 共用同一套 key；导航随当前语言显示"
+  author: "user:robin"
+  summary: 四份 locale JSON 共用同一套 key；导航随当前语言显示
   source: code
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:3"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T07:57:40
+- time: 2026-08-15T07:57:40+08:00
   kind: decision
-  summary: "ja/ko 只译少量界面短句，正文故意不译"
+  author: "user:robin"
+  summary: ja/ko 只译少量界面短句，正文故意不译
   source: product
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:4"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T08:05:01
+- time: 2026-08-15T08:05:01+08:00
   kind: decision
-  summary: "正文译齐日韩；印章、卷次、拉丁名仍不译"
+  author: "user:robin"
+  summary: 正文译齐日韩；印章、卷次、拉丁名仍不译
   source: product
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:5"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T08:07:29
+- time: 2026-08-15T08:07:29+08:00
   kind: decision
-  summary: "四语文案是改写，不是逐句对译"
+  author: "user:robin"
+  summary: 四语文案是改写，不是逐句对译
   source: product
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:6"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T08:16:19
+- time: 2026-08-15T08:16:19+08:00
   kind: decision
+  author: "user:robin"
   summary: "刊头小字 en↔zh / 其他配英；按语言加载字体；CI 跑 i18n:check"
   source: product
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:7"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-15T08:25:28
+- time: 2026-08-15T08:25:28+08:00
   kind: decision
-  summary: "默认中文：刊头对译与缺 key 都回中文"
+  author: "user:robin"
+  summary: 默认中文：刊头对译与缺 key 都回中文
   source: product
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:8"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-08-22T17:07:06
+- time: 2026-08-22T17:07:06+08:00
   kind: decision
-  summary: "增加繁體中文 /zh-hant：字形轉換，刊頭配英文，字體 Noto Serif TC。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 增加繁體中文 /zh-hant：字形轉換，刊頭配英文，字體 Noto Serif TC。
+  source: 当前聊天
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:9"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-09-08T10:19:45
+- time: 2026-09-08T10:19:45+08:00
   kind: decision
-  summary: "签字中文景之卷 essence 不是他语底本；不要按签字稿发明 en/ja/ko/zh-hant 译文。"
-  source: "Robin 签字稿 2026-09-08"
+  author: "user:robin"
+  summary: 签字中文景之卷 essence 不是他语底本；不要按签字稿发明 en/ja/ko/zh-hant 译文。
+  source: Robin 签字稿 2026-09-08
   affects: [i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:10"
+  imported_at: 2026-10-13T08:58:36.641Z
 
-- time: 2026-09-17T09:34:39
+- time: 2026-09-17T09:34:39+08:00
   kind: decision
-  summary: "专条长文不进 locale JSON；他语只 stub 标题与摘句以过 key parity，正文回退简体。"
+  author: "user:robin"
+  summary: 专条长文不进 locale JSON；他语只 stub 标题与摘句以过 key parity，正文回退简体。
   source: SHIP 10 gazetteer entries
   affects: [gazetteer-entry-pages, i18n-locale-routing]
+  source_entry_id: "local:i18n-locale-routing:11"
+  imported_at: 2026-10-13T08:58:36.641Z

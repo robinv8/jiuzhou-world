@@ -4,8 +4,8 @@ title: "读者路线：省 → 市 → 三类页面"
 category: decision
 status: active
 tags: [structure, navigation]
-created: "2026-10-12T15:43:29"
-updated: "2026-10-12T15:46:05"
+created: "2026-10-13T08:58:41.069Z"
+updated: "2026-10-13T08:58:41.522Z"
 ---
 
 <!-- compiled_truth -->
@@ -39,17 +39,28 @@ updated: "2026-10-12T15:46:05"
 
 关联 [[anthology-one-city-one-volume]]、[[anthology-spine]]、[[volume-hangzhou]]、[[hangzhou-subvolumes-roster]]。
 
-
 ## Timeline
 
-- time: 2026-10-12T15:43:29
+- time: 2026-10-13T08:58:41.101Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [reader-route-province-city]
+
+- time: 2026-10-12T15:43:29+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 读者路线：省 → 市 → 三类页面"
   source: Robin 2026-10-12
   affects: [reader-route-province-city]
+  source_entry_id: "local:reader-route-province-city:0"
+  imported_at: 2026-10-13T08:58:41.514Z
 
-- time: 2026-10-12T15:46:05
+- time: 2026-10-12T15:46:05+08:00
   kind: decision
-  summary: "2026-10-12 Robin：首页只列浙江；临安是杭州区县；市页三类只改呈现不改 URL"
+  author: "user:robin"
+  summary: 2026-10-12 Robin：首页只列浙江；临安是杭州区县；市页三类只改呈现不改 URL
   source: Robin 2026-10-12
   affects: [reader-route-province-city]
+  source_entry_id: "local:reader-route-province-city:1"
+  imported_at: 2026-10-13T08:58:41.514Z

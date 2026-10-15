@@ -4,8 +4,8 @@ title: "未知路径必须返回 HTTP 404，不能回落到首页"
 category: decision
 status: active
 tags: [cloudflare, 404, seo]
-created: "2026-09-09T02:46:06"
-updated: "2026-09-09T02:46:06"
+created: "2026-10-13T08:58:44.355Z"
+updated: "2026-10-13T08:58:44.819Z"
 ---
 
 <!-- compiled_truth -->
@@ -29,17 +29,28 @@ Cloudflare Pages：**没有顶层 `404.html` 时，按 SPA 处理**，把未匹�
 
 CI：`npm run 404:check` 在 `astro build` 之后确认 `dist/404.html` 存在且不是首页替身。
 
-
 ## Timeline
 
-- time: 2026-09-09T02:46:06
+- time: 2026-10-13T08:58:44.358Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [unknown-paths-http-404]
+
+- time: 2026-09-09T02:46:06+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 未知路径必须返回 HTTP 404，不能回落到首页"
   source: "Robin 2026-09-09: unknown URLs on jiuzhou.world return homepage 200"
   affects: [unknown-paths-http-404]
+  source_entry_id: "local:unknown-paths-http-404:0"
+  imported_at: 2026-10-13T08:58:44.814Z
 
-- time: 2026-09-09T02:46:06
+- time: 2026-09-09T02:46:06+08:00
   kind: decision
-  summary: "确认 Cloudflare Pages 无 404.html 时把未知路径当 SPA，以 200 回落到 /"
-  source: "production curl 2026-09-09 + Cloudflare Serving Pages docs"
+  author: "user:robin"
+  summary: 确认 Cloudflare Pages 无 404.html 时把未知路径当 SPA，以 200 回落到 /
+  source: production curl 2026-09-09 + Cloudflare Serving Pages docs
   affects: [unknown-paths-http-404]
+  source_entry_id: "local:unknown-paths-http-404:1"
+  imported_at: 2026-10-13T08:58:44.814Z

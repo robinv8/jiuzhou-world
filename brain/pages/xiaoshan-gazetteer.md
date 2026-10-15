@@ -4,8 +4,8 @@ title: "萧山：可立（待核）"
 category: reference
 status: active
 tags: [hangzhou, xiaoshan, gazetteer]
-created: "2026-08-22T18:46:06"
-updated: "2026-08-22T19:01:35"
+created: "2026-10-13T08:58:46.457Z"
+updated: "2026-10-13T08:58:46.902Z"
 ---
 
 <!-- compiled_truth -->
@@ -51,23 +51,37 @@ updated: "2026-08-22T19:01:35"
 - 固陵城：西兴 vs 城山越王城
 - 山川短名单里湘湖是一则还是只作江的下文；开卷时再裁
 
-
 ## Timeline
 
-- time: 2026-08-22T18:46:06
+- time: 2026-10-13T08:58:46.461Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [xiaoshan-gazetteer]
+
+- time: 2026-08-22T18:46:06+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 萧山：可立（待核）"
-  source: "并行搜集 2026-08-22"
+  source: 并行搜集 2026-08-22
   affects: [xiaoshan-gazetteer]
+  source_entry_id: "local:xiaoshan-gazetteer:0"
+  imported_at: 2026-10-13T08:58:46.898Z
 
-- time: 2026-08-22T18:47:35
+- time: 2026-08-22T18:47:35+08:00
   kind: decision
-  summary: "并行搜集后写入萧山：保持待核；湘湖/跨湖桥/南岸均撑不住整卷；不抢钱塘江标题与良渚。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 并行搜集后写入萧山：保持待核；湘湖/跨湖桥/南岸均撑不住整卷；不抢钱塘江标题与良渚。
+  source: 五城并行搜集
   affects: [xiaoshan-gazetteer]
+  source_entry_id: "local:xiaoshan-gazetteer:1"
+  imported_at: 2026-10-13T08:58:46.898Z
 
-- time: 2026-08-22T19:01:35
+- time: 2026-08-22T19:01:35+08:00
   kind: decision
-  summary: "钉萧山核：自己的水叫浦阳。湘湖、跨湖桥不当核。改道两说并存。不抢钱塘江标题。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 钉萧山核：自己的水叫浦阳。湘湖、跨湖桥不当核。改道两说并存。不抢钱塘江标题。
+  source: 当前聊天
   affects: [xiaoshan-gazetteer]
+  source_entry_id: "local:xiaoshan-gazetteer:2"
+  imported_at: 2026-10-13T08:58:46.898Z

@@ -4,8 +4,8 @@ title: "桐庐：严陵（可立）"
 category: reference
 status: active
 tags: [hangzhou, tonglu, gazetteer]
-created: "2026-08-22T18:46:06"
-updated: "2026-08-22T18:46:39"
+created: "2026-10-13T08:58:43.685Z"
+updated: "2026-10-13T08:58:44.122Z"
 ---
 
 <!-- compiled_truth -->
@@ -37,17 +37,28 @@ updated: "2026-08-22T18:46:39"
 
 漂流、玻璃栈道、攻略、A 级目录、刘裕出生当史、严光=桐庐人、范仲淹=桐庐知县、分水制笔当千年毛笔（那是当代圆珠笔）。
 
-
 ## Timeline
 
-- time: 2026-08-22T18:46:06
-  kind: decision
-  summary: "Created this page: 桐庐：严陵（可立）"
-  source: "并行搜集 2026-08-22"
+- time: 2026-10-13T08:58:43.689Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
   affects: [tonglu-gazetteer]
 
-- time: 2026-08-22T18:46:39
+- time: 2026-08-22T18:46:06+08:00
   kind: decision
-  summary: "并行搜集后写入桐庐：核严陵；刘裕出生是传说；天子地挂此；不独占富春江标题。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: "Created this page: 桐庐：严陵（可立）"
+  source: 并行搜集 2026-08-22
   affects: [tonglu-gazetteer]
+  source_entry_id: "local:tonglu-gazetteer:0"
+  imported_at: 2026-10-13T08:58:44.118Z
+
+- time: 2026-08-22T18:46:39+08:00
+  kind: decision
+  author: "user:robin"
+  summary: 并行搜集后写入桐庐：核严陵；刘裕出生是传说；天子地挂此；不独占富春江标题。
+  source: 五城并行搜集
+  affects: [tonglu-gazetteer]
+  source_entry_id: "local:tonglu-gazetteer:1"
+  imported_at: 2026-10-13T08:58:44.118Z

@@ -1,8 +1,8 @@
 ---
 slug: mindmap
-title: Feature mindmap
+title: "Feature mindmap"
 role: feature mindmap
-updated: "2026-10-12T15:46:05"
+updated: "2026-10-13T08:59:20"
 ---
 
 # Feature mindmap

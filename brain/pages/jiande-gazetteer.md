@@ -4,8 +4,8 @@ title: "建德：三江口（可立）"
 category: reference
 status: active
 tags: [hangzhou, jiande, gazetteer]
-created: "2026-08-22T18:46:06"
-updated: "2026-08-22T20:15:07"
+created: "2026-10-13T08:58:38.231Z"
+updated: "2026-10-13T08:58:38.613Z"
 ---
 
 <!-- compiled_truth -->
@@ -36,23 +36,37 @@ updated: "2026-08-22T20:15:07"
 
 攻略、漂流目录、把千岛湖当建德景区、把今治写成千年府城、把严州六县写成建德一城。
 
-
 ## Timeline
 
-- time: 2026-08-22T18:46:06
+- time: 2026-10-13T08:58:38.234Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [jiande-gazetteer]
+
+- time: 2026-08-22T18:46:06+08:00
   kind: decision
+  author: "user:robin"
   summary: "Created this page: 建德：三江口（可立）"
-  source: "并行搜集 2026-08-22"
+  source: 并行搜集 2026-08-22
   affects: [jiande-gazetteer]
+  source_entry_id: "local:jiande-gazetteer:0"
+  imported_at: 2026-10-13T08:58:38.607Z
 
-- time: 2026-08-22T18:46:56
+- time: 2026-08-22T18:46:56+08:00
   kind: decision
-  summary: "并行搜集后写入建德：核三江口在梅城；坝在建德、湖在淳安；不抢钱塘江标题。"
-  source: "五城并行搜集"
+  author: "user:robin"
+  summary: 并行搜集后写入建德：核三江口在梅城；坝在建德、湖在淳安；不抢钱塘江标题。
+  source: 五城并行搜集
   affects: [jiande-gazetteer]
+  source_entry_id: "local:jiande-gazetteer:1"
+  imported_at: 2026-10-13T08:58:38.607Z
 
-- time: 2026-08-22T20:15:07
+- time: 2026-08-22T20:15:07+08:00
   kind: decision
-  summary: "库区改为绝大部分在淳安，不写死 99%；已开卷"
-  source: "史地 review 后改文案"
+  author: "user:robin"
+  summary: 库区改为绝大部分在淳安，不写死 99%；已开卷
+  source: 史地 review 后改文案
   affects: [jiande-gazetteer]
+  source_entry_id: "local:jiande-gazetteer:2"
+  imported_at: 2026-10-13T08:58:38.607Z

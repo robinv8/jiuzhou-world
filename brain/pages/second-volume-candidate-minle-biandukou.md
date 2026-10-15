@@ -1,11 +1,11 @@
 ---
 id: second-volume-candidate-minle-biandukou
+title: "第二卷候选：民乐扁都口"
 category: decision
 status: active
 tags: [second-volume, minle, biandukou]
-title: 第二卷候选：民乐扁都口
-created: "2026-08-16T14:19:47"
-updated: "2026-08-22T18:20:18"
+created: "2026-10-13T08:58:42.442Z"
+updated: "2026-10-13T08:58:42.840Z"
 ---
 
 <!-- compiled_truth -->
@@ -27,24 +27,37 @@ updated: "2026-08-22T18:20:18"
 - 叙事重心是故乡记忆、河西走廊地理、祁连山口，还是可游览的景观？
 - 它在总目上挂在哪一省、哪一市之下？
 
-
 ## Timeline
 
-- time: 2026-08-16T14:19:47
+- time: 2026-10-13T08:58:42.445Z
+  kind: creation
+  author: "user:robin"
+  summary: 从本地 brain 迁移（jiuzhou-world/brain）
+  affects: [second-volume-candidate-minle-biandukou]
+
+- time: 2026-08-16T14:19:47+08:00
   kind: observation
   author: "user:robin"
   summary: 用户确认将「民乐扁都口，我老家」记录为第二卷候选。
   source: 当前聊天
   affects: [second-volume-candidate-minle-biandukou]
+  source_entry_id: "local:second-volume-candidate-minle-biandukou:0"
+  imported_at: 2026-10-13T08:58:42.836Z
 
-- time: 2026-08-22T16:02:12
+- time: 2026-08-22T16:02:12+08:00
   kind: decision
-  summary: "民乐扁都口仍是候选；古州身份为雍州，不是配额，也不再默认占用卷二编号。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 民乐扁都口仍是候选；古州身份为雍州，不是配额，也不再默认占用卷二编号。
+  source: 当前聊天
   affects: [second-volume-candidate-minle-biandukou]
+  source_entry_id: "local:second-volume-candidate-minle-biandukou:1"
+  imported_at: 2026-10-13T08:58:42.836Z
 
-- time: 2026-08-22T18:20:18
+- time: 2026-08-22T18:20:18+08:00
   kind: decision
-  summary: "扁都口暂缓：仍是老家候选，本轮不开卷、不占卷二，也不再与浙江下一城并列候选。"
-  source: "当前聊天"
+  author: "user:robin"
+  summary: 扁都口暂缓：仍是老家候选，本轮不开卷、不占卷二，也不再与浙江下一城并列候选。
+  source: 当前聊天
   affects: [second-volume-candidate-minle-biandukou]
+  source_entry_id: "local:second-volume-candidate-minle-biandukou:2"
+  imported_at: 2026-10-13T08:58:42.836Z
