@@ -727,63 +727,63 @@
       "description": "一つの街から。土地ごとに収める絵は違う。土地を選び、手紙で供図を。"
     },
     "fuyang": {
-      "title": "富阳 · 九州志",
+      "title": "富陽 · 九州志",
       "description": "从江读起。中游叫富春，两山夹一江。"
     },
     "fuyang_mountains": {
-      "title": "山川美景 · 富阳 · 九州志",
+      "title": "山川の景色 · 富陽 · 九州志",
       "description": "富春江中游。两山夹一江。"
     },
     "fuyang_scenic": {
-      "title": "名胜古迹 · 富阳 · 九州志",
+      "title": "名勝旧跡 · 富陽 · 九州志",
       "description": "鹳山、龙门、东洲、庙山坞、新登。"
     },
     "fuyang_history": {
-      "title": "历史文化 · 富阳 · 九州志",
+      "title": "歴史と文化 · 富陽 · 九州志",
       "description": "籍贯不是出生地。画的是江。"
     },
     "fuyang_culture": {
-      "title": "历史文化 · 富阳 · 九州志",
+      "title": "歴史と文化 · 富陽 · 九州志",
       "description": "竹纸还在山坞里。"
     },
     "tonglu": {
-      "title": "桐庐 · 九州志",
+      "title": "桐廬 · 九州志",
       "description": "严陵。天子地挂此。刘裕出生是传说。"
     },
     "tonglu_mountains": {
-      "title": "山川美景 · 桐庐 · 九州志",
+      "title": "山川の景色 · 桐廬 · 九州志",
       "description": "桐江与分水江。严陵山。"
     },
     "tonglu_scenic": {
-      "title": "名胜古迹 · 桐庐 · 九州志",
+      "title": "名勝旧跡 · 桐廬 · 九州志",
       "description": "钓台、瑶琳、天子地、桐君山、分水。"
     },
     "tonglu_history": {
-      "title": "历史文化 · 桐庐 · 九州志",
+      "title": "歴史と文化 · 桐廬 · 九州志",
       "description": "严光余姚人。范仲淹知睦州。"
     },
     "tonglu_culture": {
-      "title": "历史文化 · 桐庐 · 九州志",
+      "title": "歴史と文化 · 桐廬 · 九州志",
       "description": "茶不叫龙井。"
     },
     "jiande": {
-      "title": "建德 · 九州志",
+      "title": "建徳 · 九州志",
       "description": "三江口在梅城。坝在建德。"
     },
     "jiande_mountains": {
-      "title": "山川美景 · 建德 · 九州志",
+      "title": "山川の景色 · 建徳 · 九州志",
       "description": "新安江会合兰江，以下称富春。"
     },
     "jiande_scenic": {
-      "title": "名胜古迹 · 建德 · 九州志",
+      "title": "名勝旧跡 · 建徳 · 九州志",
       "description": "梅城、铜官坝、入峡。千岛湖不在此。"
     },
     "jiande_history": {
-      "title": "历史文化 · 建德 · 九州志",
+      "title": "歴史と文化 · 建徳 · 九州志",
       "description": "府城梅城。坝与湖拆开。"
     },
     "jiande_culture": {
-      "title": "历史文化 · 建德 · 九州志",
+      "title": "歴史と文化 · 建徳 · 九州志",
       "description": "严州苞茶、严东关五加皮。"
     },
     "chunan": {
@@ -791,39 +791,39 @@
       "description": "江成库，城在水下。千岛湖挂此。"
     },
     "chunan_mountains": {
-      "title": "山川美景 · 淳安 · 九州志",
+      "title": "山川の景色 · 淳安 · 九州志",
       "description": "被拦住的新安江。岛是没顶的山。"
     },
     "chunan_scenic": {
-      "title": "名胜古迹 · 淳安 · 九州志",
+      "title": "名勝旧跡 · 淳安 · 九州志",
       "description": "千岛湖、狮城、排岭。"
     },
     "chunan_history": {
-      "title": "历史文化 · 淳安 · 九州志",
+      "title": "歴史と文化 · 淳安 · 九州志",
       "description": "1959 截流。贺城与狮城在水下。"
     },
     "chunan_culture": {
-      "title": "历史文化 · 淳安 · 九州志",
+      "title": "歴史と文化 · 淳安 · 九州志",
       "description": "鸠坑茶。库里的鱼。"
     },
     "xiaoshan": {
-      "title": "萧山 · 九州志",
+      "title": "蕭山 · 九州志",
       "description": "自己的水叫浦阳。从南岸的江读起。"
     },
     "xiaoshan_mountains": {
-      "title": "山川美景 · 萧山 · 九州志",
+      "title": "山川の景色 · 蕭山 · 九州志",
       "description": "浦阳江。湘湖是江南岸的库。"
     },
     "xiaoshan_scenic": {
-      "title": "名胜古迹 · 萧山 · 九州志",
+      "title": "名勝旧跡 · 蕭山 · 九州志",
       "description": "湘湖、碛堰、渔浦、临浦、城山。"
     },
     "xiaoshan_history": {
-      "title": "历史文化 · 萧山 · 九州志",
+      "title": "歴史と文化 · 蕭山 · 九州志",
       "description": "跨湖桥是另一处遗址。碛堰开堵两说并存。"
     },
     "xiaoshan_culture": {
-      "title": "历史文化 · 萧山 · 九州志",
+      "title": "歴史と文化 · 蕭山 · 九州志",
       "description": "印纹陶。湖边的田。"
     },
     "entry_westlake": {

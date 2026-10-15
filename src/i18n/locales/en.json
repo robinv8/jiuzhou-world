@@ -662,19 +662,19 @@
       "description": "Lin'an Anthology: mountains, memory and craft beneath Tianmu — no itineraries, only place."
     },
     "linan_mountains": {
-      "title": "Landscape · Lin'an · Jiuzhou",
+      "title": "Mountains & scenery · Lin'an · Jiuzhou",
       "description": "Lin'an's Tianmu range: the trees of Tianmu, Daming's terrace, Qingliang's ridge. Tianmu is a watershed — north to Lake Tai, west to the Qiantang."
     },
     "linan_scenic": {
-      "title": "Places · Lin'an · Jiuzhou",
+      "title": "Historic sites · Lin'an · Jiuzhou",
       "description": "Five places in Lin'an, read along the water: Source of Taihu, Zhexi Canyon, Qingshan Lake, Zhinan, Heqiao. The mountains are under Mountains & scenery."
     },
     "linan_history": {
-      "title": "History · Lin'an · Jiuzhou",
+      "title": "History & culture · Lin'an · Jiuzhou",
       "description": "From the Poliu Well to the peaceful handover: Qian Liu, the kingdom of Wuyue, and how the name “Lin’an” was lent to a capital."
     },
     "linan_culture": {
-      "title": "Craft · Lin'an · Jiuzhou",
+      "title": "History & culture · Lin'an · Jiuzhou",
       "description": "Lin'an craft: White Dew hickory, Changhua bloodstone, tenmoku bowls, and the mountain year."
     },
     "zhejiang": {
@@ -686,19 +686,19 @@
       "description": "Hangzhou Anthology: lake, hills and the human world beside West Lake — no itineraries, only place."
     },
     "hangzhou_mountains": {
-      "title": "Landscape · Hangzhou · Jiuzhou",
+      "title": "Mountains & scenery · Hangzhou · Jiuzhou",
       "description": "Hangzhou’s landscape: West Lake, the hills around it, the tea slopes, and water as the lake’s context."
     },
     "hangzhou_scenic": {
-      "title": "Places · Hangzhou · Jiuzhou",
+      "title": "Historic sites · Hangzhou · Jiuzhou",
       "description": "Five places in Hangzhou: Lingyin Temple, Xixi Wetland, the Grand Canal, the Qiantang River, Wu Hill."
     },
     "hangzhou_history": {
-      "title": "History · Hangzhou · Jiuzhou",
+      "title": "History & culture · Hangzhou · Jiuzhou",
       "description": "From Liangzhu to the human world: how Hangzhou became a capital, and how it laid the title down."
     },
     "hangzhou_culture": {
-      "title": "Craft · Hangzhou · Jiuzhou",
+      "title": "History & culture · Hangzhou · Jiuzhou",
       "description": "Hangzhou craft and produce: Longjing tea, silk, Hangzhou dishes, and the seasons behind local things."
     },
     "jsonld": {
@@ -727,103 +727,103 @@
       "description": "City by city — each place takes different photographs. Choose a place, then write."
     },
     "fuyang": {
-      "title": "富阳 · Jiuzhou",
+      "title": "Fuyang · Jiuzhou",
       "description": "Start from the river. Midstream is called Fuchun, one river between two ranges."
     },
     "fuyang_mountains": {
-      "title": "山川之 · 富阳 · Jiuzhou",
+      "title": "Mountains & scenery · Fuyang · Jiuzhou",
       "description": "The middle reach of the Fuchun. Two ranges, one river."
     },
     "fuyang_scenic": {
-      "title": "景之 · 富阳 · Jiuzhou",
+      "title": "Historic sites · Fuyang · Jiuzhou",
       "description": "Guan Hill, Longmen, Dongzhou, Miaoshanwu, Xindeng."
     },
     "fuyang_history": {
-      "title": "史之 · 富阳 · Jiuzhou",
+      "title": "History & culture · Fuyang · Jiuzhou",
       "description": "A native place is not a birthplace. The painting is of the river."
     },
     "fuyang_culture": {
-      "title": "物之 · 富阳 · Jiuzhou",
+      "title": "History & culture · Fuyang · Jiuzhou",
       "description": "Bamboo paper is still made in the valleys."
     },
     "tonglu": {
-      "title": "桐庐 · Jiuzhou",
+      "title": "Tonglu · Jiuzhou",
       "description": "Yanling. Tianzi Di is here. That Liu Yu was born here is legend."
     },
     "tonglu_mountains": {
-      "title": "山川之 · 桐庐 · Jiuzhou",
+      "title": "Mountains & scenery · Tonglu · Jiuzhou",
       "description": "The Tong River and the Fenshui River. Yanling Mountain."
     },
     "tonglu_scenic": {
-      "title": "景之 · 桐庐 · Jiuzhou",
+      "title": "Historic sites · Tonglu · Jiuzhou",
       "description": "The fishing terrace, Yaolin, Tianzi Di, Tongjun Hill, Fenshui."
     },
     "tonglu_history": {
-      "title": "史之 · 桐庐 · Jiuzhou",
+      "title": "History & culture · Tonglu · Jiuzhou",
       "description": "Yan Guang was from Yuyao. Fan Zhongyan governed Muzhou."
     },
     "tonglu_culture": {
-      "title": "物之 · 桐庐 · Jiuzhou",
+      "title": "History & culture · Tonglu · Jiuzhou",
       "description": "The tea is not called Longjing."
     },
     "jiande": {
-      "title": "建德 · Jiuzhou",
+      "title": "Jiande · Jiuzhou",
       "description": "The three rivers meet at Meicheng. The dam is in Jiande."
     },
     "jiande_mountains": {
-      "title": "山川之 · 建德 · Jiuzhou",
+      "title": "Mountains & scenery · Jiande · Jiuzhou",
       "description": "The Xin’an meets the Lan. Below that, the river is called Fuchun."
     },
     "jiande_scenic": {
-      "title": "景之 · 建德 · Jiuzhou",
+      "title": "Historic sites · Jiande · Jiuzhou",
       "description": "Meicheng, the Tongguan dam, the way into the gorge. Qiandao Lake is not here."
     },
     "jiande_history": {
-      "title": "史之 · 建德 · Jiuzhou",
+      "title": "History & culture · Jiande · Jiuzhou",
       "description": "The prefectural seat was Meicheng. The dam and the lake are kept apart."
     },
     "jiande_culture": {
-      "title": "物之 · 建德 · Jiuzhou",
+      "title": "History & culture · Jiande · Jiuzhou",
       "description": "Yanzhou bud tea, and Yandongguan wujiapi."
     },
     "chunan": {
-      "title": "淳安 · Jiuzhou",
+      "title": "Chun’an · Jiuzhou",
       "description": "The river became a reservoir, and the city is under the water. Qiandao Lake is here."
     },
     "chunan_mountains": {
-      "title": "山川之 · 淳安 · Jiuzhou",
+      "title": "Mountains & scenery · Chun’an · Jiuzhou",
       "description": "The Xin’an, held back. The islands are hilltops that stayed above water."
     },
     "chunan_scenic": {
-      "title": "景之 · 淳安 · Jiuzhou",
+      "title": "Historic sites · Chun’an · Jiuzhou",
       "description": "Qiandao Lake, Lion City, Pailing."
     },
     "chunan_history": {
-      "title": "史之 · 淳安 · Jiuzhou",
+      "title": "History & culture · Chun’an · Jiuzhou",
       "description": "Dammed in 1959. Hecheng and Lion City are under the water."
     },
     "chunan_culture": {
-      "title": "物之 · 淳安 · Jiuzhou",
+      "title": "History & culture · Chun’an · Jiuzhou",
       "description": "Jiukeng tea. Fish in the reservoir."
     },
     "xiaoshan": {
-      "title": "萧山 · Jiuzhou",
+      "title": "Xiaoshan · Jiuzhou",
       "description": "Its own water is called the Puyang. Start from the river on the south bank."
     },
     "xiaoshan_mountains": {
-      "title": "山川之 · 萧山 · Jiuzhou",
+      "title": "Mountains & scenery · Xiaoshan · Jiuzhou",
       "description": "The Puyang River. Xiang Lake is a reservoir on the south bank."
     },
     "xiaoshan_scenic": {
-      "title": "景之 · 萧山 · Jiuzhou",
+      "title": "Historic sites · Xiaoshan · Jiuzhou",
       "description": "Xiang Lake, Qiyan, Yupu, Linpu, Chengshan."
     },
     "xiaoshan_history": {
-      "title": "史之 · 萧山 · Jiuzhou",
+      "title": "History & culture · Xiaoshan · Jiuzhou",
       "description": "Kuahuqiao is another site. Two accounts remain of Qiyan, open or blocked."
     },
     "xiaoshan_culture": {
-      "title": "物之 · 萧山 · Jiuzhou",
+      "title": "History & culture · Xiaoshan · Jiuzhou",
       "description": "Stamped pottery. Fields beside the lake."
     },
     "entry_westlake": {
