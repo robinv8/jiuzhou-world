@@ -1,326 +1,353 @@
-import { ArrowRight } from 'lucide-react'
 import {
-    anthologyVolumes,
-    chapterCoverRef,
-    cityDisplayCategories,
+    ANTHOLOGY_DOMAIN,
     findCity,
     getVolume,
     getVolumeContent,
     openDistricts,
-    placeCaptionKey,
-    volumeKernel,
-    volumeParallaxRef,
+    type ChapterKey,
 } from '@/i18n/catalogs'
-import { entriesForVolumeChapters } from '@/i18n/entries'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
-import Reveal from '@/components/Reveal'
-import MiniTitle from '@/components/MiniTitle'
-import ParallaxImage from '@/components/ParallaxImage'
-import Seal from '@/components/Seal'
 import { withLocale } from '@/lib/i18n-path'
+import { shortTitle, volumeTheme } from '@/lib/book'
+import { BookEssay, Colophon } from '@/components/TitlePage'
+import JacketColophon from '@/components/JacketColophon'
+import SectionMark from '@/components/SectionMark'
+import ImageCaption from '@/components/ImageCaption'
+import Reveal from '@/components/Reveal'
+
+const JACKET: Record<
+    string,
+    { src: string; caption: string; paper: string; slip: string; wash: string; washX?: string }
+> = {
+    hangzhou: {
+        src: '/images/hero-hangzhou-lisong.webp',
+        caption: 'book.maps.lisong',
+        paper: '#EFE9DC',
+        slip: '#EFE9DCE0',
+        wash: 'linear-gradient(to bottom, #EFE9DCE6 0%, #EFE9DC59 30%, #EFE9DC59 75%, #EFE9DCE0 100%)',
+    },
+    linan: {
+        src: '/images/hero-linan-tianmu-1876.webp',
+        caption: 'book.maps.tianmuZushan',
+        paper: '#EFE6CF',
+        slip: '#EFE6CFE0',
+        wash: 'linear-gradient(to bottom, #EFE6CFE6 0%, #EFE6CF40 20%, #EFE6CF4D 45%, #EFE6CFCC 75%, #EFE6CFF7 92%, #EFE6CFFA 100%)',
+        washX:
+            'linear-gradient(to right, #EFE6CFE0 0%, #EFE6CF8C 30%, transparent 55%, transparent 85%, #EFE6CF99 100%)',
+    },
+}
+
+const MAP: Record<
+    string,
+    { src: string; caption: string; source: string; alt: string }
+> = {
+    hangzhou: {
+        src: '/images/map-hangzhou-fucheng-1784.webp',
+        caption: 'book.maps.hangzhou',
+        source: 'book.maps.hangzhouSource',
+        alt: 'book.maps.hangzhou',
+    },
+    linan: {
+        src: '/images/map-linan-xingsheng-1759.webp',
+        caption: 'book.maps.linan',
+        source: 'book.maps.linanSource',
+        alt: 'book.maps.linan',
+    },
+}
+
+function chapterItems(
+    volume: string,
+    chapter: ChapterKey,
+    t: (key: string) => string,
+): string[] {
+    const content = getVolumeContent(volume)
+    if (!content) return []
+    if (chapter === 'mountains') {
+        return content.essays.map((e) =>
+            shortTitle(t(`${volume}.mountains.essays.${e.id}.title`)),
+        )
+    }
+    if (chapter === 'scenic') {
+        return content.spots.map((s) => t(`${volume}.scenic.spots.${s.id}.name`))
+    }
+    if (chapter === 'culture') {
+        return content.culture.map((c) =>
+            shortTitle(t(`${volume}.culture.items.${c.id}.title`)),
+        )
+    }
+    return content.history.map((h) =>
+        shortTitle(t(`${volume}.history.entries.${h.id}.title`)),
+    )
+}
 
 export default function VolumeHome({ lang, volume }: { lang: Lang; volume: string }) {
     const { t, tList } = messages(lang)
     const href = (p: string) => withLocale(p, lang)
     const vol = getVolume(volume)
     const content = getVolumeContent(volume)
+    const theme = volumeTheme(volume)
 
     if (!vol || !content) return null
 
-    const kernel = volumeKernel(volume)
-    const heroSrc = kernel?.image ?? vol.image
-    const heroSlot = kernel?.slotId
-    const parallax = volumeParallaxRef(volume)
-
-    const parentVol = vol.parent ? getVolume(vol.parent) : null
     const city = findCity(volume)
     const districts = city ? openDistricts(city) : []
-    const showCityIndex = Boolean(city)
-    const subVolumes = anthologyVolumes.filter((v) => v.parent === volume && v.status === 'open')
+    const juan = tList('book.juan')
+    const map = MAP[volume]
+    const jacket = JACKET[volume] ?? JACKET.hangzhou
+    const kicker =
+        volume === 'linan'
+            ? `${t('city.hangzhou.title')} · ${t('district.linan.title')}`
+            : t(`${volume}.heroKicker`)
+    const colophonAffiliation = theme.stele
+        ? `${t('anthology.name')}\u3000${t('book.underHangzhou')}`
+        : `${t('anthology.name')}\u3000${vol.no ?? juan[0]}`
+    const colophonSeal = t(theme.stele ? 'book.titleSealLinan' : 'book.titleSealHangzhou')
+    const colophonSealSize = theme.stele ? 48 : 50
 
     return (
-        <main>
-            <section className="relative h-screen min-h-[600px] overflow-hidden bg-[#1f2a26]">
-                <div className="ken-burns-still">
-                    <img src={heroSrc} alt={t(`${volume}.heroTitle`)} data-imagery-slot={heroSlot} />
-                </div>
+        <main className="font-display" style={{ background: theme.paper, color: theme.paperInk }}>
+            <section
+                className="relative h-[min(100svh,900px)] min-h-[600px] overflow-hidden"
+                style={{ background: jacket.paper }}
+            >
+                <img
+                    src={jacket.src}
+                    alt={t(`${volume}.heroTitle`)}
+                    className="absolute inset-0 h-full w-full object-cover"
+                />
                 <div
-                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#1f2a26]/80 via-[#1f2a26]/20 to-[#1f2a26]/30"
+                    className="pointer-events-none absolute inset-0"
+                    style={{ background: jacket.wash }}
                     aria-hidden
                 />
-
-                <div className="absolute right-6 md:right-14 top-1/2 -translate-y-1/2 hidden md:block">
-                    <p className="vertical-rl font-display text-[#f7f5ee]/60 tracking-[0.5em] text-sm">
-                        {t(`${volume}.beneath`)}
-                    </p>
-                </div>
-
-                <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-24 md:pb-28">
+                {jacket.washX && (
+                    <div
+                        className="pointer-events-none absolute inset-0"
+                        style={{ background: jacket.washX }}
+                        aria-hidden
+                    />
+                )}
+                <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-24 md:px-16 md:pb-28">
                     <Reveal>
-                        <p className="micro-label text-[#b0c6b3]">{t(`${volume}.heroKicker`)}</p>
+                        <p className="flex items-center gap-2 text-sm tracking-[0.4em] text-[#1F2A26]/85">
+                            <span className="inline-block h-1.5 w-1.5 bg-[#B03A2E]" aria-hidden />
+                            {kicker}
+                        </p>
                     </Reveal>
-                    <Reveal delay={150}>
-                        <h1 className="mt-5 font-display font-semibold text-[#f7f5ee] leading-none tracking-wide text-6xl md:text-8xl">
+                    <Reveal delay={120}>
+                        <h1 className="mt-5 font-semibold leading-none tracking-wide text-[#1F2A26] text-[clamp(2.4rem,7vw,6rem)]">
                             {t(`${volume}.heroTitle`)}
                         </h1>
                     </Reveal>
-                    <Reveal delay={300}>
-                        <p className="mt-6 max-w-xl font-display text-lg md:text-2xl text-[#f7f5ee]/85 leading-relaxed">
+                    <Reveal delay={240}>
+                        <p
+                            className="mt-6 max-w-xl text-base md:text-lg leading-relaxed text-[#1F2A26]"
+                            style={{
+                                background: jacket.slip,
+                                boxShadow: 'inset 0 0.75px 0 #1E232033, inset 0 -0.75px 0 #1E232033',
+                                padding: '12px 28px',
+                            }}
+                        >
                             {t(`${volume}.heroSub`)}
                         </p>
                     </Reveal>
-                    <Reveal delay={450}>
-                        <div className="mt-10 flex items-center gap-4 text-[#f7f5ee]/70">
-                            <span className="h-px w-16 bg-[#b0c6b3]/70" aria-hidden />
-                            <span className="text-xs tracking-[0.35em]">{t(`${volume}.heroScroll`)}</span>
-                        </div>
-                    </Reveal>
-                </div>
-            </section>
-
-            <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
-                <Reveal>
-                    <MiniTitle i18nKey={`${volume}.manifestoLabel`} lang={lang} />
-                </Reveal>
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-8">
-                    <Reveal className="md:col-span-5" delay={100}>
-                        <h2 className="font-display text-4xl md:text-5xl font-semibold leading-snug">
-                            {t(`${volume}.manifestoTitle`)}
-                        </h2>
-                        <div className="mt-8">
-                            <Seal char={t(`${volume}.seal`)} />
-                        </div>
-                    </Reveal>
-                    <div className="md:col-span-6 md:col-start-7 flex flex-col gap-7">
-                        {tList(`${volume}.manifesto`).map((p, i) => (
-                            <Reveal key={i} delay={180 + i * 120}>
-                                <p className="text-base md:text-lg leading-8 md:leading-9 text-[#3d4842]">{p}</p>
-                            </Reveal>
-                        ))}
+                    <div className="mt-6 self-start md:hidden">
+                        <JacketColophon
+                            affiliation={colophonAffiliation}
+                            published={t('book.published')}
+                            seal={colophonSeal}
+                            sealSize={colophonSealSize}
+                            slip={jacket.slip}
+                            compact
+                        />
                     </div>
+                    <Reveal delay={360}>
+                        <a
+                            href="#read"
+                            className="mt-8 inline-flex items-center gap-4 text-[12px] tracking-[0.35em] text-[#1F2A26]/75"
+                        >
+                            <span className="h-px w-10 bg-[#1F2A26]/50" aria-hidden />
+                            {t(`${volume}.heroScroll`)}
+                        </a>
+                    </Reveal>
+                </div>
+                <div className="pointer-events-none absolute right-6 bottom-28 z-10 hidden md:block md:right-16">
+                    <JacketColophon
+                        affiliation={colophonAffiliation}
+                        published={t('book.published')}
+                        seal={colophonSeal}
+                        sealSize={colophonSealSize}
+                        slip={jacket.slip}
+                    />
+                </div>
+                <div className="absolute inset-x-0 bottom-0 z-10 px-6 pb-8 md:px-16">
+                    <ImageCaption>{t(jacket.caption)}</ImageCaption>
                 </div>
             </section>
 
-            {parallax && (
-                <ParallaxImage
-                    src={parallax.image}
-                    alt={t(placeCaptionKey(parallax))}
-                    caption={t(placeCaptionKey(parallax))}
-                    slotId={parallax.slotId}
+            <div id="read">
+                <BookEssay
+                    mouth={`${t(`${volume}.volumeTitle`)}\u3000${t(`${volume}.manifestoLabel`)}`}
+                    kicker={t(`${volume}.manifestoLabel`)}
+                    title={t(`${volume}.manifestoTitle`)}
+                    paragraphs={tList(`${volume}.manifesto`)}
+                    note={t(`${volume}.prefaceNote`)}
+                    paper={theme.paper}
+                    ink={theme.paperInk}
+                    muted={theme.paperMuted}
                 />
+            </div>
+
+            {map && (
+                <section className="px-5 py-12 md:px-16 md:py-16" style={{ background: theme.paper }}>
+                    <figure className="mx-auto max-w-5xl">
+                        <div className="p-[5px] border" style={{ borderColor: `${theme.paperInk}99` }}>
+                            <div className="border bg-[#F3EEE8]" style={{ borderColor: `${theme.paperInk}99` }}>
+                                <img
+                                    src={map.src}
+                                    alt={t(map.alt)}
+                                    className="w-full"
+                                />
+                            </div>
+                        </div>
+                        <figcaption className="mt-4 flex items-start justify-between gap-4">
+                            <ImageCaption size="card">{t(map.caption)}</ImageCaption>
+                            <ImageCaption size="card" align="right">
+                                {t(map.source)}
+                            </ImageCaption>
+                        </figcaption>
+                    </figure>
+                </section>
             )}
 
-            <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
-                <Reveal>
-                    <MiniTitle i18nKey={showCityIndex ? 'ui.cityPagesLabel' : `${volume}.volumesLabel`} lang={lang} />
-                </Reveal>
-                <Reveal delay={100}>
-                    <h2 className="mt-10 font-display text-4xl md:text-5xl font-semibold">
-                        {t(showCityIndex ? 'ui.cityPagesTitle' : `${volume}.volumesTitle`)}
-                    </h2>
-                </Reveal>
-
-                {parentVol && (
-                    <Reveal delay={150}>
-                        <p className="mt-6 text-sm text-[#5a665e]">
-                            <a href={href(parentVol.route)} className="underline underline-offset-4 hover:text-[#1f2a26]">{t(`city.${parentVol.key}.title`)}</a>
-                        </p>
-                    </Reveal>
-                )}
-
-                {showCityIndex ? (
-                    <div className="mt-16 flex flex-col gap-16">
-                        {cityDisplayCategories.map((cat) => {
-                            const pages = entriesForVolumeChapters(volume, cat.chapters)
-                            if (!pages.length) return null
-                            return (
-                                <div key={cat.key}>
-                                    <Reveal>
-                                        <p className="micro-label text-[#8ca693]">{cat.latin}</p>
-                                        <h3 className="mt-3 font-display text-2xl md:text-3xl font-semibold tracking-wide">
-                                            {t(`ui.cityCategory.${cat.key}`)}
-                                        </h3>
-                                    </Reveal>
-                                    <div className="mt-8 flex flex-col">
-                                        {pages.map((entry, i) => (
-                                            <Reveal key={entry.slug} delay={i * 80}>
-                                                <a
-                                                    href={href(entry.path)}
-                                                    className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-8 md:py-10 border-t hairline ${
-                                                        i === pages.length - 1 ? 'border-b' : ''
-                                                    }`}
-                                                >
-                                                    <div className="md:col-span-5 overflow-hidden">
-                                                        <div className="aspect-3/2 overflow-hidden">
-                                                            <img
-                                                                src={entry.image}
-                                                                alt={t(`entries.${entry.slug}.title`)}
-                                                                loading="lazy"
-                                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="md:col-span-6 md:col-start-7">
-                                                        <p className="micro-label text-[#8ca693]">{entry.latin}</p>
-                                                        <h4 className="mt-3 font-display text-2xl md:text-3xl font-semibold tracking-wide">
-                                                            {t(`entries.${entry.slug}.title`)}
-                                                        </h4>
-                                                        <p className="mt-4 max-w-md text-[#5a665e] leading-7">
-                                                            {t(`entries.${entry.slug}.excerpt`)}
-                                                        </p>
-                                                        <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
-                                                            {t('ui.readEntry')}
-                                                            <ArrowRight
-                                                                size={16}
-                                                                className="transition-transform duration-500 group-hover:translate-x-1.5"
-                                                            />
-                                                        </span>
-                                                    </div>
-                                                </a>
-                                            </Reveal>
-                                        ))}
-                                    </div>
-                                </div>
-                            )
-                        })}
-                    </div>
-                ) : (
-                    <div className="mt-16 flex flex-col">
-                        {vol.chapters.map((v, i) => {
-                            const cover = chapterCoverRef(volume, v.key)
-                            return (
-                            <Reveal key={v.key} delay={i * 80}>
+            <section
+                className="scroll-mt-24 px-6 py-16 md:px-16 md:py-24"
+                style={{ background: theme.toc, color: theme.tocInk }}
+            >
+                <div className="mx-auto max-w-5xl">
+                    <SectionMark
+                        mark="目"
+                        kicker={
+                            <>
+                                {t(`${volume}.volumeTitle`)}
+                                <span className="mx-3">{t('book.fourPian')}</span>
+                                {districts.length > 0 && t('book.oneSub')}
+                            </>
+                        }
+                        aside={t('book.tocNote')}
+                        ink={theme.tocInk}
+                        muted={theme.tocMuted}
+                    />
+                    <ol className="mt-4">
+                        {vol.chapters.map((ch, i) => (
+                            <li key={ch.key}>
                                 <a
-                                    href={href(`${vol.route}/${v.key}`)}
-                                    className={`group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t hairline ${
-                                        i === vol.chapters.length - 1 ? 'border-b' : ''
-                                    }`}
+                                    href={href(`${vol.route}/${ch.key}`)}
+                                    className="flex gap-5 md:gap-8 items-start border-b py-8"
+                                    style={{ borderColor: `${theme.tocInk}22` }}
                                 >
-                                    <div
-                                        className={`md:col-span-5 overflow-hidden ${
-                                            i % 2 === 1 ? 'md:order-2 md:col-start-8' : ''
-                                        }`}
+                                    <p
+                                        className="w-14 shrink-0 pt-1 text-sm tracking-[0.2em]"
+                                        style={{ color: theme.juan }}
                                     >
-                                        <div className="aspect-3/2 overflow-hidden">
-                                            <img
-                                                src={cover?.image ?? heroSrc}
-                                                alt={t(`${volume}.chapters.${v.key}.title`)}
-                                                loading="lazy"
-                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                            />
-                                        </div>
-                                    </div>
-                                    <div
-                                        className={`md:col-span-6 ${i % 2 === 1 ? 'md:order-1 md:col-start-1' : 'md:col-start-7'}`}
-                                    >
-                                        <p className="micro-label text-[#8ca693]">{v.latin}</p>
-                                        <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
-                                            {t(`${volume}.chapters.${v.key}.title`)}
+                                        {juan[i]}
+                                    </p>
+                                    <span
+                                        className="mt-1.5 h-11 w-[6px] shrink-0"
+                                        style={{ background: theme.rail[ch.key] }}
+                                        aria-hidden
+                                    />
+                                    <div className="min-w-0 flex-1">
+                                        <h3 className="text-2xl md:text-[1.75rem] font-semibold tracking-wide">
+                                            {t(`${volume}.chapters.${ch.key}.title`)}
                                         </h3>
-                                        <p className="mt-4 max-w-md text-[#5a665e] leading-7">
-                                            {t(`${volume}.chapters.${v.key}.desc`)}
+                                        <p
+                                            className="mt-2 text-sm leading-6"
+                                            style={{ color: theme.tocMuted }}
+                                        >
+                                            {t(`${volume}.chapters.${ch.key}.desc`)}
                                         </p>
-                                        <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
-                                            {t('ui.openVolume')}
-                                            <ArrowRight
-                                                size={16}
-                                                className="transition-transform duration-500 group-hover:translate-x-1.5"
-                                            />
-                                        </span>
+                                        <p className="mt-2 text-sm tracking-wide">
+                                            {chapterItems(volume, ch.key, t).join(' · ')}
+                                        </p>
                                     </div>
                                 </a>
-                            </Reveal>
-                            )
-                        })}
-                    </div>
-                )}
-
-                {districts.length > 0 ? (
-                    <div className="mt-20">
-                        <Reveal>
-                            <h3 className="font-display text-2xl md:text-3xl font-semibold">
-                                {t('ui.districtsLabel')}
-                            </h3>
-                        </Reveal>
-                        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {districts.map((district) => {
-                                const subKernel = volumeKernel(district.key)
-                                return (
-                                <Reveal key={district.key}>
-                                    <a href={href(district.route)} className="group block">
-                                        <div className="aspect-3/2 overflow-hidden">
-                                            <img
-                                                src={subKernel?.image ?? district.image}
-                                                alt={t(`district.${district.key}.title`)}
-                                                loading="lazy"
-                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                            />
-                                        </div>
-                                        <p className="mt-4 micro-label text-[#8ca693]">{district.latin}</p>
-                                        <h4 className="mt-2 font-display text-xl md:text-2xl font-semibold">
-                                            {t(`district.${district.key}.title`)}
-                                        </h4>
-                                        <p className="mt-2 text-sm text-[#5a665e]">
-                                            {t(`district.${district.key}.desc`)}
+                            </li>
+                        ))}
+                    </ol>
+                    {districts.length > 0 && (
+                        <div
+                            className="mt-2 flex flex-col gap-4 border-b py-8 md:flex-row md:items-center"
+                            style={{ borderColor: `${theme.tocInk}22` }}
+                        >
+                            <p
+                                className="w-14 shrink-0 text-sm tracking-[0.3em]"
+                                style={{ color: theme.juan }}
+                            >
+                                {t('book.under')}
+                            </p>
+                            {districts.map((d) => (
+                                <a
+                                    key={d.key}
+                                    href={href(d.route)}
+                                    className="flex flex-1 flex-wrap items-center gap-5"
+                                >
+                                    <span
+                                        className="inline-flex h-16 w-10 items-center justify-center border font-display text-sm tracking-[0.3em]"
+                                        style={{
+                                            background: '#1E2120',
+                                            color: '#ECE7D9',
+                                            borderColor: '#ECE7D9',
+                                            borderRadius: '18px 18px 0 0',
+                                        }}
+                                    >
+                                        <span className="vertical-rl">{t(`district.${d.key}.title`)}</span>
+                                    </span>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="text-lg tracking-[0.2em]">
+                                            {t(`anthology.volumes.${d.key}.title`)}
+                                            <span className="ml-3 text-base opacity-80">
+                                                {t('book.underHangzhou')}
+                                            </span>
                                         </p>
-                                    </a>
-                                </Reveal>
-                                )
-                            })}
-                        </div>
-                    </div>
-                ) : (
-                    subVolumes.length > 0 && (
-                    <div className="mt-20">
-                        <Reveal>
-                            <h3 className="font-display text-2xl md:text-3xl font-semibold">
-                                {t(`${volume}.subVolumesTitle`)}
-                            </h3>
-                        </Reveal>
-                        <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
-                            {subVolumes.map((sub) => {
-                                const subKernel = volumeKernel(sub.key)
-                                return (
-                                <Reveal key={sub.key}>
-                                    <a href={href(sub.route)} className="group block">
-                                        <div className="aspect-3/2 overflow-hidden">
-                                            <img
-                                                src={subKernel?.image ?? sub.image}
-                                                alt={t(`${sub.key}.volumeTitle`)}
-                                                loading="lazy"
-                                                className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                            />
-                                        </div>
-                                        <p className="mt-4 micro-label text-[#8ca693]">{sub.latin}</p>
-                                        <h4 className="mt-2 font-display text-xl md:text-2xl font-semibold">
-                                            {t(`${sub.key}.volumeTitle`)}
-                                        </h4>
-                                        <p className="mt-2 text-sm text-[#5a665e]">
-                                            {t(`${sub.key}.heroSub`)}
+                                        <p
+                                            className="mt-1 text-sm leading-6"
+                                            style={{ color: theme.tocMuted }}
+                                        >
+                                            {t(`district.${d.key}.desc`)}
                                         </p>
-                                    </a>
-                                </Reveal>
-                                )
-                            })}
+                                    </div>
+                                    <span className="text-sm tracking-[0.3em]">
+                                        {t('book.enterVolume')}
+                                        <span aria-hidden> →</span>
+                                    </span>
+                                </a>
+                            ))}
                         </div>
-                    </div>
-                    )
-                )}
-            </section>
-
-            <section className="bg-[#edeae0]">
-                <div className="mx-auto max-w-4xl px-6 py-24 md:py-36 text-center">
-                    <Reveal>
-                        <blockquote className="font-display text-3xl md:text-5xl leading-snug font-medium">
-                            {t(`${volume}.closingQuote`)}
-                        </blockquote>
-                    </Reveal>
-                    <Reveal delay={200}>
-                        <p className="mt-8 text-sm tracking-[0.3em] text-[#5a665e]">{t(`${volume}.closingSource`)}</p>
-                    </Reveal>
+                    )}
                 </div>
             </section>
+
+            <section className="px-6 py-20 md:py-28 text-center" style={{ background: theme.paper }}>
+                <blockquote className="mx-auto max-w-3xl text-2xl md:text-4xl leading-snug font-medium">
+                    {t(`${volume}.closingQuote`)}
+                </blockquote>
+                <p
+                    className="mt-8 text-sm tracking-[0.3em]"
+                    style={{ color: theme.paperMuted }}
+                >
+                    {t(`${volume}.closingSource`)}
+                </p>
+            </section>
+
+            <Colophon
+                title={`${t('anthology.name')}\u3000${t(`${volume}.volumeTitle`)}`}
+                line={`${t('book.publishedLine')}\u3000${ANTHOLOGY_DOMAIN}\u3000${t('book.online')}`}
+                credit={t('book.colophonCredit')}
+                stele={theme.colophonStele}
+                bg={theme.colophonStele ? '#16181A' : '#1F2A26'}
+            />
         </main>
     )
 }

@@ -114,6 +114,11 @@
   text-orientation: mixed;
 }
 
+@utility double-frame {
+  border: 1px solid currentColor;
+  box-shadow: 0 0 0 5px var(--frame-gap, transparent), 0 0 0 6px currentColor;
+}
+
 @utility link-underline {
   /* Editorial link underline: 25% opacity -> full on hover */
   text-decoration: underline;

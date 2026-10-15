@@ -1,21 +1,21 @@
-import { ArrowRight } from 'lucide-react'
-import { provinces, ANTHOLOGY_DOMAIN, placeRefByPlace, volumeKernel } from '@/i18n/catalogs'
+import { ANTHOLOGY_DOMAIN, getVolume } from '@/i18n/catalogs'
 import type { Lang } from '@/i18n/config'
 import { messages } from '@/i18n/t'
-import Reveal from '@/components/Reveal'
-import MiniTitle from '@/components/MiniTitle'
-import ParallaxImage from '@/components/ParallaxImage'
-import Seal from '@/components/Seal'
 import { withLocale } from '@/lib/i18n-path'
+import { BookEssay, Colophon } from '@/components/TitlePage'
+import SectionMark from '@/components/SectionMark'
+import ImageCaption from '@/components/ImageCaption'
+import Stamp from '@/components/Stamp'
+import Reveal from '@/components/Reveal'
 
 export default function Home({ lang }: { lang: Lang }) {
     const { t, tList } = messages(lang)
     const href = (p: string) => withLocale(p, lang)
-    const zhinan = placeRefByPlace('linan', '临安指南村')
+    const hangzhou = getVolume('hangzhou')
 
     return (
-        <main>
-            <section className="relative h-screen min-h-[640px] overflow-hidden bg-[#101613]">
+        <main className="font-display bg-[#F3EEE2] text-[#1F2A26]">
+            <section className="relative h-[min(100svh,980px)] min-h-[640px] overflow-hidden bg-[#101614]">
                 <img
                     src="/images/hero-jiuzhou.webp"
                     alt={t('ui.alt.thousandLi')}
@@ -23,131 +23,170 @@ export default function Home({ lang }: { lang: Lang }) {
                     className="absolute inset-0 h-full w-full object-cover"
                 />
                 <div
-                    className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#101613]/85 via-[#101613]/15 to-[#101613]/40"
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                        background:
+                            'linear-gradient(to bottom, #10161499 0%, #1016142E 30%, #10161440 60%, #101614CC 100%)',
+                    }}
                     aria-hidden
                 />
-                <div className="absolute right-6 md:right-14 top-1/2 -translate-y-1/2 hidden md:block">
-                    <p className="vertical-rl font-display text-[#f7f5ee]/75 tracking-[0.6em] text-base">
-                        {t('ui.nineLands')}
-                    </p>
-                </div>
-                <div className="relative h-full mx-auto max-w-7xl px-6 md:px-16 flex flex-col justify-end pb-16 md:pb-20">
+                <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center">
                     <Reveal>
-                        <p className="micro-label text-[#d8e2d4]">{ANTHOLOGY_DOMAIN}</p>
-                    </Reveal>
-                    <Reveal delay={150}>
-                        <div className="mt-6 flex items-start gap-4 md:gap-8">
-                            <h1 className="font-display font-semibold text-[#f7f5ee] leading-[0.95] tracking-[0.1em] text-[26vw] md:text-[13rem]">
-                                {t('anthology.name')}
-                            </h1>
-                            <span
-                                aria-hidden
-                                className="seal-stamp mt-[3vw] md:mt-10 inline-flex h-11 w-11 md:h-16 md:w-16 shrink-0 items-center justify-center font-display text-2xl md:text-4xl leading-none select-none rounded-[3px] -rotate-3"
-                            >
-                                志
-                            </span>
-                        </div>
-                    </Reveal>
-                    <Reveal delay={320}>
-                        <p className="mt-7 whitespace-nowrap font-display text-[11px] md:text-lg tracking-[0.28em] md:tracking-[0.5em] text-[#f7f5ee]/65">
-                            {lang === 'en'
-                                ? t('ui.nineLands')
-                                : [...t('ui.nineLands')].join(' · ')}
-                        </p>
-                    </Reveal>
-                    <Reveal delay={450}>
-                        <p className="mt-7 max-w-xl font-display text-lg md:text-2xl text-[#f7f5ee]/90 leading-relaxed">
+                        <p className="flex items-center justify-center gap-4 text-[13px] tracking-[0.45em] text-[#F7F5EE]/80">
+                            <span className="h-px w-10 bg-[#F7F5EE]/50" aria-hidden />
                             {t('anthology.heroKicker')}
+                            <span className="h-px w-10 bg-[#F7F5EE]/50" aria-hidden />
                         </p>
                     </Reveal>
-                    <Reveal delay={560}>
-                        <p className="mt-12 text-[11px] tracking-[0.18em] text-[#f7f5ee]/45">
-                            {t('ui.caption.thousandLi')}
+                    <Reveal delay={120}>
+                        <h1 className="mt-8 font-bold leading-none tracking-[0.22em] text-[#F7F5EE] text-[clamp(4.2rem,14vw,13.75rem)]">
+                            {t('anthology.name')}
+                        </h1>
+                    </Reveal>
+                    <Reveal delay={240}>
+                        <p className="mt-8 max-w-2xl text-base md:text-xl tracking-[0.18em] text-[#F7F5EE]/80">
+                            {t('site.tagline')}
                         </p>
                     </Reveal>
                 </div>
-            </section>
-
-            <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
-                <Reveal>
-                    <MiniTitle i18nKey="anthology.about" lang={lang} />
-                </Reveal>
-                <div className="mt-10 grid grid-cols-1 md:grid-cols-12 gap-10">
-                    <Reveal className="md:col-span-5" delay={100}>
-                        <h2 className="font-display text-4xl md:text-5xl font-semibold leading-snug">
-                            {t('ui.onlineGazetteer')}
-                        </h2>
-                        <div className="mt-8">
-                            <Seal char="九" />
+                <div className="absolute inset-x-0 bottom-0 z-10 flex flex-col items-start gap-3 px-6 pb-8 md:flex-row md:items-end md:justify-between md:gap-4 md:px-16">
+                    <ImageCaption onDark>{t('book.maps.thousandLi')}</ImageCaption>
+                    <a
+                        href="#jiuzhou"
+                        className="hidden md:flex flex-col items-center gap-2 text-[12px] tracking-[0.35em] text-[#F7F5EE]/70"
+                    >
+                        {t('book.scrollOpen')}
+                        <span className="h-8 w-px bg-[#F7F5EE]/45" aria-hidden />
+                    </a>
+                    <div className="flex max-w-full items-end gap-3 self-end md:gap-4">
+                        <div className="min-w-0 text-right text-[12px] leading-relaxed tracking-[2px] text-[#F7F5EE]/60 md:tracking-[4px]">
+                            <p className="break-words">{t('book.publishedHangzhou')}</p>
+                            <p className="break-words">
+                                {`${t('anthology.name')}\u3000${t('book.contents')}\u3000${t('book.published')}`}
+                            </p>
                         </div>
-                    </Reveal>
-                    <div className="md:col-span-6 md:col-start-7 flex flex-col gap-7">
-                        {tList('anthology.intro').map((p, i) => (
-                            <Reveal key={i} delay={180 + i * 120}>
-                                <p className="text-base md:text-lg leading-8 md:leading-9 text-[#3d4842]">{p}</p>
-                            </Reveal>
-                        ))}
+                        <span className="md:hidden">
+                            <Stamp char={t('book.titleSealHome')} size={36} />
+                        </span>
+                        <span className="hidden md:inline-flex">
+                            <Stamp char={t('book.titleSealHome')} size={50} />
+                        </span>
                     </div>
                 </div>
             </section>
 
-            <ParallaxImage
-                src={zhinan?.image ?? '/images/spot-zhinan.webp'}
-                alt={t('ui.alt.zhinanAutumn')}
-                caption={t('ui.caption.zhinanAutumn')}
-                slotId={zhinan?.slotId}
-            />
-
-            <section className="mx-auto max-w-7xl px-6 md:px-16 py-24 md:py-36">
+            <section id="jiuzhou" className="scroll-mt-24 bg-[#141614] px-5 py-20 md:py-28 text-[#F7F5EE]">
                 <Reveal>
-                    <MiniTitle i18nKey="anthology.provincesLabel" lang={lang} />
+                    <p className="text-center text-sm tracking-[0.8em] text-[#D9826F]">
+                        {t('book.jiuzhouLabel')}
+                    </p>
                 </Reveal>
-                <Reveal delay={100}>
-                    <h2 className="mt-10 font-display text-4xl md:text-5xl font-semibold">
-                        {t('anthology.provincesTitle')}
+                <Reveal delay={80}>
+                    <h2 className="mx-auto mt-6 max-w-[1200px] px-2 text-center font-display text-[clamp(1.25rem,4.45vw,64px)] min-[1440px]:text-[64px] font-semibold leading-snug tracking-[clamp(0px,0.56vw,8px)] min-[1440px]:tracking-[8px] break-words whitespace-normal">
+                        {t('book.jiuzhouHeadline')}
                     </h2>
                 </Reveal>
+                <figure className="mx-auto mt-12 w-full max-w-[800px]">
+                    <div className="aspect-[800/820] w-full p-[5px] border border-[#F7F5EE]/35">
+                        <div className="h-full border border-[#F7F5EE]/35">
+                            <img
+                                src="/images/map-yujitu-1136.webp"
+                                alt={t('book.maps.yujitu')}
+                                className="h-full w-full object-contain"
+                            />
+                        </div>
+                    </div>
+                    <figcaption className="mt-5">
+                        <ImageCaption onDark align="center">
+                            {t('book.maps.yujitu')}
+                        </ImageCaption>
+                    </figcaption>
+                </figure>
+                <p className="mx-auto mt-10 max-w-2xl text-center text-[15px] md:text-base leading-8 text-[#F7F5EE]/75">
+                    {t('book.jiuzhouBody')}
+                </p>
+            </section>
 
-                <div className="mt-16 flex flex-col">
-                    {provinces.map((prov) => {
-                        const kernel = volumeKernel(prov.cities[0]?.key ?? '')
-                        return (
-                        <Reveal key={prov.key}>
-                            <a
-                                href={href(prov.route)}
-                                className="group grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center py-10 md:py-14 border-t border-b hairline"
-                            >
-                                <div className="md:col-span-5 overflow-hidden">
-                                    <div className="aspect-3/2 overflow-hidden">
-                                        <img
-                                            src={kernel?.image ?? prov.image}
-                                            alt={t(`province.${prov.key}.title`)}
-                                            className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.05]"
-                                        />
+            <BookEssay
+                mouth={`${t('anthology.name')}\u3000${t('book.preface')}`}
+                kicker={t('book.preface')}
+                title={t('book.prefaceTitle')}
+                paragraphs={tList('anthology.intro')}
+                note={t('book.prefaceNote')}
+            />
+
+            <section id="volumes" className="scroll-mt-24 bg-[#ECE5D2] px-6 py-16 md:px-16 md:py-24">
+                <div className="mx-auto max-w-6xl">
+                    <SectionMark mark="卷" aside={t('book.oneCity')} />
+                    {hangzhou && (
+                        <a
+                            href={href(hangzhou.route)}
+                            className="group mt-10 flex flex-col gap-8 md:flex-row md:items-start md:gap-14"
+                        >
+                            <div className="relative mx-auto w-full max-w-[22.5rem] shrink-0 md:mx-0">
+                                <div className="relative aspect-3/4 overflow-hidden">
+                                    <img
+                                        src="/images/cover-hangzhou-lisong.webp"
+                                        alt={t('hangzhou.heroTitle')}
+                                        className="h-full w-full object-cover transition-transform duration-1000 group-hover:scale-[1.03]"
+                                    />
+                                    <div className="absolute top-6 left-0 bg-[#F3EEE2] border border-[#1F2A26] px-2 py-3">
+                                        <p className="vertical-rl text-sm tracking-[0.35em]">
+                                            {t('hangzhou.heroTitle')}
+                                        </p>
                                     </div>
                                 </div>
-                                <div className="md:col-span-6 md:col-start-7">
-                                    <p className="micro-label text-[#8ca693]">{prov.latin}</p>
-                                    <h3 className="mt-3 font-display text-3xl md:text-4xl font-semibold tracking-wide">
-                                        {t(`province.${prov.key}.title`)}
-                                    </h3>
-                                    <p className="mt-4 max-w-md text-[#5a665e] leading-7">
-                                        {t(`province.${prov.key}.heroSub`)}
-                                    </p>
-                                    <span className="mt-6 inline-flex items-center gap-2 text-sm tracking-[0.25em] text-[#1f2a26]">
-                                        {t('ui.openVolume')}
-                                        <ArrowRight
-                                            size={16}
-                                            className="transition-transform duration-500 group-hover:translate-x-1.5"
-                                        />
-                                    </span>
+                            </div>
+                            <div className="flex-1 pt-2">
+                                <p className="text-sm tracking-[0.3em] text-[#B03A2E]">
+                                    {hangzhou.no
+                                        ? `${hangzhou.no} · ${t('province.zhejiang.title')} · ${t('city.hangzhou.title')}`
+                                        : t('anthology.volumes.hangzhou.place')}
+                                </p>
+                                <p className="mt-3 text-sm tracking-[0.25em] text-[#8A8270]">
+                                    {t('anthology.volumes.hangzhou.identity')}
+                                </p>
+                                <h3 className="mt-5 text-4xl md:text-[2.75rem] font-semibold tracking-wide">
+                                    {t('hangzhou.heroTitle')}
+                                </h3>
+                                <p className="mt-5 text-base text-[#4A514B] leading-7">
+                                    {t('hangzhou.heroSub').split('。')[0] + '。'}
+                                </p>
+                                <div className="mt-8">
+                                    <ImageCaption size="card">{t('book.maps.lisong')}</ImageCaption>
                                 </div>
-                            </a>
-                        </Reveal>
-                        )
-                    })}
+                            </div>
+                        </a>
+                    )}
                 </div>
             </section>
+
+            <section id="provinces" className="scroll-mt-24 px-6 py-16 md:px-16 md:py-20">
+                <div className="mx-auto max-w-6xl">
+                    <SectionMark mark="省" kicker={t('book.openedOneProvince')} />
+                    <a
+                        href={href('/zhejiang')}
+                        className="mt-8 flex items-center gap-6 border-b border-[#1F2A26]/20 py-6"
+                    >
+                        <span className="text-sm tracking-[0.35em] text-[#B03A2E]">
+                            {t('book.eastChina')}
+                        </span>
+                        <span className="text-[#B03A2E]/70" aria-hidden>
+                            →
+                        </span>
+                        <span className="text-2xl md:text-3xl tracking-[0.35em]">
+                            {t('province.zhejiang.title')}
+                        </span>
+                        <Stamp char={t('book.openSeal')} size={28} />
+                    </a>
+                </div>
+            </section>
+
+            <Colophon
+                title={`${t('anthology.name')}\u3000${t('book.contents')}`}
+                line={`${t('book.publishedLine')}\u3000${ANTHOLOGY_DOMAIN}\u3000${t('book.online')}`}
+                credit={t('book.colophonCredit')}
+            />
         </main>
     )
 }

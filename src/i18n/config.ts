@@ -24,7 +24,7 @@ export const LANG_META: Record<
         htmlLang: 'zh-CN',
         ogLocale: 'zh_CN',
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap',
     },
     'zh-hant': {
         label: '繁體中文',
@@ -33,7 +33,7 @@ export const LANG_META: Record<
         htmlLang: 'zh-Hant',
         ogLocale: 'zh_TW',
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+TC:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+TC:wght@400;600;700;900&display=swap',
     },
     en: {
         label: 'English',
@@ -43,7 +43,7 @@ export const LANG_META: Record<
         ogLocale: 'en_US',
         // Counterpart labels are Chinese; seals are CJK.
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+SC:wght@400;600;700;900&display=swap',
     },
     ja: {
         label: '日本語',
@@ -52,7 +52,7 @@ export const LANG_META: Record<
         htmlLang: 'ja',
         ogLocale: 'ja_JP',
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+JP:wght@400;600;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap',
     },
     ko: {
         label: '한국어',
@@ -61,7 +61,7 @@ export const LANG_META: Record<
         htmlLang: 'ko',
         ogLocale: 'ko_KR',
         fontHref:
-            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap',
+            'https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Noto+Serif+KR:wght@400;600;700;900&family=Noto+Serif+SC:wght@400;600;700;900&display=swap',
     },
 }
 

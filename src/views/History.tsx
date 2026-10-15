@@ -7,10 +7,11 @@ import Reveal from '@/components/Reveal'
 import ChapterClose from '@/components/ChapterClose'
 import EntryLinks from '@/components/EntryLinks'
 import ChapterEntries from '@/components/ChapterEntries'
+import { PlateCaption } from '@/components/ImageCaption'
 import { withLocale } from '@/lib/i18n-path'
 
 export default function History({ lang, volume }: { lang: Lang; volume: string }) {
-    const { t, tList } = messages(lang)
+    const { t, tList, tOptional } = messages(lang)
     const vol = getVolume(volume)
     const content = getVolumeContent(volume)
 
@@ -62,6 +63,9 @@ export default function History({ lang, volume }: { lang: Lang; volume: string }
                                         className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                     />
                                 </div>
+                                <PlateCaption
+                                    text={tOptional(`${volume}.plates.history.${entry.id}`)}
+                                />
                             </Reveal>
                         </div>
                     </div>

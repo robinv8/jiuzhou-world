@@ -20,6 +20,8 @@ export function headerCopy(lang: Lang, path: string) {
         basePath === '/' ||
         Boolean(currentProvince && currentProvince.route === basePath) ||
         Boolean(currentVolume && currentVolume.route === basePath)
+    const heroTone: 'dark' | 'light' = photoHero && basePath !== '/' ? 'light' : 'dark'
+    const homeHref = withLocale('/', lang)
 
     return {
         lang,
@@ -27,6 +29,7 @@ export function headerCopy(lang: Lang, path: string) {
         inVolume,
         inProvince,
         photoHero,
+        heroTone,
         volumeKey: currentVolume?.key ?? '',
         volumeTitle,
         volumeLatin,
@@ -43,12 +46,34 @@ export function headerCopy(lang: Lang, path: string) {
         language: t('ui.language'),
         menu: t('ui.menu'),
         hrefs: {
-            home: withLocale('/', lang),
-            volume: currentVolume ? withLocale(currentVolume.route, lang) : withLocale('/', lang),
-            province: currentProvince ? withLocale(currentProvince.route, lang) : withLocale('/', lang),
+            home: homeHref,
+            volume: currentVolume ? withLocale(currentVolume.route, lang) : homeHref,
+            province: currentProvince ? withLocale(currentProvince.route, lang) : homeHref,
             about: withLocale('/about', lang),
             contribute: withLocale('/contribute', lang),
         },
+        siteNav: [
+            {
+                href: `${homeHref}#volumes`,
+                label: t('nav.volumes'),
+                gloss: t('nav.volumes', gloss),
+            },
+            {
+                href: `${homeHref}#provinces`,
+                label: t('nav.provinces'),
+                gloss: t('nav.provinces', gloss),
+            },
+            {
+                href: withLocale('/about', lang),
+                label: t('anthology.about'),
+                gloss: t('anthology.about', gloss),
+            },
+            {
+                href: withLocale('/contribute', lang),
+                label: t('anthology.contribute'),
+                gloss: t('anthology.contribute', gloss),
+            },
+        ],
         nav: nav.map((l) => ({
             base: l.base,
             href: withLocale(l.base, lang),

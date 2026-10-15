@@ -8,7 +8,8 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
     const [open, setOpen] = useState(false)
     const [langOpen, setLangOpen] = useState(false)
 
-    const { inVolume, basePath, glossLang, hrefs, nav, locales, volumeTitle } = copy
+    const { inVolume, inProvince, basePath, glossLang, hrefs, nav, siteNav, locales, volumeTitle, provinceTitle } =
+        copy
     const active = (p: string) => basePath === p || basePath.startsWith(`${p}/`)
 
     useEffect(() => {
@@ -28,7 +29,8 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
         setLangOpen(false)
     }, [copy.basePath])
 
-    const onDark = copy.photoHero && !scrolled
+    const onDark = copy.photoHero && copy.heroTone !== 'light' && !scrolled
+    const onLightHero = copy.photoHero && copy.heroTone === 'light' && !scrolled
 
     const langButtonClass = onDark
         ? 'border-[#f7f5ee]/40 text-[#f7f5ee] hover:bg-[#f7f5ee] hover:text-[#1f2a26]'
@@ -41,7 +43,9 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
             } ${
                 onDark
                     ? 'bg-linear-to-b from-[#1f2a26]/55 via-[#1f2a26]/20 to-transparent'
-                    : 'bg-[#f7f5ee]/92 backdrop-blur-xs border-b hairline'
+                    : onLightHero
+                      ? 'bg-linear-to-b from-[#EFE9DC]/55 via-[#EFE9DC]/15 to-transparent'
+                      : 'bg-[#f7f5ee]/92 backdrop-blur-xs border-b hairline'
             }`}
         >
             <div
@@ -82,6 +86,21 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                             </a>
                         </>
                     )}
+                    {inProvince && (
+                        <>
+                            <span className={onDark ? 'text-[#f7f5ee]/40' : 'text-[#1f2a26]/30'}>/</span>
+                            <a
+                                href={hrefs.province}
+                                className={`font-display text-base tracking-[0.15em] transition-colors ${
+                                    onDark
+                                        ? 'text-[#f7f5ee]/85 hover:text-[#f7f5ee]'
+                                        : 'text-[#1f2a26]/70 hover:text-[#1f2a26]'
+                                }`}
+                            >
+                                {provinceTitle}
+                            </a>
+                        </>
+                    )}
                 </div>
 
                 <nav className="hidden md:flex items-center gap-8">
@@ -106,34 +125,21 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                                 </a>
                             )
                         })}
-                    {!inVolume && (
-                        <>
-                            <a href={hrefs.about}>
+                    {!inVolume &&
+                        siteNav.map((item) => (
+                            <a key={item.href} href={item.href}>
                                 <span
                                     className={`flex flex-col items-start transition-colors opacity-70 hover:opacity-100 ${
                                         onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
                                     }`}
                                 >
                                     <span className="micro-label" lang={glossLang}>
-                                        {copy.aboutGloss}
+                                        {item.gloss}
                                     </span>
-                                    <span className="font-display text-base tracking-[0.2em]">{copy.about}</span>
+                                    <span className="font-display text-base tracking-[0.2em]">{item.label}</span>
                                 </span>
                             </a>
-                            <a href={hrefs.contribute}>
-                                <span
-                                    className={`flex flex-col items-start transition-colors opacity-70 hover:opacity-100 ${
-                                        onDark ? 'text-[#f7f5ee]' : 'text-[#1f2a26]'
-                                    }`}
-                                >
-                                    <span className="micro-label" lang={glossLang}>
-                                        {copy.contributeGloss}
-                                    </span>
-                                    <span className="font-display text-base tracking-[0.2em]">{copy.contribute}</span>
-                                </span>
-                            </a>
-                        </>
-                    )}
+                        ))}
 
                     <div className="relative ml-4">
                         <button
@@ -202,18 +208,31 @@ export default function SiteHeader({ copy }: { copy: HeaderCopy }) {
                                 </span>
                             </a>
                         ))}
-                    <a href={hrefs.about} className="flex items-baseline gap-3 text-[#1f2a26]">
-                        <span className="font-display text-lg">{copy.about}</span>
-                        <span className="micro-label text-[#5a665e]" lang={glossLang}>
-                            {copy.aboutGloss}
-                        </span>
-                    </a>
-                    <a href={hrefs.contribute} className="flex items-baseline gap-3 text-[#1f2a26]">
-                        <span className="font-display text-lg">{copy.contribute}</span>
-                        <span className="micro-label text-[#5a665e]" lang={glossLang}>
-                            {copy.contributeGloss}
-                        </span>
-                    </a>
+                    {!inVolume &&
+                        siteNav.map((item) => (
+                            <a key={item.href} href={item.href} className="flex items-baseline gap-3 text-[#1f2a26]">
+                                <span className="font-display text-lg">{item.label}</span>
+                                <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                                    {item.gloss}
+                                </span>
+                            </a>
+                        ))}
+                    {inVolume && (
+                        <>
+                            <a href={hrefs.about} className="flex items-baseline gap-3 text-[#1f2a26]">
+                                <span className="font-display text-lg">{copy.about}</span>
+                                <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                                    {copy.aboutGloss}
+                                </span>
+                            </a>
+                            <a href={hrefs.contribute} className="flex items-baseline gap-3 text-[#1f2a26]">
+                                <span className="font-display text-lg">{copy.contribute}</span>
+                                <span className="micro-label text-[#5a665e]" lang={glossLang}>
+                                    {copy.contributeGloss}
+                                </span>
+                            </a>
+                        </>
+                    )}
                     <div className="flex flex-wrap gap-2 pt-2">
                         {locales.map((item) => (
                             <a

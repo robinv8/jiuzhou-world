@@ -5,6 +5,8 @@
   },
   "nav": {
     "home": "Opening",
+    "volumes": "Volumes",
+    "provinces": "Provinces",
     "mountains": "Landscape",
     "scenic": "Places",
     "history": "History",
@@ -189,6 +191,7 @@
     "seal": "临",
     "manifestoLabel": "How to read",
     "manifestoTitle": "Begin with the mountains, follow the water down",
+    "prefaceNote": "However high the mountains, that long is their water",
     "manifesto": [
       "West of Hangzhou lies Lin’an, a town of mountains. The Tianmu range folds in from southern Anhui and eases eastward, coming to rest at the edge of Hangzhou. Tianmu is a divide: streams on the north slope join the Tiaoxi and empty into Lake Tai; streams on the west slope join the Changhua and enter the Qiantang. However high the mountains, that long is their water.",
       "Read this volume from the mountains. Begin at the summits, with great trees and seas of cloud; then come down — past a source, a canyon, a lake, to the wharves of the old town. Once water leaves the mountain, it becomes the human world. The human world has its goods: hickory nuts, bloodstone, tenmoku bowls. And it has its history: a man of Lin’an named Qian Liu walked out of these hills and carried the two characters “Lin’an” into a thousand years of history books.",
@@ -383,6 +386,34 @@
           ]
         }
       }
+    },
+    "plates": {
+      "mountains": {
+        "tianmu": "Xuantong Gazetteer of Lin’an County: Autumn Wind at Tianmu · National Library of China",
+        "daming": "Mount Daming · AI rendering",
+        "qingliang": "Qingliang Peak · AI rendering",
+        "water": "Xuantong Gazetteer of Lin’an County: the Tiaoxi in flood · National Library of China"
+      },
+      "scenic": {
+        "taihuyuan": "Qianlong Gazetteer of Lin’an County: Mount Tianmu · National Library of China",
+        "canyon": "Zhexi Grand Canyon · AI rendering",
+        "qingshanhu": "Qingshan Lake · AI rendering",
+        "zhinan": "Zhinan Village · AI rendering",
+        "heqiao": "Heqiao Old Town · AI rendering"
+      },
+      "history": {
+        "birth": "Poliu Well · AI rendering",
+        "kingdom": "Xuantong Gazetteer of Lin’an County: Stone Mirror Hill · National Library of China",
+        "song": "Xuantong Gazetteer of Lin’an County: the ancient tomb of King Qian · National Library of China",
+        "precept": "Tomb of King Qian · AI rendering",
+        "name": "Xuantong Gazetteer of Lin’an County: Lin’an Hill · the county takes its name from this hill"
+      },
+      "culture": {
+        "hickory": "Daoshi · AI rendering",
+        "stone": "Yuyan Hill · AI rendering",
+        "tenmoku": "Song, Shen’an Laoren, Illustrated Eulogy of Tea Utensils: Tao Baowen · Harvard-Yenching Library",
+        "village": "Lin’an mountain village · AI rendering"
+      }
     }
   },
   "hangzhou": {
@@ -395,6 +426,7 @@
     "seal": "杭",
     "manifestoLabel": "How to read",
     "manifestoTitle": "Begin with the lake, walk toward the city",
+    "prefaceNote": "The lake is Hangzhou’s measure",
     "manifesto": [
       "Hangzhou is a city of the lake. West Lake has hills on three sides and the city on the fourth — the hills are not steep but graceful, the water not deep but broad. The lake is Hangzhou’s eyes and brows, and also its measure: however large the city, that still is the lake.",
       "Read this volume along the lake. Begin with the lake itself — the Su and Bai causeways, the three pools mirroring the moon; then read the hills around it, and the tea slopes in the hills; then walk toward the city: Lingyin, Xixi, the canal, the Qiantang, Wu Hill; then read the human world the lake has raised: Longjing, silk, craft, the dishes of Hangzhou; and last, read the city’s history: Liangzhu’s earlier city, the founding of Wuyue, the Southern Song’s borrowed peace, and the human world after the capital was laid down.",
@@ -581,6 +613,33 @@
             "The dishes are not on hotel menus. They are in the noodle shops and tea houses in the lanes. The stomach is solid, and also empty — solid in taste, empty in who once paid for a meal."
           ]
         }
+      }
+    },
+    "plates": {
+      "mountains": {
+        "westlake": "Southern Song, Ye Xiaoyan, Ten Views of West Lake: Spring Dawn on the Su Causeway · National Palace Museum, Taipei",
+        "hills": "Qianlong, Grand Ceremony of the Southern Inspection Tour: Northern Peak · Waseda University Library",
+        "tea": "Ming, Song Maojin, Album of West Lake Sites: Yanxia Cave · Tianjin Museum",
+        "water": "Qianlong, Grand Ceremony of the Southern Inspection Tour: Hupao Spring · Waseda University Library"
+      },
+      "scenic": {
+        "lingyin": "Qianlong, Grand Ceremony of the Southern Inspection Tour: Yunlin Temple · Waseda University Library",
+        "xixi": "Xixi · AI rendering",
+        "canal": "Gongchen Bridge · AI rendering",
+        "qiantang": "Qianlong, Grand Ceremony of the Southern Inspection Tour: Zhenhai Pagoda Precinct · Waseda University Library",
+        "wushan": "Ming, Chen Changxi, Splendors of Lake and Hills: Wu Hill · National Library of France"
+      },
+      "history": {
+        "liangzhu": "Liangzhu Ancient City · AI rendering",
+        "wuyue": "Qianlong Gazetteer of Hangzhou Prefecture: sea-wall map · British Library",
+        "southern-song": "Map of the Song capital from the Xianchun Gazetteer of Lin’an · Jiajing recut of West Lake Travel Record",
+        "modern": "Leifeng at Sunset · late Qing–early Republican postcard, Erwo Xuan, Hangzhou · New York Public Library"
+      },
+      "culture": {
+        "tea": "Ming, Song Maojin, Album of West Lake Sites: Longjing · Tianjin Museum",
+        "silk": "Kangxi, Jiao Bingzhen, Imperially Commissioned Pictures of Tilling and Weaving: weaving · National Library of France",
+        "craft": "Qinghefang · AI rendering",
+        "food": "Gushan · AI rendering"
       }
     }
   },
@@ -806,6 +865,61 @@
     "entry_zhinan": {
       "title": "Zhinan Village · Jiuzhou",
       "description": "A foothill village on the east of Tianmu, by the upper Tiaoxi. Full essay in Chinese."
+    }
+  },
+  "book": {
+    "contents": "Contents",
+    "preface": "Preface",
+    "published": "Autumn of Bingwu · issued online",
+    "publishedLine": "Autumn of Bingwu",
+    "online": "Issued online",
+    "coldDew": "Bingwu · Cold Dew",
+    "juan": [
+      "Juan I",
+      "Juan II",
+      "Juan III",
+      "Juan IV"
+    ],
+    "fourPian": "Four chapters",
+    "oneSub": "One nested volume",
+    "tocNote": "Essays listed under each chapter",
+    "under": "Nested",
+    "underHangzhou": "Under Hangzhou",
+    "openScroll": "Open",
+    "openIntoHangzhou": "Open, into Hangzhou",
+    "enterVolume": "Enter",
+    "opened": "Open",
+    "openedOneProvince": "One province open",
+    "openedOneCity": "One city open",
+    "oneCity": "One city, one volume",
+    "scrollOpen": "Scroll, open the volume",
+    "scrollCities": "Scroll, to the cities",
+    "publishedHangzhou": "Issued · Juan I · Hangzhou",
+    "openedHangzhou": "One city open · Hangzhou",
+    "eastChina": "East China",
+    "openSeal": "开",
+    "colophonCredit": "Images from old books, each sourced",
+    "jiuzhouLabel": "Nine Lands",
+    "jiuzhouHeadline": "The old names are gone from the map; the mountains and rivers remain.",
+    "jiuzhouBody": "The name “Nine Lands” (Jiuzhou) comes from the Tribute of Yu in the Book of Documents; it roughly covered the Yellow River and Yangtze basins and the southeast coast. China today is far larger, so this gazetteer is bound by present-day provinces, and only borrows the name.",
+    "prefaceTitle": "One city, one volume, written slowly",
+    "prefaceNote": "One city one volume written slowly",
+    "titleSealHome": "九",
+    "titleSealZhejiang": "浙",
+    "titleSealHangzhou": "湖",
+    "titleSealLinan": "临",
+    "maps": {
+      "thousandLi": "Wang Ximeng, A Thousand Li of Rivers and Mountains (detail), Northern Song · The Palace Museum",
+      "yujitu": "Yuji tu (Tracks of Yu) · engraved Fuchang 7 (1136) · each square one hundred li · rubbing at the Library of Congress",
+      "lisong": "Li Song, West Lake (scroll, detail), Southern Song · Shanghai Museum",
+      "tianmuZushan": "Map of West Tianmu · frontispiece of Gazetteer of the Ancestral Mountain of West Tianmu, Chanyuan Temple, Guangxu 2 (1876) · Waseda University Library",
+      "fuchun": "Huang Gongwang, Dwelling in the Fuchun Mountains (Master Wuyong scroll, detail), Yuan · National Palace Museum, Taipei",
+      "zhejiang": "Map of Zhejiang · north at the top · Hangzhou marked in vermilion",
+      "zhejiangSource": "Provincial Atlas of the Great Qing, Qianlong 19 (1754) · Library of Congress",
+      "hangzhou": "Prefectural city map · walls to the left, lake to the right, south at the top",
+      "hangzhouSource": "Qianlong Gazetteer of Hangzhou Prefecture",
+      "linan": "Terrain map · Qing Lin’an county · West Tianmu then belonged to Yuqian",
+      "linanSource": "Qianlong 24 woodblock Gazetteer of Lin’an County"
     }
   },
   "ui": {

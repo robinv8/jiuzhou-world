@@ -3,7 +3,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro'
 import SiteHeader from '@/components/SiteHeader'
 import SiteFooter from '@/components/SiteFooter'
 import { headerCopy } from '@/lib/header-copy'
-import { withLocale } from '@/lib/i18n-path'
+import { stripLocale, withLocale } from '@/lib/i18n-path'
 import type { PageSeo } from '@/lib/seo'
 import type { Lang } from '@/i18n/config'
 
@@ -12,13 +12,16 @@ interface Props {
     lang: Lang
 }
 
+const BOOK_PATHS = new Set(['/', '/zhejiang', '/hangzhou', '/hangzhou/linan'])
+
 const { seo, lang } = Astro.props
 const path = withLocale(seo.path, lang)
 const copy = headerCopy(lang, path)
+const hideFooter = BOOK_PATHS.has(stripLocale(seo.path))
 ---
 
 <BaseLayout seo={seo} lang={lang}>
     <SiteHeader client:load copy={copy} />
     <slot />
-    <SiteFooter lang={lang} />
+    {!hideFooter && <SiteFooter lang={lang} />}
 </BaseLayout>

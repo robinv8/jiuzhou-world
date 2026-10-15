@@ -8,10 +8,11 @@ import ParallaxImage from '@/components/ParallaxImage'
 import ChapterClose from '@/components/ChapterClose'
 import EntryLinks from '@/components/EntryLinks'
 import ChapterEntries from '@/components/ChapterEntries'
+import { PlateCaption } from '@/components/ImageCaption'
 import { withLocale } from '@/lib/i18n-path'
 
 export default function Culture({ lang, volume }: { lang: Lang; volume: string }) {
-    const { t, tList } = messages(lang)
+    const { t, tList, tOptional } = messages(lang)
     const vol = getVolume(volume)
     const content = getVolumeContent(volume)
     if (!vol || !content) return null
@@ -68,6 +69,9 @@ export default function Culture({ lang, volume }: { lang: Lang; volume: string }
                                             className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                         />
                                     </div>
+                                    <PlateCaption
+                                        text={tOptional(`${volume}.plates.culture.${item.id}`)}
+                                    />
                                 </Reveal>
                             </div>
                         </div>
@@ -76,7 +80,11 @@ export default function Culture({ lang, volume }: { lang: Lang; volume: string }
                         <ParallaxImage
                             src={parallax.image}
                             alt=""
-                            caption={t(placeCaptionKey(parallax))}
+                            caption={
+                                tOptional(
+                                    `${parallax.volKey}.plates.${parallax.kind === 'essay' ? 'mountains' : parallax.kind === 'spot' ? 'scenic' : parallax.kind}.${parallax.id}`,
+                                ) ?? t(placeCaptionKey(parallax))
+                            }
                             slotId={parallax.slotId}
                         />
                     )}

@@ -7,10 +7,11 @@ import Reveal from '@/components/Reveal'
 import ChapterClose from '@/components/ChapterClose'
 import EntryLinks from '@/components/EntryLinks'
 import ChapterEntries from '@/components/ChapterEntries'
+import { PlateCaption } from '@/components/ImageCaption'
 import { withLocale } from '@/lib/i18n-path'
 
 export default function Scenic({ lang, volume }: { lang: Lang; volume: string }) {
-    const { t } = messages(lang)
+    const { t, tOptional } = messages(lang)
     const vol = getVolume(volume)
     const content = getVolumeContent(volume)
 
@@ -42,6 +43,7 @@ export default function Scenic({ lang, volume }: { lang: Lang; volume: string })
                                         className="h-full w-full object-cover transition-transform duration-1400 ease-out group-hover:scale-[1.04]"
                                     />
                                 </div>
+                                <PlateCaption text={tOptional(`${volume}.plates.scenic.${spot.id}`)} />
                                 <div className="mt-6 flex items-baseline gap-4">
                                     <span className="font-display text-[#b03a2e] text-xl">{spot.no}</span>
                                     <p className="micro-label text-[#8ca693]">{spot.latin}</p>

@@ -59,10 +59,17 @@ export function tList(key: string, lang: Lang): string[] {
     return []
 }
 
+/** Look up a string; undefined if the key is absent (no fallback warning). */
+export function tOptional(key: string, lang: Lang): string | undefined {
+    const value = resolve(key, lang)
+    return typeof value === 'string' ? value : undefined
+}
+
 /** Bind t / tList to a locale so views do not need React context. */
 export function messages(lang: Lang) {
     return {
         t: (key: string, locale: Lang = lang) => t(key, locale),
         tList: (key: string, locale: Lang = lang) => tList(key, locale),
+        tOptional: (key: string, locale: Lang = lang) => tOptional(key, locale),
     }
 }
