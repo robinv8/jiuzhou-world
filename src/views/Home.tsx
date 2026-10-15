@@ -117,7 +117,7 @@ export default function Home({ lang }: { lang: Lang }) {
 
             <section id="volumes" className="scroll-mt-24 bg-[#ECE5D2] px-6 py-16 md:px-16 md:py-24">
                 <div className="mx-auto max-w-6xl">
-                    <SectionMark mark="卷" aside={t('book.oneCity')} />
+                    <SectionMark mark="浙" aside={t('book.oneCity')} />
                     {hangzhou && (
                         <a
                             href={href(hangzhou.route)}

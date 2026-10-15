@@ -7,16 +7,16 @@ export const ANTHOLOGY_DOMAIN = 'jiuzhou.world'
 /** Inbox for reader-submitted photographs. */
 export const CONTRIBUTE_EMAIL = 'hello@jiuzhou.world'
 
-/** Latin volume mark — not translated. */
-export const VOLUME_I_LATIN = 'Vol. I'
+/** Latin fallback when the header is not inside a city. Not a volume number. */
+export const VOLUME_I_LATIN = 'Jiuzhou'
 
 export type ChapterKey = 'mountains' | 'scenic' | 'culture' | 'history'
 
 const defaultChapters = (): VolumeChapter[] => [
-    { key: 'mountains', latin: 'Chapter I — Landscape' },
-    { key: 'scenic', latin: 'Chapter II — Places' },
-    { key: 'culture', latin: 'Chapter III — Craft' },
-    { key: 'history', latin: 'Chapter IV — History' },
+    { key: 'mountains', latin: 'Mountains & scenery' },
+    { key: 'scenic', latin: 'Historic sites' },
+    { key: 'culture', latin: 'History & culture' },
+    { key: 'history', latin: 'History & culture' },
 ]
 
 export type VolumeChapter = {
@@ -183,8 +183,7 @@ export const anthologyVolumes: Volume[] = [
     {
         key: 'hangzhou',
         route: '/hangzhou',
-        no: '卷一',
-        latin: 'Vol. I — Hangzhou',
+        latin: 'Hangzhou',
         image: '/images/hangzhou-westlake.webp',
         status: 'open',
         zhou: true,
@@ -624,7 +623,7 @@ export const contributePlaces = [
         key: 'hangzhou',
         route: '/hangzhou/contribute',
         volumeRoute: '/hangzhou',
-        latin: 'Vol. I — Hangzhou',
+        latin: 'Hangzhou',
         image: '/images/hangzhou-westlake.webp',
         status: 'open' as const,
     },

@@ -158,7 +158,7 @@ export function listStudioPages(): ImageryPage[] {
     }
     for (const vol of anthologyVolumes) {
         const place = placeName(vol.key)
-        seen.set(vol.route, `${place}卷`)
+        seen.set(vol.route, place)
         for (const ch of vol.chapters) {
             seen.set(`${vol.route}/${ch.key}`, `${place} · ${CHAPTER_ZH[ch.key] ?? ch.key}`)
         }

@@ -185,7 +185,7 @@ export default function ProvinceHome({ lang, province }: { lang: Lang; province:
                                         </a>
                                         <div className="w-full pt-1 xl:w-[632px] xl:flex-none">
                                             <p className="text-sm tracking-[0.3em] text-[#B03A2E]">
-                                                {`卷一 · ${city.latin}`}
+                                                {city.latin}
                                             </p>
                                             <h3 className="mt-3 text-4xl font-semibold tracking-wide">
                                                 <a href={href(city.route)}>{t(`city.${city.key}.title`)}</a>
